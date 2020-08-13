@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'shop.apps.ShopConfig',
 
     # 'bookmark.apps.BookmarkConfig',
@@ -46,7 +45,7 @@ INSTALLED_APPS = [
     # 'taggit.apps.TaggitAppConfig',
     # 'taggit_templatetags2',
 
-    # 'widget_tweaks',
+    'widget_tweaks',
     # 'tinymce',
 ]
 
