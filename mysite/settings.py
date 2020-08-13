@@ -41,6 +41,9 @@ INSTALLED_APPS = [
 
     # 'bookmark.apps.BookmarkConfig',
     # 'blog.apps.BlogConfig',
+    'register.apps.RegisterConfig',
+    'mypage.apps.MypageConfig',
+    'shop.apps.ShopConfig',
 
     # 'taggit.apps.TaggitAppConfig',
     # 'taggit_templatetags2',
