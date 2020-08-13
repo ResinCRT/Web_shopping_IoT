@@ -11,7 +11,7 @@ from django.db import models
 class Cart(models.Model):
     cart_id = models.IntegerField(primary_key=True)
     user_id = models.IntegerField(blank=True, null=True)
-    product = models.ForeignKey('Product', models.DO_NOTHING, blank=True, null=True)
+    product_id = models.ForeignKey('Product', models.DO_NOTHING, blank=True, null=True)
     amount = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -30,7 +30,7 @@ class Category(models.Model):
 
 
 class Inventory(models.Model):
-    product = models.ForeignKey('Product', models.DO_NOTHING)
+    product_id = models.ForeignKey('Product', models.DO_NOTHING)
     stock = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -40,8 +40,8 @@ class Inventory(models.Model):
 
 class Order(models.Model):
     order_id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey('User', models.DO_NOTHING, blank=True, null=True)
-    product = models.ForeignKey('Product', models.DO_NOTHING, blank=True, null=True)
+    user_id = models.ForeignKey('User', models.DO_NOTHING, blank=True, null=True)
+    product_id = models.ForeignKey('Product', models.DO_NOTHING, blank=True, null=True)
     wish_id = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -56,7 +56,6 @@ class Product(models.Model):
     description = models.CharField(max_length=45, blank=True, null=True)
     read_cnt = models.IntegerField(blank=True, null=True)
     category_id = models.IntegerField(blank=True, null=True)
-    category_category_id = models.IntegerField()
 
     class Meta:
         managed = False
@@ -66,7 +65,7 @@ class Product(models.Model):
 
 class Qna(models.Model):
     qna_id = models.IntegerField(primary_key=True)
-    product = models.ForeignKey(Product, models.DO_NOTHING, blank=True, null=True)
+    product_id = models.ForeignKey(Product, models.DO_NOTHING, blank=True, null=True)
     user_id = models.IntegerField(blank=True, null=True)
     parent_id = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=45, blank=True, null=True)
@@ -91,14 +90,3 @@ class Review(models.Model):
         db_table = 'review'
 
 
-class User(models.Model):
-    user_id = models.CharField(primary_key=True, max_length=45)
-    user_name = models.CharField(max_length=45, blank=True, null=True)
-    addr = models.CharField(max_length=45, blank=True, null=True)
-    phone = models.CharField(max_length=45, blank=True, null=True)
-    email = models.CharField(max_length=45, blank=True, null=True)
-    birth_date = models.CharField(max_length=45, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'user'
