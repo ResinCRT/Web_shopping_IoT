@@ -23,8 +23,8 @@ from django.views.defaults import permission_denied
 import datetime
 
 urlpatterns = [
-    path('admin/', admin.site.url),
-    path('', name='home'),
-    path('mypage/', include('mypage.urls')),
-    path('accounts/', include('register.urls')),
+    path('admin/', admin.site.urls),
+    # path('', name='home'),
+    # path('mypage/', include('mypage.urls')),
+    # path('accounts/', include('register.urls')),
 ]
