@@ -10,6 +10,8 @@ from django.contrib.auth.mixins import AccessMixin
 from django.views.defaults import permission_denied
 import datetime
 
+class HomeView(TemplateView):
+    template_name = 'index.html'
 
 class OwnerOnlyMixin(AccessMixin):
     raise_exception = True

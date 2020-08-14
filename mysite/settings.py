@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     # 'blog.apps.BlogConfig',
     'register.apps.RegisterConfig',
     'mypage.apps.MypageConfig',
-    'shop.apps.ShopConfig',
+    # 'shop.apps.ShopConfig',
 
     # 'taggit.apps.TaggitAppConfig',
     # 'taggit_templatetags2',
@@ -99,6 +99,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+
+# AUTH_USER_MODEL = 'register.models.User'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
