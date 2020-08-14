@@ -4,6 +4,7 @@ from django.views.generic import CreateView, TodayArchiveView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import AccessMixin
+from django.contrib.auth.models import User
 
 # Create your views here.
 class UserCreateView(CreateView):

@@ -11,7 +11,7 @@ from django.db import models
 class Cart(models.Model):
     cart_id = models.IntegerField(primary_key=True)
     user_id = models.IntegerField(blank=True, null=True)
-    product_id = models.ForeignKey('Product', models.DO_NOTHING, blank=True, null=True)
+    product_id = models.ForeignKey('Product_id', models.DO_NOTHING, blank=True, null=True)
     amount = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -30,7 +30,7 @@ class Category(models.Model):
 
 
 class Inventory(models.Model):
-    product_id = models.ForeignKey('Product', models.DO_NOTHING)
+    product_id = models.ForeignKey('Product_id', models.DO_NOTHING)
     stock = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -40,8 +40,8 @@ class Inventory(models.Model):
 
 class Order(models.Model):
     order_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey('User', models.DO_NOTHING, blank=True, null=True)
-    product_id = models.ForeignKey('Product', models.DO_NOTHING, blank=True, null=True)
+    user_id = models.ForeignKey('User_id', models.DO_NOTHING, blank=True, null=True)
+    product_id = models.ForeignKey('Product_id', models.DO_NOTHING, blank=True, null=True)
     wish_id = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -82,7 +82,7 @@ class Qna(models.Model):
 
 class Review(models.Model):
     review_id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey('User', models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey('User_id', models.DO_NOTHING, blank=True, null=True)
     product = models.ForeignKey(Product, models.DO_NOTHING, blank=True, null=True)
     rating = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=45, blank=True, null=True)
