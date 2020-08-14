@@ -1,0 +1,10 @@
+{% extends "base2.html" %}
+
+{% block title%}Home{% endblock %}
+
+{% block content%}
+<div>
+<h1>오늘의 게시글</h1>
+{% include 'blog/post_list.html' %}
+</div>
+{% endblock %}
