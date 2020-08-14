@@ -7,7 +7,7 @@ class Brand(models.Model):
     brand_name = models.CharField(max_length=45, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Brand'
 
 
@@ -21,7 +21,7 @@ class Product(models.Model):
     brand_id = models.ForeignKey(Brand, models.CASCADE, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'product'
 
     def __str__(self):
@@ -35,7 +35,7 @@ class Cart(models.Model):
     amount = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'cart'
 
 
@@ -50,7 +50,7 @@ class Qna(models.Model):
     qna_modify_date = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'qna'
 
     def __str__(self):
@@ -67,7 +67,7 @@ class Review(models.Model):
     file = models.CharField(max_length=45, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'review'
 
     def __str__(self):
@@ -81,7 +81,7 @@ class Order(models.Model):
     wish_id = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'order'
 
 
@@ -90,7 +90,7 @@ class Inventory(models.Model):
     stock = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'inventory'
 
 
@@ -100,7 +100,7 @@ class Category(models.Model):
     parent_id = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'category'
 
 
