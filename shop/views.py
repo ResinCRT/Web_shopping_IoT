@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from shop.models import Product
+from shop.models import Product,Brand
 from django.views.generic import ListView,DetailView,FormView
 from django.db.models import Q
 from shop.forms import ProductSearchForm
@@ -10,7 +10,19 @@ class ProductLV(ListView):
     model = Product
     template_name = 'shop/procduct_all.html'
     context_object_name = 'products'
+    paginate_by = 3
+    
     # 한페이지에 보여줄 문서 건수는 상의하기
+    
+    #so는 그냥 임시 파라미터 이름
+    # if so == 'recommend':
+    #     product_list = Product.objects.order_by('-read_cnt','-create_dt') #조회수순
+    # elif so == 'price':
+    #     product_list = Product.objects.order_by('-price','-create_dt') #가격순
+    # else:
+    #     product_list = Product.objects.order_by('-create_dt')  #최신순
+
+    context = {}
 
 # 상품 상세 보기 출력
 class ProductDV(DetailView):
@@ -37,7 +49,7 @@ class SearchFormView(FormView):
             Q(title__icontains=searchWord) |
             Q(description__icontains=searchWord) |
             Q(content__icontains=searchWord)
-        ).distinct()
+            ).distinct()
 
         context = {}
         context['form'] = form
