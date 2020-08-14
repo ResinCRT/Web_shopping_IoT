@@ -54,8 +54,11 @@ class Product(models.Model):
     p_name = models.CharField(max_length=45, blank=True, null=True)
     price = models.IntegerField(blank=True, null=True)
     description = models.CharField(max_length=45, blank=True, null=True)
-    read_cnt = models.IntegerField(blank=True, null=True)
+    read_cnt = models.IntegerField(blank=True, dafualt="0")
     category_id = models.IntegerField(blank=True, null=True)
+    created_dt = models.DateTimeField('CREATE DATE',auto_now_add=True)
+    modify_dt = models.DateTimeField('MODIFY DATE')
+
 
     class Meta:
         managed = False

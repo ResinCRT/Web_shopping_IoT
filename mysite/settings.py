@@ -26,6 +26,7 @@ SECRET_KEY = 'j*opl3ytf%$(e(h+s-=-gx6j#bwk+5ni4+y&n^w2e0eeeg)^+k'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     # 'blog.apps.BlogConfig',
     'register.apps.RegisterConfig',
     'mypage.apps.MypageConfig',
-    'shop.apps.ShopConfig',
 
     # 'taggit.apps.TaggitAppConfig',
     # 'taggit_templatetags2',
