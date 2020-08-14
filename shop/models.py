@@ -6,6 +6,10 @@ class Brand(models.Model):
     brand_id = models.IntegerField(primary_key=True)
     brand_name = models.CharField(max_length=45, blank=True, null=True)
 
+    class Meta:
+        managed = False
+        db_table = 'Brand'
+
 
 class Product(models.Model):
     product_id = models.IntegerField(primary_key=True)
