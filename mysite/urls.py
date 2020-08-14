@@ -22,9 +22,12 @@ from django.views.defaults import permission_denied
 
 import datetime
 
+from mysite.views import HomeView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', name='home'),
-    # path('mypage/', include('mypage.urls')),
-    # path('accounts/', include('register.urls')),
+    path('', HomeView.as_view(), name='home'),
+    path('mypage/', include('mypage.urls')),
+    path('accounts/', include('register.urls')),
+    path('tinymce/', include('tinymce.urls')),
 ]

@@ -48,7 +48,8 @@ class SearchFormView(FormView):
         product_list = Product.objects.filter(
             Q(title__icontains=searchWord) |
             Q(description__icontains=searchWord) |
-            Q(content__icontains=searchWord)
+            Q(content__icontains=searchWord)|
+            Q(brand__icontains=searchWord)
             ).distinct()
 
         context = {}
