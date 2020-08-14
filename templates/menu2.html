@@ -46,16 +46,16 @@
                     <i class="fas fa-user"></i>
                     &ensp;{% firstof user.get_username %}&ensp;</a>
                 <div class="dropdown-menu drop-gray">
-                    <a class="dropdown-item text-white" href="#">Logout</a>
-                    <a class="dropdown-item text-white" href="#">
+                    <a class="dropdown-item text-white" href="{% url 'register:logout' %}">Logout</a>
+                    <a class="dropdown-item text-white" href="{% url 'register:password_change' %}">
                         Change Password</a>
                 </div>
             </li>
             {% else %}
-                <li class="nav-item"><a class="nav-link" href="#">
+                <li class="nav-item"><a class="nav-link" href="{% url 'register:login'%}">
                     <i class="fas fa-sign-in-alt"></i>로그인</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="#">
+                <li class="nav-item"><a class="nav-link" href="{% url 'register:sign_up'%}">
                     <i class="fas fa-user-plus"></i>회원가입</a></li>
             {% endif %}
         </ul>
