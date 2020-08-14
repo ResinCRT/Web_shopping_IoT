@@ -27,6 +27,9 @@ class Product(models.Model):
     def __str__(self):
         return self.p_name
 
+    def save(self, *args, **kwargs):
+        self.
+
 
 class Cart(models.Model):
     cart_id = models.IntegerField(primary_key=True)
@@ -103,4 +106,13 @@ class Category(models.Model):
         managed = False
         db_table = 'category'
 
-#
+
+class ProductAttachFile(models.Model):
+    Product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="files", verbose_name='Post', blank=True, null=True)
+    upload_file = models.FileField(upload_to="%Y/%m/%d", null=True, blank=True, verbose_name='파일')
+    filename = models.CharField(max_length=64, null=True, verbose_name='첨부파일명')
+    content_type = models.CharField(max_length=128, null=True, verbose_name='MIME TYPE')
+    size = models.IntegerField('파일 크기')
+
+    def __str__(self):
+        return self.filename
