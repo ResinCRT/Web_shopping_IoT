@@ -27,4 +27,5 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('mypage/', include('mypage.urls')),
     path('accounts/', include('register.urls')),
+    path('tinymce/', include('tinymce.urls')),
 ]
