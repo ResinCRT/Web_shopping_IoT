@@ -31,7 +31,7 @@ AUTH_USER_MODEL = 'register.User'
 # Application definition
 
 INSTALLED_APPS = [
-    'register.apps.RegisterConfig',
+
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'register.apps.RegisterConfig',
     # 'bookmark.apps.BookmarkConfig',
     # 'blog.apps.BlogConfig',
     'mypage.apps.MypageConfig',
