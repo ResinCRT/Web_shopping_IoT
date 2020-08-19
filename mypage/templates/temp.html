@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <title>Django Web programming</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/adfa3cedd6.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .jumbotron {
+            background-image: url('/static_data/static/images/main2.jpg');
+            border-radius: 0;
+            background-size: cover;
+        }
+
+        .del-rad {
+            border-radius: 0;
+        }
+
+        .drop-gray {
+            background-color: #292b2c;
+        }
+
+        .drop-gray>a {
+            border-color: #555555;
+            color: white;
+        }
+
+        .drop-gray>.dropdown-divider {
+            border-color: #555555;
+        }
+
+        .drop-gray>.dropdown-item:hover {
+            background-color: #404345;
+            color: white;
+
+        }
+    </style>
+    <style>
+        ul,li {
+            list-style-type: None;
+            margin: 0;
+            padding: 0;
+        }
+        .mymenu {
+            background-color:white;
+            width:200px;
+            margin-top:-30px;
+            padding-top:0px;
+
+        }
+        .mymenu-head{
+            font-size:24pt;
+            font-weight:bold;
+            padding: 7px 0 34px;
+        }
+        .mymenu-box{
+            border:1px solid;
+            border-color:#292b2c;
+        }
+        .mymenu-list{
+            border:1px solid;
+            border-color:#292b2c;
+            padding-left:20px;
+            padding-top:15px;
+            padding-bottom:15px;
+            padding-right:10px;
+            cursor:pointer;
+        }
+        .mymenu-list > a:hover,.mymenu-list > a {
+            color:#292b2c;
+            font-weight: none;
+            text-decoration-line: none;
+        }
+        .mymenu-list:hover{
+            background-color:#DDDDDD;
+        }
+        .mymenu-list > a> i{
+            float:right;
+            line-height:24px;
+            margin:0;
+        }
+        .mymenu-active{
+            background-color:#DDDDDD;
+        }
+        .mymenu-active > a:hover{
+            color:purple;
+        }
+        .mymenu-active > a{
+            color:purple;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron mb-0 pt-4 ">
+            <h1><i class="fas fa-home"></i>Bootstrap Tutorial</h1>
+            <p>Bootstrap is the most popular HTML, CSS...</p>
+        </div>
+        <nav class="navbar sticky-top mb-3 navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Django</a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-home"></i>Home</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="far fa-star"></i>북마크</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-list"></i>News</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">
+                            <i class="fas fa-images"></i>갤러리</a></li>
+                    <li class="nav-item dropdown mx-1  ">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><i
+                                class="fas fa-cog"></i>Util</a>
+                        <div class="dropdown-menu drop-gray">
+                            <a class="util-dropdown dropdown-item" href="/admin/">Admin</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Archive</a>
+                            <a class="dropdown-item" href="#">Search</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav float-right">
+                    <form class="form-inline" action="#" method="post"><input type="hidden" name="csrfmiddlewaretoken"
+                            value="DKaIoNeoRlHOSaU48wE6lvODOdaoIz2UDgXpWGF86GLsgYV2OkQadax7e3tO1rkI">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search_word">
+                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+
+                    <li class="nav-item"><a class="nav-link" href="/accounts/login/">
+                            <i class="fas fa-sign-in-alt"></i>로그인</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="/accounts/register/">
+                            <i class="fas fa-user-plus"></i>회원가입</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content" style="padding-top:30px;">
+            <div class="mymenu">
+                <h2 class="mymenu-head">MY 정보</h2>
+                <ul class="mymenu-box">
+                    
+                    <li class="mymenu-list"><a href="https://www.naver.com">회원정보 수정<i class="fas fa-chevron-right"></i></a></li>
+                    <li href="#" class="mymenu-list"><a href="#">아이템<i class="fas fa-chevron-right"></i></a></li>
+                    <li class="mymenu-list"><a href="#">주문내역<i class="fas fa-chevron-right"></i></a></li>
+                    <li class="mymenu-list"><a href="#">a<i class="fas fa-chevron-right"></i></a></li>
+                </ul>
+                
+
+            </div>
+        </div>
+        <script>
+            active = 2;
+            let mymenu = document.getElementsByClassName("mymenu-list");
+
+            for(let item of mymenu){
+                item.className = "mymenu-list ";
+                item.onclick = function(){
+                    let a = item.firstChild.href;
+                    location.href=a;
+                }
+            }
+            for(let i=0;i<mymenu.length;i++){
+                if(active == i){
+                    mymenu[i].className += "mymenu-active"
+                }
+            }
+
+            
+        </script>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+
+
+</html>

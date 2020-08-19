@@ -1,0 +1,14 @@
+{% extends "base2.html" %}
+{% block title %}User modification{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+    {% include 'mypage_menu.html' %}
+    modify user
+
+{% endblock %}
+{% block extra-script %}
+<script> active = 3;
+    screens.innerHTML = active + "<i class='fas fa-chevron-right'></i>"
+    mymenu[active].classList.add("mymenu-active");
+</script>
+{% endblock %}

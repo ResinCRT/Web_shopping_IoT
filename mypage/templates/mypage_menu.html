@@ -1,0 +1,106 @@
+ {% block extra-style %}
+
+ <style>
+     ul,
+     li {
+         list-style-type: None;
+         margin: 0;
+         padding: 0;
+     }
+
+     .mymenu {
+         background-color: white;
+         width: 200px;
+         margin-top: -30px;
+         padding-top: 0px;
+
+     }
+
+     .mymenu-head {
+         font-size: 24pt;
+         font-weight: bold;
+         padding: 7px 0 34px;
+     }
+
+     .mymenu-box {
+         border: 1px solid;
+         border-color: #292b2c;
+     }
+
+     .mymenu-list {
+         border: 1px solid;
+         border-color: #292b2c;
+         padding-left: 20px;
+         padding-top: 15px;
+         padding-bottom: 15px;
+         padding-right: 10px;
+         cursor: pointer;
+     }
+
+     .mymenu-list>a:hover,
+     .mymenu-list>a {
+         color: #292b2c;
+         font-weight: none;
+         text-decoration-line: none;
+     }
+     .mymenu-list:hover {
+         background-color: #DDDDDD;
+     }
+
+     .mymenu-list>a>i {
+         float: right;
+         line-height: 24px;
+         margin: 0;
+     }
+
+     .mymenu-active {
+         background-color: #DDDDDD;
+     }
+
+     .mymenu-active > a:hover {
+         color: purple;
+     }
+
+     .mymenu-active>a {
+         color: purple;
+     }
+ </style>
+ {% endblock %}
+ 
+ <div class="mymenu">
+     <h2 class="mymenu-head">MY 정보</h2>
+     <ul class="mymenu-box">
+
+         <li class="mymenu-list"><a href="#">주문내역<i class="fas fa-chevron-right"></i></a></li>
+         <li class="mymenu-list"><a href="#">찜한 아이템<i class="fas fa-chevron-right"></i></a></li>
+         <li class="mymenu-list"><a href="#">상품 후기<i class="fas fa-chevron-right"></i></a></li>
+         <li class="mymenu-list"><a href="{% url 'mypage:modify_user' %}">회원정보 수정<i class="fas fa-chevron-right"></i></a></li>
+         <li class="mymenu-list"><a href="#" id="disp">a<i class="fas fa-chevron-right"></i></a></li>
+     </ul>
+ </div>
+
+ {% block extra-script %}
+ <script>
+     let active = 0;
+     let mymenu = document.getElementsByClassName("mymenu-list");
+     let screens = document.getElementById("disp");
+
+     for (let i = 0; i < mymenu.length; i++) {
+         mymenu[i].className = "mymenu-list ";
+         mymenu[i].onclick = function(){
+             let a = mymenu[i].firstChild.href;
+             location.href = a;
+             if(active != i){
+                mymenu[i].className += "mymenu-active";
+             }
+             active = i;
+             screens.innerHTML = active + "<i class='fas fa-chevron-right'></i>";
+             for (let j = 0; j < mymenu.length; j++) {
+                if(j != active){
+                    mymenu[j].className = "mymenu-list ";
+                }
+             }
+         }
+     }
+ </script>
+ {% endblock %}
