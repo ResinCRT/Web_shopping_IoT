@@ -11,9 +11,11 @@
      .mymenu {
          background-color: white;
          width: 200px;
+         float:left;
          margin-top: -30px;
          padding-top: 0px;
-
+         display:block;
+         margin-right:10px;
      }
 
      .mymenu-head {
@@ -64,22 +66,33 @@
      .mymenu-active>a {
          color: purple;
      }
+     .content-area{
+         display: inline-block;
+         background-color:#DDDDDD;
+         padding:15px;
+     }
+
  </style>
  {% endblock %}
- 
+ {% block content %}
  <div class="mymenu">
      <h2 class="mymenu-head">MY 정보</h2>
      <ul class="mymenu-box">
-
-         <li class="mymenu-list"><a href="#">주문내역<i class="fas fa-chevron-right"></i></a></li>
-         <li class="mymenu-list"><a href="#">찜한 아이템<i class="fas fa-chevron-right"></i></a></li>
-         <li class="mymenu-list"><a href="#">상품 후기<i class="fas fa-chevron-right"></i></a></li>
+         <li class="mymenu-list"><a href="{% url 'mypage:order' %}">주문내역<i class="fas fa-chevron-right"></i></a></li>
+         <li class="mymenu-list"><a href="{% url 'mypage:wishlist' %}">찜한 아이템<i class="fas fa-chevron-right"></i></a></li>
+         <li class="mymenu-list"><a href="{% url 'mypage:review' %}">상품 후기<i class="fas fa-chevron-right"></i></a></li>
          <li class="mymenu-list"><a href="{% url 'mypage:modify_user' %}">회원정보 수정<i class="fas fa-chevron-right"></i></a></li>
          <li class="mymenu-list"><a href="#" id="disp">a<i class="fas fa-chevron-right"></i></a></li>
      </ul>
  </div>
+ <div class="content-area">
+     {% block content-area %}
+        fsfsf
+     {% endblock %}
 
- {% block extra-script %}
+ </div>
+{% endblock %}
+{% block extra-script %}
  <script>
      let active = 0;
      let mymenu = document.getElementsByClassName("mymenu-list");

@@ -3,11 +3,11 @@
 {% load widget_tweaks %}
 {% block content %}
     {% include 'mypage_menu.html' %}
-    modify user
+    wishlist
 
 {% endblock %}
 {% block extra-script %}
-<script> active = 3;
+<script> active = 1;
     screens.innerHTML = active + "<i class='fas fa-chevron-right'></i>"
     mymenu[active].classList.add("mymenu-active");
 </script>

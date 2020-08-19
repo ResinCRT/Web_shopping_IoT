@@ -1,5 +1,4 @@
 from django.db import models
-# from django.contrib.auth.models import User
 from register.models import User
 
 class Brand(models.Model):
@@ -30,7 +29,7 @@ class Product(models.Model):
 
 class Cart(models.Model):
     cart_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True,null=True)
     product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
     amount = models.IntegerField(blank=True, null=True)
 
@@ -41,9 +40,9 @@ class Cart(models.Model):
 
 class Qna(models.Model):
     qna_id = models.IntegerField(primary_key=True)
-    qna_title = models.CharField(verbose_name='TITLE', max_length=50)
+    qna_title = models.CharField(verbose_name='TITLE', max_length=50,blank=True,null=True)
     product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True,null=True)
     parent_id = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=45, blank=True, null=True)
     qna_create_date = models.DateTimeField(blank=True, null=True)
@@ -59,8 +58,8 @@ class Qna(models.Model):
 
 class Review(models.Model):
     review_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
-    review_title = models.CharField(verbose_name='TITLE', max_length=50)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True,null=True)
+    review_title = models.CharField(verbose_name='TITLE', max_length=50,blank=True,null=True)
     product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
     rating = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=45, blank=True, null=True)
@@ -76,7 +75,7 @@ class Review(models.Model):
 
 class Order(models.Model):
     order_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True,null=True)
     product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
     wish_id = models.IntegerField(blank=True, null=True)
 
@@ -86,7 +85,7 @@ class Order(models.Model):
 
 
 class Inventory(models.Model):
-    product_id = models.ForeignKey(Product, models.CASCADE)
+    product_id = models.ForeignKey(Product, models.CASCADE,blank=True, null=True)
     stock = models.IntegerField(blank=True, null=True)
 
     class Meta:
