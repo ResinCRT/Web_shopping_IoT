@@ -9,7 +9,7 @@ from mypage.views import *
 app_name = "mypage"
 
 urlpatterns = [
-    path('', MypageView.as_view(), name="mypage_index"),
+    path('', MyOrderView.as_view(), name="mypage_index"),
     path('order/', MyOrderView.as_view(), name="order"),
     path('reviews/', MyReviewView.as_view(), name="review"),
     path('wishlist/', MyWishlistView.as_view(), name="wishlist"),
