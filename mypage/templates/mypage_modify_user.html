@@ -17,19 +17,19 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-3 ml-3 font-weight-bold">아이디 : </label>
         <div class="col-sm-5">
-            {{users.username}}
+            {{user.username}}
         </div>
     </div>
     <div class="form-group row">
         <label class="col-form-label col-sm-3 ml-3 font-weight-bold">실명 : </label>
         <div class="col-sm-5">
-            {{users.real_name}}
+            {{user.real_name}}
         </div>
     </div>
     <div class="form-group row">
         <label class="col-form-label col-sm-3 ml-3 font-weight-bold">이메일 : </label>
         <div class="col-sm-5">
-            {{ form.email|add_class:"form-control"|attr:"autofocus"}}
+            {{form.email|add_class:"form-control"|attr:"autofocus"}}
         </div>
     </div>
     <div class="form-group row">
@@ -52,7 +52,7 @@
     </div>
     <div class="form-group">
         <div class="offset-sm-3 col-sm-5">
-            <input type="submit" value="Register" class="btn btn-primary"/>
+            <input type="submit" value="수정" class="btn btn-primary"/>
         </div>
     </div>
 
@@ -62,5 +62,6 @@
 {% block extra-script %}
 <script> active = 3;
     mymenu[active].classList.add("mymenu-active");
+
 </script>
 {% endblock %}

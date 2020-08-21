@@ -10,23 +10,20 @@ from django.db.models import Q
 
 
 # Create your views here.
-
-
 class ModifyUserView(LoginRequiredMixin, FormView):
     template_name = "mypage_modify_user.html"
     form_class = UserChangeForm
-    model = User
-    context_object_name = "users"
     success_url = reverse_lazy('mypage:mypage_index')
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(self,**kwargs)
-        return context
 
     def form_valid(self, form):
         response = super().form_valid(form)
+        Users = self.request.user
+        Users.email = form.instance.email
+        Users.addr = form.instance.addr
+        Users.birthdate = form.instance.birthdate
+        Users.phone = form.instance.phone
+        Users.save()
         return response
-
-
 
 class MyOrderView(LoginRequiredMixin,ListView):
     template_name = "mypage_order.html"
