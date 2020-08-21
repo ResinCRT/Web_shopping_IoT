@@ -25,7 +25,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'real_name']
+        fields = ['username', 'email', 'real_name',]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -64,12 +64,11 @@ class UserCreationForm(forms.ModelForm):
 class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField(
         label="Password",
-
     )
 
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['email', 'phone', 'birthdate', 'addr',]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

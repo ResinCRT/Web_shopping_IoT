@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from django.views.generic import CreateView, TodayArchiveView
 from register.forms import *
-from django.urls import reverse_lazy,path
+from django.urls import reverse_lazy, path
 from django.contrib.auth.mixins import AccessMixin
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
@@ -13,8 +13,9 @@ class UserCreateView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('register:sign_up_done')
 
-class UserCreateDoneTV(TemplateView):
+class UserCreateDoneTV(TemplateView, User):
     template_name = 'registration/register_done.html'
+
 
 class PwChangeView(auth_views.PasswordChangeView):
     success_url = reverse_lazy('register:password_change_done')
