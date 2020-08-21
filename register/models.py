@@ -21,18 +21,20 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_user(self, email, username, password=None):
+    def create_user(self, real_name,phone,email, username, password=None):
         if not email:
             raise ValueError('must have user email')
         user = self.model(
             email=self.normalize_email(email),
-            username=username
+            username=username,
+            real_name=real_name,
+            phone=phone
         )
         user.set_password(password)
         user.save()
         return user
 
-    def create_superuser(self, email, username, password):
+    def create_superuser(self, real_name,phone, email, username, password):
         user = self.create_user(
             email=self.normalize_email(email),
             username=username,
@@ -57,6 +59,7 @@ class User(AbstractBaseUser,PermissionsMixin):
         unique=True
     )
     birthdate = models.DateField(default=timezone.now())
+    real_name = models.CharField(max_length=11)
     addr = models.CharField(max_length=100)
     phone = models.CharField(max_length=11) #validate at Frontend
     is_active = models.BooleanField(default=True)
