@@ -14,7 +14,6 @@ class UserCreateView(SuccessMessageMixin,CreateView):
     template_name = 'registration/register.html'
     form_class = UserCreationForm
     success_url = reverse_lazy('register:sign_up_done')
-
     def form_valid(self, form):
         response = super(UserCreateView, self).form_valid(form)
         self.request.session['success_id'] = self.request.POST.get('username')

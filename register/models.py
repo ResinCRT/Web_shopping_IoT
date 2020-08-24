@@ -62,7 +62,7 @@ class User(AbstractBaseUser,PermissionsMixin):
         max_length=5,
         null=False,
     )
-    birthdate = models.DateField(default=timezone.now())
+    birthdate = models.DateField(default=timezone.now)
     addr = models.CharField(max_length=100)
     phone = models.CharField(max_length=11) #validate at Frontend
     is_active = models.BooleanField(default=True)
