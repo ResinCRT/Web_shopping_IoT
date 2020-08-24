@@ -1,10 +1,8 @@
-{% extends "base2.html" %}
+{% extends "mypage_main.html" %}
 {% block title %}User modification{% endblock %}
 {% load widget_tweaks %}
 {% block content %}
     {% include 'mypage_menu.html' %}
-    modify user
-<h1>User Modify</h1>
 {% if form.errors %}
 <div class="alert alert-danger">
     <div class="font-weight-bold">
@@ -13,51 +11,122 @@
     {{ form.errors }}
 </div>
 {% endif %}
-<form action="." method="post" class="card pt-3">{% csrf_token %}
-    <div class="form-group row">
-        <label class="col-form-label col-sm-3 ml-3 font-weight-bold">아이디 : </label>
-        <div class="col-sm-5">
-            {{user.username}}
+<form id="modify-user-form" action="." class="card pt-3" method="post">{% csrf_token %}
+    <div class="type_form member_join">
+        <div class="field_head">
+            <h3 class="tit">회원정보수정</h3>
+            <p class="sub"><span class="ico">*</span>필수입력사항</p>
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-form-label col-sm-3 ml-3 font-weight-bold">실명 : </label>
-        <div class="col-sm-5">
-            {{user.real_name}}
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-form-label col-sm-3 ml-3 font-weight-bold">이메일 : </label>
-        <div class="col-sm-5">
-            {{form.email|add_class:"form-control"|attr:"autofocus"}}
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-form-label col-sm-3 ml-3 font-weight-bold">전화번호 </label>
-        <div class="col-sm-5">
-            {{ form.phone|add_class:"form-control" }}
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-form-label col-sm-3 ml-3 font-weight-bold">생일 : </label>
-        <div class="col-sm-5">
-            {{ form.birthdate|add_class:"form-control" }}
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-form-label col-sm-3 ml-3 font-weight-bold">주소 : </label>
-        <div class="col-sm-5">
-            {{ form.addr|add_class:"form-control" }}
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="offset-sm-3 col-sm-5">
-            <input type="submit" value="수정" class="btn btn-primary"/>
-        </div>
-    </div>
+        <table class="tbl_comm">
+            <tbody>
+            <tr class="fst">
+                <th>아이디</th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5">
+                            {{user.username}}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td>
+                    <!--                <input fld_esssential="" label="이름" name="name" placeholder="이름을 입력해주세요" required=""-->
+                    <!--                       type="text" value="">-->
+                    <div class="form-group row">
+                        {{user.real_name}}
+                    </div>
+                </td>
+            </tr>
+            <tr class="field_phone">
+                <th>휴대폰<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5" >
+                            {{ form.phone|add_class:"form-control" }}
 
-</form>
+                            <!--                <div class="phone_num">-->
+                            <!--                    <input class="inp" name="mobileInp" pattern="[0-9]*" placeholder="숫자만 입력해주세요" type="text" value="">-->
 
+                            <!--                </div>-->
+                            <p class="txt_guide">
+                                <span class="txt txt_case1"></span>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="field_email">
+                <th>이메일<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5"  >
+                            {{ form.email|add_class:"form-control"}}
+
+
+                            <!--                <input data-email="" fld_esssential="" label="이메일" name="email" option="regEmail"-->
+                            <!--                       placeholder="예: marketkurly@kurly.com" required="" size="30" type="text"-->
+                            <!--                       value="">-->
+                            <input fld_esssential="" label="이메일중복체크" name="chk_email" required=""
+                                   type="hidden">
+                            <a class="btn default" href="javascript:void(0)"
+                               onclick="chkEmail()">중복확인</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="field_addr">
+                <th>생일<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5" >
+                            {{ form.birthdate|add_class:"form-control" }}
+
+                            <!--                <div class="phone_num">-->
+                            <!--                    <input class="inp" name="mobileInp" pattern="[0-9]*" placeholder="숫자만 입력해주세요" type="text" value="">-->
+
+                            <!--                </div>-->
+                            <p class="txt_guide">
+                                <span class="txt txt_case1"></span>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="field_phone">
+                <th>주소<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5" >
+                            {{ form.addr|add_class:"form-control" }}
+
+                            <!--                <div class="phone_num">-->
+                            <!--                    <input class="inp" name="mobileInp" pattern="[0-9]*" placeholder="숫자만 입력해주세요" type="text" value="">-->
+
+                            <!--                </div>-->
+                            <p class="txt_guide">
+                                <span class="txt txt_case1"></span>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+
+            <td>
+            </tbody>
+        </table>
+        <div class="form_footer" id="formSubmit">
+            <button class="btn active btn_join" onclick="formJoinSubmit()"
+                    type="submit" type="button">수정하기
+            </button>
+        </div>
 {% endblock %}
 {% block extra-script %}
 <script> active = 3;

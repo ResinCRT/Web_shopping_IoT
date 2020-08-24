@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=devie-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://kit.fontawesome.com/adfa3cedd6.js"></script>
+
     <title>움치킨움치킨</title>
 </head>
 
@@ -27,6 +29,8 @@
 
                     <li class="menu none_sub menu_join"><a href="" class="link_menu" >{% firstof user.get_username %}</a>
                     </li>
+                    <li class="menu none_sub"><a href="{% url 'mypage:mypage_index'%}" class="link_menu" >마이페이지</a>
+                    </li>
                     <li class="menu none_sub"><a href="{% url 'register:logout' %}" class="link_menu">Logout</a></li>
 
             {% else %}
@@ -38,33 +42,9 @@
                     </li>
                 </ul>
             </div>
-            
 
             <h1><a href="{% url 'home' %}">움치킨움치킨</a></h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
             <div id="gnb">
                 <h2 class="screen_out">메뉴</h2>
                 <div id="gnbMenu" class="gnb_kurly">
@@ -109,33 +89,13 @@
                         </div>
                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            {% block content%}{% endblock %}
-
-
-
-
-
-
-        </div>
+                </div>
             </div>
           
         </div>
-            </div>
-        </div>
+        {% block content%}{% endblock %}
     </div>
+
 
 </body>
 </html>

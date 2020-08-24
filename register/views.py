@@ -16,10 +16,10 @@ class UserCreateView(SuccessMessageMixin,CreateView):
     success_url = reverse_lazy('register:sign_up_done')
 
     def form_valid(self, form):
-        response = super(UserCreateView,self).form_valid(form)
-        self.request.session['success_id'] =  self.request.POST.get('username')
-        self.request.session['success_name'] =  self.request.POST.get('real_name')
-        self.request.session['success_email'] =  self.request.POST.get('email')
+        response = super(UserCreateView, self).form_valid(form)
+        self.request.session['success_id'] = self.request.POST.get('username')
+        self.request.session['success_name'] = self.request.POST.get('real_name')
+        self.request.session['success_email'] = self.request.POST.get('email')
         return response
 
 
