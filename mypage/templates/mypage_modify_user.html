@@ -1,0 +1,139 @@
+{% extends "mypage_main.html" %}
+{% block title %}User modification{% endblock %}
+{% load widget_tweaks %}
+{% block extra-style %}
+<style>
+    .user-fill{
+             line-height: 40px;
+             }
+</style>
+{% endblock %}
+{% block content %}
+    {% include 'mypage_menu.html' %}
+{% if form.errors %}
+<div class="alert alert-danger">
+    <div class="font-weight-bold">
+        Wrong! Please correct the error(s) below.
+    </div>
+    {{ form.errors }}
+</div>
+{% endif %}
+<div class="container">
+<form id="modify-user-form" action="." class="card pt-3" method="post">{% csrf_token %}
+    <div class="type_form member_join">
+        <div class="field_head">
+            <h3 class="tit">회원정보수정</h3>
+            <p class="sub"><span class="ico">*</span>필수입력사항</p>
+        </div>
+        <table class="tbl_comm">
+            <tbody>
+            <tr class="fst">
+                <th>아이디</th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5 user-fill">
+                            {{user.username}}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td>
+                    <!--                <input fld_esssential="" label="이름" name="name" placeholder="이름을 입력해주세요" required=""-->
+                    <!--                       type="text" value="">-->
+                    <div class="form-group row user-fill">
+                        {{user.real_name}}
+                    </div>
+                </td>
+            </tr>
+            <tr class="field_email">
+                <th>이메일</th>
+                <td>
+                    <div class="form-group row user-fill">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5"  >
+                            {{user.email}}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="field_phone">
+                <th>휴대폰<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5" >
+                            {{ form.phone|add_class:"form-control" }}
+
+                            <!--                <div class="phone_num">-->
+                            <!--                    <input class="inp" name="mobileInp" pattern="[0-9]*" placeholder="숫자만 입력해주세요" type="text" value="">-->
+
+                            <!--                </div>-->
+                            <p class="txt_guide">
+                                <span class="txt txt_case1"></span>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr class="field_addr">
+                <th>생일<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5" >
+                            {{ form.birthdate|add_class:"form-control" }}
+
+                            <!--                <div class="phone_num">-->
+                            <!--                    <input class="inp" name="mobileInp" pattern="[0-9]*" placeholder="숫자만 입력해주세요" type="text" value="">-->
+
+                            <!--                </div>-->
+                            <p class="txt_guide">
+                                <span class="txt txt_case1"></span>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="field_phone">
+                <th>주소<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5" >
+                            {{ form.addr|add_class:"form-control" }}
+
+                            <!--                <div class="phone_num">-->
+                            <!--                    <input class="inp" name="mobileInp" pattern="[0-9]*" placeholder="숫자만 입력해주세요" type="text" value="">-->
+
+                            <!--                </div>-->
+                            <p class="txt_guide">
+                                <span class="txt txt_case1"></span>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+
+            <td>
+            </tbody>
+        </table>
+        <div class="form_footer" id="formSubmit">
+            <button class="btn active btn_join" onclick="formJoinSubmit()"
+                    type="submit" type="button">수정하기
+            </button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
+{% block extra-script %}
+<script> active = 3;
+    mymenu[active].classList.add("mymenu-active");
+
+</script>
+{% endblock %}

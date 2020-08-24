@@ -1,0 +1,1232 @@
+h1 {
+    font-size: 30px;
+    text-align: center;
+
+    margin: 0;
+    padding: 9px;
+
+}
+#userMenu {
+    width: 1050px;
+    margin: 0 auto;
+    font-family: noto sans;
+    font-weight: 400;
+    letter-spacing: -.3px;
+
+}
+
+
+#userMenu:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    text-indent: -9999px
+}
+
+#userMenu .list_menu {
+    float: right;
+    list-style: none;
+    padding-left: 0px;
+    font-size:12px;
+
+}
+
+#userMenu .menu {
+    position: relative;
+    z-index: 400;
+    float: left;
+
+}
+
+#userMenu .menu:before {
+    content: "";
+    position: absolute;
+    right: 11px;
+    top: 16px;
+    width: 8px;
+    height: 5px;
+
+}
+
+#userMenu .menu:after {
+    content: "";
+    float: right;
+    width: 1px;
+    height: 13px;
+    margin-top: 12px;
+    background-color: #d8d8d8
+}
+
+#userMenu .link_menu {
+    float: left;
+    height: 37px;
+    padding: 0 22px 0 10px;
+    color: #333;
+    line-height: 35px;
+    white-space: nowrap
+}
+
+#userMenu .txt {
+    float: left;
+    padding-left: 4px;
+
+}
+#userMenu .none_sub .link_menu {
+    padding-right: 10px
+}
+
+#userMenu .menu_join .link_menu {
+    color: #5f0080
+}
+
+#userMenu .lst .link_menu {
+    padding-right: 0;
+}
+
+
+.bnr_header a {
+    display: block;
+    height: 42px;
+    background-color: #5f0080;
+    color: #fff
+}
+
+
+
+
+
+
+
+
+#gnb .gnb_kurly {
+    position: relative;
+    z-index: 300;
+    min-width: 1050px;
+    background-color: #fff;
+    font-family: 'Noto Sans';
+    letter-spacing: -0.3px
+}
+
+#gnb .gnb_kurly:after {
+    content: "";
+    position: absolute;
+    z-index: 299;
+    left: 0;
+    top: 56px;
+    width: 100%;
+    height: 9px;
+    background: url(https://res.kurly.com/pc/service/common/1902/bg_1x9.png) repeat-x 0 100%
+}
+
+#gnb .inner_gnbkurly {
+    position: relative;
+    width: 1050px;
+    height: 56px;
+    margin: 0 auto
+}
+
+/* 검색창 */
+#gnb .gnb_search {
+    position: absolute;
+    right: 550px;
+    top: 10px;
+    width: 238px
+}
+
+#gnb .gnb_search .inp_search {
+    width: 500px;
+    height: 36px;
+    padding: 0 50px 0 20px;
+    border: 1px solid #f7f7f6;
+    border-radius: 18px;
+    background-color: #f7f7f7;
+    font-family: 'Noto Sans KR', sans-serif;;
+    font-weight: 400;
+    font-size: 12px;
+    color: #666;
+    line-height: 16px;
+    outline: none
+}
+
+#gnb .gnb_search .btn_search {
+    position: absolute;
+    left: 500px;
+    top: 3px;
+    width: 30px;
+    height: 30px
+}
+
+/* 장바구니 */
+#gnb .cart_count {
+    position: absolute;
+    right: -6px;
+    top: 10px
+}
+
+/* #gnb .cart_count .inner_cartcount {
+    text-align: center;
+    font-weight: 400
+} */
+
+/* #gnb .cart_count .num {
+    display: none;
+    position: absolute;
+    left: 19px;
+    top: -1px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #5f0080;
+    font-size: 9px;
+    color: #fff;
+    line-height: 15px;
+    text-align: center;
+    white-space: nowrap
+} */
+
+#gnb .cart_count img {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto
+}
+
+#gnb .cart_count .msg_cart {
+    display: none;
+    position: absolute;
+    right: -7px;
+    top: 61px;
+    width: 348px;
+    height: 102px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    opacity: 0
+}
+
+#gnb .cart_count .inner_msgcart {
+    display: block;
+    overflow: hidden;
+    padding: 20px 0 0 20px
+}
+
+
+/* GNB메인 */
+#gnb .gnb_main {
+    overflow: hidden;
+    width: 1050px;
+    margin: 0 auto
+}
+
+#gnb .gnb_main .gnb {
+    float: left;
+    width: 100%
+}
+
+/* #gnb .gnb_main .gnb li {
+    float: left;
+    background: url(https://res.kurly.com/pc/service/common/1902/line_1x11_c_ccc.png) no-repeat 100% 23px
+} */
+
+/* #gnb .gnb_main .gnb .lst {
+    background: none
+} */
+
+#gnb .gnb_main .gnb a {
+    overflow: hidden;
+    float: left;
+    height: 55px;
+    padding: 16px 50px 0 48px;
+    font-size: 16px;
+    color: #333;
+    line-height: 20px
+}
+
+/* #gnb .gnb_main .gnb a .txt {
+    font-weight: 700
+} */
+
+/* #gnb .gnb_main .gnb a:hover,
+#gnb .gnb_main .gnb a.on {
+    font-weight: 700;
+    color: #5f0080
+} */
+
+/* #gnb .gnb_main .gnb a:hover .txt {
+    border-bottom: 1px solid #5f0080
+} */
+
+#gnb .gnb_main .menu1 a {
+    padding-left: 19px
+}
+
+#gnb .gnb_main .menu1 .ico {
+    float: left;
+    width: 16px;
+    height: 14px;
+    margin: 4px 14px 0 0;
+
+    background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off.png) no-repeat
+
+}
+#gnb .gnb_search .btn_search form.on .ico,
+#gnb .gnb_search .btn_search form:hover .ico{
+    background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all.png) no-repeat 0 0
+
+
+}
+
+
+#gnb .gnb_main .menu1 a.on .txt,
+#gnb .gnb_main .menu1 a:hover .txt,
+#gnb .gnb_main .menu1 .txt {
+    float: left;
+    font-weight: 700;
+    border-bottom: 0
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx) {
+    #gnb .gnb_sub .ico_new {
+        background: url(https://res.kurly.com/pc/ico/1808/ico_new_gnb_16x16.png) no-repeat 0 0;
+        background-size: 8px 8px
+    }
+
+    #gnb .cart_count .msg_cart .point {
+        background: url(https://res.kurly.com/pc/ico/1903/ico_layer_point_x2.png) no-repeat 0 0;
+        background-size: 20px 14px
+    }
+
+    #gnb .gnb_main .menu1 .ico {
+        background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off_x2.png) no-repeat 0 0;
+        background-size: 16px 14px
+
+    }
+
+    #gnb .gnb_main .menu1 a.on .ico,
+    #gnb .gnb_main .menu1 a:hover .ico {
+        background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_x2.png) no-repeat 0 0;
+        background-size: 16px 14px
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.section_login {
+    width: 340px;
+    margin: 0 auto;
+    padding-top: 90px;
+    letter-spacing: -.6px
+}
+
+.section_login * {
+    font-family: noto sans;
+    color: #333
+}
+
+.section_login .tit_login {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center
+}
+
+.section_login .write_form {
+    padding-top: 36px
+}
+
+.section_login input[type=number],
+.section_login input[type=text],
+.section_login input[type=password],
+ .section_login input[type=email]{
+    width: 100%;
+    height: 54px;
+    padding: 0 19px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none
+}
+
+.section_login input[type=number]:focus,
+.section_login input[type=text]:focus,
+.section_login input[type=password]:focus,
+.section_login input[type=email]:focus{
+    border: 1px solid #333
+}
+
+.section_login [name=password],
+.section_login [name=ordno],
+.section_login .login_view [name=srch_mail],
+.section_login [name=srch_id] {
+    margin-top: 10px
+}
+
+.section_login .label_checkbox {
+    position: relative;
+    padding: 0 0 3px 22px;
+    font-size: 13px;
+    line-height: 20px
+}
+
+/* .section_login .label_checkbox:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 17px;
+    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 50% 50%
+}
+
+.section_login .label_checkbox.checked:before {
+    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
+} */
+
+.section_login .label_checkbox [type=checkbox] {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    opacity: 0
+}
+
+.section_login .btn_type2 {
+    margin-top: 10px
+}
+
+.section_login .btn_member {
+    margin-top: 10px
+}
+
+.section_login .find_view .btn_type1 {
+    margin-top: 30px
+}
+
+.section_login .btn_ordsearch {
+    margin-top: 20px
+}
+
+.section_login .login_view {
+    text-align: center
+}
+
+.section_login .checkbox_save {
+    overflow: hidden;
+    padding-bottom: 28px
+}
+
+/* .section_login .checkbox_save .label_checkbox {
+    float: left;
+    margin-top: 9px
+} */
+
+.section_login .login_search {
+    float: right;
+    padding-top: 13px
+}
+
+/* .section_login .login_search .link {
+    float: left;
+    font-size: 13px
+} */
+/*
+.section_login .login_search .bar {
+    float: left;
+    width: 1px;
+    height: 10px;
+    margin: 3px 6px 0;
+    background-color: #333
+} */
+
+.section_login .notice_join {
+    padding-top: 20px;
+    font-size: 13px;
+    color: #333;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center
+}
+
+.section_login .notice_join .link {
+    padding-left: 3px;
+    font-weight: 700;
+    color: #5f0080;
+    text-decoration: underline
+}
+
+
+.btn_type1,
+.btn_type2 {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 54px;
+    border-radius: 3px;
+    font-size: 0;
+    text-align: center
+}
+
+.btn_type1 .txt_type,
+.btn_type2 .txt_type {
+    display: inline-block;
+    height: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    line-height: 51px;
+    text-align: center
+}
+
+.btn_type1 .extra,
+.btn_type2 .extra {
+    opacity: .6
+}
+
+.btn_type1 {
+    border: 1px solid #5f0081;
+    background-color: #5f0080
+}
+
+.btn_type1 .txt_type {
+    color: #fff
+}
+
+.btn_type1.btn_disabled {
+    border: 1px solid #ddddde;
+    background-color: #ddd
+}
+
+.btn_type1.btn_disabled .txt_type {
+    opacity: .8
+}
+
+.btn_type2 {
+    border: 1px solid #5f0081;
+    background-color: #fff
+}
+
+.btn_type2 .txt_type {
+    color: #5f0080
+}
+
+.btn_type2.btn_disabled {
+    border: 1px solid #ddd
+}
+
+.btn_type2.btn_disabled .txt_type {
+    color: #ddd
+}
+
+
+/*##########################################login######################################################################*/
+
+
+
+
+
+.section_login {
+    width: 340px;
+    margin: 0 auto;
+    padding-top: 90px;
+    letter-spacing: -.6px
+}
+
+.section_login * {
+    font-family: noto sans;
+    color: #333
+}
+
+.section_login .tit_login {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center
+}
+
+.section_login .write_form {
+    padding-top: 36px
+}
+
+.section_login input[type=number],
+.section_login input[type=text],
+.section_login input[type=email],
+.section_login input[type=password] {
+    width: 100%;
+    height: 54px;
+    padding: 0 19px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none
+}
+
+.section_login input[type=number]:focus,
+.section_login input[type=text]:focus,
+.section_login input[type=email]:focus,
+.section_login input[type=password]:focus {
+    border: 1px solid #333
+}
+
+.section_login [name=password],
+.section_login [name=ordno],
+.section_login .login_view [name=srch_mail],
+.section_login [name=srch_id] {
+    margin-top: 10px
+}
+
+.section_login .label_checkbox {
+    position: relative;
+    padding: 0 0 3px 22px;
+    font-size: 13px;
+    line-height: 20px
+}
+
+/* .section_login .label_checkbox:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 17px;
+    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 50% 50%
+}
+
+.section_login .label_checkbox.checked:before {
+    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
+} */
+
+.section_login .label_checkbox [type=checkbox] {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    opacity: 0
+}
+
+.section_login .btn_type2 {
+    margin-top: 10px
+}
+
+.section_login .btn_member {
+    margin-top: 10px
+}
+
+.section_login .find_view .btn_type1 {
+    margin-top: 30px
+}
+
+.section_login .btn_ordsearch {
+    margin-top: 20px
+}
+
+.section_login .login_view {
+    text-align: center
+}
+
+.section_login .checkbox_save {
+    overflow: hidden;
+    padding-bottom: 28px
+}
+
+/* .section_login .checkbox_save .label_checkbox {
+    float: left;
+    margin-top: 9px
+} */
+
+.section_login .login_search {
+    float: right;
+    padding-top: 13px
+}
+
+/* .section_login .login_search .link {
+    float: left;
+    font-size: 13px
+} */
+/*
+.section_login .login_search .bar {
+    float: left;
+    width: 1px;
+    height: 10px;
+    margin: 3px 6px 0;
+    background-color: #333
+} */
+
+.section_login .notice_join {
+    padding-top: 20px;
+    font-size: 13px;
+    color: #333;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center
+}
+
+.section_login .notice_join .link {
+    padding-left: 3px;
+    font-weight: 700;
+    color: #5f0080;
+    text-decoration: underline
+}
+
+
+.btn_type1,
+.btn_type2 {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 54px;
+    border-radius: 3px;
+    font-size: 0;
+    text-align: center
+}
+
+.btn_type1 .txt_type,
+.btn_type2 .txt_type {
+    display: inline-block;
+    height: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    line-height: 51px;
+    text-align: center
+}
+
+.btn_type1 .extra,
+.btn_type2 .extra {
+    opacity: .6
+}
+
+.btn_type1 {
+    border: 1px solid #5f0081;
+    background-color: #5f0080
+}
+
+.btn_type1 .txt_type {
+    color: #fff
+}
+
+.btn_type1.btn_disabled {
+    border: 1px solid #ddddde;
+    background-color: #ddd
+}
+
+.btn_type1.btn_disabled .txt_type {
+    opacity: .8
+}
+
+.btn_type2 {
+    border: 1px solid #5f0081;
+    background-color: #fff
+}
+
+.btn_type2 .txt_type {
+    color: #5f0080
+}
+
+.btn_type2.btn_disabled {
+    border: 1px solid #ddd
+}
+
+.btn_type2.btn_disabled .txt_type {
+    color: #ddd
+}
+
+/*################################################################################################################*/
+
+.screen_out {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px
+}
+
+#header,
+#container,
+#content {
+    position: relative
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration:none;
+    font-family: 'Noto Sans KR', sans-serif;;
+}
+
+
+.member_join {
+    width: 640px;
+    margin: 0 auto
+}
+
+.member_join .field_head .tit {
+    padding-top: 64px;
+    font-weight: 900;
+    font-size: 30px;
+    color: #333;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: -.5px
+}
+
+.member_join .field_head .sub {
+    padding: 23px 0 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 17px;
+    text-align: right
+}
+
+.member_join .field_head .sub .ico {
+    padding-right: 2px;
+    color: #ee6a7b
+}
+
+.member_join .txt_guide {
+    width: 332px
+}
+
+.member_join .tbl_comm {
+    width: 100%;
+    border-top: 1px solid #333
+}
+
+.member_join .tbl_comm .fst th {
+    padding-top: 29px
+}
+
+.member_join .tbl_comm .fst td {
+    padding-top: 19px
+}
+
+.member_join th {
+    width: 159px;
+    padding: 20px 0 0 20px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: left
+}
+
+.member_join th .ico {
+    color: #ee6a7b
+}
+
+.member_join td {
+    padding: 10px 0;
+    border-top: 0;
+    font-size: 14px;
+    vertical-align: top;
+    text-align: left
+}
+.member_join input[type=text],
+.member_join input[type=email],
+.member_join input[type=password]
+ {
+    width: 332px
+}
+
+.member_join .btn {
+    display: inline-block;
+    width: 120px;
+    margin-left: 5px;
+    vertical-align: top
+}
+
+.member_join .field_phone .phone_num input[type=text] {
+    margin: 0
+}
+
+.member_join .field_phone .code_num {
+    display: none;
+    position: relative;
+    padding-top: 10px
+}
+
+.member_join .field_phone .code_num input[type=text] {
+    margin: 0
+}
+
+.member_join .field_phone .code_num .count_down {
+    position: absolute;
+    left: 216px;
+    top: 21px;
+    width: 100px;
+    font-size: 14px;
+    color: #b3130b;
+    line-height: 20px;
+    text-align: right;
+    letter-spacing: -.5px
+}
+
+
+.member_join .form_footer {
+    padding-top: 40px;
+    text-align: center
+}
+
+.member_join .form_footer .btn_join {
+    width: 240px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 54px
+}
+
+
+
+
+/*#############################회원가입###############################*/
+.type_form textarea,
+.type_form input[type=text],
+.type_form input[type=password],
+ .type_form input[type=email]{
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    border-radius: 3px;
+    background: #fff;
+    outline: none;
+    vertical-align: top
+}
+
+.type_form input[type=text]:focus,
+.type_form input[type=password]:focus ,
+.type_form input[type=email]:focus{
+    border: 1px solid #333
+}
+
+.type_form input[type=text]:disabled,
+.type_form input[type=password]:disabled,
+ .type_form input[type=email]:disabled{
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    color: #999
+}
+
+.type_form .btn {
+    display: block;
+    width: 100%;
+    height: 44px;
+    border: 0;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    outline: none
+}
+
+.type_form textarea {
+    height: auto;
+    padding-top: 13px;
+    resize: none
+}
+
+.type_form .btn.normal {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333
+}
+
+.type_form .btn.default {
+    border: 1px solid #5f0080;
+    background-color: #fff;
+    color: #5f0080
+}
+
+.type_form .btn.active {
+    border: 1px solid #5f0081;
+    background-color: #5f0080;
+    color: #fff
+}
+
+.type_form .btn.submit {
+    height: 56px;
+    line-height: 58px
+}
+
+.type_form .btn.disabled {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #ddd
+}
+
+.type_form .double {
+    display: flex
+}
+
+.type_form .double .btn {
+    margin-left: 4px
+}
+
+.type_form .double .btn :first-child {
+    margin-left: 0;
+    margin-right: 4px
+}
+
+.type_form input[type=radio] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0
+}
+
+.type_form input[type=radio]+.ico {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 100%;
+    vertical-align: -7px
+}
+
+.type_form input[type=radio]:focus {
+    outline: 0
+}
+
+.type_form input[type=radio]:checked+.ico {
+    border: 1px solid #5f0081;
+    background-color: #5f0080
+}
+
+.type_form input[type=radio]:checked+.ico:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+    border-radius: 100%;
+    background-color: #fff
+}
+
+.type_form input[type=radio]:disabled+.ico {
+    border: 1px solid #ddd;
+    background-color: #fafafa
+}
+
+.type_form input[type=checkbox] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0
+}
+
+.type_form input[type=checkbox]+.ico {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border: 0;
+    background: url(https://res.kurly.com/pc/service/common/2006/ico_checkbox.svg) no-repeat 50% 50%;
+    background-size: 24px 24px;
+    vertical-align: -7px
+}
+
+.type_form input[type=checkbox]:focus {
+    outline: 0
+}
+
+.type_form input[type=checkbox]:checked+.ico {
+    background: url(https://res.kurly.com/pc/service/common/2006/ico_checkbox_checked.svg) no-repeat 50% 50%;
+    background-size: 24px 24px
+}
+
+.type_form input[type=checkbox]:disabled+.ico {
+    background: url(https://res.kurly.com/pc/service/common/2003/ico_checkbox_disabled.png) no-repeat 50% 50%;
+    background-size: 24px 24px
+}
+
+.type_form label {
+    font-size: 14px;
+    line-height: 22px
+}
+
+.type_form label.label_block {
+    display: block;
+    padding: 15px 0 13px
+}
+
+.type_form .txt_guide {
+    display: none;
+    padding: 10px 0 9px;
+    font-size: 12px;
+    color: #666;
+    line-height: 18px;
+    word-break: break-all;
+    letter-spacing: -.1px;
+    clear: both
+}
+
+.type_form .txt_guide .txt {
+    display: block
+}
+
+.type_form .txt_guide .txt:before {
+    font-size: 0
+}
+
+.type_form .square .txt:before {
+    content: '\2022';
+    display: inline-block;
+    padding: 0 4px 0 2px;
+    font-size: 12px;
+    vertical-align: 0
+}
+
+.type_form .txt_guide .txt.good {
+    color: #0f851a
+}
+
+.type_form .txt_guide .txt.good:before {
+    content: '\2713';
+    display: inline-block;
+    padding: 0 4px 0 2px;
+    font-size: 12px;
+    vertical-align: 0
+}
+
+.type_form .txt_guide .txt.bad {
+    color: #b3130b
+}
+
+.type_form .txt_guide .txt.bad:before {
+    content: '\2715';
+    display: inline-block;
+    padding-right: 3px;
+    font-size: 12px;
+    vertical-align: 0
+}
+
+.type_form .txt_guide .txt.receive {
+    color: #666
+}
+
+
+.member_join .btn {
+    display: inline-block;
+    width: 120px;
+    margin-left: 5px;
+    vertical-align: top
+}
+
+
+/*-------------------------------------------------------회원가입 던---------------------------------------------------*/
+
+.xans-member-joincomplete {
+    padding: 50px 0;
+    line-height: 150%;
+    text-align: center;
+    background-color: #f7f5f8;
+    border-top: 2px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d
+}
+
+.xans-member-joincomplete .joinComplete {
+    width: 430px;
+    margin: 0 auto;
+    color: #4c4c4c
+}
+
+.xans-member-joincomplete .joinComplete .desc {
+    margin: 0 0 30px;
+    font-size: 20px;
+    font-weight: 700
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo {
+    overflow: hidden;
+    text-align: left;
+    border-top: 2px solid #6a3664;
+    padding-top: 10px
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li {
+    border-bottom: 1px solid #6a3664
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li strong {
+    text-indent: 20px;
+    font-weight: 400
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li span .bolds,
+.xans-member-joincomplete .joinComplete .memberInfo li strong {
+    display: inline-block;
+    width: 30%;
+    padding: 20px 0;
+    color: #000;
+    font-size: 13px
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li.nobold {
+    padding: 20px 0;
+    font-size: 13px;
+    text-indent: 20px
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li span input[type=radio] {
+    position: relative;
+    top: 2px
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li span .bolds,
+.xans-member-joincomplete .joinComplete .memberInfo li strong {
+    font-weight: 700
+}
+
+.xans-member-joincomplete .joinComplete .button {
+    margin: 30px 0 0
+}
+
+.bhs_button {
+    width: 150px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    background-color: #795b8f;
+    border: 1px solid #5f0080;
+    color: #fff;
+    font-size: 15px;
+    float: right;
+    margin-left: 2px;
+    font-size: 13px
+}
+
+.layout-wrapper {
+    position: relative;
+    width: 1050px;
+    height: 100%;
+    margin: 0 auto
+}
+/*--------------------------------------회원가입 던-------------------------------------------*/

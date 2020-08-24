@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block title %}login.html{% endblock %}
+{% block content %}
+<div id="main">
+    <div id="content">
+        <div class="quick-navigation" id="qnb">
+        </div>
+        <div class="section_login">
+            <h3 class="tit_login">로그인</h3>
+
+            <div class="write_form">
+                <div class="write_view login_view">
+                    <form action="." class="card pt-3" method="post">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <div class="col-sm-5">
+                                {{form.username|add_class:"form-control"|attr:'placeholder autofocus'}}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-5">
+                                {{ form.password|add_class:"form-control"|attr:'placeholder autofocus'}}
+                            </div>
+                        </div>
+                        {% if form.errors %}
+                        <div class="alert alert-danger" style="margin-top:10px;">
+                            <div class="font-weight-bold" style="color:red">
+                                아이디 또는 비밀번호 오류입니다.
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="checkbox_save">
+                        </div>
+                        <div class="form-group">
+                            <div class="offset-sm-2 col-sm-5">
+                                <button class="btn_type1" type="submit" value="Log in"/>
+                                <span class="txt_type">로그인</span></button>
+                                <input name="next" type="hidden" value="{{ next }}"/>
+                                <a class="btn_type2 btn_member"
+                                   href=""><span class="txt_type">회원가입</span></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% block extra-script %}
+<script>
+    let textareas = document.querySelectorAll("#id_username,#id_password ");
+    textareas[0].placeholder = "아이디를 입력하세요.";
+    textareas[1].placeholder = "비밀번호를 입력하세요.";
+
+</script>
+
+{% endblock %}
+
+{% endblock %}
+

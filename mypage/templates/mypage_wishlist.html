@@ -1,0 +1,13 @@
+{% extends "mypage_main.html" %}
+{% block title %}User modification{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+    {% include 'mypage_menu.html' %}
+    wishlist
+
+{% endblock %}
+{% block extra-script %}
+<script> active = 1;
+    mymenu[active].classList.add("mymenu-active");
+</script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "mypage_main.html" %}
+{% block title %}User modification{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+    {% include 'mypage_menu.html' %}
+    <div class="content-area">
+
+        {%for item in order%}
+            <h3><a href="#">{{item.order_id}}</a></h3>
+            {{item.wish_id}}<br>주문자 : {{item.user_id}}<br>가격 : {{item.product_id.price}}<br>설명 : {{item.product_id.description}}<br>
+            <p>제품:{{item.product_id}}</p>
+        {% endfor %}
+
+    </div>
+        {% endblock %}
+
+
+
+{% block extra-script %}
+<script> active = 0;
+    mymenu[active].classList.add("mymenu-active");
+</script>
+{% endblock %}
