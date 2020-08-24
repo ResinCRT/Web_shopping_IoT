@@ -3,6 +3,7 @@
 
 
 {% block content %}
+
 <html lang="ko">
 <head>
 
@@ -22,20 +23,20 @@
                     <div class="memberInfo">
                         <ul>
                             <li>
-                                <strong class="bolds">아이디</strong><span><span>kkc926</span></span>
+                                <strong class="bolds">아이디</strong><span><span>{{username}}</span></span>
                             </li>
                             <li>
-                                <strong class="bolds">이름</strong><span><span>전용인</span></span>
+                                <strong class="bolds">이름</strong><span><span>{{real_name}}</span></span>
                             </li>
                             <li>
-                                <strong class="bolds">이메일</strong><span><span>kkc926@naver.com</span></span>
+                                <strong class="bolds">이메일</strong><span><span>{{email}}</span></span>
                             </li>
                         </ul>
                     </div>
                     <p class="button">
                         <a href="{% url 'register:login' %}"><span
                                 class="bhs_button active">로그인</span></a>
-                        <a href="/shop/mypage/index.php?&amp;"><span class="bhs_button">마이페이지로 이동</span></a>
+                        <a href="{%url 'mypage:mypage_index' %}"><span class="bhs_button">마이페이지로 이동</span></a>
                     </p>
                 </div>
             </div>
