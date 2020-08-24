@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<html lang="ko">
+<head>
+
+    <style type="text/css">
+		.button .bhs_button{float:none;width:200px}
+		.button .bhs_button:hover{width:200px}
+
+
+    </style>
+    <div style="height:180px"></div>
+    <div class="layout-wrapper">
+        <div class="indiv">
+
+            <div class="xans-member-joincomplete">
+                <div class="joinComplete">
+                    <p class="desc">회원가입이 완료되었습니다.</p>
+                    <div class="memberInfo">
+                        <ul>
+                            <li>
+                                <strong class="bolds">아이디</strong><span><span>kkc926</span></span>
+                            </li>
+                            <li>
+                                <strong class="bolds">이름</strong><span><span>전용인</span></span>
+                            </li>
+                            <li>
+                                <strong class="bolds">이메일</strong><span><span>kkc926@naver.com</span></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="button">
+                        <a href="{% url 'register:login' %}"><span
+                                class="bhs_button active">로그인</span></a>
+                        <a href="/shop/mypage/index.php?&amp;"><span class="bhs_button">마이페이지로 이동</span></a>
+                    </p>
+                </div>
+            </div>
+            <div style="height:100px;"></div>
+        </div>
+    </div>
+</head>
+</html>
+
+{% endblock %}
