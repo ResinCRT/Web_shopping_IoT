@@ -68,7 +68,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['email', 'phone', 'birthdate', 'addr',]
+        fields = [ 'phone', 'birthdate', 'addr',]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

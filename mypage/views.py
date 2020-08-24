@@ -15,10 +15,16 @@ class ModifyUserView(LoginRequiredMixin, FormView):
     form_class = UserChangeForm
     success_url = reverse_lazy('mypage:mypage_index')
 
+    def get_form(self):
+        form = super(ModifyUserView, self).get_form()
+        form.fields['addr'].widget.attrs.update({'value': self.request.user.addr})
+        form.fields['birthdate'].widget.attrs.update({'value': self.request.user.birthdate})
+        form.fields['phone'].widget.attrs.update({'value': self.request.user.phone})
+        return form
+
     def form_valid(self, form):
         response = super().form_valid(form)
         Users = self.request.user
-        Users.email = form.instance.email
         Users.addr = form.instance.addr
         Users.birthdate = form.instance.birthdate
         Users.phone = form.instance.phone

@@ -8,14 +8,24 @@
     <meta name="viewport" content="width=devie-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://kit.fontawesome.com/adfa3cedd6.js"></script>
-
     <title>움치킨움치킨</title>
+    <style>
+    html, body{
+        margin: 0;
+		padding: 0;
+        height:100%
+     }
+    .mainbox{
+        height:100%
+    }
+    </style>
+    {% block extra-style %}{% endblock %}
 </head>
 
 
 <body>
 
-    <div class="">
+    <div class="mainbox">
         <div id="container">
             <div id="header">
                 <div class="bnr_header">
@@ -98,4 +108,5 @@
 
 
 </body>
+{% block extra-script %}{% endblock %}
 </html>

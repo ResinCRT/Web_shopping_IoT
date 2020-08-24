@@ -1,5 +1,8 @@
 from django.db import models
+# from django.contrib.auth.models import User
 from register.models import User
+from django.urls import reverse
+
 
 class Brand(models.Model):
     brand_id = models.IntegerField(primary_key=True)
@@ -11,13 +14,14 @@ class Brand(models.Model):
 
 
 class Product(models.Model):
-    product_id = models.IntegerField(primary_key=True)
     p_name = models.CharField(max_length=45, blank=True, null=True)
     price = models.IntegerField(blank=True, null=True)
     description = models.CharField(max_length=45, blank=True, null=True)
     read_cnt = models.IntegerField(blank=True, null=True, default=0)
     category_id = models.IntegerField(blank=True, null=True)
-    brand_id = models.ForeignKey(Brand, models.CASCADE, blank=True, null=True)
+    p_created_dt = models.DateTimeField(blank=True, null=True)
+    p_modify_dt = models.DateTimeField(blank=True, null=True)
+    brand = models.CharField(max_length=45)
 
     class Meta:
         managed = True
@@ -26,23 +30,25 @@ class Product(models.Model):
     def __str__(self):
         return self.p_name
 
+    def get_absolute_url(self):  # 현재 데이터의 절대 경로 추출
+        # 경로변수인 슬러그의 값을 args로 받는다
+        return reverse('shop:detail', args=(self.id,))
 
-class Cart(models.Model):
-    cart_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True,null=True)
-    product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
-    amount = models.IntegerField(blank=True, null=True)
+    def get_previous(self):  # 이전 데이터 추출
+        return self.get_previous_by_modify_dt()
 
-    class Meta:
-        managed = True
-        db_table = 'cart'
+    def get_next(self):  # 다음 데이터 추출
+        return self.get_next_by_modify_dt()
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
 
 class Qna(models.Model):
     qna_id = models.IntegerField(primary_key=True)
-    qna_title = models.CharField(verbose_name='TITLE', max_length=50,blank=True,null=True)
+    qna_title = models.CharField(verbose_name='TITLE', max_length=50)
     product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True,null=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
     parent_id = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=45, blank=True, null=True)
     qna_create_date = models.DateTimeField(blank=True, null=True)
@@ -58,8 +64,8 @@ class Qna(models.Model):
 
 class Review(models.Model):
     review_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True,null=True)
-    review_title = models.CharField(verbose_name='TITLE', max_length=50,blank=True,null=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
+    review_title = models.CharField(verbose_name='TITLE', max_length=50)
     product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
     rating = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=45, blank=True, null=True)
@@ -75,7 +81,7 @@ class Review(models.Model):
 
 class Order(models.Model):
     order_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True,null=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
     product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
     wish_id = models.IntegerField(blank=True, null=True)
 
@@ -85,7 +91,7 @@ class Order(models.Model):
 
 
 class Inventory(models.Model):
-    product_id = models.ForeignKey(Product, models.CASCADE,blank=True, null=True)
+    product_id = models.ForeignKey(Product, models.CASCADE)
     stock = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -104,7 +110,7 @@ class Category(models.Model):
 
 
 class ProductAttachFile(models.Model):
-    Product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="files", verbose_name='Post', blank=True, null=True)
+    Product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="files", verbose_name='Post', blank=True, null=True)
     upload_file = models.FileField(upload_to="%Y/%m/%d", null=True, blank=True, verbose_name='파일')
     filename = models.CharField(max_length=64, null=True, verbose_name='첨부파일명')
     content_type = models.CharField(max_length=128, null=True, verbose_name='MIME TYPE')

@@ -7,12 +7,16 @@
          margin: 0;
          padding: 0;
      }
+     .content{
+         margin-top:0;
+         height:100%;
+     }
 
      .mymenu {
          background-color: white;
          width: 200px;
-         height:500px;
-         position:absolute;
+         height:100%;
+         position:relative;
          float:left;
          margin-top: 50px;
          margin-left: 100px;
@@ -73,20 +77,24 @@
          display: inline-block;
          background-color:#DDDDDD;
          padding:15px;
+         margin-left:200px;
+         margin-top:100px;
      }
+     .content-area >
 
  </style>
  {% endblock %}
  {% block content %}
- <div class="mymenu">
-     <h2 class="mymenu-head">MY 정보</h2>
-     <ul class="mymenu-box">
-         <li class="mymenu-list"><a href="{% url 'mypage:order' %}">주문내역<i class="fas fa-chevron-right"></i></a></li>
-         <li class="mymenu-list"><a href="{% url 'mypage:wishlist' %}">찜한 아이템<i class="fas fa-chevron-right"></i></a></li>
-         <li class="mymenu-list"><a href="{% url 'mypage:review' %}">상품 후기<i class="fas fa-chevron-right"></i></a></li>
-         <li class="mymenu-list"><a href="{% url 'mypage:modify_user' %}">회원정보 수정<i class="fas fa-chevron-right"></i></a></li>
-     </ul>
- </div>
+ <div class="content">
+     <div class="mymenu">
+         <h2 class="mymenu-head">MY 정보</h2>
+         <ul class="mymenu-box">
+             <li class="mymenu-list"><a href="{% url 'mypage:order' %}">주문내역<i class="fas fa-chevron-right"></i></a></li>
+             <li class="mymenu-list"><a href="{% url 'mypage:wishlist' %}">찜한 아이템<i class="fas fa-chevron-right"></i></a></li>
+             <li class="mymenu-list"><a href="{% url 'mypage:review' %}">상품 후기<i class="fas fa-chevron-right"></i></a></li>
+             <li class="mymenu-list"><a href="{% url 'mypage:modify_user' %}">회원정보 수정<i class="fas fa-chevron-right"></i></a></li>
+         </ul>
+     </div>
  {% endblock %}
 
 

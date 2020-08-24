@@ -1,6 +1,13 @@
 {% extends "mypage_main.html" %}
 {% block title %}User modification{% endblock %}
 {% load widget_tweaks %}
+{% block extra-style %}
+<style>
+    .user-fill{
+             line-height: 40px;
+             }
+</style>
+{% endblock %}
 {% block content %}
     {% include 'mypage_menu.html' %}
 {% if form.errors %}
@@ -11,6 +18,7 @@
     {{ form.errors }}
 </div>
 {% endif %}
+<div class="container">
 <form id="modify-user-form" action="." class="card pt-3" method="post">{% csrf_token %}
     <div class="type_form member_join">
         <div class="field_head">
@@ -24,7 +32,7 @@
                 <td>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 user-fill">
                             {{user.username}}
                         </div>
                     </div>
@@ -35,8 +43,19 @@
                 <td>
                     <!--                <input fld_esssential="" label="이름" name="name" placeholder="이름을 입력해주세요" required=""-->
                     <!--                       type="text" value="">-->
-                    <div class="form-group row">
+                    <div class="form-group row user-fill">
                         {{user.real_name}}
+                    </div>
+                </td>
+            </tr>
+            <tr class="field_email">
+                <th>이메일</th>
+                <td>
+                    <div class="form-group row user-fill">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5"  >
+                            {{user.email}}
+                        </div>
                     </div>
                 </td>
             </tr>
@@ -59,26 +78,7 @@
                     </div>
                 </td>
             </tr>
-            <tr class="field_email">
-                <th>이메일<span class="ico">*<span class="screen_out">필수항목</span></span></th>
-                <td>
-                    <div class="form-group row">
-                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
-                        <div class="col-sm-5"  >
-                            {{ form.email|add_class:"form-control"}}
 
-
-                            <!--                <input data-email="" fld_esssential="" label="이메일" name="email" option="regEmail"-->
-                            <!--                       placeholder="예: marketkurly@kurly.com" required="" size="30" type="text"-->
-                            <!--                       value="">-->
-                            <input fld_esssential="" label="이메일중복체크" name="chk_email" required=""
-                                   type="hidden">
-                            <a class="btn default" href="javascript:void(0)"
-                               onclick="chkEmail()">중복확인</a>
-                        </div>
-                    </div>
-                </td>
-            </tr>
             <tr class="field_addr">
                 <th>생일<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                 <td>
@@ -127,6 +127,9 @@
                     type="submit" type="button">수정하기
             </button>
         </div>
+    </div>
+</form>
+
 {% endblock %}
 {% block extra-script %}
 <script> active = 3;
