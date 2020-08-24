@@ -93,7 +93,7 @@
                 </td>
             </tr>
             <tr class="field_phone">
-                <th>휴대폰<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <th>휴대폰</th>
                 <td>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
@@ -131,10 +131,31 @@
                     </div>
                 </td>
             </tr>
-
-
+            <tr class="field_email">
+                <th>주소</th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5"  >
+                            {{ form.addr|add_class:"form-control"}}
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <td>
+            <tr class="field_email">
+                <th>생일</th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5"  >
+                            {{ form.birthdate|add_class:"form-control"}}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+
+
             </tbody>
         </table>
         <div class="form_footer" id="formSubmit">

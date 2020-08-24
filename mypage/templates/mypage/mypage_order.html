@@ -1,8 +1,8 @@
-{% extends "mypage_main.html" %}
+{% extends "mypage/mypage_main.html" %}
 {% block title %}User modification{% endblock %}
 {% load widget_tweaks %}
 {% block content %}
-    {% include 'mypage_menu.html' %}
+    {% include 'mypage/mypage_menu.html' %}
     <div class="content-area">
 
         {%for item in order%}

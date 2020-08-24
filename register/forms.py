@@ -25,12 +25,15 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'real_name', 'phone']
+        fields = ['username', 'email', 'real_name', 'phone', 'addr', 'birthdate',]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self._meta.model.USERNAME_FIELD in self.fields:
             self.fields[self._meta.model.USERNAME_FIELD].widget.attrs['autofocus'] = True
+        self.fields['addr'].required = False
+        self.fields['birthdate'].required = False
+        self.fields['phone'].required = False
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -65,14 +68,18 @@ class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField(
         label="Password",
     )
-
+    birthdate = forms.DateField(required=False)
     class Meta:
         model = User
-        fields = [ 'phone', 'birthdate', 'addr',]
+        fields = ['phone', 'addr','birthdate']
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         password = self.fields.get('password')
+        self.fields['addr'].required = False
+        self.fields['birthdate'].required = False
+        self.fields['phone'].required = False
         if password:
             password.help_text = password.help_text.format('../password/')
         user_permissions = self.fields.get('user_permissions')

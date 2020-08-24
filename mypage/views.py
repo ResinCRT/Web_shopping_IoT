@@ -11,15 +11,15 @@ from django.db.models import Q
 
 # Create your views here.
 class ModifyUserView(LoginRequiredMixin, FormView):
-    template_name = "mypage_modify_user.html"
+    template_name = "mypage/mypage_modify_user.html"
     form_class = UserChangeForm
     success_url = reverse_lazy('mypage:mypage_index')
 
     def get_form(self):
         form = super(ModifyUserView, self).get_form()
         form.fields['addr'].widget.attrs.update({'value': self.request.user.addr})
-        form.fields['birthdate'].widget.attrs.update({'value': self.request.user.birthdate})
         form.fields['phone'].widget.attrs.update({'value': self.request.user.phone})
+        form.fields['birthdate'].widget.attrs.update({'value': self.request.user.birthdate})
         return form
 
     def form_valid(self, form):
@@ -31,8 +31,12 @@ class ModifyUserView(LoginRequiredMixin, FormView):
         Users.save()
         return response
 
+class PwChangeView(auth_views.PasswordChangeView):
+    template_name = "mypage/mypage_password_change.html"
+    success_url = reverse_lazy('register:password_change_done')
+
 class MyOrderView(LoginRequiredMixin,ListView):
-    template_name = "mypage_order.html"
+    template_name = "mypage/mypage_order.html"
     model = Order
     context_object_name = "order"
     paginate_by = 3
@@ -40,7 +44,7 @@ class MyOrderView(LoginRequiredMixin,ListView):
         return Order.objects.filter(user_id=self.request.user.pk).select_related("product_id")
 
 class MyReviewView(LoginRequiredMixin, ListView):
-    template_name = "mypage_review.html"
+    template_name = "mypage/mypage_review.html"
     model = Review
     context_object_name = "review"
     paginate_by = 3
@@ -48,5 +52,5 @@ class MyReviewView(LoginRequiredMixin, ListView):
         return Review.objects.filter(user_id=self.request.user.pk).select_related("product_id")
 
 class MyWishlistView(LoginRequiredMixin, ListView):
-    template_name = "mypage_wishlist.html"
+    template_name = "myapge/mypage_wishlist.html"
 

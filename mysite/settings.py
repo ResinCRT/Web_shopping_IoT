@@ -31,7 +31,7 @@ AUTH_USER_MODEL = 'register.User'
 # Application definition
 
 INSTALLED_APPS = [
-
+    'mypage.apps.MypageConfig',
     'register.apps.RegisterConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     # 'bookmark.apps.BookmarkConfig',
     # 'blog.apps.BlogConfig',
-    'mypage.apps.MypageConfig',
+
     'shop.apps.ShopConfig',
 
     'taggit.apps.TaggitAppConfig',

@@ -1,9 +1,9 @@
-{% extends "mypage_main.html" %}
+{% extends "mypage/mypage_main.html" %}
 {% block title %}User modification{% endblock %}
 {% load widget_tweaks %}
 
 {% block content %}
-    {% include 'mypage_menu.html' %}
+    {% include 'mypage/mypage_menu.html' %}
     {%for item in review%}
         <h3><a href="#">{{item.order_id}}</a></h3>
         {{item.review_id}}<br>작성자 : {{item.user_id}}<br>상품명 : {{item.product_id}}<br>

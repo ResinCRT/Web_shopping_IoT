@@ -1,4 +1,4 @@
-{% extends "mypage_main.html" %}
+{% extends "mypage/mypage_main.html" %}
 {% block title %}User modification{% endblock %}
 {% load widget_tweaks %}
 {% block extra-style %}
@@ -6,10 +6,17 @@
     .user-fill{
              line-height: 40px;
              }
+    .member_join .modify-password{
+        width: 50px;
+        line-height:0px;
+        height:30px;
+        margin-top:5px;
+        margin-left:0;
+    }
 </style>
 {% endblock %}
 {% block content %}
-    {% include 'mypage_menu.html' %}
+    {% include 'mypage/mypage_menu.html' %}
 {% if form.errors %}
 <div class="alert alert-danger">
     <div class="font-weight-bold">
@@ -39,10 +46,18 @@
                 </td>
             </tr>
             <tr>
+                <th>비밀번호</th>
+                <td>
+                    <div class="row">
+                    <button class="btn active modify-password" onclick="location.href='{% url 'register:password_change' %}'"
+                    type="button" >수정
+                    </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
                 <th>이름</th>
                 <td>
-                    <!--                <input fld_esssential="" label="이름" name="name" placeholder="이름을 입력해주세요" required=""-->
-                    <!--                       type="text" value="">-->
                     <div class="form-group row user-fill">
                         {{user.real_name}}
                     </div>
@@ -60,7 +75,7 @@
                 </td>
             </tr>
             <tr class="field_phone">
-                <th>휴대폰<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <th>휴대폰</th>
                 <td>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
@@ -78,28 +93,8 @@
                     </div>
                 </td>
             </tr>
-
-            <tr class="field_addr">
-                <th>생일<span class="ico">*<span class="screen_out">필수항목</span></span></th>
-                <td>
-                    <div class="form-group row">
-                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
-                        <div class="col-sm-5" >
-                            {{ form.birthdate|add_class:"form-control" }}
-
-                            <!--                <div class="phone_num">-->
-                            <!--                    <input class="inp" name="mobileInp" pattern="[0-9]*" placeholder="숫자만 입력해주세요" type="text" value="">-->
-
-                            <!--                </div>-->
-                            <p class="txt_guide">
-                                <span class="txt txt_case1"></span>
-                            </p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
             <tr class="field_phone">
-                <th>주소<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                <th>주소</th>
                 <td>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
@@ -117,9 +112,25 @@
                     </div>
                 </td>
             </tr>
+            <tr class="field_phone">
+                <th>생일</th>
+                <td>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+                        <div class="col-sm-5" >
+                            {{ form.birthdate|add_class:"form-control" }}
 
+                            <!--                <div class="phone_num">-->
+                            <!--                    <input class="inp" name="mobileInp" pattern="[0-9]*" placeholder="숫자만 입력해주세요" type="text" value="">-->
 
-            <td>
+                            <!--                </div>-->
+                            <p class="txt_guide">
+                                <span class="txt txt_case1"></span>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
         <div class="form_footer" id="formSubmit">

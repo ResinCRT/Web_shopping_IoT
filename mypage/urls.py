@@ -14,5 +14,6 @@ urlpatterns = [
     path('reviews/', MyReviewView.as_view(), name="review"),
     path('wishlist/', MyWishlistView.as_view(), name="wishlist"),
     path('modify/', ModifyUserView.as_view(), name="modify_user"),
+    path('modify/change_password',PwChangeView.as_view(),name="pw_change")
 
 ]
