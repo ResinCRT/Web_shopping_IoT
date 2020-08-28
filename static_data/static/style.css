@@ -4,6 +4,7 @@ h1 {
 
     margin: 0;
     padding: 9px;
+    min-width: 1050px;
 
 }
 #userMenu {
@@ -320,6 +321,19 @@ only screen and (min-resolution: 1.5dppx) {
 
 
 
+.page_aticle {
+    width: 1050px;
+    margin: 0 auto
+}
+
+.page_aticle button,
+.page_aticle input,
+.page_aticle select,
+.page_aticle * {
+    font-family: noto sans;
+    font-weight: 400;
+    letter-spacing: 0
+}
 
 
 
@@ -782,7 +796,16 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .member_join .field_head .tit {
-    padding-top: 64px;
+    padding-top: 10px;
+    font-weight: 545;
+    font-size: 25px;
+    color: #333;
+    line-height: 40px;
+    text-align: none;
+    letter-spacing: -.5px
+}
+.member_join .field_head .tit1 {
+    padding-top: 3px;
     font-weight: 900;
     font-size: 30px;
     color: #333;
@@ -792,7 +815,7 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .member_join .field_head .sub {
-    padding: 23px 0 10px;
+    padding: 8px 0 5px;
     font-size: 12px;
     color: #666;
     line-height: 17px;
@@ -1133,15 +1156,20 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 
-.member_join .btn {
-    display: inline-block;
-    width: 120px;
-    margin-left: 5px;
-    vertical-align: top
+/*-------------------------------------------------------회원가입 던---------------------------------------------------*/
+.mypage_top {
+    width: 100%;
+    padding: 50px 0;
+    margin-bottom: -20px;
+    background-color: #f7f7f7;
 }
 
+.mypage_top .mypagetop_user {
+    overflow: hidden;
+    width: 1050px;
+    margin: 0 auto
+}
 
-/*-------------------------------------------------------회원가입 던---------------------------------------------------*/
 
 .xans-member-joincomplete {
     padding: 50px 0;
@@ -1149,7 +1177,9 @@ only screen and (min-resolution: 1.5dppx) {
     text-align: center;
     background-color: #f7f5f8;
     border-top: 2px solid #4d4d4d;
-    border-bottom: 1px solid #4d4d4d
+    border-bottom: 1px solid #4d4d4d;
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 .xans-member-joincomplete .joinComplete {
@@ -1160,7 +1190,7 @@ only screen and (min-resolution: 1.5dppx) {
 
 .xans-member-joincomplete .joinComplete .desc {
     margin: 0 0 30px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700
 }
 
@@ -1215,10 +1245,10 @@ only screen and (min-resolution: 1.5dppx) {
     line-height: 40px;
     text-align: center;
     background-color: #795b8f;
-    border: 1px solid #5f0080;
+    border: 0px solid #5f0080;
     color: #fff;
     font-size: 15px;
-    float: right;
+    /*float: right;*/
     margin-left: 2px;
     font-size: 13px
 }
@@ -1229,4 +1259,482 @@ only screen and (min-resolution: 1.5dppx) {
     height: 100%;
     margin: 0 auto
 }
+.member_join .btn {
+    display: inline-block;
+    width: 120px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
 /*--------------------------------------회원가입 던-------------------------------------------*/
+
+
+body,
+input,
+select,
+textarea,
+button {
+    font-family: malgun gothic, AppleGothic, dotum;
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: #4c4c4c;
+    font-size: 12px;
+    /*max-width: 100%*/
+}
+
+html,
+body {
+    height: 100%
+}
+
+
+body {
+    margin: 0
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+#content {
+    min-width: 1050px;
+    padding-bottom: 170px
+}
+
+div,
+th,
+td,
+li,
+dt,
+dd,
+p {
+    word-break: break-all
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit
+}
+
+b,
+strong {
+    font-weight: 700
+}
+
+ol,
+ul {
+    list-style-type: none
+}
+
+
+
+
+
+
+
+.mypage_top .inner_mypagetop {
+    overflow: hidden;
+    width: 100%;
+    background: url(https://res.kurly.com/pc/service/common/1904/bg_mypagetop.png) repeat-y 0 0
+}
+
+
+.mypage_top .grade_user {
+    float: left;
+    width: 444px;
+    height: 100%;
+    padding: 28px 0 30px 30px;
+    background-color: #fff
+}
+
+
+.mypage_top .grade_user .grade {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 26px
+}
+
+.mypage_top .grade_user .class6 {
+    border: 1px solid #949296;
+    background-color: #fff;
+    color: #949296
+}
+
+.mypage_top .grade_user .ico_grade {
+    float: left;
+    width: 64px;
+    height: 64px;
+    margin: 2px 20px 0 0;
+    border-radius: 3px;
+    font-size: 16px;
+
+    text-align: center;
+    word-break: break-all
+}
+.mypage_top .grade_user .inner_grade {
+    display: table;
+    width: 100%;
+    height: 64px;
+    padding-bottom: 3px
+}
+.mypage_top .grade_user .in_grade {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    line-height: 18px;
+    word-break: keep-all
+}
+
+
+.mypage_top .grade_bnenfit {
+    overflow: hidden
+}
+.mypage_top .grade_user .user {
+    overflow: hidden;
+    padding: 2px 0 14px
+}
+
+.mypage_top .name {
+    overflow: hidden;
+    float: left;
+    max-width: 263px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    line-height: 28px;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+
+.mypage_top .txt {
+    float: left;
+    padding-left: 5px;
+    font-size: 16px;
+    line-height: 28px
+}
+
+.mypage_top .grade_user .benefit {
+    padding-top: 2px
+}
+.mypage_top .benefit {
+    font-size: 12px;
+    line-height: 18px;
+    color: #333
+}
+.mypage_top .benefit .tit {
+    color: #5f0080
+}
+
+.mypage_top .next {
+    overflow: hidden;
+    width: 100%;
+    padding: 22px 0 0 84px
+}
+
+.mypage_top .next a {
+    float: left;
+    height: 30px;
+    padding-top: 4px;
+    margin-right: 10px;
+    border: 1px solid #f4f4f3;
+    border-radius: 15px;
+    background-color: #f4f4f4;
+    font-size: 14px;
+    color: #333;
+    line-height: 18px;
+    text-align: center
+}
+.mypage_top .total_grade {
+    width: 121px
+}
+.mypage_top .next_month {
+    width: 169px
+}
+.mypage_top .list_mypage {
+    float: right;
+    width: 602px
+}
+
+.mypage_top .list_mypage li {
+    float: left;
+    width: 198px;
+    margin-right: 4px;
+    background-color: #fff
+}
+.mypage_top .list_mypage .link {
+    float: left;
+    width: 100%;
+    padding: 29px 0 0 30px
+}
+
+.mypage_top .list_mypage .tit {
+    padding-bottom: 26px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333
+}
+.mypage_top .list_mypage .info {
+    font-weight: 700;
+    font-size: 20px;
+    color: #5f0080;
+    line-height: 28px
+}
+
+.mypage_top .list_mypage .info img {
+    width: 28px;
+    height: 28px;
+    margin: 1px 0 0 -4px;
+    vertical-align: top
+}
+img {
+    border: 0
+}
+
+.mypage_top .list_mypage .info .date {
+    display: block;
+    padding-top: 12px;
+    font-size: 12px;
+    color: #999;
+    line-height: 16px
+}
+.mypage_top .ico_new {
+    width: 14px;
+    height: 14px;
+    margin: 3px 0 0 2px;
+    vertical-align: top
+}
+
+.mypage_top .list_mypage .user_kurlypass {
+    margin-right: 0
+}
+.mypage_top .bnr_event {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    background-size: 1050px 60px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #6c2e81
+
+}
+.bg_loading {
+    position: fixed;
+    z-index: 9998;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5
+}
+.loading_show {
+    position: fixed;
+    z-index: 10000;
+    top: 50%;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+    width: 32px;
+    height: 32px;
+    background: url(https://res.kurly.com/pc/img/1909/img_loading_128x128.gif) no-repeat 50% 50%;
+    background-size: 16px 16px
+}
+.page_aticle.aticle_type2 {
+    padding-top: 65px;
+
+}
+#grid{
+
+        display:grid;
+        grid-template-columns: 200px 750px;
+
+        }
+.page_aticle.aticle_type2:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    clear: both
+}
+
+#snb {
+    float: left;
+    width: 200px
+}
+#snb .tit_snb {
+    padding: 7px 0 34px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 34px;
+    color: #333;
+    letter-spacing: -.5px
+}
+#snb .inner_snb {
+    border: 1px solid #dcdbde;
+    border-bottom: 0
+}
+#snb .list_menu li {
+    border-bottom: 1px solid #dcdbde
+}
+
+#snb .list_menu li a {
+    display: block;
+    overflow: hidden;
+    padding: 16px 0 16px 19px;
+    background: #fff url(https://res.kurly.com/pc/ico/1803/ico_arrow_12x22.png) no-repeat 174px 50%;
+    background-size: 6px 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 18px
+}
+#snb .list_menu li.on a,
+#snb .list_menu li a:hover {
+    background: #f7f7f7 url(https://res.kurly.com/pc/ico/1803/ico_arrow_on_12x22.png) no-repeat 174px 50%;
+    background-size: 6px 10px;
+    color: #5f0080
+}
+#snb .link_inquire {
+    display: block;
+    overflow: hidden;
+    width: 200px;
+    height: 60px;
+    margin-top: 16px;
+    padding: 9px 0 0 19px;
+    border: 1px solid #f7f5f7;
+    border-radius: 0 100px 100px 0;
+    background: #f7f7f7 url(https://res.kurly.com/pc/ico/1803/ico_arrow_on_12x22.png) no-repeat 173px 24px;
+    background-size: 6px 11px;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px
+}
+#snb .link_inquire .emph {
+    display: block;
+    padding-bottom: 1px;
+    font-weight: 700;
+    font-size: 14px
+}
+.page_aticle.aticle_type2 .page_section {
+    float: right;
+    width: 820px
+}
+.page_aticle .head_aticle {
+    padding: 5px 0 34px
+}
+.member_pw {
+    width: 820px
+}
+.member_pw .tit {
+    padding: 0 0 4px;
+    font-weight: 700;
+    font-size: 18px
+}
+.member_pw .sub {
+    padding-bottom: 4px;
+    font-size: 12px;
+    color: #666;
+    line-height: 17px
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+.member_pw .active {
+    display: block;
+    width: 240px;
+    height: 56px;
+    margin: 40px auto 0;
+    font-size: 16px;
+    line-height: 54px
+}
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button,
+select {
+    text-transform: none
+}
+button {
+    overflow: visible;
+    border-radius: 0
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+
+
+.mypage_top .grade_user .class6 {
+    border: 1px solid #949296;
+    background-color: #fff;
+    color: #949296;
+}
+.page_aticle .head_aticle .tit {
+    height: 36px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #333;
+    letter-spacing: -.5px
+}
+
+#qnb{position:absolute;z-index:1;right:20px;top:70px;width:80px;font:normal 12px/16px "Noto Sans";color:#333;letter-spacing:-0.3px;transition:top 0.2s}
+.goods-goods_view #qnb{top:20px}
+/* 배너 */
+#qnb .bnr_qnb{padding-bottom:7px}
+#qnb .bnr_qnb .thumb{width:80px;height:120px;vertical-align:top}
+/* 메뉴 */
+#qnb .side_menu{width:80px;border:1px solid #ddd;border-top:0 none;background-color:#fff}
+#qnb .link_menu{display:block;height:29px;padding-top:5px;border-top:1px solid #ddd;text-align:center}
+#qnb .link_menu:hover,
+#qnb .link_menu.on{color:#5f0080}
+/* 최근본상품 */
+#qnb .side_recent{position:relative;margin-top:6px;border:1px solid #ddd;background-color:#fff}
+#qnb .side_recent .tit{display:block;padding:22px 0 6px;text-align:center}
+#qnb .side_recent .list_goods{overflow:hidden;position:relative;width:60px;margin:0 auto}
+#qnb .side_recent .list{position:absolute;left:0;top:0}
+#qnb .side_recent .link_goods{display:block;overflow:hidden;width:60px;height:80px;padding:1px 0 2px}
+#qnb .side_recent .btn{display:block;overflow:hidden;width:100%;height:17px;border:0 none;font-size:0;line-height:0;text-indent:-9999px}
+
+#qnb .side_recent .btn_up{position:absolute;left:0;top:0;background:url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_hover.png) no-repeat 50% 50%}
+#qnb .side_recent .btn_up.off{background:url(https://res.kurly.com/pc/service/main/2002/ico_quick_up.png) no-repeat 50% 50%}
+#qnb .side_recent .btn_down{background:url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_hover.png) no-repeat 50% 0}
+#qnb .side_recent .btn_down.off{background:url(https://res.kurly.com/pc/service/main/2002/ico_quick_down.png) no-repeat 50% 0}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx) {
+    #qnb .side_recent .btn_up{background-image:url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_hover_x2.png);background-size:12px 18px}
+    #qnb .side_recent .btn_down{background-image:url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_hover_x2.png);background-size:12px 18px}
+    #qnb .side_recent .btn_up.off{background-image:url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_x2.png);background-size:12px 18px}
+    #qnb .side_recent .btn_down.off{background-image:url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_x2.png);background-size:12px 18px}
+}
+@media all and (max-width: 1250px){
+    #qnb{display:none}
+}

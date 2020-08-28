@@ -1,127 +1,95 @@
- {% block extra-style %}
+{% load widget_tweaks %}
 
- <style>
-     ul,
-     li {
-         list-style-type: None;
-         margin: 0;
-         padding: 0;
-     }
-     .content{
-         margin-top:0;
-         height:100%;
-     }
-
-     .mymenu {
-         background-color: white;
-         width: 200px;
-         height:100%;
-         position:relative;
-         float:left;
-         margin-top: 50px;
-         margin-left: 100px;
-         padding-top: 0px;
-         display:block;
-         margin-right:10px;
-     }
-
-     .mymenu-head {
-         font-size: 24pt;
-         font-weight: bold;
-         padding: 7px 0 34px;
-     }
-
-     .mymenu-box {
-         border-style:solid;
-         border-width:1px 1px 0 1px;
-         border-color: #AAA1AA;
-     }
-
-     .mymenu-list {
-         border-bottom: 1px solid;
-         border-color: #AAA1AA;
-         padding-left: 20px;
-         padding-top: 15px;
-         padding-bottom: 15px;
-         padding-right: 10px;
-         cursor: pointer;
-     }
-     .mymenu-list-end
-
-     .mymenu-list>a:hover,
-     .mymenu-list>a {
-         color: #292b2c;
-         font-weight: none;
-         text-decoration-line: none;
-     }
-     .mymenu-list:hover {
-         background-color: #DDDDDD;
-     }
-
-     .mymenu-list>a>i {
-         float: right;
-         line-height: 24px;
-         margin: 0;
-     }
-
-     .mymenu-active {
-         background-color: #DDDDDD;
-     }
-
-     .mymenu-active > a:hover {
-         color: purple;
-     }
-
-     .mymenu-active>a {
-         color: purple;
-     }
-     .content-area{
-         display: inline-block;
-         background-color:#DDDDDD;
-         padding:15px;
-         margin-left:200px;
-         margin-top:100px;
-     }
-     .content-area >
-
- </style>
- {% endblock %}
- {% block content %}
- <div class="content">
-     <div class="mymenu">
-         <h2 class="mymenu-head">MY 정보</h2>
-         <ul class="mymenu-box">
-             <li class="mymenu-list"><a href="{% url 'mypage:order' %}">주문내역<i class="fas fa-chevron-right"></i></a></li>
-             <li class="mymenu-list"><a href="{% url 'mypage:wishlist' %}">찜한 아이템<i class="fas fa-chevron-right"></i></a></li>
-             <li class="mymenu-list"><a href="{% url 'mypage:review' %}">상품 후기<i class="fas fa-chevron-right"></i></a></li>
-             <li class="mymenu-list"><a href="{% url 'mypage:modify_user' %}">회원정보 수정<i class="fas fa-chevron-right"></i></a></li>
-         </ul>
-     </div>
- {% endblock %}
+{% block content %}
+<body>
 
 
-{% block extra-script %}
- <script>
-     let active = 0;
-     let mymenu = document.getElementsByClassName("mymenu-list");
-     let screens = document.getElementById("disp");
 
-     for (let i = 0; i < mymenu.length; i++) {
-         mymenu[i].className = "mymenu-list ";
-         mymenu[i].onclick = function(){
-             let a = mymenu[i].firstChild.href;
-             location.href = a;
-             if(active != i){
-                mymenu[i].className += "mymenu-active";
-             }
-             active = i;
-             screens.innerHTML = active + "<i class='fas fa-chevron-right'></i>";
-             for (let j = 0; j < mymenu.length; j++) {
-                if(j != active){
-                    mymenu[j].className = "mymenu-list ";
-                }
-             }
-         }
-     }
- </script>
- {% endblock %}
+<div id="main">
+    <div id="content">
+
+        <div id="qnb" class="quick-navigation" style="top: 70px;">
+        </div>
+        <div id="myPageTop" class="page_aticle mypage_top">
+            <h2 class="screen_out">마이페이지</h2>
+            <div class="mypagetop_user">
+                <div class="inner_mypagetop">
+                    <div class="grade_user">
+                        <div class="grade"><span class="screen_out">등급</span> <span class="ico_grade class6"><span
+                                class="inner_grade"><span class="in_grade">웰컴</span></span></span>
+                            <div class="grade_bnenfit">
+                                <div class="user"><strong class="name">전용인</strong> <span class="txt">님</span></div>
+                                <!---->
+                                <div class="benefit"><strong class="tit"></strong>적립 5%</div>
+                                <div class="benefit"><strong class="tit"></strong>최초 1회 무료배송</div>
+                                <div class="benefit"></div>
+                            </div>
+                        </div>
+                        <div class="next"><a href="/shop/event/lovers/lovers.php" class="total_grade">전체등급 보기</a> <a
+                                href="/shop/proc/my_benefit.php?id=benefit" class="next_month">다음 달 예상등급 보기</a></div>
+                    </div>
+                    <ul class="list_mypage">
+                        <li class="user_reserve">
+                            <div class="link">
+                                <div class="tit">적립금
+                                    <!---->
+                                </div>
+                                <a href="/shop/mypage/mypage_emoney.php" class="info"> 0 원 <img
+                                        src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png"
+                                        alt="자세히 보기">
+                                    <span class="date">소멸 예정 0 원</span></a>
+                            </div>
+                        </li>
+                        <li class="user_coupon">
+                            <div class="link">
+                                <div class="tit">쿠폰 <img
+                                        src="https://res.kurly.com/pc/service/common/1904/ico_new_28x28.png" alt="New"
+                                        class="ico_new"></div>
+                                <a href="/shop/mypage/mypage_coupon.php" class="info">1 개
+                                    <img src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png"
+                                         alt="자세히 보기"></a>
+                            </div>
+                        </li>
+                        <li class="user_kurlypass">
+                            <div class="link">
+                                <div class="tit">컬리패스</div>
+                                <!----> <a href="/shop/mypage/kurlypass.php" class="info info_link"> 알아보기 <img
+                                    src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png"
+                                    alt="자세히 보기"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bnr_event"></div>
+            </div>
+        </div>
+        <div class="bg_loading" id="bgLoading" style="display: none;">
+            <div class="loading_show"></div>
+        </div>
+        <div class="page_aticle aticle_type2">
+            <div id="grid">
+                <div id="snb" class="snb_my">
+                <h2 class="tit_snb">마이페이지</h2>
+                <div class="inner_snb">
+                    <ul class="list_menu">
+                        <li>
+                            <a href="{% url 'mypage:order' %}">주문내역</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'mypage:wishlist' %}">찜한 아이템</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'mypage:review' %}">상품 후기</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'mypage:modify_user' %}">회원정보 수정</a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+
+
+</body>
+
+
+{% endblock %}
