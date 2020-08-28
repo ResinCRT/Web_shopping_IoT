@@ -7,6 +7,7 @@ h1 {
     min-width: 1050px;
 
 }
+
 #userMenu {
     width: 1050px;
     margin: 0 auto;
@@ -103,7 +104,7 @@ h1 {
 
 
 #gnb .gnb_kurly {
-    position: relative;
+    /*position: relative;*/
     z-index: 300;
     min-width: 1050px;
     background-color: #fff;
@@ -407,7 +408,6 @@ only screen and (min-resolution: 1.5dppx) {
     height: 17px;
     background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 50% 50%
 }
-
 .section_login .label_checkbox.checked:before {
     background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
 } */
@@ -621,7 +621,6 @@ only screen and (min-resolution: 1.5dppx) {
     height: 17px;
     background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 50% 50%
 }
-
 .section_login .label_checkbox.checked:before {
     background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
 } */
@@ -796,8 +795,8 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .member_join .field_head .tit {
-    padding-top: 10px;
-    font-weight: 545;
+    padding-top: 40px;
+    font-weight: 700;
     font-size: 25px;
     color: #333;
     line-height: 40px;
@@ -1310,7 +1309,8 @@ html {
 
 #content {
     min-width: 1050px;
-    padding-bottom: 170px
+    padding-bottom: 170px;
+    z-index: 0;
 }
 
 div,
