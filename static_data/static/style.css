@@ -353,8 +353,8 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .section_login .tit_login {
-    font-weight: 800;
-    font-size: 20px;
+    font-weight: 700px;
+    font-size: 25px;
     line-height: 20px;
     text-align: center
 }
@@ -565,12 +565,7 @@ only screen and (min-resolution: 1.5dppx) {
     color: #333
 }
 
-.section_login .tit_login {
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 20px;
-    text-align: center
-}
+
 
 .section_login .write_form {
     padding-top: 36px
