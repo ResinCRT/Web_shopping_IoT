@@ -1,0 +1,3638 @@
+
+@font-face {
+    font-family: nanum gothic;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://res.kurly.com/fonts/NanumGothic-Regular.woff2) format('woff2'), url(https://res.kurly.com/fonts/NanumGothic-Regular.woff) format('woff'), url(https://res.kurly.com/fonts/NanumGothic-Regular.otf) format('opentype')
+}
+
+@font-face {
+    font-family: noto sans;
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://res.kurly.com/fonts/NotoSansKR-Light.woff2) format('woff2'), url(https://res.kurly.com/fonts/NotoSansKR-Light.woff) format('woff'), url(https://res.kurly.com/fonts/NotoSansKR-Light.otf) format('opentype')
+}
+
+@font-face {
+    font-family: noto sans;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://res.kurly.com/fonts/NotoSansKR-Regular.woff2) format('woff2'), url(https://res.kurly.com/fonts/NotoSansKR-Regular.woff) format('woff'), url(https://res.kurly.com/fonts/NotoSansKR-Regular.otf) format('opentype')
+}
+
+@font-face {
+    font-family: noto sans;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://res.kurly.com/fonts/NotoSansKR-Medium.woff2) format('woff2'), url(https://res.kurly.com/fonts/NotoSansKR-Medium.woff) format('woff'), url(https://res.kurly.com/fonts/NotoSansKR-Medium.otf) format('opentype')
+}
+
+@font-face {
+    font-family: noto sans;
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://res.kurly.com/fonts/NotoSansKR-Bold.woff2) format('woff2'), url(https://res.kurly.com/fonts/NotoSansKR-Bold.woff) format('woff'), url(https://res.kurly.com/fonts/NotoSansKR-Bold.otf) format('opentype')
+}
+
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+
+    margin: 0;
+    padding: 9px;
+    min-width: 1050px;
+
+}
+
+#userMenu {
+    width: 1050px;
+    margin: 0 auto;
+    font-family: noto sans;
+    font-weight: 400;
+    letter-spacing: -.3px;
+
+}
+
+
+#userMenu:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    text-indent: -9999px
+}
+
+#userMenu .list_menu {
+    float: right;
+    list-style: none;
+    padding-left: 0px;
+    font-size:12px;
+
+}
+
+#userMenu .menu {
+    position: relative;
+    z-index: 400;
+    float: left;
+
+}
+
+#userMenu .menu:before {
+    content: "";
+    position: absolute;
+    right: 11px;
+    top: 16px;
+    width: 8px;
+    height: 5px;
+
+}
+
+#userMenu .menu:after {
+    content: "";
+    float: right;
+    width: 1px;
+    height: 13px;
+    margin-top: 12px;
+    background-color: #d8d8d8
+}
+
+#userMenu .link_menu {
+    float: left;
+    height: 37px;
+    padding: 0 22px 0 10px;
+    color: #333;
+    line-height: 35px;
+    white-space: nowrap
+}
+
+#userMenu .txt {
+    float: left;
+    padding-left: 4px;
+
+}
+#userMenu .none_sub .link_menu {
+    padding-right: 10px
+}
+
+#userMenu .menu_join .link_menu {
+    color: #5f0080
+}
+
+
+.bnr_header {
+    display: block;
+    height: 42px;
+    background-color: #5f0080;
+    color: #fff;
+    min-width:1080px;
+
+}
+
+
+
+
+
+
+
+
+#gnb .gnb_kurly {
+    /*position: relative;*/
+    z-index: 300;
+    min-width: 1050px;
+    background-color: #fff;
+    font-family: 'Noto Sans';
+    letter-spacing: -0.3px
+}
+#gnb .gnb_kurly:after {
+    content: "";
+    position: relative;
+    z-index: 299;
+    left: 0;
+    top: 56px;
+    width: 100%;
+    height: 9px;
+    background: url(https://res.kurly.com/pc/service/common/1902/bg_1x9.png) repeat-x 0 100%
+}
+
+
+#gnb .inner_gnbkurly {
+    position: relative;
+    width: 1050px;
+    height: 56px;
+    margin: 0 auto
+}
+
+/* 검색창 */
+#gnb .gnb_search {
+    position: absolute;
+    right: 550px;
+    top: 10px;
+    width: 238px
+}
+
+#gnb .gnb_search .inp_search {
+    width: 500px;
+    height: 36px;
+    padding: 0 50px 0 20px;
+    border: 1px solid #f7f7f6;
+    border-radius: 18px;
+    background-color: #f7f7f7;
+    font-family: 'Noto Sans KR', sans-serif;;
+    font-weight: 400;
+    font-size: 12px;
+    color: #666;
+    line-height: 16px;
+    outline: none
+}
+
+#gnb .gnb_search .btn_search {
+    position: absolute;
+    left: 500px;
+    top: 3px;
+    width: 30px;
+    height: 30px
+}
+
+/* 장바구니 */
+#gnb .cart_count {
+    position: absolute;
+    right: -6px;
+    top: 10px
+}
+
+/* #gnb .cart_count .inner_cartcount {
+    text-align: center;
+    font-weight: 400
+} */
+
+/* #gnb .cart_count .num {
+    display: none;
+    position: absolute;
+    left: 19px;
+    top: -1px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #5f0080;
+    font-size: 9px;
+    color: #fff;
+    line-height: 15px;
+    text-align: center;
+    white-space: nowrap
+} */
+
+#gnb .cart_count img {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto
+}
+
+#gnb .cart_count .msg_cart {
+    display: none;
+    position: absolute;
+    right: -7px;
+    top: 61px;
+    width: 348px;
+    height: 102px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    opacity: 0
+}
+
+#gnb .cart_count .inner_msgcart {
+    display: block;
+    overflow: hidden;
+    padding: 20px 0 0 20px
+}
+
+
+/* GNB메인 */
+#gnb .gnb_main {
+    overflow: hidden;
+    width: 1050px;
+    margin: 0 auto
+}
+
+#gnb .gnb_main .gnb {
+    float: left;
+    width: 100%
+}
+
+/* #gnb .gnb_main .gnb li {
+    float: left;
+    background: url(https://res.kurly.com/pc/service/common/1902/line_1x11_c_ccc.png) no-repeat 100% 23px
+} */
+
+/* #gnb .gnb_main .gnb .lst {
+    background: none
+} */
+
+#gnb .gnb_main .gnb a {
+    overflow: hidden;
+    float: left;
+    height: 55px;
+    padding: 16px 50px 0 48px;
+    font-size: 16px;
+    color: #333;
+    line-height: 20px
+}
+
+/* #gnb .gnb_main .gnb a .txt {
+    font-weight: 700
+} */
+
+/* #gnb .gnb_main .gnb a:hover,
+#gnb .gnb_main .gnb a.on {
+    font-weight: 700;
+    color: #5f0080
+} */
+
+/* #gnb .gnb_main .gnb a:hover .txt {
+    border-bottom: 1px solid #5f0080
+} */
+
+#gnb .gnb_main .menu1 a {
+    padding-left: 19px
+}
+
+#gnb .gnb_main .menu1 .ico {
+    float: left;
+    width: 16px;
+    height: 14px;
+    margin: 4px 14px 0 0;
+
+    background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off.png) no-repeat
+
+}
+#gnb .gnb_search .btn_search form.on .ico,
+#gnb .gnb_search .btn_search form:hover .ico{
+    background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all.png) no-repeat 0 0
+
+
+}
+
+
+#gnb .gnb_main .menu1 a.on .txt,
+#gnb .gnb_main .menu1 a:hover .txt,
+#gnb .gnb_main .menu1 .txt {
+    float: left;
+    font-weight: 700;
+    border-bottom: 0
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx) {
+    #gnb .gnb_sub .ico_new {
+        background: url(https://res.kurly.com/pc/ico/1808/ico_new_gnb_16x16.png) no-repeat 0 0;
+        background-size: 8px 8px
+    }
+
+    #gnb .cart_count .msg_cart .point {
+        background: url(https://res.kurly.com/pc/ico/1903/ico_layer_point_x2.png) no-repeat 0 0;
+        background-size: 20px 14px
+    }
+
+    #gnb .gnb_main .menu1 .ico {
+        background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off_x2.png) no-repeat 0 0;
+        background-size: 16px 14px
+
+    }
+
+    #gnb .gnb_main .menu1 a.on .ico,
+    #gnb .gnb_main .menu1 a:hover .ico {
+        background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_x2.png) no-repeat 0 0;
+        background-size: 16px 14px
+    }
+}
+
+
+
+
+
+
+.page_aticle {
+    width: 1050px;
+    margin: 0 auto
+}
+
+.page_aticle button,
+.page_aticle input,
+.page_aticle select,
+.page_aticle * {
+    font-family: noto sans;
+    font-weight: 400;
+    letter-spacing: 0
+}
+
+
+
+
+
+.section_login {
+    width: 340px;
+    margin: 0 auto;
+    padding-top: 90px;
+    letter-spacing: -.6px
+}
+
+.section_login * {
+    font-family: noto sans;
+    color: #333
+}
+
+.section_login .tit_login {
+    font-weight: 700px;
+    font-size: 25px;
+    line-height: 20px;
+    text-align: center
+}
+
+.section_login .write_form {
+    padding-top: 36px
+}
+
+.section_login input[type=number],
+.section_login input[type=text],
+.section_login input[type=password],
+ .section_login input[type=email]{
+    width: 100%;
+    height: 54px;
+    padding: 0 19px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none
+}
+
+.section_login input[type=number]:focus,
+.section_login input[type=text]:focus,
+.section_login input[type=password]:focus,
+.section_login input[type=email]:focus{
+    border: 1px solid #333
+}
+
+.section_login [name=password],
+.section_login [name=ordno],
+.section_login .login_view [name=srch_mail],
+.section_login [name=srch_id] {
+    margin-top: 10px
+}
+
+.section_login .label_checkbox {
+    position: relative;
+    padding: 0 0 3px 22px;
+    font-size: 13px;
+    line-height: 20px
+}
+
+/* .section_login .label_checkbox:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 17px;
+    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 50% 50%
+}
+.section_login .label_checkbox.checked:before {
+    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
+} */
+
+.section_login .label_checkbox [type=checkbox] {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    opacity: 0
+}
+
+.section_login .btn_type2 {
+    margin-top: 10px
+}
+
+.section_login .btn_member {
+    margin-top: 10px
+}
+
+.section_login .find_view .btn_type1 {
+    margin-top: 30px
+}
+
+.section_login .btn_ordsearch {
+    margin-top: 20px
+}
+
+.section_login .login_view {
+    text-align: center
+}
+
+.section_login .checkbox_save {
+    overflow: hidden;
+    padding-bottom: 28px
+}
+
+/* .section_login .checkbox_save .label_checkbox {
+    float: left;
+    margin-top: 9px
+} */
+
+.section_login .login_search {
+    float: right;
+    padding-top: 13px
+}
+
+/* .section_login .login_search .link {
+    float: left;
+    font-size: 13px
+} */
+/*
+.section_login .login_search .bar {
+    float: left;
+    width: 1px;
+    height: 10px;
+    margin: 3px 6px 0;
+    background-color: #333
+} */
+
+.section_login .notice_join {
+    padding-top: 20px;
+    font-size: 13px;
+    color: #333;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center
+}
+
+.section_login .notice_join .link {
+    padding-left: 3px;
+    font-weight: 700;
+    color: #5f0080;
+    text-decoration: underline
+}
+
+
+.btn_type1,
+.btn_type2 {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 54px;
+    border-radius: 3px;
+    font-size: 0;
+    text-align: center
+}
+
+.btn_type1 .txt_type,
+.btn_type2 .txt_type {
+    display: inline-block;
+    height: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    line-height: 51px;
+    text-align: center
+}
+
+.btn_type1 .extra,
+.btn_type2 .extra {
+    opacity: .6
+}
+
+.btn_type1 {
+    border: 1px solid #5f0081;
+    background-color: #5f0080
+}
+
+.btn_type1 .txt_type {
+    color: #fff
+}
+
+.btn_type1.btn_disabled {
+    border: 1px solid #ddddde;
+    background-color: #ddd
+}
+
+.btn_type1.btn_disabled .txt_type {
+    opacity: .8
+}
+
+.btn_type2 {
+    border: 1px solid #5f0081;
+    background-color: #fff
+}
+
+.btn_type2 .txt_type {
+    color: #5f0080
+}
+
+.btn_type2.btn_disabled {
+    border: 1px solid #ddd
+}
+
+.btn_type2.btn_disabled .txt_type {
+    color: #ddd
+}
+
+
+/*##########################################login######################################################################*/
+
+
+
+
+
+.section_login {
+    width: 340px;
+    margin: 0 auto;
+    padding-top: 90px;
+    letter-spacing: -.6px
+}
+
+.section_login * {
+    font-family: noto sans;
+    color: #333
+}
+
+
+
+.section_login .write_form {
+    padding-top: 36px
+}
+
+.section_login input[type=number],
+.section_login input[type=text],
+.section_login input[type=email],
+.section_login input[type=password] {
+    width: 100%;
+    height: 54px;
+    padding: 0 19px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none
+}
+
+.section_login input[type=number]:focus,
+.section_login input[type=text]:focus,
+.section_login input[type=email]:focus,
+.section_login input[type=password]:focus {
+    border: 1px solid #333
+}
+
+.section_login [name=password],
+.section_login [name=ordno],
+.section_login .login_view [name=srch_mail],
+.section_login [name=srch_id] {
+    margin-top: 10px
+}
+
+.section_login .label_checkbox {
+    position: relative;
+    padding: 0 0 3px 22px;
+    font-size: 13px;
+    line-height: 20px
+}
+
+/* .section_login .label_checkbox:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 17px;
+    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 50% 50%
+}
+.section_login .label_checkbox.checked:before {
+    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
+} */
+
+.section_login .label_checkbox [type=checkbox] {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    opacity: 0
+}
+
+.section_login .btn_type2 {
+    margin-top: 10px
+}
+
+.section_login .btn_member {
+    margin-top: 10px
+}
+
+.section_login .find_view .btn_type1 {
+    margin-top: 30px
+}
+
+.section_login .btn_ordsearch {
+    margin-top: 20px
+}
+
+.section_login .login_view {
+    text-align: center
+}
+
+.section_login .checkbox_save {
+    overflow: hidden;
+    padding-bottom: 28px
+}
+
+/* .section_login .checkbox_save .label_checkbox {
+    float: left;
+    margin-top: 9px
+} */
+
+.section_login .login_search {
+    float: right;
+    padding-top: 13px
+}
+
+/* .section_login .login_search .link {
+    float: left;
+    font-size: 13px
+} */
+/*
+.section_login .login_search .bar {
+    float: left;
+    width: 1px;
+    height: 10px;
+    margin: 3px 6px 0;
+    background-color: #333
+} */
+
+.section_login .notice_join {
+    padding-top: 20px;
+    font-size: 13px;
+    color: #333;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center
+}
+
+.section_login .notice_join .link {
+    padding-left: 3px;
+    font-weight: 700;
+    color: #5f0080;
+    text-decoration: underline
+}
+
+
+.btn_type1,
+.btn_type2 {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 54px;
+    border-radius: 3px;
+    font-size: 0;
+    text-align: center
+}
+
+.btn_type1 .txt_type,
+.btn_type2 .txt_type {
+    display: inline-block;
+    height: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    line-height: 51px;
+    text-align: center
+}
+
+.btn_type1 .extra,
+.btn_type2 .extra {
+    opacity: .6
+}
+
+.btn_type1 {
+    border: 1px solid #5f0081;
+    background-color: #5f0080
+}
+
+.btn_type1 .txt_type {
+    color: #fff
+}
+
+.btn_type1.btn_disabled {
+    border: 1px solid #ddddde;
+    background-color: #ddd
+}
+
+.btn_type1.btn_disabled .txt_type {
+    opacity: .8
+}
+
+.btn_type2 {
+    border: 1px solid #5f0081;
+    background-color: #fff
+}
+
+.btn_type2 .txt_type {
+    color: #5f0080
+}
+
+.btn_type2.btn_disabled {
+    border: 1px solid #ddd
+}
+
+.btn_type2.btn_disabled .txt_type {
+    color: #ddd
+}
+
+/*################################################################################################################*/
+
+.screen_out {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px
+}
+
+#header,
+#container,
+#content {
+    position: relative
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration:none;
+    font-family: 'Noto Sans KR', sans-serif;;
+}
+
+
+.member_join {
+    width: 640px;
+    margin: 0 auto
+}
+
+.member_join .field_head .tit {
+    padding-top: 4px;
+    font-weight: 700;
+    font-size: 25px;
+    color: #333;
+    line-height: 40px;
+    text-align: none;
+    letter-spacing: -.5px
+}
+.member_join .field_head .tit1 {
+    padding-top: 3px;
+    font-weight: 900;
+    font-size: 30px;
+    color: #333;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: -.5px
+}
+
+.member_join .field_head .sub {
+    padding: 8px 0 5px;
+    font-size: 12px;
+    color: #666;
+    line-height: 17px;
+    text-align: right
+}
+
+.member_join .field_head .sub .ico {
+    padding-right: 2px;
+    color: #ee6a7b
+}
+
+.member_join .txt_guide {
+    width: 332px
+}
+
+.member_join .tbl_comm {
+    width: 100%;
+    border-top: 1px solid #333
+}
+
+.member_join .tbl_comm .fst th {
+    padding-top: 29px
+}
+
+.member_join .tbl_comm .fst td {
+    padding-top: 19px
+}
+
+.member_join th {
+    width: 159px;
+    padding: 20px 0 0 20px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: left
+}
+
+.member_join th .ico {
+    color: #ee6a7b
+}
+
+.member_join td {
+    padding: 10px 0;
+    border-top: 0;
+    font-size: 14px;
+    vertical-align: top;
+    text-align: left
+}
+.member_join input[type=text],
+.member_join input[type=email],
+.member_join input[type=password]
+ {
+    width: 332px
+}
+
+.member_join .btn {
+    display: inline-block;
+    width: 120px;
+    margin-left: 5px;
+    vertical-align: top
+}
+
+.member_join .field_phone .phone_num input[type=text] {
+    margin: 0
+}
+
+.member_join .field_phone .code_num {
+    display: none;
+    position: relative;
+    padding-top: 10px
+}
+
+.member_join .field_phone .code_num input[type=text] {
+    margin: 0
+}
+
+.member_join .field_phone .code_num .count_down {
+    position: absolute;
+    left: 216px;
+    top: 21px;
+    width: 100px;
+    font-size: 14px;
+    color: #b3130b;
+    line-height: 20px;
+    text-align: right;
+    letter-spacing: -.5px
+}
+
+
+.member_join .form_footer {
+    padding-top: 40px;
+    text-align: center
+}
+
+.member_join .form_footer .btn_join {
+    width: 240px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 54px
+}
+
+
+
+
+/*#############################회원가입###############################*/
+.type_form textarea,
+.type_form input[type=text],
+.type_form input[type=password],
+ .type_form input[type=email]{
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    border-radius: 3px;
+    background: #fff;
+    outline: none;
+    vertical-align: top
+}
+
+.type_form input[type=text]:focus,
+.type_form input[type=password]:focus ,
+.type_form input[type=email]:focus{
+    border: 1px solid #333
+}
+
+.type_form input[type=text]:disabled,
+.type_form input[type=password]:disabled,
+ .type_form input[type=email]:disabled{
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    color: #999
+}
+
+.type_form .btn {
+    display: block;
+    width: 100%;
+    height: 44px;
+    border: 0;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    outline: none
+}
+
+.type_form textarea {
+    height: auto;
+    padding-top: 13px;
+    resize: none
+}
+
+.type_form .btn.normal {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333
+}
+
+.type_form .btn.default {
+    border: 1px solid #5f0080;
+    background-color: #fff;
+    color: #5f0080
+}
+
+.type_form .btn.active {
+    border: 1px solid #5f0081;
+    background-color: #5f0080;
+    color: #fff
+}
+
+.type_form .btn.submit {
+    height: 56px;
+    line-height: 58px
+}
+
+.type_form .btn.disabled {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #ddd
+}
+
+.type_form .double {
+    display: flex
+}
+
+.type_form .double .btn {
+    margin-left: 4px
+}
+
+.type_form .double .btn :first-child {
+    margin-left: 0;
+    margin-right: 4px
+}
+
+.type_form input[type=radio] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0
+}
+
+.type_form input[type=radio]+.ico {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 100%;
+    vertical-align: -7px
+}
+
+.type_form input[type=radio]:focus {
+    outline: 0
+}
+
+.type_form input[type=radio]:checked+.ico {
+    border: 1px solid #5f0081;
+    background-color: #5f0080
+}
+
+.type_form input[type=radio]:checked+.ico:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+    border-radius: 100%;
+    background-color: #fff
+}
+
+.type_form input[type=radio]:disabled+.ico {
+    border: 1px solid #ddd;
+    background-color: #fafafa
+}
+
+.type_form input[type=checkbox] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0
+}
+
+.type_form input[type=checkbox]+.ico {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border: 0;
+    background: url(https://res.kurly.com/pc/service/common/2006/ico_checkbox.svg) no-repeat 50% 50%;
+    background-size: 24px 24px;
+    vertical-align: -7px
+}
+
+.type_form input[type=checkbox]:focus {
+    outline: 0
+}
+
+.type_form input[type=checkbox]:checked+.ico {
+    background: url(https://res.kurly.com/pc/service/common/2006/ico_checkbox_checked.svg) no-repeat 50% 50%;
+    background-size: 24px 24px
+}
+
+.type_form input[type=checkbox]:disabled+.ico {
+    background: url(https://res.kurly.com/pc/service/common/2003/ico_checkbox_disabled.png) no-repeat 50% 50%;
+    background-size: 24px 24px
+}
+
+.type_form label {
+    font-size: 14px;
+    line-height: 22px
+}
+
+.type_form label.label_block {
+    display: block;
+    padding: 15px 0 13px
+}
+
+.type_form .txt_guide {
+    display: none;
+    padding: 10px 0 9px;
+    font-size: 12px;
+    color: #666;
+    line-height: 18px;
+    word-break: break-all;
+    letter-spacing: -.1px;
+    clear: both
+}
+
+.type_form .txt_guide .txt {
+    display: block
+}
+
+.type_form .txt_guide .txt:before {
+    font-size: 0
+}
+
+.type_form .square .txt:before {
+    content: '\2022';
+    display: inline-block;
+    padding: 0 4px 0 2px;
+    font-size: 12px;
+    vertical-align: 0
+}
+
+.type_form .txt_guide .txt.good {
+    color: #0f851a
+}
+
+.type_form .txt_guide .txt.good:before {
+    content: '\2713';
+    display: inline-block;
+    padding: 0 4px 0 2px;
+    font-size: 12px;
+    vertical-align: 0
+}
+
+.type_form .txt_guide .txt.bad {
+    color: #b3130b
+}
+
+.type_form .txt_guide .txt.bad:before {
+    content: '\2715';
+    display: inline-block;
+    padding-right: 3px;
+    font-size: 12px;
+    vertical-align: 0
+}
+
+.type_form .txt_guide .txt.receive {
+    color: #666
+}
+
+
+/*-------------------------------------------------------회원가입 던---------------------------------------------------*/
+.mypage_top {
+    width: 100%;
+    padding: 50px 0;
+    margin-bottom: -20px;
+    background-color: #f7f7f7;
+}
+
+.mypage_top .mypagetop_user {
+    overflow: hidden;
+    width: 1050px;
+    margin: 0 auto
+}
+
+
+.xans-member-joincomplete {
+    padding: 50px 0;
+    line-height: 150%;
+    text-align: center;
+    background-color: #f7f5f8;
+    border-top: 2px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.xans-member-joincomplete .joinComplete {
+    width: 430px;
+    margin: 0 auto;
+    color: #4c4c4c
+}
+
+.xans-member-joincomplete .joinComplete .desc {
+    margin: 0 0 30px;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo {
+    overflow: hidden;
+    text-align: left;
+    border-top: 2px solid #6a3664;
+    padding-top: 10px
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li {
+    border-bottom: 1px solid #6a3664
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li strong {
+    text-indent: 20px;
+    font-weight: 400
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li span .bolds,
+.xans-member-joincomplete .joinComplete .memberInfo li strong {
+    display: inline-block;
+    width: 30%;
+    padding: 20px 0;
+    color: #000;
+    font-size: 13px
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li.nobold {
+    padding: 20px 0;
+    font-size: 13px;
+    text-indent: 20px
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li span input[type=radio] {
+    position: relative;
+    top: 2px
+}
+
+.xans-member-joincomplete .joinComplete .memberInfo li span .bolds,
+.xans-member-joincomplete .joinComplete .memberInfo li strong {
+    font-weight: 700
+}
+
+.xans-member-joincomplete .joinComplete .button {
+    margin: 30px 0 0
+}
+
+.bhs_button {
+    width: 150px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    background-color: #795b8f;
+    border: 0px solid #5f0080;
+    color: #fff;
+    font-size: 15px;
+    /*float: right;*/
+    margin-left: 2px;
+    font-size: 13px
+}
+
+.layout-wrapper {
+    position: relative;
+    width: 1050px;
+    height: 100%;
+    margin: 0 auto
+}
+.member_join .btn {
+    display: inline-block;
+    width: 120px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+/*--------------------------------------회원가입 던-------------------------------------------*/
+
+
+body,
+input,
+select,
+textarea,
+button {
+    font-family: 'Noto Sans KR', sans-serif;;
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: #4c4c4c;
+    font-size: 12px;
+    /*max-width: 100%*/
+
+}
+
+html,
+body {
+    height: 100%;
+    width: revert;
+}
+
+
+body {
+    margin: 0
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+#content {
+    min-width: 1050px;
+    padding-bottom: 170px;
+    z-index: 0;
+}
+
+div,
+th,
+td,
+li,
+dt,
+dd,
+p {
+    word-break: break-all
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit
+}
+
+b,
+strong {
+    font-weight: 700
+}
+
+ol,
+ul {
+    list-style-type: none
+}
+
+
+
+
+
+
+
+.mypage_top .inner_mypagetop {
+    overflow: hidden;
+    width: 100%;
+    background: url(https://res.kurly.com/pc/service/common/1904/bg_mypagetop.png) repeat-y 0 0
+}
+
+
+.mypage_top .grade_user {
+    float: left;
+    width: 444px;
+    height: 100%;
+    padding: 28px 0 30px 30px;
+    background-color: #fff
+}
+
+
+.mypage_top .grade_user .grade {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 26px
+}
+
+.mypage_top .grade_user .class6 {
+    border: 1px solid #949296;
+    background-color: #fff;
+    color: #949296
+}
+
+.mypage_top .grade_user .ico_grade {
+    float: left;
+    width: 64px;
+    height: 64px;
+    margin: 2px 20px 0 0;
+    border-radius: 3px;
+    font-size: 16px;
+
+    text-align: center;
+    word-break: break-all
+}
+.mypage_top .grade_user .inner_grade {
+    display: table;
+    width: 100%;
+    height: 64px;
+    padding-bottom: 3px
+}
+.mypage_top .grade_user .in_grade {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    line-height: 18px;
+    word-break: keep-all
+}
+
+
+.mypage_top .grade_bnenfit {
+    overflow: hidden
+}
+.mypage_top .grade_user .user {
+    overflow: hidden;
+    padding: 2px 0 14px
+}
+
+.mypage_top .name {
+    overflow: hidden;
+    float: left;
+    max-width: 263px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    line-height: 28px;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+
+.mypage_top .txt {
+    float: left;
+    padding-left: 5px;
+    font-size: 16px;
+    line-height: 28px
+}
+
+.mypage_top .grade_user .benefit {
+    padding-top: 2px
+}
+.mypage_top .benefit {
+    font-size: 12px;
+    line-height: 18px;
+    color: #333
+}
+.mypage_top .benefit .tit {
+    color: #5f0080
+}
+
+.mypage_top .next {
+    overflow: hidden;
+    width: 100%;
+    padding: 22px 0 0 84px
+}
+
+.mypage_top .next a {
+    float: left;
+    height: 30px;
+    padding-top: 4px;
+    margin-right: 10px;
+    border: 1px solid #f4f4f3;
+    border-radius: 15px;
+    background-color: #f4f4f4;
+    font-size: 14px;
+    color: #333;
+    line-height: 18px;
+    text-align: center
+}
+.mypage_top .total_grade {
+    width: 121px
+}
+.mypage_top .next_month {
+    width: 169px
+}
+.mypage_top .list_mypage {
+    float: right;
+    width: 602px
+}
+
+.mypage_top .list_mypage li {
+    float: left;
+    width: 198px;
+    margin-right: 4px;
+    background-color: #fff
+}
+.mypage_top .list_mypage .link {
+    float: left;
+    width: 100%;
+    padding: 29px 0 0 30px
+}
+
+.mypage_top .list_mypage .tit {
+    padding-bottom: 26px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333
+}
+.mypage_top .list_mypage .info {
+    font-weight: 700;
+    font-size: 20px;
+    color: #5f0080;
+    line-height: 28px
+}
+
+.mypage_top .list_mypage .info img {
+    width: 28px;
+    height: 28px;
+    margin: 1px 0 0 -4px;
+    vertical-align: top
+}
+img {
+    border: 0
+}
+
+.mypage_top .list_mypage .info .date {
+    display: block;
+    padding-top: 12px;
+    font-size: 12px;
+    color: #999;
+    line-height: 16px
+}
+.mypage_top .ico_new {
+    width: 14px;
+    height: 14px;
+    margin: 3px 0 0 2px;
+    vertical-align: top
+}
+
+.mypage_top .list_mypage .user_kurlypass {
+    margin-right: 0
+}
+.mypage_top .bnr_event {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    background-size: 1050px 60px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #6c2e81
+
+}
+.bg_loading {
+    position: fixed;
+    z-index: 9998;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5
+}
+.loading_show {
+    position: fixed;
+    z-index: 10000;
+    top: 50%;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+    width: 32px;
+    height: 32px;
+    background: url(https://res.kurly.com/pc/img/1909/img_loading_128x128.gif) no-repeat 50% 50%;
+    background-size: 16px 16px
+}
+.page_aticle.aticle_type2 {
+    padding-top: 65px;
+
+}
+#grid{
+
+        display:grid;
+        grid-template-columns: 200px 750px;
+
+        }
+.page_aticle.aticle_type2:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    clear: both
+}
+
+#snb {
+    float: left;
+    width: 200px
+}
+#snb .tit_snb {
+    padding: 7px 0 34px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 34px;
+    color: #333;
+    letter-spacing: -.5px
+}
+#snb .inner_snb {
+    border: 1px solid #dcdbde;
+    border-bottom: 0
+}
+#snb .list_menu li {
+    border-bottom: 1px solid #dcdbde
+}
+
+#snb .list_menu li a {
+    display: block;
+    overflow: hidden;
+    padding: 16px 0 16px 19px;
+    background: #fff url(https://res.kurly.com/pc/ico/1803/ico_arrow_12x22.png) no-repeat 174px 50%;
+    background-size: 6px 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 18px
+}
+#snb .list_menu li.on a,
+#snb .list_menu li a:hover {
+    background: #f7f7f7 url(https://res.kurly.com/pc/ico/1803/ico_arrow_on_12x22.png) no-repeat 174px 50%;
+    background-size: 6px 10px;
+    color: #5f0080
+}
+#snb .link_inquire {
+    display: block;
+    overflow: hidden;
+    width: 200px;
+    height: 60px;
+    margin-top: 16px;
+    padding: 9px 0 0 19px;
+    border: 1px solid #f7f5f7;
+    border-radius: 0 100px 100px 0;
+    background: #f7f7f7 url(https://res.kurly.com/pc/ico/1803/ico_arrow_on_12x22.png) no-repeat 173px 24px;
+    background-size: 6px 11px;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px
+}
+#snb .link_inquire .emph {
+    display: block;
+    padding-bottom: 1px;
+    font-weight: 700;
+    font-size: 14px
+}
+.page_aticle.aticle_type2 .page_section {
+    float: right;
+    width: 820px
+}
+.page_aticle .head_aticle {
+    padding: 5px 0 34px
+}
+.member_pw {
+    width: 820px
+}
+.member_pw .tit {
+    padding: 0 0 4px;
+    font-weight: 700;
+    font-size: 18px
+}
+.member_pw .sub {
+    padding-bottom: 4px;
+    font-size: 12px;
+    color: #666;
+    line-height: 17px
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+.member_pw .active {
+    display: block;
+    width: 240px;
+    height: 56px;
+    margin: 40px auto 0;
+    font-size: 16px;
+    line-height: 54px
+}
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button,
+select {
+    text-transform: none
+}
+button {
+    overflow: visible;
+    border-radius: 0
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+
+
+.mypage_top .grade_user .class6 {
+    border: 1px solid #949296;
+    background-color: #fff;
+    color: #949296;
+}
+.page_aticle .head_aticle .tit {
+    height: 36px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #333;
+    letter-spacing: -.5px
+}
+
+
+
+
+
+
+#lnbMenu {
+    padding-top: 26px
+}
+
+#lnbMenu .inner_lnb {
+    position: relative;
+    padding-left: 29px
+}
+
+#lnbMenu .ico_cate {
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+    padding-bottom: 10px
+}
+
+#lnbMenu .ico_cate .ico {
+    display: none;
+    overflow: hidden;
+    float: left;
+    width: 40px;
+    height: 40px
+}
+
+#lnbMenu .ico_cate .ico img {
+    width: 40px;
+    height: 40px;
+    vertical-align: top
+}
+
+#lnbMenu .ico_cate .tit {
+    float: left;
+    padding: 20px 0 0 4px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -.3px
+}
+
+#lnbMenu .list {
+    overflow: hidden;
+    width: 870px
+}
+
+#lnbMenu li {
+    float: left
+}
+
+#lnbMenu li a {
+    overflow: hidden;
+    float: left;
+    padding: 0 13px 7px 12px;
+    border-bottom: 1px solid #ddd;
+    line-height: 20px;
+    font-size: 12px;
+    color: #333;
+    letter-spacing: -.3px;
+    cursor: pointer
+}
+
+#lnbMenu li a:hover,
+#lnbMenu li .on {
+    font-weight: 700;
+    color: #5f0080
+}
+
+#lnbMenu li.bg {
+    position: absolute;
+    top: 78px;
+    height: 1px;
+    margin-top: -1px;
+    background-color: #5f0080
+}
+
+#bnrCategory {
+    display: none;
+    position: relative;
+    margin: 0 auto 20px
+}
+
+#bnrCategory.on {
+    display: block
+}
+
+#bnrCategory .link_event {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://res.kurly.com/images/common/old/common/bg_1_1.gif) repeat 0 0;
+    font-size: 1px;
+    line-height: 0;
+    text-indent: -9999px
+}
+
+#lnbMenu .event_list {
+    display: block;
+    padding: 10px 0
+}
+
+#lnbMenu .event_list * {
+    font-weight: 400;
+    font-size: 14px;
+    color: #444;
+    line-height: 22px;
+    letter-spacing: -.3px
+}
+
+#lnbMenu .event_list a {
+    padding: 0 12px 0 11px
+}
+
+#lnbMenu .event_list .bar {
+    padding-right: 2px;
+    font-weight: 700;
+    color: #ddd
+}
+
+#lnbMenu .event_list a:first-child {
+    padding-left: 4px
+}
+
+#lnbMenu .event_list a.on {
+    font-weight: 700;
+    color: #5f0080
+}
+
+#goodsList .list_ability {
+    position: relative
+}
+
+#goodsList .sort_menu {
+    position: absolute;
+    right: 0;
+    top: -33px;
+    padding: 0 10px
+}
+
+#goodsList .sort_menu:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    height: 0;
+    clear: both
+}
+
+#goodsList .sort_menu .select_type {
+    position: relative;
+    z-index: 1;
+    height: 44px
+}
+
+#goodsList .sort_menu .name_select {
+    display: block;
+    overflow: hidden;
+    padding: 13px 0 13px 10px;
+    font-size: 14px;
+    color: #333
+}
+
+#goodsList .sort_menu .name_select:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 6px;
+    background: url(https://res.kurly.com/pc/service/common/1908/ico_arrow_down_20x20.png) no-repeat 50% 50%;
+    background-size: 10px 10px;
+    vertical-align: 0
+}
+
+#goodsList .sort_menu .list {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 36px;
+    width: 98px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3)
+}
+
+#goodsList .sort_menu .list a {
+    display: block;
+    overflow: hidden;
+    width: 106px;
+    height: 44px;
+    padding: 13px 0 11px 12px;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap
+}
+
+#goodsList .sort_menu .list a:hover,
+#goodsList .sort_menu .list a.on {
+    font-weight: 700;
+    color: #5f0080
+}
+
+#goodsList .sort_menu .delivery {
+    float: left;
+    width: 110px
+}
+
+#goodsList .sort_menu .user_sort {
+    float: right;
+    width: 130px;
+    padding-right: 30px
+}
+
+#goodsList .sort_menu .user_sort .name_select {
+    padding: 8px 13px 13px 0;
+    font-size: 12px;
+    text-align: right
+}
+
+#goodsList .sort_menu .user_sort .list a {
+    padding: 13px 18px 11px 0;
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+    cursor: pointer
+}
+
+#goodsList .sort_menu .user_sort .list a.on,
+#goodsList .sort_menu .user_sort .list a:hover {
+    color: #5f0080
+}
+
+#goodsList .sort_menu .select_type.checked .name_select {
+    color: #5f0080
+}
+
+#goodsList .sort_menu .select_type.checked .name_select:after {
+    background: url(https://res.kurly.com/pc/service/common/1908/ico_arrow_up_20x20.png) no-repeat 50% 50%;
+    background-size: 10px 10px
+}
+
+#goodsList .sort_menu .select_type.checked .list {
+    display: block
+}
+
+#goodsList .bnr_category {
+    display: none
+}
+
+#goodsList .list_goods {
+    overflow: hidden;
+    padding: 0 29px
+}
+
+#goodsList .list_goods .inner_listgoods {
+    overflow: hidden;
+    width: 990px
+}
+
+#goodsList .list_goods .list {
+    overflow: hidden;
+    width: 1008px
+}
+
+#goodsList .list_goods li {
+    float: left;
+    width: 336px;
+    height: 611px;
+    padding: 25px 28px 0 0
+}
+
+#goodsList .list_goods .item {
+    display: block;
+    background-color: #fff;
+    cursor: pointer
+}
+
+#goodsList .list_goods .thumb {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 396px;
+    border: 1px solid rgba(0, 0, 0, .08);
+    background-color: #f9f8f9
+}
+
+#goodsList .list_goods .thumb .img {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+#goodsList .list_goods .thumb img {
+    width: 100%;
+    vertical-align: top;
+    transition: all .5s ease-in-out
+}
+
+#goodsList .list_goods .thumb img:hover {
+    transform: scale(1.02);
+    transition: all .3s ease-in-out
+}
+
+#goodsList .list_goods .thumb .ico {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 66px;
+    height: 58px
+}
+
+#goodsList .list_goods .thumb .ico img {
+    width: 66px;
+    height: 58px
+}
+
+#goodsList .list_goods .thumb .group_btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 45px
+}
+
+#goodsList .list_goods .thumb .btn {
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin-top: 15px;
+    border: 0
+}
+
+#goodsList .list_goods .thumb .btn_cart {
+    background: url(https://res.kurly.com/pc/service/common/1908/ico_list_add_cart.png) no-repeat 50% 50%
+}
+
+#goodsList .list_goods .thumb .btn_alarm {
+    background: url(https://res.kurly.com/pc/service/common/1908/ico_list_add_noti.png) no-repeat 50% 50%
+}
+
+#goodsList .list_goods .info {
+    display: block;
+    padding: 10px
+}
+
+#goodsList .list_goods .name {
+    display: block;
+    overflow: hidden;
+    max-height: 58px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    line-height: 29px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word
+}
+
+#goodsList .list_goods .name img {
+    vertical-align: middle
+}
+
+#goodsList .list_goods .name span {
+    padding: 0 3px;
+    font-size: 0
+}
+
+#goodsList .list_goods .name .ico {
+    display: inline-block;
+    height: 18px;
+    padding: 0 6px 0 5px;
+    background-color: #522972;
+    font-size: 12px;
+    line-height: 16px;
+    font-style: normal;
+    font-family: noto sans;
+    color: #fff;
+    vertical-align: 2px;
+    letter-spacing: -.3px
+}
+
+#goodsList .list_goods .cost {
+    display: block;
+    padding-top: 9px;
+    font-size: 17px;
+    line-height: 24px
+}
+
+#goodsList .list_goods .cost .dc {
+    padding-right: 1px;
+    font-weight: 700;
+    color: #ccc;
+    text-decoration: line-through
+}
+
+#goodsList .list_goods .cost .price {
+    font-weight: 700;
+    color: #5f0080
+}
+
+#goodsList .list_goods .cost .emph {
+    font-weight: 700;
+    color: #5f0080
+}
+
+#goodsList .list_goods .desc {
+    display: block;
+    padding-top: 8px;
+    font-size: 13px;
+    color: #666;
+    line-height: 19px
+}
+
+#goodsList .list_goods .tag {
+    display: block;
+    height: 27px;
+    padding: 0 10px 10px;
+    vertical-align: top
+}
+
+#goodsList .list_goods .tag .ico {
+    display: inline-block;
+    height: 18px;
+    margin-right: 4px;
+    padding: 0 4px;
+    border: 1px solid #5f0080;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    color: #5f0080;
+    line-height: 15px;
+    vertical-align: middle
+}
+
+#goodsList .list_goods .sold_out {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    background: url(https://res.kurly.com/pc/service/common/bg_dimm.png) repeat 0 0;
+    text-align: center
+}
+
+#goodsList .list_goods .sold_out:hover {
+    background: url(https://res.kurly.com/pc/img/1808/bg_dimm_double.png) repeat 0 0
+}
+
+#goodsList .list_goods .inner_soldout {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    margin-top: -16px;
+    font-weight: 700;
+    font-size: 28px;
+    color: #fff;
+    line-height: 32px
+}
+
+#goodsList .list_goods .txt_sub .inner_soldout {
+    margin-top: -33px
+}
+
+#goodsList .list_goods .sub_soldout {
+    display: block;
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),
+only screen and (min-device-pixel-ratio:1.5),
+only screen and (min-resolution:1.5dppx) {
+    #goodsList .list_goods .thumb .btn_cart {
+        background: url(https://res.kurly.com/pc/service/common/1908/ico_list_add_cart_x2.png) no-repeat 50% 50%;
+        background-size: 45px 45px
+    }
+
+    #goodsList .list_goods .thumb .btn_alarm {
+        background: url(https://res.kurly.com/pc/service/common/1908/ico_list_add_noti_x2.png) no-repeat 50% 50%;
+        background-size: 45px 45px
+    }
+}
+
+.page_aticle button,
+.page_aticle input,
+.page_aticle select,
+.page_aticle * {
+    font-family: noto sans;
+    font-weight: 400;
+    letter-spacing: 0
+}
+
+.page_aticle .layout-pagination {
+    font-size: 0
+}
+
+.page_aticle .layout-pagination a:hover {
+    background-color: #f7f7f7
+}
+
+.page_aticle .layout-pagination a,
+.page_aticle .layout-pagination strong {
+    font-weight: 700;
+    font-size: 12px
+}
+
+.page_aticle .layout-pagination a {
+    cursor: pointer
+}
+
+.page_aticle .layout-pagination-button:first-child {
+    border-left: 0
+}
+
+.page_aticle .layout-pagination-first-page:first-child {
+    border-left: 1px solid #ddd
+}
+
+
+.layout-pagination {
+    margin: 60px 0 0;
+    text-align: center
+}
+
+.layout-pagination-button {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #ddd;
+    border-left: 0;
+    vertical-align: top
+}
+
+.layout-pagination-button:first-child {
+    border-left: 1px solid #ddd
+}
+
+.layout-pagination-number {
+    font-weight: 700;
+    color: #333;
+    line-height: 34px
+}
+
+.layout-pagination-number:hover,
+.layout-pagination-number.__active {
+    background-color: #f7f7f7;
+    color: #5f0080
+}
+
+.layout-pagination-first-page,
+.layout-pagination-prev-page,
+.layout-pagination-next-page,
+.layout-pagination-last-page {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    text-indent: -9999px
+}
+
+.layout-pagination-first-page {
+    background-image: url(https://res.kurly.com/pc/etc/old/images/common/icon-pagination-first.png)
+}
+
+.layout-pagination-prev-page {
+    background-image: url(https://res.kurly.com/pc/etc/old/images/common/icon-pagination-prev.png)
+}
+
+.layout-pagination-next-page {
+    background-image: url(https://res.kurly.com/pc/etc/old/images/common/icon-pagination-next.png)
+}
+
+.layout-pagination-last-page {
+    background-image: url(https://res.kurly.com/pc/etc/old/images/common/icon-pagination-last.png)
+}
+/*----------------------------- 샵 리스트 던-----------------------------------*/
+
+.section_cart .tbl_comm {
+    width: 100%
+}
+
+.section_cart .tbl_comm caption {
+    display: none
+}
+
+.section_cart .tbl_comm th {
+    padding: 20px 0;
+    border-top: 2px solid #5f0080;
+    font-weight: 700;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: -.3px;
+    text-align: left
+}
+
+.section_cart .tbl_comm td {
+    border-top: 1px solid #ddd;
+    border-bottom: 2px solid #ddd
+}
+
+.section_cart .label_check {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    background-position: 0 0;
+    cursor: pointer
+}
+
+.section_cart .label_check.checked {
+    background-position: 0 0
+}
+
+.section_cart .label_check .ico_check {
+    vertical-align: top;
+    opacity: 0;
+    cursor: pointer
+}
+
+.section_cart .all_select .tit {
+    font-weight: 700;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    letter-spacing: 0
+}
+
+.section_cart .all_select .label_check {
+    margin-top: 2px
+}
+
+.section_cart .select_option {
+    overflow: hidden;
+    width: 100%;
+    padding: 30px 0 80px 20px
+}
+
+.section_cart .select_option .label_check {
+    float: left;
+    margin-top: 13px
+}
+
+.section_cart .select_option .tit {
+    float: left;
+    padding-right: 15px;
+    padding-top: 10px
+}
+
+.section_cart .select_option .btn_delete {
+    float: left;
+    width: 88px;
+    height: 42px;
+    margin-right: 10px;
+    padding-bottom: 2px;
+    border: 1px solid #5f0080;
+    background-color: #fff;
+    color: #5f0080;
+    letter-spacing: -.3px;
+    text-align: center
+}
+
+.section_cart .select_option .btn_delete:last-child {
+    width: 120px
+}
+
+.section_cart .notice_cart {
+    padding: 20px 0 40px;
+    font-size: 12px;
+    color: #777;
+    line-height: 18px;
+    text-align: right;
+    letter-spacing: -.2px
+}
+
+.section_cart .btn_submit {
+    display: block;
+    width: 200px;
+    height: 48px;
+    margin: 0 auto;
+    border: 0;
+    background-color: #5f0080;
+    font-size: 14px;
+    color: #fff;
+    line-height: 20px;
+    letter-spacing: -.3px
+}
+
+.section_cart .btn_submit.no_submit {
+    background-color: #dddfe1
+}
+
+.section_cart .btn_submit .price {
+    display: none
+}
+
+.section_cart .info_notice {
+    margin-top: 50px;
+    padding: 17px 0;
+    background-color: #fafafa;
+    font-size: 12px;
+    color: #777;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -.2px
+}
+
+.section_cart .tbl_header .all_select {
+    padding-left: 20px
+}
+
+.section_cart #viewGoods {
+    overflow: hidden;
+    width: 100%;
+    border-bottom: 2px solid #ddd
+}
+
+.section_cart .view_goods {
+    border-top: 2px solid #ddd
+}
+
+.section_cart .view_goods .goods {
+    width: 100%;
+    padding: 14px 0
+}
+
+.section_cart .tbl_goods td {
+    padding: 20px 0;
+    border: 0;
+    text-align: center
+}
+
+.section_cart .tbl_goods .goods_check {
+    padding-left: 20px
+}
+
+.section_cart .tbl_goods .thumb {
+    display: block;
+    overflow: hidden;
+    width: 60px;
+    height: 77px;
+    margin-right: 40px;
+    background-color: #f4f4f4
+}
+
+.section_cart .tbl_goods .thumb img {
+    width: 100%;
+    height: auto
+}
+
+.section_cart .tbl_goods .goods_thumb {
+    text-align: left
+}
+
+.section_cart .tbl_goods .goods_info {
+    padding-top: 18px;
+    text-align: left
+}
+
+.section_cart .tbl_goods .goods_info .ico_tag {
+    display: block;
+    padding: 2px 0
+}
+
+.section_cart .tbl_goods .goods_info .ico_tag .ico {
+    display: inline-block;
+    height: 18px;
+    padding: 0 5px 0 3px;
+    border: 1px solid #6335a8;
+    font-weight: 700;
+    font-size: 12px;
+    color: #6335a8;
+    line-height: 14px;
+    vertical-align: top
+}
+
+.section_cart .tbl_goods .goods_info .name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+    line-height: 20px;
+    letter-spacing: 0
+}
+
+.section_cart .tbl_goods .goods_info .goods_cost {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 7px
+}
+
+.section_cart .tbl_goods .goods_info .goods_cost dd {
+    float: left;
+    font-size: 12px
+}
+
+.section_cart .tbl_goods .goods_info .goods_cost .selling_price {
+    padding-right: 7px;
+    color: #000
+}
+
+.section_cart .tbl_goods .goods_info .goods_cost .cost {
+    background: url(https://res.kurly.com/mobile/ico/1801/ico_1x1_949296.png) repeat-x 0 6px;
+    color: #777
+}
+
+.section_cart .tbl_goods .goods_info .txt_limit span {
+    display: block;
+    padding-top: 18px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #b3130b;
+    letter-spacing: -.2px
+}
+
+.section_cart .tbl_goods .goods_info .additional {
+    padding-top: 13px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #5f0080;
+    line-height: 18px
+}
+
+.section_cart .tbl_goods .goods_condition {
+    text-align: left
+}
+
+.section_cart .tbl_goods .condition {
+    font-weight: 700;
+    font-size: 12px;
+    color: #5f0080;
+    letter-spacing: -.2px
+}
+
+.section_cart .tbl_goods .goods_quantity {
+    margin-right: -1px
+}
+
+.section_cart .tbl_goods .goods_quantity .quantity {
+    float: left;
+    border: 1px solid #ddd
+}
+
+.section_cart .tbl_goods .goods_quantity .btn {
+    float: left;
+    width: 23px;
+    height: 22px;
+    border: 0;
+    background-color: #f3f3f3
+}
+
+.section_cart .tbl_goods .goods_quantity .btn img {
+    width: 12px;
+    vertical-align: middle
+}
+
+.section_cart .tbl_goods .goods_quantity .btn_reduce {
+    padding-bottom: 3px;
+    border-right: 1px solid #ddd
+}
+
+.section_cart .tbl_goods .goods_quantity .btn_reduce img {
+    height: 2px
+}
+
+.section_cart .tbl_goods .goods_quantity .btn_rise {
+    padding-bottom: 1px;
+    border-left: 1px solid #ddd
+}
+
+.section_cart .tbl_goods .goods_quantity .btn_rise img {
+    height: 12px
+}
+
+.section_cart .tbl_goods .goods_quantity .inp_quantity {
+    float: left;
+    width: 38px;
+    height: 22px;
+    border: 0;
+    background-color: #fff;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    letter-spacing: -.2px
+}
+
+.section_cart .tbl_goods .goods_total .result {
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+    letter-spacing: -.2px;
+    text-align: right
+}
+
+.section_cart .tbl_goods .goods_delete {
+    padding-left: 41px;
+    text-align: left
+}
+
+.section_cart .tbl_goods .goods_delete .btn_delete {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 0;
+    background-color: #fff
+}
+
+.section_cart .tbl_goods .goods_delete .btn_delete img {
+    display: block;
+    width: 12px;
+    height: 12px
+}
+
+.section_cart .view_goods .name_goods {
+    margin-left: 76px;
+    padding: 23px 0 17px;
+    letter-spacing: 0
+}
+
+.section_cart .view_goods .name_goods a {
+    font-weight: 700;
+    font-size: 12px;
+    color: #666;
+    line-height: 18px
+}
+
+.section_cart .view_pakege {
+    border-top: 0
+}
+
+.section_cart .view_pakege.fst {
+    border-top: 2px solid #ddd
+}
+
+.section_cart .view_pakege.lst {
+    padding-bottom: 7px
+}
+
+.section_cart .view_pakege .tbl_goods td {
+    padding-top: 14px;
+    padding-bottom: 13px;
+    border-top: 1px solid #ddd
+}
+
+.section_cart .view_pakege .tbl_goods .goods_check {
+    border-top: 0
+}
+
+.goods_soldout .label_check.disabled {
+    background-position: 0 0
+}
+
+.section_cart .goods_soldout .goods_thumb .thumb {
+    opacity: .4
+}
+
+.section_cart .goods_soldout .goods_info .name {
+    color: #777
+}
+
+.section_cart .goods_soldout .goods_info .goods_cost {
+    font-size: 12px;
+    color: #777;
+    line-height: 18px;
+    letter-spacing: -.2px
+}
+
+.section_cart .goods_soldout .goods_info .ico_tag .ico {
+    border: 1px solid #b19ad4;
+    color: #b19ad4
+}
+
+.section_cart .no_data {
+    padding: 100px 0;
+    border-top: 2px solid #ddd;
+    font-weight: 700;
+    font-size: 14px;
+    color: #4c4c4c;
+    text-align: center;
+    letter-spacing: -.3px
+}
+
+.cart_amount {
+    overflow: hidden;
+    width: 100%
+}
+
+.cart_amount .amount_detail {
+    float: left
+}
+
+.cart_amount .list {
+    float: left;
+    width: 143px;
+    border: 2px solid #ddd
+}
+
+.cart_amount .list .tit {
+    display: block;
+    overflow: hidden;
+    padding-top: 38px;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    text-align: center
+}
+
+.cart_amount .list .result {
+    display: table;
+    width: 100%;
+    height: 103px;
+    padding: 2px 0 22px;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #000;
+    line-height: 28px;
+    letter-spacing: -.4px;
+    text-align: center
+}
+
+.cart_amount .list .inner_result {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle
+}
+
+.cart_amount .list .inner_result.add {
+    padding-top: 22px
+}
+
+.cart_amount .no_login {
+    display: block;
+    padding-top: 2px;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    letter-spacing: -.2px
+}
+
+.cart_amount .amout_order {
+    width: 178px;
+    background-color: #f7f7f7
+}
+
+.cart_amount .amout_order .result {
+    font-size: 16px;
+    line-height: 29px;
+    font-weight: 700
+}
+
+.cart_amount .amount_delivery {
+    width: 180px;
+    border: 2px solid #ddd
+}
+
+.cart_amount .amount_delivery .desc_pc {
+    display: none
+}
+
+.cart_amount .amount_delivery .pass {
+    color: #5f0080
+}
+
+.cart_amount .delivery_limit {
+    display: block;
+    padding-top: 2px;
+    font-size: 12px;
+    color: #5f0080;
+    line-height: 20px;
+    letter-spacing: -.2px
+}
+
+.cart_amount .delivery_limit .emph {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700
+}
+
+.cart_amount .amout_result {
+    float: right;
+    width: 180px;
+    border: 2px solid #ddd;
+    background-color: #f7f7f7
+}
+
+.cart_amount .amout_result .result {
+    color: #5f0080
+}
+
+.cart_amount .amout_result .txt_point {
+    display: block;
+    padding-top: 2px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #5f0080;
+    letter-spacing: -.2px
+}
+
+.cart_amount .amout_result .no_login {
+    color: #5f0080
+}
+
+.cart_amount .deco {
+    position: relative;
+    float: left;
+    width: 56px;
+    height: 145px
+}
+
+.cart_amount .deco .ico {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #777
+}
+
+.cart_amount .deco_plus .ico {
+    left: 20px;
+    top: 82px
+}
+
+.cart_amount .deco_plus .fst {
+    left: 27px;
+    top: 75px;
+    width: 2px;
+    height: 16px
+}
+
+.cart_amount .deco_minus .ico {
+    left: 20px;
+    top: 82px
+}
+
+.cart_amount .deco_minus .fst {
+    display: none
+}
+
+.cart_amount .deco_equal .ico {
+    left: 38px;
+    top: 85px
+}
+
+.cart_amount .deco_equal .fst {
+    left: 38px;
+    top: 79px
+}
+
+.cart_amount.cell_except .list {
+    width: 200px
+}
+
+.cart_amount.cell_except .deco {
+    width: 72px
+}
+
+.cart_amount.cell_except .amout_result {
+    width: 230px
+}
+
+.cart_amount.cell_except .deco_plus .ico {
+    left: 28px
+}
+
+.cart_amount.cell_except .deco_plus .fst {
+    left: 35px
+}
+
+.cart_amount.cell_except .deco_minus .ico {
+    left: 28px
+}
+
+.cart_amount.cell_except .deco_equal .ico {
+    left: 30px
+}
+
+.cart_amount.cell_except .deco_equal .fst {
+    left: 30px
+}
+
+.user_form {
+    width: 1050px;
+    margin: 0 auto;
+    font-family: noto sans;
+    font-weight: 400
+}
+
+.user_form input,
+.user_form select,
+.user_form textarea,
+.user_form button {
+    font-family: noto sans;
+    font-weight: 400
+}
+
+body,
+input,
+select,
+textarea,
+button {
+    font-family: malgun gothic, AppleGothic, dotum;
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: #4c4c4c;
+    font-size: 12px;
+    max-width: 100%
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+
+
+.section_cart .tbl_comm {
+    width: 100%
+}
+
+.section_cart .tbl_comm caption {
+    display: none
+}
+
+.section_cart .tbl_comm th {
+    padding: 20px 0;
+    border-top: 2px solid #5f0080;
+    font-weight: 700;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: -.3px;
+    text-align: left
+}
+
+.section_cart .tbl_comm td {
+    border-top: 1px solid #ddd;
+    border-bottom: 2px solid #ddd
+}
+
+.section_cart .label_check {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    background-position: 0 0;
+    cursor: pointer
+}
+
+.section_cart .label_check.checked {
+    background-position: 0 0
+}
+
+.section_cart .label_check .ico_check {
+    vertical-align: top;
+    opacity: 0;
+    cursor: pointer
+}
+
+.section_cart .all_select .tit {
+    font-weight: 700;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    letter-spacing: 0
+}
+
+.section_cart .all_select .label_check {
+    margin-top: 2px
+}
+
+.section_cart .select_option {
+    overflow: hidden;
+    width: 100%;
+    padding: 30px 0 80px 20px
+}
+
+.section_cart .select_option .label_check {
+    float: left;
+    margin-top: 13px
+}
+
+.section_cart .select_option .tit {
+    float: left;
+    padding-right: 15px;
+    padding-top: 10px
+}
+
+.section_cart .select_option .btn_delete {
+    float: left;
+    width: 88px;
+    height: 42px;
+    margin-right: 10px;
+    padding-bottom: 2px;
+    border: 1px solid #5f0080;
+    background-color: #fff;
+    color: #5f0080;
+    letter-spacing: -.3px;
+    text-align: center
+}
+
+.section_cart .select_option .btn_delete:last-child {
+    width: 120px
+}
+
+.section_cart .notice_cart {
+    padding: 20px 0 40px;
+    font-size: 12px;
+    color: #777;
+    line-height: 18px;
+    text-align: right;
+    letter-spacing: -.2px
+}
+
+.section_cart .btn_submit {
+    display: block;
+    width: 200px;
+    height: 48px;
+    margin: 0 auto;
+    border: 0;
+    background-color: #5f0080;
+    font-size: 14px;
+    color: #fff;
+    line-height: 20px;
+    letter-spacing: -.3px
+}
+
+.section_cart .btn_submit.no_submit {
+    background-color: #dddfe1
+}
+
+.section_cart .btn_submit .price {
+    display: none
+}
+
+.section_cart .info_notice {
+    margin-top: 50px;
+    padding: 17px 0;
+    background-color: #fafafa;
+    font-size: 12px;
+    color: #777;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -.2px
+}
+
+.section_cart .tbl_header .all_select {
+    padding-left: 20px
+}
+
+.section_cart #viewGoods {
+    overflow: hidden;
+    width: 100%;
+    border-bottom: 2px solid #ddd
+}
+
+.section_cart .view_goods {
+    border-top: 2px solid #ddd
+}
+
+.section_cart .view_goods .goods {
+    width: 100%;
+    padding: 14px 0
+}
+
+.section_cart .tbl_goods td {
+    padding: 20px 0;
+    border: 0;
+    text-align: center
+}
+
+.section_cart .tbl_goods .goods_check {
+    padding-left: 20px
+}
+
+.section_cart .tbl_goods .thumb {
+    display: block;
+    overflow: hidden;
+    width: 60px;
+    height: 77px;
+    margin-right: 40px;
+    background-color: #f4f4f4
+}
+
+.section_cart .tbl_goods .thumb img {
+    width: 100%;
+    height: auto
+}
+
+.section_cart .tbl_goods .goods_thumb {
+    text-align: left
+}
+
+.section_cart .tbl_goods .goods_info {
+    padding-top: 18px;
+    text-align: left
+}
+
+.section_cart .tbl_goods .goods_info .ico_tag {
+    display: block;
+    padding: 2px 0
+}
+
+.section_cart .tbl_goods .goods_info .ico_tag .ico {
+    display: inline-block;
+    height: 18px;
+    padding: 0 5px 0 3px;
+    border: 1px solid #6335a8;
+    font-weight: 700;
+    font-size: 12px;
+    color: #6335a8;
+    line-height: 14px;
+    vertical-align: top
+}
+
+.section_cart .tbl_goods .goods_info .name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+    line-height: 20px;
+    letter-spacing: 0
+}
+
+.section_cart .tbl_goods .goods_info .goods_cost {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 7px
+}
+
+.section_cart .tbl_goods .goods_info .goods_cost dd {
+    float: left;
+    font-size: 12px
+}
+
+.section_cart .tbl_goods .goods_info .goods_cost .selling_price {
+    padding-right: 7px;
+    color: #000
+}
+
+.section_cart .tbl_goods .goods_info .goods_cost .cost {
+    background: url(https://res.kurly.com/mobile/ico/1801/ico_1x1_949296.png) repeat-x 0 6px;
+    color: #777
+}
+
+.section_cart .tbl_goods .goods_info .txt_limit span {
+    display: block;
+    padding-top: 18px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #b3130b;
+    letter-spacing: -.2px
+}
+
+.section_cart .tbl_goods .goods_info .additional {
+    padding-top: 13px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #5f0080;
+    line-height: 18px
+}
+
+.section_cart .tbl_goods .goods_condition {
+    text-align: left
+}
+
+.section_cart .tbl_goods .condition {
+    font-weight: 700;
+    font-size: 12px;
+    color: #5f0080;
+    letter-spacing: -.2px
+}
+
+.section_cart .tbl_goods .goods_quantity {
+    margin-right: -1px
+}
+
+.section_cart .tbl_goods .goods_quantity .quantity {
+    float: left;
+    border: 1px solid #ddd
+}
+
+.section_cart .tbl_goods .goods_quantity .btn {
+    float: left;
+    width: 23px;
+    height: 22px;
+    border: 0;
+    background-color: #f3f3f3
+}
+
+.section_cart .tbl_goods .goods_quantity .btn img {
+    width: 12px;
+    vertical-align: middle
+}
+
+.section_cart .tbl_goods .goods_quantity .btn_reduce {
+    padding-bottom: 3px;
+    border-right: 1px solid #ddd
+}
+
+.section_cart .tbl_goods .goods_quantity .btn_reduce img {
+    height: 2px
+}
+
+.section_cart .tbl_goods .goods_quantity .btn_rise {
+    padding-bottom: 1px;
+    border-left: 1px solid #ddd
+}
+
+.section_cart .tbl_goods .goods_quantity .btn_rise img {
+    height: 12px
+}
+
+.section_cart .tbl_goods .goods_quantity .inp_quantity {
+    float: left;
+    width: 38px;
+    height: 22px;
+    border: 0;
+    background-color: #fff;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    letter-spacing: -.2px
+}
+
+.section_cart .tbl_goods .goods_total .result {
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+    letter-spacing: -.2px;
+    text-align: right
+}
+
+.section_cart .tbl_goods .goods_delete {
+    padding-left: 41px;
+    text-align: left
+}
+
+.section_cart .tbl_goods .goods_delete .btn_delete {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 0;
+    background-color: #fff
+}
+
+.section_cart .tbl_goods .goods_delete .btn_delete img {
+    display: block;
+    width: 12px;
+    height: 12px
+}
+
+.section_cart .view_goods .name_goods {
+    margin-left: 76px;
+    padding: 23px 0 17px;
+    letter-spacing: 0
+}
+
+.section_cart .view_goods .name_goods a {
+    font-weight: 700;
+    font-size: 12px;
+    color: #666;
+    line-height: 18px
+}
+
+.section_cart .view_pakege {
+    border-top: 0
+}
+
+.section_cart .view_pakege.fst {
+    border-top: 2px solid #ddd
+}
+
+.section_cart .view_pakege.lst {
+    padding-bottom: 7px
+}
+
+.section_cart .view_pakege .tbl_goods td {
+    padding-top: 14px;
+    padding-bottom: 13px;
+    border-top: 1px solid #ddd
+}
+
+.section_cart .view_pakege .tbl_goods .goods_check {
+    border-top: 0
+}
+
+.goods_soldout .label_check.disabled {
+    background-position: 0 0
+}
+
+.section_cart .goods_soldout .goods_thumb .thumb {
+    opacity: .4
+}
+
+.section_cart .goods_soldout .goods_info .name {
+    color: #777
+}
+
+.section_cart .goods_soldout .goods_info .goods_cost {
+    font-size: 12px;
+    color: #777;
+    line-height: 18px;
+    letter-spacing: -.2px
+}
+
+.section_cart .goods_soldout .goods_info .ico_tag .ico {
+    border: 1px solid #b19ad4;
+    color: #b19ad4
+}
+
+.section_cart .no_data {
+    padding: 100px 0;
+    border-top: 2px solid #ddd;
+    font-weight: 700;
+    font-size: 14px;
+    color: #4c4c4c;
+    text-align: center;
+    letter-spacing: -.3px
+}
+
+.cart_amount {
+    overflow: hidden;
+    width: 100%
+}
+
+.cart_amount .amount_detail {
+    float: left
+}
+
+.cart_amount .list {
+    float: left;
+    width: 143px;
+    border: 2px solid #ddd
+}
+
+.cart_amount .list .tit {
+    display: block;
+    overflow: hidden;
+    padding-top: 38px;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    text-align: center
+}
+
+.cart_amount .list .result {
+    display: table;
+    width: 100%;
+    height: 103px;
+    padding: 2px 0 22px;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #000;
+    line-height: 28px;
+    letter-spacing: -.4px;
+    text-align: center
+}
+
+.cart_amount .list .inner_result {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle
+}
+
+.cart_amount .list .inner_result.add {
+    padding-top: 22px
+}
+
+.cart_amount .no_login {
+    display: block;
+    padding-top: 2px;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    letter-spacing: -.2px
+}
+
+.cart_amount .amout_order {
+    width: 178px;
+    background-color: #f7f7f7
+}
+
+.cart_amount .amout_order .result {
+    font-size: 16px;
+    line-height: 29px;
+    font-weight: 700
+}
+
+.cart_amount .amount_delivery {
+    width: 180px;
+    border: 2px solid #ddd
+}
+
+.cart_amount .amount_delivery .desc_pc {
+    display: none
+}
+
+.cart_amount .amount_delivery .pass {
+    color: #5f0080
+}
+
+.cart_amount .delivery_limit {
+    display: block;
+    padding-top: 2px;
+    font-size: 12px;
+    color: #5f0080;
+    line-height: 20px;
+    letter-spacing: -.2px
+}
+
+.cart_amount .delivery_limit .emph {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700
+}
+
+.cart_amount .amout_result {
+    float: right;
+    width: 180px;
+    border: 2px solid #ddd;
+    background-color: #f7f7f7
+}
+
+.cart_amount .amout_result .result {
+    color: #5f0080
+}
+
+.cart_amount .amout_result .txt_point {
+    display: block;
+    padding-top: 2px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #5f0080;
+    letter-spacing: -.2px
+}
+
+.cart_amount .amout_result .no_login {
+    color: #5f0080
+}
+
+.cart_amount .deco {
+    position: relative;
+    float: left;
+    width: 56px;
+    height: 145px
+}
+
+.cart_amount .deco .ico {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #777
+}
+
+.cart_amount .deco_plus .ico {
+    left: 20px;
+    top: 82px
+}
+
+.cart_amount .deco_plus .fst {
+    left: 27px;
+    top: 75px;
+    width: 2px;
+    height: 16px
+}
+
+.cart_amount .deco_minus .ico {
+    left: 20px;
+    top: 82px
+}
+
+.cart_amount .deco_minus .fst {
+    display: none
+}
+
+.cart_amount .deco_equal .ico {
+    left: 38px;
+    top: 85px
+}
+
+.cart_amount .deco_equal .fst {
+    left: 38px;
+    top: 79px
+}
+
+.cart_amount.cell_except .list {
+    width: 200px
+}
+
+.cart_amount.cell_except .deco {
+    width: 72px
+}
+
+.cart_amount.cell_except .amout_result {
+    width: 230px
+}
+
+.cart_amount.cell_except .deco_plus .ico {
+    left: 28px
+}
+
+.cart_amount.cell_except .deco_plus .fst {
+    left: 35px
+}
+
+.cart_amount.cell_except .deco_minus .ico {
+    left: 28px
+}
+
+.cart_amount.cell_except .deco_equal .ico {
+    left: 30px
+}
+
+.cart_amount.cell_except .deco_equal .fst {
+    left: 30px
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+
+.label_check {
+    display: inline-block;
+    padding: 0 21px 0 6px;
+    background: #fff url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 0 2px;
+    font-size: 14px;
+    color: #000;
+    line-height: 18px;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.label_check.checked {
+    background: #fff url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 0 2px
+}
+
+.check_type2 .label_check.checked {
+    background: #fff url(https://res.kurly.com/pc/service/order/1810/ico_checkbox_16x16_checked_type2.png) no-repeat 0 2px
+}
+
+.label_check.disabled {
+    background: #fff url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_disabled.png) no-repeat 0 2px
+}
+
+.label_check .txt_guide {
+    padding-top: 5px
+}
+
+.label_check .ico_check {
+    position: relative;
+    z-index: -1;
+    vertical-align: top;
+    opacity: 0;
+    cursor: pointer
+}
+
+
+.layout-page-title {
+    display: block;
+    padding: 10px 0 14px;
+    font: normal bold 40px/1.5 'Noto Sans' !important;
+    color: #333
+}
+
+
+.layout-page-header {
+    padding-bottom: 40px;
+    text-align: center
+}
+.pg_sub_desc {
+    margin: 0 0 40px;
+    font: normal 16px/18px 'Noto Sans';
+    color: #999;
+    text-align: center
+}
+
+/*-------------------------------------------카트 던*/
