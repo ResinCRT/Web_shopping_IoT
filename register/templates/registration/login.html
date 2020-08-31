@@ -14,12 +14,12 @@
                     <form action="." class="card pt-3" method="post">
                         {% csrf_token %}
                         <div class="form-group row">
-                            <div class="col-sm-5">
+                            <div class="">
                                 {{form.username|add_class:"form-control"|attr:'placeholder autofocus'}}
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-5">
+                            <div class="">
                                 {{ form.password|add_class:"form-control"|attr:'placeholder autofocus'}}
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                         <div class="checkbox_save">
                         </div>
                         <div class="form-group">
-                            <div class="offset-sm-2 col-sm-5">
+                            <div>
                                 <button class="btn_type1" type="submit" value="Log in"/>
                                 <span class="txt_type">로그인</span></button>
                                 <input name="next" type="hidden" value="{{ next }}"/>
