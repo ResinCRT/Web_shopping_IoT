@@ -1280,7 +1280,7 @@ button {
 html,
 body {
     height: 100%;
-    width: max-content;
+    width: revert;
 }
 
 
