@@ -1,17 +1,24 @@
 h1 {
     font-size: 30px;
-    text-align: center;
-
+    text-align:center;
+    font-weight:1000;
+    line-height:0.5;
     margin: 0;
     padding: 9px;
+    width:100%;
     min-width: 1050px;
+    display:inline-block;
+    max-width:100%;
 
 }
+h1:hover {
 
+}
 #userMenu {
     width: 1050px;
     margin: 0 auto;
     font-family: noto sans;
+    height:37px;
     font-weight: 400;
     letter-spacing: -.3px;
 
@@ -910,7 +917,6 @@ only screen and (min-resolution: 1.5dppx) {
     width: 240px;
     height: 56px;
     font-size: 16px;
-    line-height: 54px
 }
 
 

@@ -11,7 +11,12 @@
         line-height:0px;
         height:30px;
         margin-top:5px;
+        padding:0;
         margin-left:0;
+
+    }
+    .card{
+        border:0;
     }
 </style>
 {% endblock %}
@@ -38,7 +43,7 @@
                 <th>아이디</th>
                 <td>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+<!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
                         <div class="col-sm-5 user-fill">
                             {{user.username}}
                         </div>
@@ -48,18 +53,22 @@
             <tr>
                 <th>비밀번호</th>
                 <td>
-                    <div class="row">
-                    <button class="btn active modify-password" onclick="location.href='{% url 'register:password_change' %}'"
-                    type="button" >수정
-                    </button>
+                    <div class="form-group row">
+                        <div class="col-sm-5 user-fill">
+                            <button class="btn active modify-password" onclick="location.href='{% url 'register:password_change' %}'"
+                            type="button" >수정
+                            </button>
+                        </div>
                     </div>
                 </td>
             </tr>
             <tr>
                 <th>이름</th>
                 <td>
-                    <div class="form-group row user-fill">
-                        {{user.real_name}}
+                    <div class="form-group row">
+                        <div class="col-sm-5 user-fill">
+                            {{user.real_name}}
+                        </div>
                     </div>
                 </td>
             </tr>
@@ -67,7 +76,7 @@
                 <th>이메일</th>
                 <td>
                     <div class="form-group row user-fill">
-                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+<!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
                         <div class="col-sm-5"  >
                             {{user.email}}
                         </div>
@@ -78,7 +87,7 @@
                 <th>휴대폰</th>
                 <td>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+<!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
                         <div class="col-sm-5" >
                             {{ form.phone|add_class:"form-control" }}
 
@@ -97,7 +106,7 @@
                 <th>주소</th>
                 <td>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+<!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
                         <div class="col-sm-5" >
                             {{ form.addr|add_class:"form-control" }}
 
@@ -116,7 +125,7 @@
                 <th>생일</th>
                 <td>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>
+<!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
                         <div class="col-sm-5" >
                             {{ form.birthdate|add_class:"form-control" }}
 
