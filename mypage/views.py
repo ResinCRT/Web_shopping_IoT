@@ -52,5 +52,8 @@ class MyReviewView(LoginRequiredMixin, ListView):
         return Review.objects.filter(user_id=self.request.user.pk).select_related("product_id")
 
 class MyWishlistView(LoginRequiredMixin, ListView):
-    template_name = "myapge/mypage_wishlist.html"
+    template_name = "mypage/mypage_wishlist.html"
+    model = Wishlist
+    context_object_name = "wishlist"
+
 

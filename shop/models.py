@@ -118,3 +118,6 @@ class ProductAttachFile(models.Model):
 
     def __str__(self):
         return self.filename
+
+class Wishlist(models.Model):
+    pass
