@@ -13,6 +13,10 @@ import datetime
 class HomeView(TemplateView):
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = {}
+        return context
+
 class OwnerOnlyMixin(AccessMixin):
     raise_exception = True
     permission_denied_message = "Owner only can update/ delete the object"

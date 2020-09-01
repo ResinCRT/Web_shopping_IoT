@@ -1,1 +1,40 @@
 {% extends "base.html" %}
+{% block extra-style %}
+<style>
+    .banner {
+        max-width:100%;
+        height:300px;
+        padding:0;
+        overflow:hidden;
+        position:relative;
+    }
+    .imgs {
+        width: 100%;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: auto auto;
+        font-size: 0;
+        display:block;
+        text-indent: -9999px;
+    }
+    .shoplist2 {
+        display:block;
+        margin-top:50px;
+    }
+    .test {
+        background-color:#A0A0A0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="banner">
+    <a href="#" class="imgs" style="background-image: url('https://via.placeholder.com/2000x300/000000/FFFFFF/?text=main_image');">메인배너</a>
+</div>
+<div class="container shoplist2 test">
+fs
+</div>
+
+{% endblock %}

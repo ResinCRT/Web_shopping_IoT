@@ -1,14 +1,41 @@
 {% extends "mypage/mypage_main.html" %}
 {% block title %}User modification{% endblock %}
 {% load widget_tweaks %}
+{% block extra-style %}
+    <style>
+        .order_item {
+            border:1px solid #e7e7e7;
+            margin-top:40px;
+        }
+        .order_head {
+            border-bottom:1px solid #e7e7e7;
+            background-color:#e7e7e7;
+            padding:20px;
+        }
+        .order_detail{
+
+        }
+        .order_hear_date h4{
+            display:inline;
+        }
+    </style>
+{% endblock %}
 {% block content %}
     {% include 'mypage/mypage_menu.html' %}
     <div class="container">
 
         {%for item in order%}
+        <div class="order_item">
+            <div class="order_head">
+                <div class="order_head_date">
+                <span><h4 style="display:inline;">주문일자: ㅇㅇ</h4></span>
+                <span style="float:right;"><a href="#" style="line-height:25px; color=">주문상세></a></span>
+                </div>
+            </div>
             <h3><a href="#">{{item.order_id}}</a></h3>
-            {{item.wish_id}}<br>주문자 : {{item.user_id}}<br>가격 : {{item.product_id.price}}<br>설명 : {{item.product_id.description}}<br>
+                {{item.wish_id}}<br>주문자 : {{item.user_id}}<br>가격 : {{item.product_id.price}}<br>설명 : {{item.product_id.description}}<br>
             <p>제품:{{item.product_id}}</p>
+        </div>
         {% endfor %}
 
     </div>
