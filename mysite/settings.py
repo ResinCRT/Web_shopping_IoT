@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     # 'blog.apps.BlogConfig',
 
     'shop.apps.ShopConfig',
-
+    'cart.apps.CartConfig',
+    'order.apps.OrderConfig',
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
 

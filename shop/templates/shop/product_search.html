@@ -1,0 +1,17 @@
+{% extends "base2.html" %}
+{% block title %}product_search.html{% endblock %}
+{% block content %}
+ <h1>Product Search</h1>
+ <br>
+
+ <br/><br/>
+{% if object_list %}
+ {% for product in object_list %}
+ <h2><a href='{{ product.get_absolute_url }}'>{{ product.p_name }}</a></h2>
+
+ <p>{{ product.description }}</p>
+ {% endfor %}
+ {% elif search_term %}
+ <b><i>Search Word({{ search_term }}) Not Found !</i></b>
+ {% endif %}
+{% endblock %}

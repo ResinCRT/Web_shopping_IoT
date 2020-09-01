@@ -1,0 +1,108 @@
+{% extends 'base2.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+.star_left{
+    background: url('/static_data/static/images/ico_review.png') no-repeat -52px 0;
+    background-size: auto 100%;
+    width: 15px;
+    height: 30px;
+    float:left;
+    text-indent: -9999px;
+}
+.star_right{
+    background: url('/static_data/static/images/ico_review.png') no-repeat right 0;
+    background-size: auto 100%;
+    width: 15px;
+    height: 30px;
+    float:left;
+    text-indent: -9999px;
+}
+.star_left.on{background-position:0 0; }
+.star_right.on{background-position:-15px 0; }
+</style>
+</head>
+
+
+<h2>{{ product.p_name }}</h2>
+{{ product.price }}
+{{ product.description }}
+
+<div class = "form-group">
+<form method = "POST" action = "/order/create/">{% csrf_token %}
+
+<input id="id_quantity" type="int" name="quantity" maxlength="3" />
+ <input type = "{{field.field.widget.input_type}}" class = "form-control" id = "{{field.id_for_label}}"
+                            placeholder="{{field.label}}" name = "{{field.name}}"
+                            value = "{% ifequal field.name 'product' %} {{product.id}} {% endifequal %}">
+</form>
+</div>
+<a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">장바구니에 담기</a>
+
+<br><br>
+{% if user.is_active %}
+<div class="text-right mr-3">
+    <a href="{%url 'shop:add_review' pk=product.id %}" class="btn btn-primary btn-sm">
+        <i class="fas fa-pencil-alt"></i> 리뷰쓰기</a>
+</div>
+{% endif %}
+<div>
+<h1>상품 리뷰</h1>
+</div>
+<hr>
+{% for review in product.review_set.all %}
+<h2>{{review.review_title}}</h2>
+<br>
+<div >
+최근 수정한 날짜 : {{review.r_modify_dt}}
+</div>
+${ review.rating }
+<c:forEach begin="1" end="${ review.rating }">★</c:forEach>
+<br>
+{% for file in review.files.all %}
+<img src="{{file.upload_file.url}}">
+{% endfor %}
+
+
+<br>
+{{review.content | safe}}
+{% if review.author == user %}
+{% if user.is_active %}
+<a href="{%url 'shop:update_review' pk=review.id %}" class="btn btn-primary btn-sm">리뷰수정</a>
+
+<a href="{%url 'shop:delete_review' pk=review.id %}" class="btn btn-primary btn-sm">리뷰삭제</a>
+
+{% endif %}
+{% endif %}
+<br>
+<hr>
+{% endfor %}
+</div>
+
+
+<br>
+<h1>상품 문의</h1>
+ {% for qna in product.qna_set.all %}
+    <a class="mr-3" href="{% url 'shop:update_qna' qna.id %}">
+        <i class="far fa-edit"></i> 수정</a>
+    <a class="mr-3" href="{% url 'shop:delete_qna' qna.id %}">
+        <i class="far fa-edit"></i> 삭제</a>
+    <p>{{ qna.qna_title }} {{ qna.qna_modify_date }}</p>
+    <p>{{ qna.author }}</p>
+    <p>{{ qna | safe }}</p>
+    <hr>
+    {% endfor %}
+
+{% if user.is_active %}
+<div class="text-right mr-3">
+    <a href="{%url 'shop:add_qna' product.id %}" class="btn btn-primary btn-sm">
+        <i class="fas fa-pencil-alt"></i> 쓰기</a>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -2,15 +2,7 @@ from django.db import models
 # from django.contrib.auth.models import User
 from register.models import User
 from django.urls import reverse
-
-
-class Brand(models.Model):
-    brand_id = models.IntegerField(primary_key=True)
-    brand_name = models.CharField(max_length=45, blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'Brand'
+from tinymce.models import HTMLField
 
 
 class Product(models.Model):
@@ -19,7 +11,7 @@ class Product(models.Model):
     description = models.CharField(max_length=45, blank=True, null=True)
     read_cnt = models.IntegerField(blank=True, null=True, default=0)
     category_id = models.IntegerField(blank=True, null=True)
-    p_created_dt = models.DateTimeField(blank=True, null=True)
+    p_created_dt = models.DateTimeField(blank=True,null=True)
     p_modify_dt = models.DateTimeField(blank=True, null=True)
     brand = models.CharField(max_length=45)
 
@@ -45,31 +37,32 @@ class Product(models.Model):
 
 
 class Qna(models.Model):
-    qna_id = models.IntegerField(primary_key=True)
     qna_title = models.CharField(verbose_name='TITLE', max_length=50)
-    product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
+    product = models.ForeignKey(Product, models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
     parent_id = models.IntegerField(blank=True, null=True)
-    content = models.CharField(max_length=45, blank=True, null=True)
-    qna_create_date = models.DateTimeField(blank=True, null=True)
-    qna_modify_date = models.DateTimeField(blank=True, null=True)
+    # content = models.TextField()
+    content = HTMLField('CONTENT')
+    qna_create_date = models.DateTimeField(auto_now_add=True)
+    qna_modify_date = models.DateTimeField(auto_now=True)
 
     class Meta:
         managed = True
         db_table = 'qna'
 
     def __str__(self):
-        return self.qna_title
+        return self.content
 
 
 class Review(models.Model):
-    review_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
     review_title = models.CharField(verbose_name='TITLE', max_length=50)
-    product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
+    product = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
     rating = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=45, blank=True, null=True)
     file = models.CharField(max_length=45, blank=True, null=True)
+    r_created_dt = models.DateTimeField(auto_now_add=True)
+    r_modify_dt = models.DateTimeField(auto_now=True)
 
     class Meta:
         managed = True
@@ -79,28 +72,7 @@ class Review(models.Model):
         return self.review_title
 
 
-class Order(models.Model):
-    order_id = models.IntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
-    product_id = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
-    wish_id = models.IntegerField(blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'order'
-
-
-class Inventory(models.Model):
-    product_id = models.ForeignKey(Product, models.CASCADE)
-    stock = models.IntegerField(blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'inventory'
-
-
 class Category(models.Model):
-    category_id = models.IntegerField(primary_key=True)
     category_name = models.CharField(max_length=45, blank=True, null=True)
     parent_id = models.IntegerField(blank=True, null=True)
 
@@ -110,8 +82,19 @@ class Category(models.Model):
 
 
 class ProductAttachFile(models.Model):
-    Product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="files", verbose_name='Post', blank=True, null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="files", verbose_name='Post', blank=True, null=True)
     upload_file = models.FileField(upload_to="%Y/%m/%d", null=True, blank=True, verbose_name='파일')
+    filename = models.CharField(max_length=64, null=True, verbose_name='첨부파일명')
+    content_type = models.CharField(max_length=128, null=True, verbose_name='MIME TYPE')
+    size = models.IntegerField('파일 크기')
+
+    def __str__(self):
+        return self.filename
+
+
+class ReviewAttachFile(models.Model):
+    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="files", verbose_name='Review', blank=True, null=True)
+    upload_file = models.ImageField(upload_to="%Y/%m/%d", null=True, blank=True, verbose_name='파일')
     filename = models.CharField(max_length=64, null=True, verbose_name='첨부파일명')
     content_type = models.CharField(max_length=128, null=True, verbose_name='MIME TYPE')
     size = models.IntegerField('파일 크기')

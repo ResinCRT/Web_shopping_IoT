@@ -1,0 +1,30 @@
+{% extends "mypage/mypage_main.html" %}
+{% block title %}User modification{% endblock %}
+{% load widget_tweaks %}
+{% block extra-style %}
+<style>
+    .user-fill{
+             line-height: 40px;
+             }
+    .member_join .modify-password{
+        width: 50px;
+        line-height:0px;
+        height:30px;
+        margin-top:5px;
+        padding:0;
+        margin-left:0;
+
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+    {% include 'mypage/mypage_menu.html' %}
+<script>
+    alert('비밀번호 변경이 완료되었습니다.');
+</script>
+
+{% endblock %}
+{% block extra-script %}
+
+{% endblock %}

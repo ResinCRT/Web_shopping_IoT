@@ -1,0 +1,68 @@
+{% extends "base2.html" %}
+{% load widget_tweaks %}
+
+{% block title %}qna_form.html{% endblock %}
+
+{% block content %}
+<h1>상품 문의 - ({{product.id}}){{user}}</h1>
+{% if form.errors %}
+<div class="alert alert-danger">
+    <div class="font-weight-bold">
+        Wrong! Please correct the error(s) below.
+    </div>
+    {{ form.errors }}
+</div>
+{% endif %}
+<form action="." class="card pt-3" enctype="multipart/form-data" method="post">{% csrf_token %}
+
+
+    <div class="form-group row">
+        {{ form.qna_title| add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+        <div class="col-sm-5">
+            {{ form.qna_title|add_class:"form-control"|attr:"autofocus" }}
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group row">
+        {{ form.content| add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+        <div class="col-sm-8">
+            {{ form.content|add_class:"form-control" }}
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="offset-sm-2 col-sm-5">
+            <input class="btn btn-info" type="submit" value="Submit"/>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block extra-script %}
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+ tinymce.init({
+ selector:'#id_content',
+ menubar: false,
+ statusbar: false,
+ toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor |link | alignleft aligncenter alignright alignjustify | numlist bullistoutdent indent | removeformat'
+ });
+
+
+
+
+
+
+</script>
+
+
+
+
+
+{% endblock %}

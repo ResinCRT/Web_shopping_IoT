@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<form id="sortForm" method="get" >
+    <select id="sort"  name="sort">
+        <option value="-p_modify_dt">신상품순</option>
+        <option value="-price">가격순</option>
+        <option value="-read_cnt">인기순</option>
+    </select>
+</form>
+
+{% for product in products %}
+<a href='{{ product.get_absolute_url }}'>{{product.p_name}}</a>
+<p >{{ product.description }}</p>
+{% endfor %}
+
+
+</body>
+</html>
+<script>
+let sort = document.getElementById("sort")
+sort.onchange = function(e) {
+    document.forms["sortForm"].submit();
+}
+let sortby = '{{sortby}}';
+
+let length = sort.options.length;
+for(let i=0; i<length; i++) {
+    if(sortby === sort.options[i].value) {
+        sort.options[i].selected = true;
+    }
+}
+
+</script>
+{% endblock %}
