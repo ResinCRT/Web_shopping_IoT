@@ -1,0 +1,90 @@
+<html lang="ko"><head>
+    <meta charset="euc-kr">
+
+    <link rel="styleSheet" href="style+shop+cart.css">
+
+    <div id="main">
+    <div id="content">
+
+    <div id="qnb" class="quick-navigation" style="top: 70px;">
+
+
+    <script>
+        var brnQuick = {
+            nowTime : '1598230475403',
+            update : function(){
+                $.ajax({
+                    url : campaginUrl + 'pc/service/bnr_quick.html'
+                }).done(function(result){
+                    $('#brnQuick').html(result);lo
+                });
+            }
+        }
+        brnQuick.update();
+    </script>
+
+    <div class="side_recent" style="display:none">
+    <strong class="tit">최근 본 상품</strong>
+    <div class="list_goods" data-height="209" style="height: 0px;">
+    <ul class="list"></ul>
+    </div>
+    <button type="button" class="btn btn_up off">최근 본 상품 위로 올리기</button>
+    <button type="button" class="btn btn_down off">최근 본 상품 아래로 내리기</button>
+    </div>
+    <script>
+    /**
+     * 상품상세일때 현재 보고 있는 상품 담기. 상품URL & 상품이미지
+     * 최종 저장 날짜로 부터 24시가 지날시 localStorage 삭제
+     */
+    var getGoodsRecent = (function(){
+        var i, len, getGoodsRecent, item, _nowTime = '1598230475403';
+
+        _goodsRecent();
+        function _goodsRecent(){
+            if(localStorage.getItem('goodsRecent') === null){
+                return false;
+            }
+
+            try{
+                getGoodsRecent = JSON.parse(localStorage.getItem("goodsRecent"));
+                len = getGoodsRecent.length;
+                if(addDays(getGoodsRecent[len - 1].time, 1) < _nowTime){
+                    localStorage.removeItem('goodsRecent');
+                }else{
+                    for(i = 0; i < len; i++){
+                        item = '<li><a class="link_goods" href="/shop/goods/goods_view.php?goodsno=' + getGoodsRecent[i].no + '"><img src="' + getGoodsRecent[i].thumb + '" alt=""></a></li>';
+                        $('.side_recent .list').append(item);
+                    }
+                    $('.side_recent').show();
+                }
+            } catch(e){
+                console.log("JSON parse error from the Quick menu goods list!!!", e);
+            }
+        }
+
+        function addDays(date, days){
+            var result = new Date(date);
+            result.setDate(result.getDate() + days);
+            return result.getTime();
+        }
+
+        // return {
+        // }
+    })();
+    </script>
+    </div>
+    <style type="text/css">
+        /* 장바구니에서만 전용 */
+        .layout-page-header{padding-bottom:10px}
+    </style>
+    <div class="user_form section_cart">
+    <form id="viewCart" name="frmCart" method="post" action="/shop/order/order.php"><input type="hidden" name="mode" value="setOrder"> <div class="tbl_comm cart_goods"><table class="tbl_comm tbl_header"><caption>장바구니 목록 제목</caption> <colgroup><col style="width: 375px;"> <col style="width: 432px;"> <col style="width: 115px;"> <col style="width: 110px;"> <col style="width: auto;"></colgroup> <thead><tr><th id="thSelect"><div class="all_select"><label class="label_check checked"><input type="checkbox" name="allCheck" class="ico_check"></label> <span class="tit">
+    전체선택 (<span class="num_count">3</span>/<span class="num_total">3</span>)
+    </span></div></th> <th id="thInfo">상품 정보</th> <th id="thCount">수량</th> <th id="thCost">상품금액</th> <th id="thDelete"><span class="screen_out">삭제선택</span></th></tr></thead></table> <div id="viewGoods"><div><!----> <div class="view_goods"><!----> <table class="tbl_goods goods"><caption>장바구니 목록 내용</caption> <colgroup><col style="width: 76px;"> <col style="width: 100px;"> <col style="width: 488px;"> <col style="width: 112px;"> <col style="width: 86px;"> <col style="width: 110px;"> <col style="width: auto;"></colgroup> <tbody><tr><td header="thSelect" class="goods_check"><label class="label_check checked"><input type="checkbox" name="" class="ico_check" value="55767"></label> <!----></td> <td header="thInfo" class="goods_thumb"><a href="/shop/goods/goods_view.php?&amp;goodsno=55767" class="thumb"><img src="https://img-cf.kurly.com/shop/data/goods/1597898767450i0.jpg" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/common/bg_1x1.png'"></a></td> <td header="thInfo" class="goods_info"><!----> <a href="/shop/goods/goods_view.php?&amp;goodsno=55767" class="name"><!---->[모윰] 스트로우 세트</a> <dl class="goods_cost"><dt class="screen_out">판매가격</dt> <dd class="selling_price"><span class="num">11,520</span> <span class="txt">원</span></dd> <dt class="screen_out">원가</dt> <dd class="cost"><span class="num">12,800</span> <span class="txt">원</span></dd></dl> <!----> <p class="txt txt_limit"><!----></p> <!----> <!----></td> <td header="thInfo" class="goods_condition"><div class="condition"><!----></div></td> <td header="thCount"><div class="goods_quantity"><div class="quantity"><strong class="screen_out">수량</strong> <button type="button" class="btn btn_reduce"><img src="https://res.kurly.com/pc/ico/1801/ico_minus_24x4_777.png" alt="감소"></button> <input type="text" readonly="readonly" class="inp_quantity"> <button type="button" class="btn btn_rise"><img src="https://res.kurly.com/pc/ico/1801/ico_plus_24x24_777.png" alt="추가"></button></div></div></td> <td header="thCost"><dl class="goods_total"><dt class="screen_out">합계</dt> <dd class="result"><span class="num">11,520</span> <span class="txt">원</span></dd></dl></td> <td header="thDelete" class="goods_delete"><button type="button" class="btn btn_delete"><img src="https://res.kurly.com/pc/ico/1801/btn_close_24x24_514859.png" alt="삭제"></button></td></tr></tbody></table></div></div> <div><!----> <div class="view_goods"><!----> <table class="tbl_goods goods"><caption>장바구니 목록 내용</caption> <colgroup><col style="width: 76px;"> <col style="width: 100px;"> <col style="width: 488px;"> <col style="width: 112px;"> <col style="width: 86px;"> <col style="width: 110px;"> <col style="width: auto;"></colgroup> <tbody><tr><td header="thSelect" class="goods_check"><label class="label_check checked"><input type="checkbox" name="" class="ico_check" value="50652"></label> <!----></td> <td header="thInfo" class="goods_thumb"><a href="/shop/goods/goods_view.php?&amp;goodsno=50652" class="thumb"><img src="https://img-cf.kurly.com/shop/data/goods/1592810832674i0.jpg" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/common/bg_1x1.png'"></a></td> <td header="thInfo" class="goods_info"><!----> <a href="/shop/goods/goods_view.php?&amp;goodsno=50652" class="name"><!---->[멕케인] 골든 롱 후라이 750g</a> <dl class="goods_cost"><dt class="screen_out">판매가격</dt> <dd class="selling_price"><span class="num">3,800</span> <span class="txt">원</span></dd> <dt class="screen_out">원가</dt> <dd class="cost"><span class="num">4,000</span> <span class="txt">원</span></dd></dl> <!----> <p class="txt txt_limit"><!----></p> <!----> <!----></td> <td header="thInfo" class="goods_condition"><div class="condition"><!----></div></td> <td header="thCount"><div class="goods_quantity"><div class="quantity"><strong class="screen_out">수량</strong> <button type="button" class="btn btn_reduce"><img src="https://res.kurly.com/pc/ico/1801/ico_minus_24x4_777.png" alt="감소"></button> <input type="text" readonly="readonly" class="inp_quantity"> <button type="button" class="btn btn_rise"><img src="https://res.kurly.com/pc/ico/1801/ico_plus_24x24_777.png" alt="추가"></button></div></div></td> <td header="thCost"><dl class="goods_total"><dt class="screen_out">합계</dt> <dd class="result"><span class="num">7,600</span> <span class="txt">원</span></dd></dl></td> <td header="thDelete" class="goods_delete"><button type="button" class="btn btn_delete"><img src="https://res.kurly.com/pc/ico/1801/btn_close_24x24_514859.png" alt="삭제"></button></td></tr></tbody></table></div></div> <div><!----> <div class="view_goods"><!----> <table class="tbl_goods goods"><caption>장바구니 목록 내용</caption> <colgroup><col style="width: 76px;"> <col style="width: 100px;"> <col style="width: 488px;"> <col style="width: 112px;"> <col style="width: 86px;"> <col style="width: 110px;"> <col style="width: auto;"></colgroup> <tbody><tr><td header="thSelect" class="goods_check"><label class="label_check checked"><input type="checkbox" name="" class="ico_check" value="29439"></label> <!----></td> <td header="thInfo" class="goods_thumb"><a href="/shop/goods/goods_view.php?&amp;goodsno=29439" class="thumb"><img src="https://img-cf.kurly.com/shop/data/goods/1535621718107i0.jpg" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/common/bg_1x1.png'"></a></td> <td header="thInfo" class="goods_info"><!----> <a href="/shop/goods/goods_view.php?&amp;goodsno=29439" class="name"><!---->저탄소 GAP 햇사과 한봉지 (자홍) 5~6입</a> <dl class="goods_cost"><dt class="screen_out">판매가격</dt> <dd class="selling_price"><span class="num">8,800</span> <span class="txt">원</span></dd> <!----> <!----></dl> <!----> <p class="txt txt_limit"><!----></p> <!----> <!----></td> <td header="thInfo" class="goods_condition"><div class="condition"><!----></div></td> <td header="thCount"><div class="goods_quantity"><div class="quantity"><strong class="screen_out">수량</strong> <button type="button" class="btn btn_reduce"><img src="https://res.kurly.com/pc/ico/1801/ico_minus_24x4_777.png" alt="감소"></button> <input type="text" readonly="readonly" class="inp_quantity"> <button type="button" class="btn btn_rise"><img src="https://res.kurly.com/pc/ico/1801/ico_plus_24x24_777.png" alt="추가"></button></div></div></td> <td header="thCost"><dl class="goods_total"><dt class="screen_out">합계</dt> <dd class="result"><span class="num">8,800</span> <span class="txt">원</span></dd></dl></td> <td header="thDelete" class="goods_delete"><button type="button" class="btn btn_delete"><img src="https://res.kurly.com/pc/ico/1801/btn_close_24x24_514859.png" alt="삭제"></button></td></tr></tbody></table></div></div>  <!----></div></div> <div class="all_select select_option"><label class="label_check checked"><input type="checkbox" name="allCheck" class="ico_check"></label> <span class="tit">
+    전체선택 (<span class="num_count">3</span>/<span class="num_total">3</span>)
+    </span> <button type="button" class="btn_delete">선택 삭제</button> <button type="button" class="btn_delete">품절 상품 삭제</button></div> <div class="cart_result"><div class="cart_amount cell_except"><div class="amount_detail"><dl class="list amount_total"><dt class="tit">상품금액</dt> <dd class="result"><span class="inner_result"><span class="num">29,600</span> <span class="txt">원</span></span></dd></dl> <div class="deco deco_minus"><span class="ico fst"></span> <span class="ico"></span></div> <dl class="list amount_dc"><dt class="tit">상품할인금액</dt> <dd class="result"><span class="inner_result"><span class="num"><!---->-1,680</span> <span class="txt">원</span> <!----></span></dd></dl> <!----> <!----> <dl class="list amout_order" style="display: none;"><dt class="tit">주문금액</dt> <dd class="result"><span class="num"><span class="desc">= </span>27,920</span> <span class="txt">원</span></dd></dl></div> <div class="deco deco_plus"><span class="ico fst"></span> <span class="ico"></span></div> <dl class="list amount_delivery"><dt class="tit">배송비</dt> <dd class="result"><span class="inner_result"><span class="num"><!---->0</span> <span class="txt">원</span> <!----></span></dd></dl> <div class="deco deco_equal"><span class="ico fst"></span> <span class="ico"></span></div> <dl class="list amout_result"><dt class="tit">결제예정금액</dt> <dd class="result"><span class="inner_result add"><span class="num">27,920</span> <span class="txt">원</span> <span class="txt_point">구매시 1,396 원 <strong class="emph">적립예정</strong></span> <!----></span></dd></dl></div> <div class="notice_cart">*쿠폰, 적립금은 다음화면인 ‘주문서’에서 확인가능합니다.</div> <button type="button" id="btnOrder" class="btn_submit">주문하기 <span class="price">(27,920 원)</span></button> <!----></div></form>
+    </div>
+    </div>
+    </div>
+
+    </body></head></html>
