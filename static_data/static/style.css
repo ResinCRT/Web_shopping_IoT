@@ -5,19 +5,14 @@ h1 {
     margin: 0;
     padding: 9px;
     min-width: 1050px;
-
 }
-
 #userMenu {
     width: 1050px;
     margin: 0 auto;
     font-family: noto sans;
     font-weight: 400;
     letter-spacing: -.3px;
-
 }
-
-
 #userMenu:after {
     content: "";
     display: block;
@@ -27,22 +22,17 @@ h1 {
     font-size: 0;
     text-indent: -9999px
 }
-
 #userMenu .list_menu {
     float: right;
     list-style: none;
     padding-left: 0px;
     font-size:12px;
-
 }
-
 #userMenu .menu {
     position: relative;
     z-index: 400;
     float: left;
-
 }
-
 #userMenu .menu:before {
     content: "";
     position: absolute;
@@ -50,9 +40,7 @@ h1 {
     top: 16px;
     width: 8px;
     height: 5px;
-
 }
-
 #userMenu .menu:after {
     content: "";
     float: right;
@@ -61,7 +49,6 @@ h1 {
     margin-top: 12px;
     background-color: #d8d8d8
 }
-
 #userMenu .link_menu {
     float: left;
     height: 37px;
@@ -70,44 +57,31 @@ h1 {
     line-height: 35px;
     white-space: nowrap
 }
-
 #userMenu .txt {
     float: left;
     padding-left: 4px;
-
 }
 #userMenu .none_sub .link_menu {
     padding-right: 10px
 }
-
 #userMenu .menu_join .link_menu {
     color: #5f0080
 }
-
-
 .bnr_header {
     display: block;
     height: 42px;
     background-color: #5f0080;
     color: #fff;
     min-width:1080px;
-
 }
-
-
-
-
-
-
-
-
 #gnb .gnb_kurly {
     /*position: relative;*/
     z-index: 300;
     min-width: 1050px;
     background-color: #fff;
     font-family: 'Noto Sans';
-    letter-spacing: -0.3px
+    letter-spacing: -0.3px;
+    padding-top : 27px;
 }
 #gnb .gnb_kurly:after {
     content: "";
@@ -119,23 +93,21 @@ h1 {
     height: 9px;
     background: url(https://res.kurly.com/pc/service/common/1902/bg_1x9.png) repeat-x 0 100%
 }
-
-
 #gnb .inner_gnbkurly {
     position: relative;
     width: 1050px;
     height: 56px;
-    margin: 0 auto
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
 }
-
 /* 검색창 */
 #gnb .gnb_search {
-    position: absolute;
-    right: 550px;
-    top: 10px;
-    width: 238px
-}
+    padding-top:14px;
+    position: relative;
+    margin-right:30px;
 
+}
 #gnb .gnb_search .inp_search {
     width: 500px;
     height: 36px;
@@ -150,26 +122,20 @@ h1 {
     line-height: 16px;
     outline: none
 }
-
 #gnb .gnb_search .btn_search {
     position: absolute;
-    left: 500px;
-    top: 3px;
-    width: 30px;
     height: 30px
 }
-
 /* 장바구니 */
 #gnb .cart_count {
-    position: absolute;
-    right: -6px;
-    top: 10px
+    position: relative;
+    text-align:center;
 }
-
-/* #gnb .cart_count .inner_cartcount {
+#gnb .cart_count .inner_cartcount {
+    margin-top:12px;
     text-align: center;
     font-weight: 400
-} */
+}
 
 /* #gnb .cart_count .num {
     display: none;
@@ -190,12 +156,11 @@ h1 {
 } */
 
 #gnb .cart_count img {
-    display: block;
+
     width: 36px;
     height: 36px;
-    margin: 0 auto
-}
 
+}
 #gnb .cart_count .msg_cart {
     display: none;
     position: absolute;
@@ -207,26 +172,21 @@ h1 {
     background-color: #fff;
     opacity: 0
 }
-
 #gnb .cart_count .inner_msgcart {
     display: block;
     overflow: hidden;
     padding: 20px 0 0 20px
 }
-
-
 /* GNB메인 */
 #gnb .gnb_main {
     overflow: hidden;
     width: 1050px;
     margin: 0 auto
 }
-
 #gnb .gnb_main .gnb {
     float: left;
     width: 100%
 }
-
 /* #gnb .gnb_main .gnb li {
     float: left;
     background: url(https://res.kurly.com/pc/service/common/1902/line_1x11_c_ccc.png) no-repeat 100% 23px
@@ -235,7 +195,6 @@ h1 {
 /* #gnb .gnb_main .gnb .lst {
     background: none
 } */
-
 #gnb .gnb_main .gnb a {
     overflow: hidden;
     float: left;
@@ -245,7 +204,6 @@ h1 {
     color: #333;
     line-height: 20px
 }
-
 /* #gnb .gnb_main .gnb a .txt {
     font-weight: 700
 } */
@@ -259,35 +217,26 @@ h1 {
 /* #gnb .gnb_main .gnb a:hover .txt {
     border-bottom: 1px solid #5f0080
 } */
-
 #gnb .gnb_main .menu1 a {
     padding-left: 19px
 }
-
 #gnb .gnb_main .menu1 .ico {
     float: left;
     width: 16px;
     height: 14px;
     margin: 4px 14px 0 0;
-
     background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off.png) no-repeat
-
 }
 #gnb .gnb_search .btn_search form.on .ico,
 #gnb .gnb_search .btn_search form:hover .ico{
     background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all.png) no-repeat 0 0
-
-
 }
-
-
 #gnb .gnb_main .menu1 a.on .txt,
 #gnb .gnb_main .menu1 a:hover .txt,
 #gnb .gnb_main .menu1 .txt {
     float: left;
     font-weight: 700;
     border-bottom: 0
-
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5),
@@ -296,35 +245,24 @@ only screen and (min-resolution: 1.5dppx) {
         background: url(https://res.kurly.com/pc/ico/1808/ico_new_gnb_16x16.png) no-repeat 0 0;
         background-size: 8px 8px
     }
-
     #gnb .cart_count .msg_cart .point {
         background: url(https://res.kurly.com/pc/ico/1903/ico_layer_point_x2.png) no-repeat 0 0;
         background-size: 20px 14px
     }
-
     #gnb .gnb_main .menu1 .ico {
         background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off_x2.png) no-repeat 0 0;
         background-size: 16px 14px
-
     }
-
     #gnb .gnb_main .menu1 a.on .ico,
     #gnb .gnb_main .menu1 a:hover .ico {
         background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_x2.png) no-repeat 0 0;
         background-size: 16px 14px
     }
 }
-
-
-
-
-
-
 .page_aticle {
     width: 1050px;
     margin: 0 auto
 }
-
 .page_aticle button,
 .page_aticle input,
 .page_aticle select,
@@ -333,34 +271,25 @@ only screen and (min-resolution: 1.5dppx) {
     font-weight: 400;
     letter-spacing: 0
 }
-
-
-
-
-
 .section_login {
     width: 340px;
     margin: 0 auto;
     padding-top: 90px;
     letter-spacing: -.6px
 }
-
 .section_login * {
     font-family: noto sans;
     color: #333
 }
-
 .section_login .tit_login {
     font-weight: 700px;
     font-size: 25px;
     line-height: 20px;
     text-align: center
 }
-
 .section_login .write_form {
     padding-top: 36px
 }
-
 .section_login input[type=number],
 .section_login input[type=text],
 .section_login input[type=password],
@@ -375,28 +304,24 @@ only screen and (min-resolution: 1.5dppx) {
     line-height: 20px;
     outline: none
 }
-
 .section_login input[type=number]:focus,
 .section_login input[type=text]:focus,
 .section_login input[type=password]:focus,
 .section_login input[type=email]:focus{
     border: 1px solid #333
 }
-
 .section_login [name=password],
 .section_login [name=ordno],
 .section_login .login_view [name=srch_mail],
 .section_login [name=srch_id] {
     margin-top: 10px
 }
-
 .section_login .label_checkbox {
     position: relative;
     padding: 0 0 3px 22px;
     font-size: 13px;
     line-height: 20px
 }
-
 /* .section_login .label_checkbox:before {
     content: "";
     position: absolute;
@@ -409,49 +334,39 @@ only screen and (min-resolution: 1.5dppx) {
 .section_login .label_checkbox.checked:before {
     background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
 } */
-
 .section_login .label_checkbox [type=checkbox] {
     position: absolute;
     left: 0;
     top: 3px;
     opacity: 0
 }
-
 .section_login .btn_type2 {
     margin-top: 10px
 }
-
 .section_login .btn_member {
     margin-top: 10px
 }
-
 .section_login .find_view .btn_type1 {
     margin-top: 30px
 }
-
 .section_login .btn_ordsearch {
     margin-top: 20px
 }
-
 .section_login .login_view {
     text-align: center
 }
-
 .section_login .checkbox_save {
     overflow: hidden;
     padding-bottom: 28px
 }
-
 /* .section_login .checkbox_save .label_checkbox {
     float: left;
     margin-top: 9px
 } */
-
 .section_login .login_search {
     float: right;
     padding-top: 13px
 }
-
 /* .section_login .login_search .link {
     float: left;
     font-size: 13px
@@ -464,7 +379,6 @@ only screen and (min-resolution: 1.5dppx) {
     margin: 3px 6px 0;
     background-color: #333
 } */
-
 .section_login .notice_join {
     padding-top: 20px;
     font-size: 13px;
@@ -473,15 +387,12 @@ only screen and (min-resolution: 1.5dppx) {
     letter-spacing: 0;
     text-align: center
 }
-
 .section_login .notice_join .link {
     padding-left: 3px;
     font-weight: 700;
     color: #5f0080;
     text-decoration: underline
 }
-
-
 .btn_type1,
 .btn_type2 {
     display: block;
@@ -492,7 +403,6 @@ only screen and (min-resolution: 1.5dppx) {
     font-size: 0;
     text-align: center
 }
-
 .btn_type1 .txt_type,
 .btn_type2 .txt_type {
     display: inline-block;
@@ -503,72 +413,51 @@ only screen and (min-resolution: 1.5dppx) {
     line-height: 51px;
     text-align: center
 }
-
 .btn_type1 .extra,
 .btn_type2 .extra {
     opacity: .6
 }
-
 .btn_type1 {
     border: 1px solid #5f0081;
     background-color: #5f0080
 }
-
 .btn_type1 .txt_type {
     color: #fff
 }
-
 .btn_type1.btn_disabled {
     border: 1px solid #ddddde;
     background-color: #ddd
 }
-
 .btn_type1.btn_disabled .txt_type {
     opacity: .8
 }
-
 .btn_type2 {
     border: 1px solid #5f0081;
     background-color: #fff
 }
-
 .btn_type2 .txt_type {
     color: #5f0080
 }
-
 .btn_type2.btn_disabled {
     border: 1px solid #ddd
 }
-
 .btn_type2.btn_disabled .txt_type {
     color: #ddd
 }
-
-
 /*##########################################login######################################################################*/
-
-
-
-
-
 .section_login {
     width: 340px;
     margin: 0 auto;
     padding-top: 90px;
     letter-spacing: -.6px
 }
-
 .section_login * {
     font-family: noto sans;
     color: #333
 }
-
-
-
 .section_login .write_form {
     padding-top: 36px
 }
-
 .section_login input[type=number],
 .section_login input[type=text],
 .section_login input[type=email],
@@ -767,10 +656,14 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 #header,
-#container,
 #content {
     position: relative
 }
+#container{
+    position: relative;
+    display:grid
+}
+
 *{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1681,8 +1574,6 @@ textarea {
     font: inherit;
     margin: 0
 }
-
-
 .mypage_top .grade_user .class6 {
     border: 1px solid #949296;
     background-color: #fff;
