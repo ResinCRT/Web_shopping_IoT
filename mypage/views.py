@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView,TemplateView
 from django.views.generic.edit import FormView, UpdateView
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -56,6 +56,6 @@ class MyReviewView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Review.objects.filter(user_id=self.request.user.pk).select_related("product_id")
 
-class MyWishlistView(LoginRequiredMixin, ListView):
-    template_name = "myapge/mypage_wishlist.html"
+class MyWishlistView(LoginRequiredMixin, TemplateView):
+    template_name = "mypage/mypage_wishlist.html"
 
