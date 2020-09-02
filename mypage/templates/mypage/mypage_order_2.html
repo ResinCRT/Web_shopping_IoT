@@ -1,0 +1,57 @@
+{% extends "mypage/mypage_main.html" %}
+{% block title %}User modification{% endblock %}
+{% load widget_tweaks %}
+{% block extra-style %}
+    <style>
+        .order_item {
+            border:1px solid #e7e7e7;
+            margin-top:40px;
+        }
+        .order_head {
+            border-bottom:1px solid #e7e7e7;
+            background-color:#e7e7e7;
+            padding:20px;
+        }
+        .order_detail{
+            padding:20px;
+        }
+        .order_hear_date h4{
+            display:inline;
+        }
+        .order_head_link{
+            font-size:13pt;
+            line-height:25px;
+            color:#5f0080;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    {% include 'mypage/mypage_menu.html' %}
+    <div class="container">
+    {% regroup order|dictsort:"order_id" by order_id as grouped_order %}
+        {%for item in grouped_order%}
+        <div class="order_item">
+            <div class="order_head">
+                <div class="order_head_date">
+                <span><h4 style="display:inline;">주문일자: {{item.list.0.order.order_dt|date:"Y/m/d"}}</h4></span>
+
+                <span style="float:right;"><a href="#" class="order_head_link">주문상세 <i class="fas fa-chevron-right"></i></a></span>
+                </div>
+            </div>
+            <div class="order_detail" style="line-height:2;">
+                <h3 style=""><a href="{{item.product.get_absolute_url}}">{{item.product_id}}</a></h3>
+                    <br>주문자 : {{user.username}}<br>가격 : {{item.list.0.product.price}}<br>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+        {% endblock %}
+
+
+
+{% block extra-script %}
+<script> active = 0;
+    getList = itemList
+</script>
+{% endblock %}
