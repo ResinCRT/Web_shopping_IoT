@@ -14,6 +14,7 @@ class Product(models.Model):
     p_created_dt = models.DateTimeField(blank=True,null=True)
     p_modify_dt = models.DateTimeField(blank=True, null=True)
     brand = models.CharField(max_length=45)
+    p_url = models.CharField(max_length=256)
 
     class Meta:
         managed = True

@@ -97,13 +97,9 @@
                             </div>
                         </div>
                         <div id="side_search" class="gnb_search">
-                            <form action=""
-                            ><input type="hidden" name="searched"
-                                    value="Y"> <input type="hidden" name="log" value="1">
-                                <input type="hidden" name="skey" value="all">
-                                <input type="hidden" name="hid_pr_text" value="검색어를 입력하세요">
-                                <input type="hidden" id="edit" name="edit" value="">
-                                <input placeholder="검색어를 입력하세요" required="required" class="inp_search">
+                            <form action="{% url 'shop:search' %}" method="post"> {% csrf_token %}
+
+                                <input class="inp_search" placeholder="검색어를 입력하세요" type="search" name="search_word" >
                                 <input type="image"
                                        src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
                                        class="btn_search"></form>
@@ -129,6 +125,7 @@
                     </div>
                 </div>
                 <div class="content" style="padding-top:30px;">
+
                 </div>
             </nav>
         </div>

@@ -29,14 +29,14 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item"
                        href=#">Archive</a>
-                    <a class="dropdown-item" href="#">Search</a>
+                    <a class="dropdown-item" href="{% url 'shop:search' %}">Search</a>
                 </div>
             </li>
         </ul>
         <ul class="navbar-nav float-right">
             <form class="form-inline" action="#" method="post">{% csrf_token %}
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search_word">
-                <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn btn-success" href="{% url 'shop:search' %}" type="submit"><i class="fas fa-search"></i></button>
             </form>
 
         {% if user.is_active %}
