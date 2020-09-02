@@ -37,12 +37,16 @@ class PwChangeView(auth_views.PasswordChangeView):
     success_url = reverse_lazy('register:password_change_done')
 
 class MyOrderView(LoginRequiredMixin,ListView):
-    template_name = "mypage/mypage_order.html"
-    model = Order
+    template_name = "mypage/mypage_order_2.html"
     context_object_name = "order"
     paginate_by = 3
     def get_queryset(self):
-        return Order.objects.filter(user_id=self.request.user.pk).select_related("product_id")
+        return OrderDetail.objects.select_related("order").filter(order__user_id=self.request.user.pk)
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     new_context = context
+    #     return new_context
+
 
 class MyReviewView(LoginRequiredMixin, ListView):
     template_name = "mypage/mypage_review.html"

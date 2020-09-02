@@ -34,7 +34,10 @@
     <a href="#" class="imgs" style="background-image: url('https://via.placeholder.com/2000x300/000000/FFFFFF/?text=main_image');">메인배너</a>
 </div>
 <div class="container shoplist2 test">
-fs
+{% for product in products %}
+<a href='{{ product.get_absolute_url }}'>{{product.p_name}}</a>
+<p >{{ product.description }}</p>
+{% endfor %}
 </div>
 
 {% endblock %}
