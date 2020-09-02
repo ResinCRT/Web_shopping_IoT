@@ -39,7 +39,7 @@ class PwChangeView(auth_views.PasswordChangeView):
 class MyOrderView(LoginRequiredMixin,ListView):
     template_name = "mypage/mypage_order_2.html"
     context_object_name = "order"
-    paginate_by = 3
+    paginate_by = 5
     def get_queryset(self):
         return OrderDetail.objects.select_related("order").filter(order__user_id=self.request.user.pk)
     # def get_context_data(self, **kwargs):

@@ -1,45 +1,4 @@
-{% extends "mypage/mypage_main.html" %}
-{% block title %}User modification{% endblock %}
-{% load widget_tweaks %}
-{% load order_handler %}
-{% block extra-style %}
-
-    <style>
-        .order_item {
-            border:1px solid #e7e7e7;
-            margin-top:40px;
-        }
-        .order_head {
-            border-bottom:1px solid #e7e7e7;
-            background-color:#e7e7e7;
-            padding:20px;
-        }
-        .order_detail{
-            padding:20px;
-        }
-        .order_hear_date h4{
-            display:inline;
-        }
-        .order_head_link{
-            font-size:13pt;
-            line-height:25px;
-            color:#5f0080;
-        }
-        .order_detail_link{
-            font-weight:bold;
-            color:#5f0080;
-            text-decoration:underline;
-        }
-        .order_mainbox {
-            border-top:2px solid;
-            border-bottom:1px solid;
-            border-color:#5f0080 #000000 #e7e7e7;
-            padding:40px;
-        }
-    </style>
-{% endblock %}
-{% block content %}
-    {% include 'mypage/mypage_menu.html' %}
+  {% include 'mypage/mypage_menu.html' %}
     <div class="container member_join">
         <div class="field_head">
             <h3 class="tit">주문 내역</h3>
@@ -72,18 +31,14 @@
         </div>
 
         {% endfor %}
-        {% else %}
-
-            <p style="text-align:center;">주문내역이 없습니다.</p>
-        {% endif %}
         </div>
     </div>
-        {% endblock %}
+  {% endblock %}
 
 
 
 {% block extra-script %}
-<script> active = 0;
-    getList = itemList
+<script>
+
 </script>
 {% endblock %}

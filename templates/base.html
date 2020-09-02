@@ -69,28 +69,20 @@
                                             <i class="fas fa-bars"></i>
                                             <span>메인카테고리</span></div>
                                         <ul>
-                                            <li class='has-sub'><a href='#'>Product 1</a>
+
+                                            {% for category in categories %}
+                                            {% if not category.parent_id %}
+                                            <li class='has-sub'><a href='#' name='category_{{category.id}}'>{{category.category_name}}</a>
                                                 <ul>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
+                                                    {% for sub_category in categories %}
+                                                        {% if sub_category.parent_id == category.id %}
+                                                        <li><a href='#' name='category_{{sub_category.id}}'>{{sub_category.category_name}}</a></li>
+                                                        {% endif %}
+                                                    {% endfor %}
                                                 </ul>
                                             </li>
-                                            <li class='has-sub'><a href='#'>Product 2</a>
-                                                <ul>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                    <li><a href='#'>Sub Product</a></li>
-                                                </ul>
-                                            </li>
+                                            {%endif %}
+                                            {% endfor %}
                                         </ul>
                                     </li>
                                 </ul>

@@ -5,7 +5,6 @@ from django.urls import reverse_lazy
 from shop.models import *
 
 
-
 from django.contrib.auth.mixins import AccessMixin
 from django.views.defaults import permission_denied
 import datetime
@@ -35,3 +34,9 @@ class OwnerOnlyMixin(AccessMixin):
         if self.request.user != self.object.author:
             self.handle_no_permission()
         return super().get(request, *args, **kwargs)
+
+def category_context_processor(request):
+    context = {
+        'categories': Category.objects.all()
+    }
+    return context
