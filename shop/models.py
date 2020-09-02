@@ -4,14 +4,22 @@ from register.models import User
 from django.urls import reverse
 from tinymce.models import HTMLField
 
+class Category(models.Model):
+    category_name = models.CharField(max_length=45, blank=True, null=True)
+    parent_id = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 'category'
+
 
 class Product(models.Model):
     p_name = models.CharField(max_length=45, blank=True, null=True)
     price = models.IntegerField(blank=True, null=True)
     description = models.CharField(max_length=45, blank=True, null=True)
     read_cnt = models.IntegerField(blank=True, null=True, default=0)
-    category_id = models.IntegerField(blank=True, null=True)
-    p_created_dt = models.DateTimeField(blank=True,null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Category', blank=True,null=True)
+    p_created_dt = models.DateTimeField(blank=True, null=True)
     p_modify_dt = models.DateTimeField(blank=True, null=True)
     brand = models.CharField(max_length=45)
 
@@ -72,13 +80,13 @@ class Review(models.Model):
         return self.review_title
 
 
-class Category(models.Model):
-    category_name = models.CharField(max_length=45, blank=True, null=True)
-    parent_id = models.IntegerField(blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'category'
+# class Category(models.Model):
+#     category_name = models.CharField(max_length=45, blank=True, null=True)
+#     parent_id = models.IntegerField(blank=True, null=True)
+#
+#     class Meta:
+#         managed = True
+#         db_table = 'category'
 
 
 class ProductAttachFile(models.Model):

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView,TemplateView
+from django.views.generic import ListView,TemplateView, DetailView
 from django.views.generic.edit import FormView, UpdateView
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,6 +7,7 @@ from register.forms import UserChangeForm
 from django.urls import reverse_lazy
 from shop.models import *
 from order.models import *
+from mysite.views import OwnerOnlyMixin
 from django.db.models import Q
 
 
@@ -35,6 +36,17 @@ class ModifyUserView(LoginRequiredMixin, FormView):
 class PwChangeView(auth_views.PasswordChangeView):
     template_name = "mypage/mypage_password_change.html"
     success_url = reverse_lazy('register:password_change_done')
+
+class MyOrderDV(OwnerOnlyMixin,DetailView):
+    template_name = "mypage/mypage_order_detail.html"
+    context_object_name = "order"
+    model = Order
+    def get_context_data(self, **kwargs):
+        detail = OrderDetail.objects.select_related("order").filter(order__id=self.object.pk)
+        context = super().get_context_data(**kwargs)
+        context['details'] = detail
+        return context
+
 
 class MyOrderView(LoginRequiredMixin,ListView):
     template_name = "mypage/mypage_order_2.html"

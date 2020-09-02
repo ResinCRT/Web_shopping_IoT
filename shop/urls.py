@@ -27,4 +27,6 @@ urlpatterns = [
     path('review/<int:pk>/update/', UpdateReviewView.as_view(), name='update_review'),
     # Example: /shop/review/id/delete/
     path('review/<int:pk>/delete/', DeleteReviewView.as_view(), name='delete_review'),
+
+
 ]

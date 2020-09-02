@@ -72,11 +72,11 @@
 
                                             {% for category in categories %}
                                             {% if not category.parent_id %}
-                                            <li class='has-sub'><a href='#' name='category_{{category.id}}'>{{category.category_name}}</a>
+                                            <li class='has-sub'><a href="{% url 'shop:index'%}category/{{category.id}}+0"  name='category_{{category.id}}'>{{category.category_name}}</a>
                                                 <ul>
                                                     {% for sub_category in categories %}
                                                         {% if sub_category.parent_id == category.id %}
-                                                        <li><a href='#' name='category_{{sub_category.id}}'>{{sub_category.category_name}}</a></li>
+                                                        <li><a href="{% url 'shop:index'%}category/{{category.id}}+{{sub_category.id}}" name='category_{{sub_category.id}}'>{{sub_category.category_name}}</a></li>
                                                         {% endif %}
                                                     {% endfor %}
                                                 </ul>

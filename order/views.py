@@ -49,7 +49,7 @@ def order_detail(request, total=0, counter=0, order_info_set=None):
     except ObjectDoesNotExist:
         pass
 
-    return render(request, 'order.html',
+    return render(request, 'mypage/mypage_order_detail.html',
                   dict(order_info_set=order_info_set, total=total, counter=counter))
 
 

@@ -1,44 +1,145 @@
-  {% include 'mypage/mypage_menu.html' %}
+{% extends "mypage/mypage_main.html" %}
+{% block title %}User modification{% endblock %}
+{% load widget_tweaks %}
+{% load order_handler %}
+{% block extra-style %}
+
+    <style>
+        .order_item {
+            border:1px solid #e7e7e7;
+            margin-top:0px;
+            padding:20px;
+            display:flex;
+            align-items:center;
+        }
+        .order_head {
+            border-bottom:1px solid #e7e7e7;
+            background-color:#e7e7e7;
+            padding:20px;
+        }
+        .order_detail{
+            padding:20px;
+            display:inline-block;
+        }
+        .order_hear_date h4{
+            display:inline;
+        }
+        .order_head_link{
+            font-size:13pt;
+            line-height:10px;
+            color:#5f0080;
+        }
+        .order_detail_link{
+            font-weight:bold;
+            color:#5f0080;
+            text-decoration:underline;
+        }
+        .order_mainbox {
+            border-top:2px solid;
+            border-bottom:1px solid;
+            border-color:#5f0080 #000000 #e7e7e7;
+            padding:40px;
+            margin-top:5px;
+            width:100%;
+        }
+        .img_div{
+            display:inline-flex;
+            width:100px;
+            height:100px;
+            margin:10px;
+        }
+        .img_thumbnail{
+            width:100px;
+            height:100px;
+        }
+        .order_date{
+            font-family:"돋움";
+            padding-right:10px;
+
+            border-right:1px solid;
+            border-color:#e7e7e7;
+            display:inline;
+        }
+        .order_id{
+            font-family:"돋움";
+            display:inline;
+        }
+        .order_sum{
+            display:flex;
+            justify-content:center;
+        }
+        .order_mainbox tr{
+        }
+        .order_mainbox th, .order_mainbox td{
+            padding:10px 0 10px 15px;
+            vertical-align:middle;
+        }
+        .order_mainbox th{
+
+        }
+        .order_mainbox td{
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    {% include 'mypage/mypage_menu.html' %}
     <div class="container member_join">
         <div class="field_head">
-            <h3 class="tit">주문 내역</h3>
+            <h3 class="tit">주문 상세내역</h3>
+            <h6 class="order_date">주문일 : {{order.order_dt|date:"Y/m/d"}}</h6>
+            <h6 class="order_id">&nbsp;주문 ID : {{order.id}}</h6>
         </div>
 
-        {% regroup order|dictsort:"order_id" by order_id as grouped_order %}
         <div class="order_mainbox">
-        {% if grouped_order %}
-
-        {%for item in grouped_order%}
-
+        {% for item in details%}
         <div class="order_item">
-            <div class="order_head">
-                <div class="order_head_date">
-                <span><h4 style="display:inline;">주문일자: {{item.list.0.order.order_dt|date:"Y/m/d"}}</h4></span>
-
-                <span style="float:right;"><a href="#" class="order_head_link">주문상세 <i class="fas fa-chevron-right"></i></a></span>
-                </div>
+            <div class="img_div">
+                <a href='{{ item.product.get_absolute_url }}'><img class="img_thumbnail"
+                            src="{{item.product.p_url}}" /></a>
             </div>
             <div class="order_detail" style="line-height:2;">
-                {% with product_amount=item.list|length|add:"-1" %}
-                <a href="{{item.product.get_absolute_url}}"><h5 class="order_detail_link">{{item.list.0.product}}
-                {% if product_amount != "1" %}
-                    외 {{product_amount}}가지 품목
-                {% endif %}
+                <a href="{{item.product.get_absolute_url}}"><h5 class="order_detail_link">
+                    {{item.product}}
                 </h5></a>
-                    주문 합계 : {{item.list|get_order_total}} 원
-                {% endwith %}
+
+                <p>{{item.product.price}}원 / {{item.quantity}} 개<br>
+
             </div>
         </div>
-
-        {% endfor %}
+            {% endfor %}
+        <div class="order_item order_sum">
+            <h5 class="order_detail_link">주문 합계 : {{details|get_order_total}}원</h5>
         </div>
+
+        </div>
+        <div class="field_head">
+            <h3 class="tit">받는사람 정보</h3>
+        </div>
+        <table class="order_mainbox">
+            <tbody>
+                <tr>
+                    <th>받는 사람</th>
+                    <td>{{order.user.real_name}}</td>
+                </tr>
+                <tr>
+                    <th>연락처</th>
+                    <td>{{order.user.phone}}</td>
+                </tr>
+            <tr>
+                    <th>배송 주소</th>
+                    <td>{{order.user.addr}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  {% endblock %}
+
+        {% endblock %}
 
 
 
 {% block extra-script %}
-<script>
-
+<script> active = 0;
+    getList = itemList
 </script>
 {% endblock %}

@@ -56,12 +56,12 @@
                 <div class="order_head_date">
                 <span><h4 style="display:inline;">주문일자: {{item.list.0.order.order_dt|date:"Y/m/d"}}</h4></span>
 
-                <span style="float:right;"><a href="#" class="order_head_link">주문상세 <i class="fas fa-chevron-right"></i></a></span>
+                <span style="float:right;"><a href="{%url 'mypage:order' %}{{item.grouper}}" class="order_head_link">주문상세 <i class="fas fa-chevron-right"></i></a></span>
                 </div>
             </div>
             <div class="order_detail" style="line-height:2;">
                 {% with product_amount=item.list|length|add:"-1" %}
-                <a href="{{item.product.get_absolute_url}}"><h5 class="order_detail_link">{{item.list.0.product}}
+                <a href="{%url 'mypage:order' %}{{item.grouper}}"><h5 class="order_detail_link">{{item.list.0.product}}
                 {% if product_amount != "1" %}
                     외 {{product_amount}}가지 품목
                 {% endif %}

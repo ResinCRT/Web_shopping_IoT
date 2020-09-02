@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.mixins import AccessMixin
 from django.views.defaults import permission_denied
-from mysite.views import HomeView
+from mysite.views import HomeView, CategoryView
 import datetime
 from shop.views import *
 from django.conf import settings
@@ -32,13 +32,13 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('shop/', include('shop.urls')),
 
-    path('shop/', ProductLV.as_view(),name='index'),
     path('shop/product/', ProductLV.as_view(), name='index'),
     path('shop/product/<int:pk>/add_qna', CreateQna.as_view(), name='qna'),
 
     path('cart/', include('cart.urls', 'cart')),
     path('order/', include('order.urls', 'order')),
-
+    re_path(r'^shop/category/(?P<parent>[0-9]+)[\+]*(?P<pk>[0-9]+)/$', CategoryView.as_view(), name='category'),
+    # path('shop/category/<int:pk>',CategoryView.as_view(), name='category'),
     ]
 
 urlpatterns += static(
