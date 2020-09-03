@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style+shop.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
 <div class="container">
     <div id="main">
         <div id="content">
@@ -10,8 +24,13 @@
                         <div class="thumb"><img src="" alt="카테고리배너"></div>
                     </div>
                     <div class="inner_lnb">
+
                         <ul class="list" style="border-bottom: 1px solid #ddd;">
                             <li><a class="on">전체보기</a></li>
+                            <li><a class="">닭가슴살</a></li>
+                            <li><a class="">훈제</a></li>
+                            <li><a class="">소시지</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -64,9 +83,9 @@
 
 
         </div>
-        {% endblock %}
 
-        {% block extra-script%}
+</body>
+</html>
 <script>
 let sort = document.getElementById("sort")
 sort.onchange = function(e) {

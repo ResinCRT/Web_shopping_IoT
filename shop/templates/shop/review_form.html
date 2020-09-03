@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
-{% block extra-style %}
+{% block content %}
 <style>
 .star_left{
     background: url('/static_data/static/images/ico_review.png') no-repeat -52px 0;
@@ -22,96 +22,113 @@
 }
 .star_left.on{background-position:0 0; }
 .star_right.on{background-position:-15px 0; }
+.btn-info {
+    color: #eee;
+    background-color: #5f0080;
+    border-color: #5f0080;
+}
+
 </style>
-{% endblock %}
-{% block content %}
 
 
-<h1>Review Create/Update </h1>
-<p class="font-italic">This is a creation or update form for your Review.</p>
 {% if form.errors %}
 <div class="alert alert-danger">
-    <div class="font-weight-bold">
-        Wrong! Please correct the error(s) below.
-    </div>
+
     {{ form.errors }}
 </div>
 {% endif %}
+<div id="wrap" class="">
+    <div id="container">
+        <div id="header">
+            <div class="section_view">
+
+                <form id="reviewForm" action="." method="post" enctype="multipart/form-data" class="card pt-3">
+                    {%csrf_token %}
+
+                    <h1 style="text-align-last: center; padding-bottom:50px;">상품 리뷰를 남겨주세요!</h1>
+
+                    <div id="reviewTitle" class="form-group" style="text-align: -webkit-center;">
+                        <label class="control-label col-sm-5"></label>
+                        <div class="col-sm-8"><h2>{{ form.review_title|add_class:"form-control"|attr:"autofocus" }}</h2>
+                        </div>
+                    </div>
+                    <div class="form-group" style="align-self: center;">
+                        <div class="star-box">
+                            <span class="star star_left" value="1"></span>
+                            <span class="star star_right" value="2"></span>
+
+                            <span class="star star_left" value="3"></span>
+                            <span class="star star_right" value="4"></span>
+
+                            <span class="star star_left" value="5"></span>
+                            <span class="star star_right" value="6"></span>
+
+                            <span class="star star_left" value="7"></span>
+                            <span class="star star_right" value="8"></span>
+
+                            <span class="star star_left" value="9"></span>
+                            <span class="star star_right" value="10"></span>
+                        </div>
+                        <div style="display:none;">
+                            <input type="range" class="form-control" id="rating" name="rating">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        {{ form.description|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+                        <div class="col-sm-5">
+                            {{ form.description|add_class:"form-control" }}
+                        </div>
+                        <small class="form-text text-muted">
+                            {{ form.description.help_text }}</small>
+                    </div>
+                    <div style="margin-left: 183px;">
+                        <div class="form-group row">
+                            <label for="files"
+                                   class="col-form-label col-sm-2 ml-3 font-weight-bold" style="width:87px;">첨부
+                                파일:</label>
+
+                            <input type="file" id="files" name="files" multiple>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="files"
+                                   class="col-form-label col-sm-2 ml-3 font-weight-bold" style="padding-left:2px;">삭제할
+                                파일:</label>
+                            <div class="col-sm-8">
+                                {% for file in post.files.all %}
+                                <input type="checkbox" name="delete_files" value="{{file.id}}">
+                                {{file.filename}} ({{file.size | filesizeformat}})
+                                <br>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
 
 
-<form id="reviewForm" action="." method="post" enctype="multipart/form-data" class="card pt-3">{% csrf_token %}
+                    <div class="form-group row" style=" text-align: -webkit-center;">
+                        <div>
+                            <div class="col-sm-8">{{ form.content|add_class:"form-control"}}</div>
+                        </div>
+                    </div>
 
-    <h2>상품 리뷰를 남겨주세요! 값나오니? </h2>
-
-     <div id="reviewTitle" class="form-group">
-    <label class="control-label col-sm-2" ></label>
-    <div class="col-sm-10"><h2>{{ form.review_title }}</h2></div>
-  </div>
-    <div class="form-group">
-        <div class="star-box">
-       <span class="star star_left" value="1"></span>
-       <span class="star star_right" value="2"></span>
-
-       <span class="star star_left" value="3"></span>
-       <span class="star star_right" value="4"></span>
-
-       <span class="star star_left" value="5"></span>
-       <span class="star star_right"  value="6"></span>
-
-       <span class="star star_left" value="7"></span>
-       <span class="star star_right" value="8"></span>
-
-       <span class="star star_left" value="9"></span>
-       <span class="star star_right" value="10"></span>
-    </div>
-    <div style="display:none;">
-        <input type="range" class="form-control" id="rating" name="rating">
-    </div>
-    </div>
-
-    <div class="form-group row">
-        {{ form.description|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
-        <div class="col-sm-5">
-            {{ form.description|add_class:"form-control" }}
+                    <div class="form-group">
+                        <div class="offset-sm-2 col-sm-5">
+                            <input type="submit" value="등록" class="btn btn-info"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <small class="form-text text-muted">
-            {{ form.description.help_text }}</small>
     </div>
-
-    <div class="form-group row">
-        <label for="files"
-               class="col-form-label col-sm-2 ml-3 font-weight-bold">삭제할 파일 :</label>
-        <div class="col-sm-8">
-            {% for file in post.files.all %}
-            <input type="checkbox" name="delete_files" value="{{file.id}}">
-            {{file.filename}} ({{file.size | filesizeformat}})
-            <br>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="files"
-               class="col-form-label col-sm-2 ml-3 font-weight-bold">첨부 파일 :</label>
-        <div class="col-sm-8 ">
-            <input type="file" id="files" name="files" multiple>
-        </div>
-    </div>
-
-    <div class="form-group row" >
-        {{ form.content|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}<div class="col-sm-8">{{ form.content|add_class:"form-control"}}</div>
-    </div>
-
-    <div class="form-group">
-        <div class="offset-sm-2 col-sm-5">
-            <input type="submit" value="Submit" class="btn btn-info"/>
-        </div>
-    </div>
-</form>
+</div>
 {% endblock %}
 {% block extra-script %}
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script>
  tinymce.init({
  selector:'#id_content',
@@ -119,6 +136,7 @@
  statusbar: false,
  toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor |link | alignleft aligncenter alignright alignjustify | numlist bullistoutdent indent | removeformat'
  });
+
 </script>
 
 <script>
@@ -127,6 +145,7 @@ if(rate){
 for(var i=0; i<rate; i++){
             $(".star").eq(i).addClass("on");
 };
+
 </script>
 <script>
 
@@ -135,8 +154,8 @@ var star_value = $(".star").attr('value');
     $('#rating').val(star_value);
     $(".star").eq(0).addClass("on");
     };
-</script>
 
+</script>
 <script>
 $(".star").on('click',function(){
         var star_value = $(this).attr('value');
@@ -147,6 +166,7 @@ $(".star").on('click',function(){
             $(".star").eq(i).addClass("on");
          };
 });
+
 </script>
 
 

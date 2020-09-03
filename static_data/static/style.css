@@ -3052,3 +3052,1896 @@ only screen and (min-resolution:1.5dppx) {
 }
 
 /*----------------------샵 던----------------------*/
+
+
+
+
+
+html,
+body {
+    height: 100%
+}
+
+.section_view {
+    width: 1050px;
+    margin: 0 auto;
+    padding-top: 20px
+}
+
+.section_view * {
+    font-family: noto sans;
+    color: #555;
+    letter-spacing: -.5px
+}
+
+.section_view:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    height: 0;
+    clear: both
+}
+
+#sectionView .thumb {
+    float: left;
+    background-color: #eee;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+#sectionView .thumb .bg {
+    width: 430px;
+    height: 552px
+}
+
+#sectionView .goods_name {
+    float: right;
+    width: 560px;
+    padding: 10px 0 29px
+}
+
+#sectionView .goods_name .name {
+    display: block;
+    padding-right: 60px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    word-break: break-all
+}
+
+#sectionView .goods_name .short_desc {
+    display: block;
+    padding: 4px 60px 0 0;
+    font-size: 14px;
+    color: #999;
+    line-height: 20px;
+    word-break: break-all
+}
+
+#sectionView .btn_share {
+    display: block;
+    position: relative
+}
+
+#sectionView #btnShare {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: url(https://res.kurly.com/mobile/service/goodsview/1910/ico_view_sns.png) no-repeat 50% 50%;
+    font-size: 0;
+    text-indent: -9999px
+}
+
+#sectionView .goods_dcinfo {
+    float: right;
+    width: 560px;
+    padding-right: 21px;
+    font-size: 14px;
+    line-height: 20px
+}
+
+#sectionView .goods_price .position:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    clear: both
+}
+
+#sectionView .goods_price .ico {
+    width: 24px;
+    height: 24px;
+    vertical-align: -6px
+}
+
+#sectionView .goods_price .layer_position {
+    display: none;
+    position: relative;
+    float: left;
+    width: 16px
+}
+
+#sectionView .goods_price .layer_position.on {
+    display: block
+}
+
+#sectionView .goods_price .layer_position.on .btn_close {
+    overflow: hidden;
+    position: absolute;
+    left: 272px;
+    top: 46px;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background: url(https://res.kurly.com/mobile/service/goodsview/1910/btn_close_333_32x32.png) no-repeat 50% 50%;
+    background-size: 16px 16px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px
+}
+
+#sectionView .goods_price .layer_price {
+    position: absolute;
+    left: -18px;
+    top: 32px;
+    width: 320px;
+    padding: 13px 23px 13px 13px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #666;
+    line-height: 16px
+}
+
+#sectionView .goods_price .layer_price .tit_layer {
+    display: block;
+    padding-bottom: 6px;
+    font-size: 12px;
+    line-height: 16px
+}
+
+#sectionView .goods_price .layer_price .bar {
+    display: block
+}
+
+#sectionView .goods_price {
+    float: right;
+    width: 560px;
+    padding: 0 20px 0 0
+}
+
+#sectionView .goods_price .dc {
+    display: block;
+    padding-top: 4px
+}
+
+#sectionView .goods_price .dc .won {
+    padding: 0 7px 0 2px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    vertical-align: 2px
+}
+
+#sectionView .goods_price .dc_price {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 30px;
+    letter-spacing: -.5px;
+    word-break: break-all
+}
+
+#sectionView .goods_price .dc_percent .per,
+#sectionView .goods_price .dc_percent {
+    font-weight: 700;
+    font-size: 28px;
+    color: #fa622f;
+    line-height: 30px
+}
+
+#sectionView .goods_price .percent {
+    font-size: 26px;
+    color: #fa622f;
+    line-height: 30px
+}
+
+#sectionView .goods_price .original_price {
+    float: left;
+    padding-top: 7px
+}
+
+#sectionView .goods_price .price {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 24px;
+    text-decoration: line-through
+}
+
+#sectionView .goods_price .price .won {
+    color: #ccc
+}
+
+#sectionView .goods_price .txt_newuser {
+    display: block;
+    padding: 11px 0 8px;
+    font-size: 14px;
+    line-height: 20px
+}
+
+#sectionView .goods_price .limit_day {
+    display: block;
+    color: #5f0080;
+    letter-spacing: 0
+}
+
+#sectionView .goods_price .limit_price {
+    display: block;
+    color: #5f0080;
+    letter-spacing: 0
+}
+
+#sectionView .goods_price .txt_benefit {
+    display: block;
+    overflow: hidden;
+    padding-top: 11px
+}
+
+#sectionView .goods_price .point {
+    float: left;
+    padding: 1px 0 0 6px;
+    font-size: 14px;
+    line-height: 18px
+}
+
+#sectionView .goods_price .ico_grade {
+    float: left;
+    height: 22px;
+    padding: 0 8px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+    line-height: 19px;
+    text-align: center
+}
+
+#sectionView .goods_price .grade0 {
+    border: 1px solid #5f0080;
+    color: #5f0080
+}
+
+#sectionView .goods_price .grade1 {
+    border: 1px solid #a864d8;
+    color: #a864d8
+}
+
+#sectionView .goods_price .grade2 {
+    border: 1px solid #8d4cc4;
+    color: #8d4cc4
+}
+
+#sectionView .goods_price .grade3 {
+    border: 1px solid #500f7c;
+    color: #500f7c
+}
+
+#sectionView .goods_price .grade4 {
+    border: 1px solid #4f177a;
+    color: #4f177a
+}
+
+#sectionView .goods_price .grade5 {
+    border: 1px solid #cba3e9;
+    color: #cba3e9
+}
+
+#sectionView .goods_price .grade6 {
+    border: 1px solid #949296;
+    color: #949296
+}
+
+#sectionView .goods_price .grade7 {
+    border: 1px solid #4f177a;
+    background-color: #4f177a;
+    color: #fff
+}
+
+#sectionView .goods_price .emph {
+    font-weight: 700
+}
+
+#sectionView .goods_price .txt_point {
+    display: none;
+    padding: 4px 0 1px;
+    font-size: 14px;
+    color: #5f0080;
+    line-height: 20px;
+    letter-spacing: 0
+}
+
+#sectionView .goods_price .not_login span,
+#sectionView .goods_price .not_login {
+    display: block;
+    padding-top: 7px;
+    font-size: 14px;
+    color: #5f0080;
+    line-height: 20px;
+    letter-spacing: 0
+}
+
+#sectionView .goods_price .not_login {
+    padding-top: 4px
+}
+
+#sectionView .goods_info {
+    float: right;
+    width: 560px;
+    margin-top: 19px;
+    padding-bottom: 19px;
+    border-top: 1px solid #f4f4f4
+}
+
+#sectionView .goods_info .list {
+    overflow: hidden;
+    padding: 5px 0;
+    border-bottom: 1px solid #f4f4f4
+}
+
+#sectionView .goods_info .list.fst {
+    padding-bottom: 0;
+    border-bottom: 0
+}
+
+#sectionView .goods_info .tit {
+    float: left;
+    width: 150px;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px
+}
+
+#sectionView .goods_info .desc {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    word-break: break-all
+}
+
+#sectionView .goods_info .status {
+    color: #b3130b
+}
+
+#sectionView .goods_info .txt {
+    display: block
+}
+
+#sectionView .goods_info .txt:before {
+    content: "- ";
+    display: inline
+}
+
+#sectionView .goods_info .emph {
+    display: block;
+    padding-top: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #666;
+    line-height: 16px
+}
+
+#sectionView .info_kurlypass {
+    float: right;
+    width: 560px;
+    padding: 20px 0
+}
+
+#sectionView .info_kurlypass .tit {
+    float: left;
+    width: 280px;
+    padding-top: 2px;
+    color: #333
+}
+
+#sectionView .info_kurlypass .btn_type2 {
+    display: block;
+    overflow: hidden;
+    width: 280px;
+    height: 44px;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    background-color: #fff
+}
+
+#sectionView .info_kurlypass .txt_type {
+    padding-left: 26px;
+    background: url(https://res.kurly.com/mobile/service/common/1908/ico_search_5f0080_20x20.png?v=1) no-repeat 0 50%;
+    font-weight: 700;
+    font-size: 14px;
+    color: #5f0080;
+    line-height: 42px;
+    letter-spacing: -.6px
+}
+
+
+#cartPut * {
+    font-family: noto sans;
+    color: #333;
+    letter-spacing: 0
+}
+
+#cartPut .cart_result,
+#cartPut .cart_option.off,
+#cartPut .cart_option .tit_cart,
+#cartPut .cart_option .box_select,
+#cartPut .cart_option .bar_open,
+#cartPut .cart_option .view_function {
+    display: none
+}
+
+#cartPut .cart_option {
+    background-color: #fff
+}
+
+#cartPut .cart_option .box_select:after,
+#cartPut:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 0
+}
+
+#cartPut .cart_option .box_select {
+    display: block
+}
+
+#cartPut .cart_option .box_select .name {
+    float: left;
+    width: 150px;
+    padding-top: 9px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    letter-spacing: -.5px
+}
+
+#cartPut .cart_option .box_select .inner_select {
+    position: relative;
+    z-index: 4;
+    width: 410px;
+    height: 40px
+}
+
+#cartPut .cart_option .box_select .txt_select,
+#cartPut .cart_option .box_select a {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding: 8px 0 10px 15px;
+    border-top: 1px solid #f4f4f4;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -.3px
+}
+
+#cartPut .cart_option .box_select a:hover {
+    background-color: #f7f7f7
+}
+
+#cartPut .cart_option .box_select .item_name {
+    float: left;
+    width: 240px
+}
+
+#cartPut .cart_option .box_select .price {
+    float: right;
+    width: 145px;
+    padding-right: 15px;
+    text-align: right
+}
+
+#cartPut .cart_option .box_select .dc_price {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -.6px
+}
+
+#cartPut .cart_option .box_select .original_price {
+    padding-right: 2px;
+    font-weight: 400;
+    color: #ccc;
+    text-decoration: line-through
+}
+
+#cartPut .cart_option .box_select .sold_out .item_name,
+#cartPut .cart_option .box_select .sold_out .item_name span {
+    color: #ccc
+}
+
+#cartPut .cart_option .box_select .sold_out .original_price,
+#cartPut .cart_option .box_select .sold_out .dc_price,
+#cartPut .cart_option .box_select .sold_out .price {
+    color: #ccc
+}
+
+#cartPut .cart_option .box_select .txt_select {
+    border: 1px solid #ddd;
+    background: url(https://res.kurly.com/pc/service/goods/1910/ico_selectbox_12x9.png) no-repeat 381px 14px
+}
+
+#cartPut .cart_option .box_select .txt_select.open {
+    background: url(https://res.kurly.com/pc/service/goods/1910/ico_selectbox_up_12x9.png) no-repeat 381px 14px
+}
+
+#cartPut .cart_option .box_select .txt_select:hover {
+    background-color: #fff
+}
+
+#cartPut .cart_option .box_select .select_item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff
+}
+
+#cartPut .cart_option .list {
+    overflow: hidden;
+    padding-bottom: 1px
+}
+
+#cartPut .cart_option .list li.off {
+    display: none
+}
+
+#cartPut .cart_option .list .sold_out .name span,
+#cartPut .cart_option .list .sold_out .option,
+#cartPut .cart_option .list .sold_out .price,
+#cartPut .cart_option .list .sold_out .dc_price,
+#cartPut .cart_option .list .sold_out .name {
+    color: #ccc
+}
+
+#cartPut .cart_option .list .name {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -.6px
+}
+
+#cartPut .cart_option .list .btn_position {
+    display: block;
+    position: relative
+}
+
+#cartPut .cart_option .list .btn_del {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: -1px;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    background: url(https://res.kurly.com/mobile/service/goodsview/1910/ico_view_cartitem_del_24x24.png) no-repeat 50% 50%;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px
+}
+
+#cartPut .cart_option .list .option {
+    overflow: hidden
+}
+
+#cartPut .cart_option .list .count {
+    overflow: hidden;
+    float: left;
+    width: 88px;
+    height: 24px;
+    border: 1px solid #dddfe1;
+    border-radius: 3px
+}
+
+#cartPut .cart_option .list .inp {
+    float: left;
+    width: 41px;
+    height: 24px;
+    padding: 0 0 2px;
+    border: 0;
+    background-color: #fff;
+    font-size: 14px;
+    color: #000;
+    line-height: 18px;
+    text-align: center
+}
+
+#cartPut .cart_option .list .btn {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: 22px;
+    height: 22px;
+    border: 0;
+    background: #f6f7f7;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px
+}
+
+#cartPut .cart_option .list .btn:before,
+#cartPut .cart_option .list .btn:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    width: 10px;
+    height: 2px;
+    background-color: #5f0080
+}
+
+#cartPut .cart_option .list .down {
+    border-right: 1px solid #dddfe1
+}
+
+#cartPut .cart_option .list .down:before {
+    display: none
+}
+
+#cartPut .cart_option .list .up {
+    float: right;
+    border-left: 1px solid #dddfe1
+}
+
+#cartPut .cart_option .list .up:before {
+    left: 10px;
+    top: 6px;
+    width: 2px;
+    height: 10px
+}
+
+#cartPut .cart_option .list .price {
+    font-weight: 700;
+    text-align: right
+}
+
+#cartPut .cart_option .list .original_price {
+    font-weight: 400;
+    color: #ccc;
+    text-decoration: line-through
+}
+
+#cartPut .cart_option .total .price {
+    overflow: hidden;
+    text-align: right
+}
+
+#cartPut .cart_option .total .tit {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    vertical-align: 2px
+}
+
+#cartPut .cart_option .total .num {
+    padding-left: 8px;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 32px
+}
+
+#cartPut .cart_option .total .won {
+    padding-left: 2px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    vertical-align: -1px
+}
+
+#cartPut .cart_option .total .txt_point {
+    display: block;
+    padding-top: 14px;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    text-align: right
+}
+
+#cartPut .cart_option .total .ico {
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+    margin-right: 2px;
+    border: 1px solid #e8a828;
+    border-radius: 10px;
+    background-color: #ffbf00;
+    font-weight: 700;
+    font-size: 11px;
+    color: #fff;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: 1px
+}
+
+#cartPut .cart_option .total .emph {
+    font-weight: 700
+}
+
+#cartPut .cart_option .group_btn {
+    overflow: hidden;
+    width: 100%
+}
+
+#cartPut .cart_option .group_btn .txt_type {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: 0 0;
+    font-weight: 700;
+    color: #fff;
+    font-size: 16px;
+    line-height: 52px;
+    letter-spacing: -.1px;
+    text-align: center
+}
+
+#cartPut .cart_option .group_btn .btn_type1 {
+    width: auto
+}
+
+#cartPut .cart_option .group_btn .btn_type2 .txt_type {
+    color: #5f0080
+}
+
+#cartPut .cart_option .view_function .btn {
+    overflow: hidden;
+    float: right;
+    width: 128px;
+    height: 54px;
+    margin-right: 12px;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    background: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    color: #5f0080;
+    line-height: 52px;
+    letter-spacing: -.1px;
+    text-align: center
+}
+
+#cartPut .cart_option .view_function .btn_save.on {
+    border: 1px solid #5f0081;
+    background-color: #5f0080;
+    color: #fff
+}
+
+#cartPut .cart_option .view_function .btn_alarm.off {
+    border: 1px solid #ddd;
+    color: #ddd
+}
+
+#cartPut .cart_option .success {
+    padding: 40px 0 25px;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -.4px;
+    text-align: center
+}
+
+#cartPut .cart_type2 {
+    float: right;
+    width: 560px;
+    padding-bottom: 40px
+}
+
+#cartPut .cart_type2 .box_select {
+    margin-top: -1px;
+    padding-bottom: 6px
+}
+
+#cartPut .cart_type2 .box_select .inner_select {
+    float: right
+}
+
+#cartPut .cart_type2 .box_select .select_item {
+    top: 39px
+}
+
+#cartPut .cart_type2 .list_goods {
+    padding-bottom: 12px
+}
+
+#cartPut .cart_type2 .option_pass .list {
+    display: none
+}
+
+#cartPut .cart_type2 .option_pass .total {
+    padding-top: 126px;
+    border-top: 0
+}
+
+#cartPut .cart_type2 .list li {
+    float: right;
+    width: 410px;
+    padding: 12px 10px 11px 15px;
+    margin-bottom: -1px;
+    border: 1px solid #f4f4f4
+}
+
+#cartPut .cart_type2 .list .name {
+    padding: 0 63px 0 0
+}
+
+#cartPut .cart_type2 .list .option {
+    padding-top: 9px
+}
+
+#cartPut .cart_type2 .list_nopackage {
+    padding: 0
+}
+
+#cartPut .cart_type2 .list_nopackage li {
+    float: none;
+    width: 100%;
+    padding: 0 0 5px;
+    margin: 0;
+    border: 0
+}
+
+#cartPut .cart_type2 .list_nopackage .price,
+#cartPut .cart_type2 .list_nopackage .name,
+#cartPut .cart_type2 .list_nopackage .btn_position {
+    display: none
+}
+
+#cartPut .cart_type2 .list_nopackage .tit_item {
+    float: left;
+    width: 150px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    letter-spacing: -.5px
+}
+
+#cartPut .cart_type2 .list_nopackage .option {
+    padding-top: 0
+}
+
+#cartPut .cart_type2 .list .price {
+    float: right;
+    padding: 2px 4px 0;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -.6px
+}
+
+#cartPut .cart_type2 .list .original_price {
+    padding-right: 2px
+}
+
+#cartPut .cart_type2 .total {
+    padding: 30px 0 20px;
+    border-top: 1px solid #f4f4f4
+}
+
+#cartPut .cart_type2 .total.no_border {
+    border-top: 0
+}
+
+#cartPut .cart_type2 .view_function {
+    display: block;
+    float: left;
+    width: 280px
+}
+
+#cartPut .cart_type1 {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    bottom: 0;
+    width: 100%
+}
+
+#cartPut .cart_type1.on {
+    display: block
+}
+
+#cartPut .cart_type1 .bar_open {
+    display: block;
+    position: relative;
+    height: 22px;
+    border-top: 2px solid #5f0080
+}
+
+#cartPut .cart_type1 .btn_close {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    width: 170px;
+    height: 48px;
+    margin-left: 280px;
+    border: 0;
+    border-radius: 3px 3px 0 0;
+    background-color: #5f0080;
+    text-align: center
+}
+
+#cartPut .cart_type1 .btn_close .ico {
+    padding: 0 30px 0 7px;
+    background: url(https://res.kurly.com/pc/service/goods/1910/ico_up_fff_24x24.png) no-repeat 100% -3px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 20px
+}
+
+#cartPut .cart_type1 .btn_close .ico.open {
+    background: url(https://res.kurly.com/pc/service/goods/1910/ico_down_fff_24x24.png) no-repeat 100% -3px
+}
+
+#cartPut .cart_type1 .box_select {
+    width: 900px;
+    margin: 0 auto;
+    padding-bottom: 20px
+}
+
+#cartPut .cart_type1 .box_select.off {
+    display: none
+}
+
+#cartPut .cart_type1 .box_select .inner_select {
+    float: left;
+    width: 436px
+}
+
+#cartPut .cart_type1 .box_select .txt_select.open,
+#cartPut .cart_type1 .box_select .txt_select {
+    background-position: 406px 14px
+}
+
+#cartPut .cart_type1 .box_select .name {
+    display: none
+}
+
+#cartPut .cart_type1 .box_select .select_item {
+    bottom: 39px
+}
+
+#cartPut .cart_type1 .list .btn_del {
+    top: 0
+}
+
+#cartPut .cart_type1 .list {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0
+}
+
+#cartPut .cart_type1 .list .off {
+    display: none
+}
+
+#cartPut .cart_type1 .list li {
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 15px 10px 20px;
+    background-color: #f7f7f7
+}
+
+#cartPut .cart_type1 .list .name {
+    float: left;
+    width: 523px;
+    padding-top: 2px
+}
+
+#cartPut .cart_type1 .list .option {
+    float: left;
+    width: 294px;
+    padding-left: 20px
+}
+
+#cartPut .cart_type1 .list .count {
+    float: left;
+    width: 88px
+}
+
+#cartPut .cart_type1 .in_option {
+    left: 0;
+    bottom: 70px;
+    width: 100%;
+    background-color: #fcfcfc
+}
+
+#cartPut .cart_type1 .list .price {
+    float: right;
+    width: 186px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.5px
+}
+
+#cartPut .cart_type1 .list_nopackage .btn_del {
+    display: none
+}
+
+#cartPut .cart_type1 .total {
+    width: 900px;
+    margin: 0 auto;
+    padding: 19px 0 21px
+}
+
+#cartPut .cart_type1 .total .tit {
+    vertical-align: 3px
+}
+
+#cartPut .cart_type1 .total .num {
+    font-size: 28px
+}
+
+#cartPut .cart_type1 .total .won {
+    vertical-align: 0
+}
+
+#cartPut .cart_type1 .total .txt_point {
+    padding-top: 8px
+}
+
+#cartPut .cart_type1 .group_btn {
+    width: 900px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    background-color: #fcfcfc
+}
+
+#cartPut .cart_type1 .group_btn.off {
+    display: none
+}
+
+#cartPut .cart_type1 .group_btn .txt_type {}
+
+#cartPut .cart_type1 .group_btn .btn_type1 {}
+
+#cartPut .cart_type1 .view_function {
+    display: block;
+    float: left;
+    width: 448px
+}
+
+#cartPut .cart_type1 .view_function .btn {
+    width: 212px
+}
+
+#cartPut .cart_type3 {
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    width: 440px;
+    height: 516px;
+    margin: -258px 0 0 -220px;
+    border-radius: 6px;
+    background-color: #fff
+}
+
+#cartPut .cart_type3.on {
+    display: block
+}
+
+#cartPut .cart_type3 .layer_name {
+    display: block;
+    padding: 25px 0 17px 30px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px
+}
+
+#cartPut .cart_type3 .btn_close1 {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    right: 24px;
+    top: 30px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: url(https://res.kurly.com/pc/ico/1908/ico_layer_close.png) no-repeat 50% 50%;
+    font-size: 0;
+    text-indent: -9999px
+}
+
+#cartPut .cart_type3 .inner_option {
+    padding: 0 30px
+}
+
+#cartPut .cart_type3 .tit_cart {
+    display: block;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #333;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -.67px
+}
+
+#cartPut .cart_type3 .list_goods {
+    width: 380px
+}
+
+#cartPut .cart_type3 .list {
+    overflow: hidden;
+    overflow-y: auto;
+    width: 400px;
+    height: 220px
+}
+
+#cartPut .cart_type3 .list li {
+    width: 380px;
+    padding: 11px 0 18px;
+    border-top: 1px solid #f4f4f4
+}
+
+#cartPut .cart_type3 .list li:first-child {
+    border-top: 0
+}
+
+#cartPut .cart_type3 .list .name {
+    font-size: 14px;
+    letter-spacing: 0
+}
+
+#cartPut .cart_type3 .list .count {
+    float: right
+}
+
+#cartPut .cart_type3 .list .price {
+    float: left;
+    padding: 4px 0 0;
+    font-size: 14px;
+    letter-spacing: 0
+}
+
+#cartPut .cart_type3 .list .original_price {
+    padding-right: 2px
+}
+
+#cartPut .cart_type3 .list .btn_position {
+    display: none
+}
+
+#cartPut .cart_type3 .list .option {
+    padding-top: 11px
+}
+
+#cartPut .cart_type3 .total {
+    padding-top: 20px
+}
+
+#cartPut .cart_type3 .total .tit {
+    float: left;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -.67px;
+    vertical-align: 0
+}
+
+#cartPut .cart_type3 .total .sum {
+    float: right
+}
+
+#cartPut .cart_type3 .total .num {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -1px
+}
+
+#cartPut .cart_type3 .total .won {
+    padding-left: 0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -.67px;
+    vertical-align: 3px
+}
+
+#cartPut .cart_type3 .total .txt_point {
+    padding-top: 8px
+}
+
+#cartPut .cart_type3 .group_btn {
+    overflow: hidden;
+    padding: 21px 0 30px
+}
+
+#cartPut .cart_type3 .group_btn .btn_type1 .txt_type,
+#cartPut .cart_type3 .group_btn .btn_type2 .txt_type {
+    width: 100%;
+    border: 0;
+    border-radius: 3px;
+    background: 0 0
+}
+
+#cartPut .cart_type3 .group_btn .btn_type2 {
+    float: left;
+    width: 186px
+}
+
+#cartPut .cart_type3 .group_btn .btn_type1 {
+    float: right;
+    width: 186px;
+    background-color: #5f0080;
+    color: #fff
+}
+
+#cartPut .cart_type3 .group_btn .btn_type1 .txt_type {
+    color: #fff
+}
+
+#cartPut .cart_type3 .group_btn .btn_disabled {
+    border: 1px solid #ddddde;
+    background-color: #ddd
+}
+
+#cartPut .cart_type3 .group_btn .btn_disabled .txt_type {
+    opacity: .8
+}
+
+#cartPut .cart_type3 .group_btn .only_one {
+    width: 100%
+}
+
+#cartPut .cart_result {
+    height: 222px;
+    margin-top: -111px
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),
+only screen and (min-device-pixel-ratio:1.5),
+only screen and (min-resolution:1.5dppx) {
+    #cartPut .cart_option .box_select .txt_select {
+        background: url(https://res.kurly.com/pc/service/goods/1910/ico_selectbox_24x18.png) no-repeat 381px 14px;
+        background-size: 12px 9px
+    }
+
+    #cartPut .cart_option .box_select .txt_select.open {
+        background: url(https://res.kurly.com/pc/service/goods/1910/ico_selectbox_up_24x18.png) no-repeat 381px 14px;
+        background-size: 12px 9px
+    }
+
+    #cartPut .cart_type1 .box_select .txt_select.open,
+    #cartPut .cart_type1 .box_select .txt_select {
+        background-position: 406px 14px
+    }
+
+    #cartPut .cart_option .list .btn_del {
+        background: url(https://res.kurly.com/mobile/service/goodsview/1910/ico_view_cartitem_del_48x48.png) no-repeat 50% 50%;
+        background-size: 24px 24px
+    }
+
+    #cartPut .cart_type1 .btn_close .ico {
+        background: url(https://res.kurly.com/pc/service/goods/1910/ico_up_fff_48x48.png) no-repeat 100% 0;
+        background-size: 24px 24px
+    }
+
+    #cartPut .cart_type1 .btn_close .ico.open {
+        background: url(https://res.kurly.com/pc/service/goods/1910/ico_down_fff_48x48.png) no-repeat 100% -3px;
+        background-size: 24px 24px
+    }
+}
+
+.layout-wrapper.goods-view-area {
+    padding-right: 40px;}
+
+
+body, input, select, textarea, button {
+    font-family: malgun gothic, AppleGothic, dotum;
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: #4c4c4c;
+    font-size: 12px;
+    max-width: 100%;}
+
+body {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+#header,
+#container,
+#content {
+    position: relative
+}
+
+#shareLayer {
+    position: relative
+}
+
+#shareLayer .layer_share {
+    display: none;
+    position: absolute;
+    right: -25px;
+    top: 39px;
+    width: 278px;
+    height: 164px;
+    background: url(https://res.kurly.com/mobile/service/goodsview/1804/layer_share.png) no-repeat 0 0
+}
+#shareLayer .inner_layersns {
+    overflow: hidden;
+    width: 238px;
+    height: 120px
+}
+
+.layout-wrapper.goods-view-area {
+    padding-right: 40px;
+    margin-bottom: 200px;
+}
+.goods-add-product {
+    position: relative
+}
+.goods-add-product-title {
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.8;
+}
+.goods-add-product-title:before {
+    width: 20px;
+    height: 5px;
+    background-color: #000;
+    display: block;
+    content: '';
+}
+.__slide-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.goods-add-product-wrapper {
+    position: relative;
+    margin-top: 20px;
+}
+
+.goods-view-infomation {
+    margin-top: 50px;
+}
+
+.goods-view-infomation-tab-group {
+    border-bottom: 1px solid #bfbfbf;
+}
+ol, ul {
+    list-style-type: none;
+}
+.goods-view-infomation-tab {
+    float: left;
+    vertical-align: top;
+}
+.goods-view-infomation-tab:first-child .goods-view-infomation-tab-anchor {
+    border-left: 1px solid #bfbfbf;
+    width: 170px;
+}
+.goods-view-infomation-tab-anchor.__active {
+    background-color: #fff;
+    height: 47px;
+}
+.goods-view-infomation-tab-anchor {
+    position: relative;
+    top: 1px;
+    width: 168px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    display: block;
+    color: #4c4c4c;
+    font-size: 14px;
+    font-family: noto sans;
+    background-color: #f0eef1;
+    border: 1px solid #bfbfbf;
+    border-bottom: 0;
+    border-left: none;
+}
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+.goods-add-product-move.goods-add-product-move-left {
+    left: 0;
+    background-image: url(https://res.kurly.com/pc/etc/old/images/common/slide-sub-left-button-black.png);
+    background-position: left;
+}
+
+.goods-add-product-move {
+    position: absolute;
+    text-indent: -9999px;
+    background-color: transparent;
+    border: 0;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-repeat: no-repeat;
+    z-index: 3;
+    width: 30px;
+    background-position: 50% 50%;
+}
+
+button {
+    outline: none;
+}
+body, input, select, textarea, button {
+    font-family: malgun gothic, AppleGothic, dotum;
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: #4c4c4c;
+    font-size: 12px;
+    max-width: 100%;
+}
+
+utton, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button {
+    overflow: visible;
+    border-radius: 0;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+.goods-add-product-move.goods-add-product-move-right {
+    right: 0;
+    background-image: url(https://res.kurly.com/pc/etc/old/images/common/slide-sub-right-button-black.png);
+    background-position: right;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.goods-add-product-list-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 940px;
+    margin: 0 auto;
+    height: 350px;
+}
+
+.__slide-mover {
+    position: absolute;
+    left: 0;
+    width: 10000%;
+    height: 100%;
+}
+
+.goods-add-product-list {
+    width: 10000%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.__slide-item {
+    float: left;
+    height: 100%;
+}
+
+.goods-add-product-item {
+    float: left;
+    width: 180px;
+    height: 100%;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+}
+
+.goods-add-product-item-figure {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+}
+
+.goods-add-product-item-image {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    border: 0;
+}
+
+img, video, canvas {
+    max-width: 100%;
+}
+
+.goods-add-product-item-content {
+    height: 120px;
+}
+
+.goods-add-product-item-content-wrapper {
+    padding: 10px;
+    position: relative;
+    min-height: 75px;
+}
+div, th, td, li, dt, dd, p {
+    word-break: break-all;
+}
+
+.goods-view-infomation-content.__active {
+    display: block;
+}
+
+.goods-view-infomation-content {
+    padding-top: 60px;
+    min-height: 500px;
+    margin-bottom: 50px;
+}
+
+.goods_wrap {
+    width: 1010px;
+    margin: 0 auto;
+    font-family: noto sans;
+    font-weight: 200;
+    letter-spacing: 0;
+}
+.goods_wrap .goods_intro .context .words {
+    margin-top: 28px;
+}
+
+.goods_wrap .context .words {
+    margin-top: 55px;
+    font-size: 18px;
+    line-height: 32px;
+    color: #373737;
+}
+.section_view {
+    width: 1050px;
+    margin: 0 auto;
+    padding-top: 70px
+}
+
+#shareLayer {
+    position: relative
+}
+
+#shareLayer .layer_share {
+    display: none;
+    position: absolute;
+    right: -25px;
+    top: 39px;
+    width: 278px;
+    height: 164px;
+    background: url(https://res.kurly.com/mobile/service/goodsview/1804/layer_share.png) no-repeat 0 0
+}
+
+#shareLayer .inner_layersns {
+    overflow: hidden;
+    width: 238px;
+    height: 120px
+}
+
+#shareLayer .list_share .btn {
+    position: absolute;
+    top: 0
+}
+
+#shareLayer .list_share .btn img {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px
+}
+
+#shareLayer .list_share .txt {
+    float: left;
+    padding-top: 4px;
+    font-size: 12px;
+    color: #000;
+    line-height: 20px
+}
+
+#shareLayer .list_share .btn:hover .txt {
+    border-bottom: 1px solid #5f0080
+}
+
+#shareLayer .list_share .btn_fb {
+    left: 154px;
+    top: 44px
+}
+
+#shareLayer .list_share .btn_tw {
+    left: 41px;
+    top: 44px
+}
+
+#shareLayer .list_share .btn_url {
+    overflow: hidden;
+    position: absolute;
+    left: 40px;
+    top: 94px;
+    width: 198px;
+    height: 30px;
+    clear: both
+}
+
+#shareLayer .list_share .inp {
+    float: left;
+    width: 114px;
+    height: 30px;
+    padding: 7px 0 6px 3px;
+    border: 1px solid #f3f2f3;
+    background-color: #f3f2f4;
+    font-size: 11px;
+    color: #666
+}
+
+#shareLayer .list_share .btn_copy {
+    float: left;
+    width: 84px;
+    height: 30px;
+    border: 1px solid #5f0080;
+    font-size: 12px;
+    color: #5f0080;
+    line-height: 28px;
+    text-align: center
+}
+
+#shareLayer .list_share .btn_copy img {
+    width: 10px;
+    height: 9px;
+    margin-left: 5px
+}
+
+#shareLayer .list_share .btn_copy:hover {
+    background-color: #f7f7f7;
+    font-weight: 700
+}
+
+#shareLayer .list_share .btn_copy.off img {
+    display: none
+}
+
+
+.goods_point h3 span {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    margin-left: 260px;
+    padding: 0 15px;
+    background: #fff;
+    text-shadow: 2px 0;
+}
+
+.goods_wrap .goods_pick h3, .goods_point h3 {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    font-size: 50px;
+    width: 100%;
+    margin-bottom: 70px;
+    font-weight: 700;
+    font-family: noto sans;
+    font-weight: 700;
+    color: #666;
+}
+
+.goods_wrap .context.last {
+    margin-bottom: 170px;
+}
+
+.goods_wrap .goods_intro .context h3 {
+    display: block;
+    margin: 75px 0 0;
+    padding-bottom: 35px;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+    border-bottom: 1px solid #c1c1c1;
+    color: #666;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.goods_wrap .goods_intro .context h3 small {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 14px;
+    line-height: 15px;
+}
+
+small {
+    font-size: 80%;
+}
+
+.happy_center {
+    overflow: hidden;
+    padding: 0 5px;
+    border-bottom: 1px solid #ddd;
+    font: normal 16px/23px 'Noto Sans';
+    color: #333;
+    letter-spacing: 0
+}
+
+.happy_center.fst {
+    padding-top: 59px;
+    border-top: 2px solid #ddd
+}
+
+.happy_center .happy .tit {
+    font-weight: 700;
+    font-size: 28px;
+    color: #666;
+    line-height: 41px;
+    letter-spacing: .8px
+}
+
+.happy_center .happy .emph {
+    display: block;
+    padding-bottom: 6px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #666
+}
+
+.happy_center .happy .sub {
+    font-weight: 200;
+    padding-top: 31px
+}
+
+.happy_center .list {
+    overflow: hidden;
+    width: 100%;
+    padding: 59px 0 72px
+}
+
+.happy_center .list li {
+    float: left;
+    width: 340px
+}
+
+.happy_center .list li:last-child {
+    width: 212px
+}
+
+.happy_center .list .tit {
+    font-weight: 700;
+    font-size: 18px;
+    color: #5f0080;
+    line-height: 27px
+}
+
+.happy_center .list .tit:before {
+    content: "";
+    float: left;
+    width: 3px;
+    height: 20px;
+    margin: 5px 10px 0 0;
+    background-color: #5f0080
+}
+
+.happy_center .list .sub {
+    font-weight: 200;
+    padding-top: 9px;
+    font-size: 17px;
+    line-height: 25px
+}
+
+.happy_center .list .expend {
+    padding-top: 13px;
+    font-weight: 200;
+    font-size: 15px;
+    color: #666;
+    line-height: 22px;
+    letter-spacing: -.4px
+}
+
+.happy_center .unfold {
+    overflow: hidden;
+    position: relative;
+    padding: 16px 0 17px
+}
+
+.happy_center .unfold .tit {
+    float: left;
+    width: 175px;
+    padding: 0 0 0 13px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666;
+    line-height: 27px;
+    letter-spacing: 0
+}
+
+.happy_center .unfold .sub {
+    float: left;
+    width: 650px;
+    padding: 0;
+    line-height: 27px
+}
+
+.happy_center .unfold .emph {
+    display: inline;
+    padding: 0 8px 0 0;
+    font-weight: 700;
+    font-size: 16px
+}
+
+.happy_center .asked {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 95px;
+    height: 24px;
+    margin-top: -12px;
+    font-size: 16px;
+    color: #5f0080;
+    line-height: 24px;
+    text-align: right;
+    letter-spacing: -.4px
+}
+
+.happy_center .asked .txt {
+    padding-right: 20px
+}
+
+.happy_center .asked .ico {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 14px;
+    height: 8px;
+    margin-top: -4px
+}
+
+.happy_center .happy_faq {
+    display: none;
+    overflow: hidden;
+    padding: 49px 0 40px;
+    border-top: 1px solid #ddd
+}
+
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.goods-view-infomation-tab-group:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+/*_________________프로덕트 디테일_______________________*/
+.btn-danger,
+.btn-info {
+    color: #eeeeee;
+    background-color: #5f0080;
+    border-color: #5f0080;
+        font-size: large;
+}
