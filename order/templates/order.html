@@ -1,0 +1,26 @@
+{% extends 'base2.html' %}
+{% block content %}
+    {% if not order_info_set %}
+    <div>
+        <h1>주문내역이 없습니다.</h1>
+    </div>
+    {% else %}
+    <div>
+        <h1>주문내역</h1>
+    </div>
+        {% for order_info in order_info_set %}
+
+        {{order_info.product.p_name}}
+        <br>
+        {{order_info.product.id}}
+        <br>
+        {{order_info.product.price}}
+        <br>
+        수량: {{order_info.quantity}}
+        <br>
+        {{order_info.sub_total}}
+        <br>
+
+{% endfor %}
+{% endif %}
+{% endblock %}

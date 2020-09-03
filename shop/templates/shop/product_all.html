@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div id="main">
+        <div id="content">
+
+            <div class="page_aticle">
+                <div id="lnbMenu" class="lnb_menu">
+                    <div id="bnrCategory" class="bnr_category" style="">
+                        <div class="thumb"><img src="" alt="카테고리배너"></div>
+                    </div>
+                    <div class="inner_lnb">
+
+                        <ul class="list" style="border-bottom: 1px solid #ddd;">
+                            <li><a class="on">전체보기</a></li>
+                            <li><a class="">닭가슴살</a></li>
+                            <li><a class="">훈제</a></li>
+                            <li><a class="">소시지</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div id="goodsList" class="page_section section_goodslist">
+                    <div class="list_ability">
+                        <div class="sort_menu">
+                            <form id="sortForm" method="get" class="sort_menu">
+                                <select id="sort" name="sort" class="select_type user_sort">
+                                    <option value="-p_modify_dt">신상품순</option>
+                                    <option value="-price">가격순</option>
+                                    <option value="-read_cnt">인기순</option>
+                                </select>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="menu_row mx-auto">
+                        <div class="list_goods">
+                            <div class="inner_listgoods">
+                                <ul class="list">
+                                    {% for product in products %}
+                                    <div id="um_product">
+                                        <div class="thumb">
+
+                                            <div>
+                                                <a href='{{ product.get_absolute_url }}'><img
+                                                        class="card-img-top my_image"
+                                                        src="{{product.p_url}}"/></a>
+
+                                                <div class="group_btn">
+                                                    <button type="button" class="btn btn_cart"><span class="screen_out">38300</span>
+                                                    </button> <!----></div>
+                                                <div class="info">
+                                                    <h4 class="name">{{product.p_name}}</h4>
+                                                    <p class="cost">{{product.price}} 원</p>
+                                                    <p class="desc">{{product.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+</body>
+</html>
+<script>
+let sort = document.getElementById("sort")
+sort.onchange = function(e) {
+    document.forms["sortForm"].submit();
+}
+let sortby = '{{sortby}}';
+
+let length = sort.options.length;
+for(let i=0; i<length; i++) {
+    if(sortby === sort.options[i].value) {
+        sort.options[i].selected = true;
+    }
+}
+
+
+</script>
+{% endblock %}

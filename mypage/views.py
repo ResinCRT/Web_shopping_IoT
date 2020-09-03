@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from register.forms import UserChangeForm
 from django.urls import reverse_lazy
 from shop.models import *
+from order.models import *
 from django.db.models import Q
 
 
@@ -55,5 +56,4 @@ class MyWishlistView(LoginRequiredMixin, ListView):
     template_name = "mypage/mypage_wishlist.html"
     model = Wishlist
     context_object_name = "wishlist"
-
 

@@ -21,6 +21,8 @@ from django.contrib.auth.mixins import AccessMixin
 from django.views.defaults import permission_denied
 from mysite.views import HomeView
 import datetime
+from shop.views import *
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +30,18 @@ urlpatterns = [
     path('mypage/', include('mypage.urls')),
     path('accounts/', include('register.urls')),
     path('tinymce/', include('tinymce.urls')),
-]
+    path('shop/', include('shop.urls')),
+
+    path('shop/', ProductLV.as_view(),name='index'),
+    path('shop/product/', ProductLV.as_view(), name='index'),
+    path('shop/product/<int:pk>/add_qna', CreateQna.as_view(), name='qna'),
+
+    path('cart/', include('cart.urls', 'cart')),
+    path('order/', include('order.urls', 'order')),
+
+    ]
+
+urlpatterns += static(
+    prefix=settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT,
+)

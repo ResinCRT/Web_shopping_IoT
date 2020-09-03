@@ -34,6 +34,9 @@ class UserCreateDoneTV(TemplateView):
 
 class PwChangeView(auth_views.PasswordChangeView):
     success_url = reverse_lazy('register:password_change_done')
+    def form_valid(self,form):
+        response = super().form_valid(form)
+        return response
 
 class OwnerOnlyMixin(AccessMixin):
     raise_exception = True
