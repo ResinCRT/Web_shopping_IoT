@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
-{% block content %}
+{% block extra-style %}
 <style>
 .star_left{
     background: url('/static_data/static/images/ico_review.png') no-repeat -52px 0;
@@ -23,6 +23,9 @@
 .star_left.on{background-position:0 0; }
 .star_right.on{background-position:-15px 0; }
 </style>
+{%endblock%}
+{% block content %}
+
 
 <h1>Review Create/Update </h1>
 <p class="font-italic">This is a creation or update form for your Review.</p>

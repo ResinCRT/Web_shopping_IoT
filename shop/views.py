@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.shortcuts import render, get_object_or_404, redirect
-from shop.models import Product, Qna, Review, ReviewAttachFile
+from shop.models import *
 from django.views.generic import CreateView, ListView, DetailView, FormView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q,Count
@@ -26,6 +26,7 @@ class ProductLV(ListView):
 
     def get_ordering(self):
         sortby = self.request.GET.get("sort", "-p_modify_dt")
+        print(f"{sortby}")
         return sortby
 
     def get_context_data(self, **kwargs):

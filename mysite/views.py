@@ -29,10 +29,9 @@ class HomeView(ListView):
 
 class CategoryView(DetailView):
     model = Category
-    template_name = "shop/product_all.html"
-
+    template_name = "shop/product_category.html"
+    context_object_name = 'selected_category'
     def get_object(self, queryset=None):
-
         # override get_object in SingleObjectMixin
         # URL pattern : .../category/<parent>+<pk>
         # if you clicked parent, search all products whose parent category is <parent>
@@ -45,10 +44,8 @@ class CategoryView(DetailView):
 
         # check pk
         if pk is not '0':
-            print("pk is not 0")
             queryset = queryset.filter(pk=pk)
         else:
-            print("pk is 0")
             queryset = queryset.filter(pk=int(parent))
 
         # If none of those are defined, it's an error.
@@ -66,13 +63,17 @@ class CategoryView(DetailView):
         return obj
 
     def get_context_data(self, **kwargs):
-        context = {}
+        context = super().get_context_data(**kwargs)
+        sortby = self.request.GET.get("sort", "-p_modify_dt")
+        context["sortby"] = sortby
         if self.kwargs['pk'] == '0':
-            context['products'] = Product.objects.select_related('category').filter(category__parent_id=self.kwargs['parent'])
+            context['products'] = Product.objects.select_related('category').filter(category__parent_id=self.kwargs['parent']).order_by(sortby)
         else:
-            context['products'] = Product.objects.select_related('category').filter(category=self.object.pk)
+            context['products'] = Product.objects.select_related('category').filter(category=self.object.pk).order_by(sortby)
+
 
         return context
+
 
 class OwnerOnlyMixin(AccessMixin):
     raise_exception = True

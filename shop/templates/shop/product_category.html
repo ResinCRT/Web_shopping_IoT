@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
+
+{% block extra-style %}
+    <style>
+    .main_category{
+        font-weight:700;
+    }
+    </style>
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <div id="main">
@@ -10,8 +19,31 @@
                         <div class="thumb"><img src="" alt="카테고리배너"></div>
                     </div>
                     <div class="inner_lnb">
+
                         <ul class="list" style="border-bottom: 1px solid #ddd;">
-                            <li><a class="on">전체보기</a></li>
+                            <li><a href="{% url 'shop:index'%}" class="main_category">상품 전체보기</a></li>
+                            {% with cat=selected_category cat_p=selected_category.parent_id%}
+                            {% if cat_p %}
+                                {% for category in categories %}
+                                    {% if cat_p == category.id %}
+                                        <li><a href="{% url 'shop:index'%}category/{{cat_p}}+0" class="main_category">{{category.category_name}}
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                <li><a href="{% url 'shop:index'%}category/{{cat.id}}+0/"
+                                       class="main_category on">{{cat.category_name}}
+                            {% endif %}
+                            </a></li>
+                            {% for category in categories %}
+                                {% if cat_p and cat_p == category.parent_id%}
+                                    <li><a href="{% url 'shop:index'%}category/{{cat_p}}+{{category.id}}"
+                                           class="{% if category.id == cat.id%}on{%endif%}">{{category.category_name}}</a></li>
+                                {% elif not cat_p and cat.id == category.parent_id %}
+                                    <li><a href="{% url 'shop:index'%}category/{{cat.id}}+{{category.id}}"
+                                           class="">{{category.category_name}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% endwith %}
                         </ul>
                     </div>
                 </div>
