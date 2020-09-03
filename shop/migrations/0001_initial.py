@@ -5,7 +5,7 @@ from django.db import migrations, models
 import django.db.models.deletion
 import tinymce.models
 
-
+#
 class Migration(migrations.Migration):
 
     initial = True
