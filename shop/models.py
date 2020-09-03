@@ -50,7 +50,7 @@ class Qna(models.Model):
     qna_title = models.CharField(verbose_name='TITLE', max_length=50)
     product = models.ForeignKey(Product, models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
-    parent_id = models.IntegerField(blank=True, null=True)
+    parent = models.ForeignKey('self', related_name='replies', on_delete=models.CASCADE, null=True, blank=True)
     # content = models.TextField()
     content = HTMLField('CONTENT')
     qna_create_date = models.DateTimeField(auto_now_add=True)
@@ -59,6 +59,7 @@ class Qna(models.Model):
     class Meta:
         managed = True
         db_table = 'qna'
+        ordering = '-qna_create_date',
 
     def __str__(self):
         return self.content
@@ -69,7 +70,7 @@ class Review(models.Model):
     review_title = models.CharField(verbose_name='TITLE', max_length=50)
     product = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
     rating = models.IntegerField(blank=True, null=True)
-    content = models.CharField(max_length=45, blank=True, null=True)
+    content = HTMLField('CONTENT')
     file = models.CharField(max_length=45, blank=True, null=True)
     r_created_dt = models.DateTimeField(auto_now_add=True)
     r_modify_dt = models.DateTimeField(auto_now=True)
@@ -77,6 +78,7 @@ class Review(models.Model):
     class Meta:
         managed = True
         db_table = 'review'
+        ordering = '-r_created_dt',
 
     def __str__(self):
         return self.review_title

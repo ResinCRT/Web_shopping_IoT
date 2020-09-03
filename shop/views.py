@@ -122,6 +122,25 @@ class DeleteQnaView(OwnerOnlyMixin, DeleteView):
     def get_success_url(self):
         return reverse_lazy('shop:detail', kwargs={'pk': self.object.product_id})
 
+# 질문 덧글
+class CreateQnaComment(LoginRequiredMixin, CreateView):
+    model = Qna
+    fields = ['qna_title', 'content', 'author']
+
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.product_id = self.kwargs['product_id']
+        form.instance.parent_id = self.kwargs['qna_id']
+        # form.instance.qna_create_date = timezone.now()
+        # form.instance.qna_modify_date = timezone.now()
+        response = super().form_valid(form)
+
+        return response
+
+    def get_success_url(self):
+        return reverse_lazy('shop:detail', kwargs={'pk': self.object.product_id})
+
 
 # 해당 상품 리뷰 목록
 class ReviewLV(ListView):
