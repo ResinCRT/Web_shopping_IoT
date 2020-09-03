@@ -1,108 +1,242 @@
-{% extends 'base2.html' %}
+
+{% extends 'base.html' %}
 {% load widget_tweaks %}
 {% block content %}
 <head>
+    <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-.star_left{
-    background: url('/static_data/static/images/ico_review.png') no-repeat -52px 0;
-    background-size: auto 100%;
-    width: 15px;
-    height: 30px;
-    float:left;
-    text-indent: -9999px;
+<style>
+    .my_prod_row_class{
+    padding-top:15px;
+    padding-bottom:20px;
+    }
+    .my_prod_row_class .mx-auto p {
+    color : #000;
+    font-size: 12px;
+    }
+    .my_prod_row_class .mx-auto p a {
+    color: #000;
+    font-size: 12px;
+    text-decoration: none;
+    }
+    .my_prod_title{
+    font-size: 16;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    }
+    .my_prod_text{
+    padding-right: 20px;
+    }
+    .menu_row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+    .max-small {
+    width: auto; height: auto;
+    max-width: 200px;
+    max-height: 200px;
 }
-.star_right{
-    background: url('/static_data/static/images/ico_review.png') no-repeat right 0;
-    background-size: auto 100%;
-    width: 15px;
-    height: 30px;
-    float:left;
-    text-indent: -9999px;
-}
-.star_left.on{background-position:0 0; }
-.star_right.on{background-position:-15px 0; }
 </style>
+
 </head>
 
+<div class="container">
+    <br>
+    <div class="row">
 
-<h2>{{ product.p_name }}</h2>
-{{ product.price }}
-{{ product.description }}
+        <div class="col-12 col-sm-12 com-md-12 col-lg-6">
+            <div style="min-width: 18rem">
+                <img src="{{product.p_url}}"/>
+            </div>
+            <div  >
+                <h1 class="my_prod_title">{{product.p_name}}</h1>
+                <p>{{product.price}}원</p>
+                <p class="my_title">상품 설명</p>
+                <p class="text-justify my_prod_text">{{product.description}}</p>
 
-<div class = "form-group">
-<form method = "POST" action = "/order/create/">{% csrf_token %}
+                <div class = "product-btns">
+                <form action="{% url 'cart:add_to_cart' product.id %}" method="post">{% csrf_token %}
+                    <div class="qty-input">
+                        <span class="text">수량: </span>
+                        <input class="input" name="quantity" type="number" style="text-align: center; width: 70px;  " value="1" min="1">
+                    </div>
+                <button type="submit" class="primary-btn add-to-cart" style="font-size:20px;">&nbsp;<i class="fa fa-shopping-cart"></i>&nbsp;장바구니 담기&nbsp;</button>
+                </form>
+                </div>
 
-<input id="id_quantity" type="int" name="quantity" maxlength="3" />
- <input type = "{{field.field.widget.input_type}}" class = "form-control" id = "{{field.id_for_label}}"
-                            placeholder="{{field.label}}" name = "{{field.name}}"
-                            value = "{% ifequal field.name 'product' %} {{product.id}} {% endifequal %}">
-</form>
-</div>
-<a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">장바구니에 담기</a>
+            </div>
+        </div>
+    </div>
+    <br><br>
 
-<br><br>
-{% if user.is_active %}
-<div class="text-right mr-3">
-    <a href="{%url 'shop:add_review' pk=product.id %}" class="btn btn-primary btn-sm">
-        <i class="fas fa-pencil-alt"></i> 리뷰쓰기</a>
+
+
+
+
+
+
+<div class="container">
+<div class="row">
+    <div class="text-left"><h3>상품 리뷰</h3></div>
+    {% if user.is_active %}
+<div class="text-right" >
+    <a href="{%url 'shop:add_review' pk=product.id %}" class="btn btn-sm">
+        <i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;&nbsp;리뷰작성</a>
 </div>
 {% endif %}
-<div>
-<h1>상품 리뷰</h1>
 </div>
-<hr>
+</div>
+<hr height="3px">
 {% for review in product.review_set.all %}
-<h2>{{review.review_title}}</h2>
-<br>
-<div >
-최근 수정한 날짜 : {{review.r_modify_dt}}
+
+<div><h5>{{review.review_title}}</h5></div>
+    <div class="container" >
+        <div class="row">
+        <div>{% if review.rating == 1 %}
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 2 %}
+<i class="fa fa-star text-warning"></i>
+{% elif review.rating == 3 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 4 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+{% elif review.rating == 5 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 6 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+{% elif review.rating == 7 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 8 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+{% elif review.rating == 9 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 10 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+{% endif %}
+    </div>
+     <div>
+         <font color="#BDBDBD" size="1">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{review.author}}</font>
+     </div>
+    <div>
+    <font color="#BDBDBD" size="1">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{review.r_modify_dt}}</font>
 </div>
-${ review.rating }
-<c:forEach begin="1" end="${ review.rating }">★</c:forEach>
+    </div>
+    </div>
 <br>
-{% for file in review.files.all %}
-<img src="{{file.upload_file.url}}">
+    {% for file in review.files.all %}
+<img class="max-small" src="{{file.upload_file.url}}">
+
 {% endfor %}
-
-
 <br>
-{{review.content | safe}}
+<br>
+<font color="#353535" size="3">{{review.content | safe}}</font>
 {% if review.author == user %}
 {% if user.is_active %}
-<a href="{%url 'shop:update_review' pk=review.id %}" class="btn btn-primary btn-sm">리뷰수정</a>
+    <div class="text-right" >
+<a href="{%url 'shop:update_review' pk=review.id %}" class="btn btn-sm">리뷰수정</a>
 
-<a href="{%url 'shop:delete_review' pk=review.id %}" class="btn btn-primary btn-sm">리뷰삭제</a>
-
+<a href="{%url 'shop:delete_review' pk=review.id %}" class="btn btn-sm">리뷰삭제</a>
+    </div>
 {% endif %}
 {% endif %}
-<br>
 <hr>
 {% endfor %}
-</div>
+    <br>
 
-
-<br>
-<h1>상품 문의</h1>
- {% for qna in product.qna_set.all %}
-    <a class="mr-3" href="{% url 'shop:update_qna' qna.id %}">
-        <i class="far fa-edit"></i> 수정</a>
-    <a class="mr-3" href="{% url 'shop:delete_qna' qna.id %}">
-        <i class="far fa-edit"></i> 삭제</a>
-    <p>{{ qna.qna_title }} {{ qna.qna_modify_date }}</p>
-    <p>{{ qna.author }}</p>
-    <p>{{ qna | safe }}</p>
-    <hr>
-    {% endfor %}
-
-{% if user.is_active %}
-<div class="text-right mr-3">
-    <a href="{%url 'shop:add_qna' product.id %}" class="btn btn-primary btn-sm">
-        <i class="fas fa-pencil-alt"></i> 쓰기</a>
+<div class="container">
+<div class="row">
+    <div class="text-left"><h3>상품 문의</h3></div>
+    {% if user.is_active %}
+<div class="text-right" >
+    <a href="{%url 'shop:add_qna' product.id %}" class="btn btn-sm">
+        <i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;&nbsp;문의작성</a>
 </div>
 {% endif %}
+</div>
+</div>
+<hr height="5px">
+{% for qna in product.qna_set.all %}
+{% if not qna.parent_id %}
+<div><h5>{{ qna.qna_title }}</h5></div>
+    <div class="container" >
+        <div class="row">
+
+     <div>
+         <font color="#BDBDBD" size="1">{{qna.author}}</font>
+     </div>
+    <div>
+    <font color="#BDBDBD" size="1">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{qna.qna_create_date}}</font>
+</div>
+    </div>
+    </div>
+
+<br>
+<font color="#353535" size="3">{{qna.content | safe}}</font>
+{% if qna.author == user %}
+{% if user.is_active %}
+ <div class="text-right" >
+<a href="{% url 'shop:update_qna' qna.id %}" class="btn btn-sm">문의수정</a>
+<a href="{% url 'shop:delete_qna' qna.id %}" class="btn btn-sm">문의삭제</a>
+<a href="{% url 'shop:add_comment' product.id qna.id %}" class="btn btn-sm">답변작성(관리자)</a>
+ </div>
+{% endif %}
+{% endif %}
+{% endif %}
+{% for qna_comment in product.qna_set.all %}
+    {% if qna.id == qna_comment.parent_id %}
+    <p>
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-return-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+        </svg>
+        <font color="#BDBDBD" size="1">관리자&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{ qna_comment.qna_modify_date }}</font>
+        <a href="{% url 'shop:update_qna' qna_comment.id %}" class="btn btn-sm">답변수정</a>
+        <a href="{% url 'shop:delete_qna' qna_comment.id %}" class="btn btn-sm">답변삭제</a>
+    </p>
+    <p>{{ qna_comment | safe }}</p>
+    {% endif %}
+{% endfor %}
+<hr>
+{% endfor %}
+
+
+
+</div>
+</div>
+
+
+
+</div>
+
+
 
 {% endblock %}
