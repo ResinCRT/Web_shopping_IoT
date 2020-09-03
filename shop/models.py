@@ -22,6 +22,8 @@ class Product(models.Model):
     p_created_dt = models.DateTimeField(blank=True, null=True)
     p_modify_dt = models.DateTimeField(blank=True, null=True)
     brand = models.CharField(max_length=45)
+    p_url = models.CharField(max_length=256)
+    p_url = models.CharField(max_length=256)
 
     class Meta:
         managed = True
@@ -109,3 +111,17 @@ class ReviewAttachFile(models.Model):
 
     def __str__(self):
         return self.filename
+
+
+class ReviewAttachFile(models.Model):
+    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="files", verbose_name='Review', blank=True, null=True)
+    upload_file = models.ImageField(upload_to="%Y/%m/%d", null=True, blank=True, verbose_name='파일')
+    filename = models.CharField(max_length=64, null=True, verbose_name='첨부파일명')
+    content_type = models.CharField(max_length=128, null=True, verbose_name='MIME TYPE')
+    size = models.IntegerField('파일 크기')
+
+    def __str__(self):
+        return self.filename
+
+class Wishlist(models.Model):
+    pass

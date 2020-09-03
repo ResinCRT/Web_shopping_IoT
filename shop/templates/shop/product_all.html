@@ -3,100 +3,103 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 
     <style>
-        .my_image {
-            width: 100%;
-            height: auto%;
 
-        }
-
-        .my_bottom_margin {
-            margin-bottom: 10px;
-        }
-
-        .card-body h4 {
-            font-size: 14px;
-            text-trasform: uppercase;
-            letter-spacing: .2em;
-        }
-
-        .card-img-top {
-            width: 100%;
-            height: 20vw;
-            object-fit: cover;
-        }
-
-        div#wrapper {
-            border: 1px solid gray;
-        }
-        .menu_row {            
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            margin-right: -15px;
-            margin-left: -15px;
-        }
-        
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div>
-            <br>
-            <br>
-            <form id="sortForm" method="get">
-                <select id="sort" name="sort">
-                    <option value="-p_modify_dt">신상품순</option>
-                    <option value="-price">가격순</option>
-                    <option value="-read_cnt">인기순</option>
-                </select>
-            </form>
-        </div>
+<div class="container">
+    <div id="main">
+        <div id="content">
 
-        <br>
-        <br>
-        <hr>
-        <br>
-        <br>
-        <div class="menu_row mx_auto">
-            {% for product in products %}
-            <div class="my_bottom_margin col-9 col-sm-6 col-md-4 col-lg-4">
-                <div class="card text-center my_bottom_margin " style="min-width: 18rem;">
-                    <a href='{{ product.get_absolute_url }}'><img class="card-img-top my_image"
-                            src="{{product.p_url}}" /></a>
-                    <div class="card-body">
-                        <h4>{{product.p_name}}</h4>
-                        <p>{{product.price}} 원</p>
+            <div class="page_aticle">
+                <div id="lnbMenu" class="lnb_menu">
+                    <div id="bnrCategory" class="bnr_category" style="">
+                        <div class="thumb"><img src="" alt="카테고리배너"></div>
+                    </div>
+                    <div class="inner_lnb">
+
+                        <ul class="list" style="border-bottom: 1px solid #ddd;">
+                            <li><a class="on">전체보기</a></li>
+                            <li><a class="">닭가슴살</a></li>
+                            <li><a class="">훈제</a></li>
+                            <li><a class="">소시지</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div id="goodsList" class="page_section section_goodslist">
+                    <div class="list_ability">
+                        <div class="sort_menu">
+                            <form id="sortForm" method="get" class="sort_menu">
+                                <select id="sort" name="sort" class="select_type user_sort">
+                                    <option value="-p_modify_dt">신상품순</option>
+                                    <option value="-price">가격순</option>
+                                    <option value="-read_cnt">인기순</option>
+                                </select>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="menu_row mx-auto">
+                        <div class="list_goods">
+                            <div class="inner_listgoods">
+                                <ul class="list">
+                                    {% for product in products %}
+                                    <div id="um_product">
+                                        <div class="thumb">
+
+                                            <div>
+                                                <a href='{{ product.get_absolute_url }}'><img
+                                                        class="card-img-top my_image"
+                                                        src="{{product.p_url}}"/></a>
+
+                                                <div class="group_btn">
+                                                    <button type="button" class="btn btn_cart"><span class="screen_out">38300</span>
+                                                    </button> <!----></div>
+                                                <div class="info">
+                                                    <h4 class="name">{{product.p_name}}</h4>
+                                                    <p class="cost">{{product.price}} 원</p>
+                                                    <p class="desc">{{product.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+
+
         </div>
-    </div>
 
 </body>
-
 </html>
 <script>
-    let sort = document.getElementById("sort")
-    sort.onchange = function (e) {
-        document.forms["sortForm"].submit();
-    }
-    let sortby = '{{sortby}}';
+let sort = document.getElementById("sort")
+sort.onchange = function(e) {
+    document.forms["sortForm"].submit();
+}
+let sortby = '{{sortby}}';
 
-    let length = sort.options.length;
-    for (let i = 0; i < length; i++) {
-        if (sortby === sort.options[i].value) {
-            sort.options[i].selected = true;
-        }
+let length = sort.options.length;
+for(let i=0; i<length; i++) {
+    if(sortby === sort.options[i].value) {
+        sort.options[i].selected = true;
     }
+}
+
+
 </script>
 {% endblock %}

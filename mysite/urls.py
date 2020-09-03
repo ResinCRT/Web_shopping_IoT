@@ -41,6 +41,11 @@ urlpatterns = [
     # path('shop/category/<int:pk>',CategoryView.as_view(), name='category'),
     ]
 
+
+
+
+    ]
+
 urlpatterns += static(
     prefix=settings.MEDIA_URL,
     document_root=settings.MEDIA_ROOT,

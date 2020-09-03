@@ -1,6 +1,5 @@
-{% extends "base2.html" %}
+{% extends "base.html" %}
 {% load widget_tweaks %}
-{% block title %}post_form.html{% endblock %}
 {% block content %}
 <style>
 .star_left{
@@ -37,11 +36,11 @@
 {% endif %}
 
 
-<form action="." method="post" enctype="multipart/form-data" class="card pt-3">{% csrf_token %}
+<form id="reviewForm" action="." method="post" enctype="multipart/form-data" class="card pt-3">{% csrf_token %}
 
     <h2>상품 리뷰를 남겨주세요! 값나오니? </h2>
 
-     <div class="form-group">
+     <div id="reviewTitle" class="form-group">
     <label class="control-label col-sm-2" ></label>
     <div class="col-sm-10"><h2>{{ form.review_title }}</h2></div>
   </div>
@@ -95,7 +94,7 @@
         </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row" >
         {{ form.content|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}<div class="col-sm-8">{{ form.content|add_class:"form-control"}}</div>
     </div>
 
@@ -125,23 +124,25 @@ if(rate){
 for(var i=0; i<rate; i++){
             $(".star").eq(i).addClass("on");
 };
-};
 </script>
+<script>
 
+var star_value = $(".star").attr('value');
+    if(star_value==1){
+    $('#rating').val(star_value);
+    $(".star").eq(0).addClass("on");
+    };
+</script>
 <script>
 $(".star").on('click',function(){
         var star_value = $(this).attr('value');
-        $('#rating').val(star_value);
+
         var idx = $(this).index();
         $(".star").removeClass("on");
          for(var i=0; i<=idx; i++){
             $(".star").eq(i).addClass("on");
          };
 });
-
-
 </script>
-
-
 
 {% endblock %}
