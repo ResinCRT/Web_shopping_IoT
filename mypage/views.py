@@ -51,13 +51,19 @@ class MyOrderDV(OwnerOnlyMixin,DetailView):
 class MyOrderView(LoginRequiredMixin,ListView):
     template_name = "mypage/mypage_order_2.html"
     context_object_name = "order"
-    paginate_by = 5
+    paginate_by = 2
+
     def get_queryset(self):
-        return OrderDetail.objects.select_related("order").filter(order__user_id=self.request.user.pk)
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     new_context = context
-    #     return new_context
+        return Order.objects.filter(user_id=self.request.user.pk)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        query_sum = Q()
+        for ord in context['order']:
+            query_sum = query_sum | Q(order__id=ord.id)
+
+        context['order_detail'] = OrderDetail.objects.select_related("order").filter(query_sum)
+        return context
 
 
 class MyReviewView(LoginRequiredMixin, ListView):

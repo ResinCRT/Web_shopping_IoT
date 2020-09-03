@@ -1,4 +1,27 @@
-<ul class="pagination" style="margin:20px 0">
+{% block extra-style %}
+<style>
+    .page-item.active .page-link{
+        background-color: #f7f7f7;
+        color: #5f0080;
+        border-color:#dee2e6;
+    }
+    .page-item.disabled .page-link{
+        color:#e0e0e0;
+    }
+    .page-link{
+        color:#909090;
+        font-family:noto sans;
+        border-radius:0  !important;
+
+    }
+     .page-link:hover{
+        color: #5f0080;
+
+    }
+</style>
+{% endblock %}
+<ul class="pagination " style="margin:20px 0;justify-content:center;">
+
     {% if page_obj.has_previous %}
     <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">
         {% else %}

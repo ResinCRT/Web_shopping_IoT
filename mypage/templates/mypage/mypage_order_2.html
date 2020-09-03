@@ -45,7 +45,7 @@
             <h3 class="tit">주문 내역</h3>
         </div>
 
-        {% regroup order|dictsort:"order_id" by order_id as grouped_order %}
+        {% regroup order_detail|dictsort:"order_id" by order_id as grouped_order %}
         <div class="order_mainbox">
         {% if grouped_order %}
 
@@ -72,6 +72,9 @@
         </div>
 
         {% endfor %}
+            <div style="justify-content:center;text-align:center;">
+                {% include 'component/pagination.html' %}
+            </div>
         {% else %}
 
             <p style="text-align:center;">주문내역이 없습니다.</p>

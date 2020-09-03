@@ -26,7 +26,7 @@
     </style>
 {% endblock %}
 {% block content %}
-    {% include 'mypage/mypage_menu.html' %}
+
     <div class="container">
         {%for order in orders%}
         <div class="order_item">
@@ -46,7 +46,7 @@
             </div>
         </div>
         {% endfor %}
-
+    {% include 'component/pagination.html' %}
     </div>
         {% endblock %}
 
