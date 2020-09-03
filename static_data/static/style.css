@@ -115,13 +115,6 @@ a:hover {
     min-width:1080px;
 }
 
-
-
-
-
-
-
-
 #gnb .gnb_kurly {
     /*position: relative;*/
     z-index: 300;
@@ -190,24 +183,6 @@ a:hover {
     font-weight: 400
 }
 
-/* #gnb .cart_count .num {
-    display: none;
-    position: absolute;
-    left: 19px;
-    top: -1px;
-    min-width: 20px;
-    height: 20px;
-    padding: 0 5px;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    background-color: #5f0080;
-    font-size: 9px;
-    color: #fff;
-    line-height: 15px;
-    text-align: center;
-    white-space: nowrap
-} */
-
 #gnb .cart_count img {
 
     width: 36px;
@@ -240,14 +215,6 @@ a:hover {
     float: left;
     width: 100%
 }
-/* #gnb .gnb_main .gnb li {
-    float: left;
-    background: url(https://res.kurly.com/pc/service/common/1902/line_1x11_c_ccc.png) no-repeat 100% 23px
-} */
-
-/* #gnb .gnb_main .gnb .lst {
-    background: none
-} */
 #gnb .gnb_main .gnb a {
     overflow: hidden;
     float: left;
@@ -257,19 +224,6 @@ a:hover {
     color: #333;
     line-height: 20px
 }
-/* #gnb .gnb_main .gnb a .txt {
-    font-weight: 700
-} */
-
-/* #gnb .gnb_main .gnb a:hover,
-#gnb .gnb_main .gnb a.on {
-    font-weight: 700;
-    color: #5f0080
-} */
-
-/* #gnb .gnb_main .gnb a:hover .txt {
-    border-bottom: 1px solid #5f0080
-} */
 #gnb .gnb_main .menu1 a {
     padding-left: 19px
 }
@@ -406,19 +360,6 @@ only screen and (min-resolution: 1.5dppx) {
     line-height: 20px
 }
 
-/* .section_login .label_checkbox:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 3px;
-    width: 16px;
-    height: 17px;
-    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 50% 50%
-}
-.section_login .label_checkbox.checked:before {
-    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
-} */
-
 .section_login .label_checkbox [type=checkbox] {
     position: absolute;
     left: 0;
@@ -451,28 +392,10 @@ only screen and (min-resolution: 1.5dppx) {
     padding-bottom: 28px
 }
 
-/* .section_login .checkbox_save .label_checkbox {
-    float: left;
-    margin-top: 9px
-} */
-
 .section_login .login_search {
     float: right;
     padding-top: 13px
 }
-
-/* .section_login .login_search .link {
-    float: left;
-    font-size: 13px
-} */
-/*
-.section_login .login_search .bar {
-    float: left;
-    width: 1px;
-    height: 10px;
-    margin: 3px 6px 0;
-    background-color: #333
-} */
 
 .section_login .notice_join {
     padding-top: 20px;
@@ -614,19 +537,6 @@ only screen and (min-resolution: 1.5dppx) {
     line-height: 20px
 }
 
-/* .section_login .label_checkbox:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 3px;
-    width: 16px;
-    height: 17px;
-    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_off.png) no-repeat 50% 50%
-}
-.section_login .label_checkbox.checked:before {
-    background: url(https://res.kurly.com/pc/service/order/1908/ico_checkbox_on.png) no-repeat 50% 50%
-} */
-
 .section_login .label_checkbox [type=checkbox] {
     position: absolute;
     left: 0;
@@ -659,28 +569,10 @@ only screen and (min-resolution: 1.5dppx) {
     padding-bottom: 28px
 }
 
-/* .section_login .checkbox_save .label_checkbox {
-    float: left;
-    margin-top: 9px
-} */
-
 .section_login .login_search {
     float: right;
     padding-top: 13px
 }
-
-/* .section_login .login_search .link {
-    float: left;
-    font-size: 13px
-} */
-/*
-.section_login .login_search .bar {
-    float: left;
-    width: 1px;
-    height: 10px;
-    margin: 3px 6px 0;
-    background-color: #333
-} */
 
 .section_login .notice_join {
     padding-top: 20px;
@@ -1274,19 +1166,6 @@ only screen and (min-resolution: 1.5dppx) {
 /*--------------------------------------회원가입 던-------------------------------------------*/
 
 
-body,
-input,
-select,
-textarea,
-button {
-    font-family: 'Noto Sans KR', sans-serif;;
-    line-height: 1;
-    letter-spacing: -.05em;
-    color: #4c4c4c;
-    font-size: 12px;
-    /*max-width: 100%*/
-
-}
 
 html,
 body {
