@@ -94,8 +94,8 @@ DATABASES = {
         'NAME': 'shopping_umchikin',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'USER': 'umchik_user',
-        'PASSWORD': 'geunsonsil13'
+        'USER': 'root',
+        'PASSWORD': '1349'
     }
 }
 
