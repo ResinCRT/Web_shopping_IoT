@@ -51,7 +51,7 @@ class MyOrderDV(OwnerOnlyMixin,DetailView):
 class MyOrderView(LoginRequiredMixin,ListView):
     template_name = "mypage/mypage_order_2.html"
     context_object_name = "order"
-    paginate_by = 2
+    paginate_by = 3
 
     def get_queryset(self):
         return Order.objects.filter(user_id=self.request.user.pk)

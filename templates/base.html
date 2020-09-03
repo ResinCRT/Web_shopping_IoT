@@ -25,7 +25,11 @@
         height:220px;
         border-bottom:1px solid #bbbbbb;
     }
-
+    .my-image{
+            height: -webkit-fill-available;
+    vertical-align: top;
+    transition: all .5s ease-in-out;
+    }
     </style>
     {% block extra-style %}{% endblock %}
 </head>
@@ -124,7 +128,7 @@
         </div>
     </div>
     <div>
-    {% block content%}{% endblock %}
+    {% block content%} {% endblock %}
     </div>
 </header>
 

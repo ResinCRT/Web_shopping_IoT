@@ -62,7 +62,7 @@
             <div class="order_detail" style="line-height:2;">
                 {% with product_amount=item.list|length|add:"-1" %}
                 <a href="{%url 'mypage:order' %}{{item.grouper}}"><h5 class="order_detail_link">{{item.list.0.product}}
-                {% if product_amount != "1" %}
+                {% if product_amount != 0 %}
                     외 {{product_amount}}가지 품목
                 {% endif %}
                 </h5></a>

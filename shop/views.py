@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from shop.models import *
 from django.views.generic import CreateView, ListView, DetailView, FormView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import Q,Count
+from django.db.models import Q, Count
 from shop.forms import ProductSearchForm, QnaForm
 from django.urls import reverse_lazy
 from django.utils import timezone

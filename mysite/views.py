@@ -15,7 +15,7 @@ class HomeView(ListView):
     template_name = 'index.html'
     model = Product
     context_object_name = "products"
-    paginate_by = 8
+    paginate_by = 9
 
     def get_ordering(self):
         sortby = "-read_cnt"
@@ -82,12 +82,13 @@ class OwnerOnlyMixin(AccessMixin):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
 
-        if type(self.object) == type(Product.objects.first()):
-            owner = self.object.author
-        elif type(self.object) == type(OrderDetail.objects.first()):
+
+        if type(self.object) == type(OrderDetail.objects.first()):
             owner = self.object.order.user
         elif type(self.object) == type(Order.objects.first()):
             owner = self.object.user
+        else:
+            owner = self.object.author
 
         if self.request.user != owner:
             self.handle_no_permission()

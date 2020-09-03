@@ -1,12 +1,6 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
-{% block content %}
-<head>
-    <meta charset="UTF-8">
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% block extra-style %}
 <style>
     .my_prod_row_class{
     padding-top:15px;
@@ -46,8 +40,8 @@
     max-height: 200px;
 }
 </style>
-
-</head>
+{% endblock %}
+{% block content %}
 
 <div class="container">
     <br>
@@ -91,7 +85,7 @@
 {% endif %}
 </div>
 </div>
-<hr height="3px">
+<hr height="5px">
 {% for review in product.review_set.all %}
 
 <div><h5>{{review.review_title}}</h5></div>

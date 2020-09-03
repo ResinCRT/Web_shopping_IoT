@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% block content %}
+<div class="container">
+    <div id="main">
+        <div id="content">
 
-</body>
-</html>
+            <div class="page_aticle">
+                <div id="lnbMenu" class="lnb_menu">
+                    <div id="bnrCategory" class="bnr_category" style="">
+                        <div class="thumb"><img src="" alt="카테고리배너"></div>
+                    </div>
+                    <div class="inner_lnb">
+                        <ul class="list" style="border-bottom: 1px solid #ddd;width:980px;">
+                            <li class="main_text">추천 상품</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="goodsList" class="page_section section_goodslist">
+
+                    <br>
+                    <div class="menu_row mx-auto">
+                        <div class="list_goods">
+                            <div class="inner_listgoods">
+                                <ul class="list">
+                                    {% for product in products %}
+                                    <div id="um_product">
+                                        <div class="thumb">
+
+                                            <div>
+                                                <a href='{{ product.get_absolute_url }}'><img
+                                                        class="card-img-top my_image"
+                                                        src="{{product.p_url}}"/></a>
+
+                                                <div class="group_btn">
+                                                    <button type="button" class="btn btn_cart"><span class="screen_out">38300</span>
+                                                    </button> <!----></div>
+                                                <div class="info">
+                                                    <h4 class="name">{{product.p_name}}</h4>
+                                                    <p class="cost">{{product.price}} 원</p>
+                                                    <p class="desc">{{product.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        {% endblock %}
