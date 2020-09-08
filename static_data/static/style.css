@@ -99,7 +99,7 @@ a:hover {
 }
 
 #userMenu .menu_join .link_menu {
-    color: #5f0080
+    color: #FC715B;
 }
 
 #userMenu .lst .link_menu {
@@ -110,7 +110,7 @@ a:hover {
 .bnr_header a {
     display: block;
     height: 42px;
-    background-color: #5f0080;
+    background-color: #FFCA18;
     color: #fff;
     min-width:1080px;
 }
@@ -442,8 +442,8 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .btn_type1 {
-    border: 1px solid #5f0081;
-    background-color: #5f0080
+    border: 1px solid #FFCA18;
+    background-color: #FFCA18;
 }
 
 .btn_type1 .txt_type {
@@ -618,10 +618,6 @@ only screen and (min-resolution: 1.5dppx) {
     opacity: .6
 }
 
-.btn_type1 {
-    border: 1px solid #5f0081;
-    background-color: #5f0080
-}
 
 .btn_type1 .txt_type {
     color: #fff
@@ -637,12 +633,12 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .btn_type2 {
-    border: 1px solid #5f0081;
+    border: 1px solid #FC715B;
     background-color: #fff
 }
 
 .btn_type2 .txt_type {
-    color: #5f0080
+    color: #FC715B;
 }
 
 .btn_type2.btn_disabled {
@@ -882,8 +878,8 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .type_form .btn.active {
-    border: 1px solid #5f0081;
-    background-color: #5f0080;
+    border: 1px solid #FFCA18;
+    background-color: #FFCA18;
     color: #fff
 }
 
@@ -1072,9 +1068,9 @@ only screen and (min-resolution: 1.5dppx) {
     padding: 50px 0;
     line-height: 150%;
     text-align: center;
-    background-color: #f7f5f8;
+    /*background-color: #f7f5f8;
     border-top: 2px solid #4d4d4d;
-    border-bottom: 1px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;*/
     padding-top: 40px;
     padding-bottom: 20px;
 }
@@ -1087,19 +1083,19 @@ only screen and (min-resolution: 1.5dppx) {
 
 .xans-member-joincomplete .joinComplete .desc {
     margin: 0 0 30px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700
 }
 
 .xans-member-joincomplete .joinComplete .memberInfo {
     overflow: hidden;
     text-align: left;
-    border-top: 2px solid #6a3664;
+    border-top: 2px solid #FFCA18;
     padding-top: 10px
 }
 
 .xans-member-joincomplete .joinComplete .memberInfo li {
-    border-bottom: 1px solid #6a3664
+    border-bottom: 1px solid #FFCA18;
 }
 
 .xans-member-joincomplete .joinComplete .memberInfo li strong {
@@ -1141,8 +1137,8 @@ only screen and (min-resolution: 1.5dppx) {
     display: inline-block;
     line-height: 40px;
     text-align: center;
-    background-color: #795b8f;
-    border: 0px solid #5f0080;
+    background-color: #FFCA18;
+    border: 0px solid #FFCA18;
     color: #fff;
     font-size: 15px;
     /*float: right;*/
@@ -2671,7 +2667,7 @@ table {
 }
 #goodsList .list_goods .cost{
     font-weight: 700;
-    color: #5f0080;
+    color: #FC715B;
 }
 
 #goodsList .list_goods .thumb .btn {
@@ -2683,7 +2679,9 @@ table {
 }
 
 #goodsList .list_goods .thumb .btn_cart {
-    background: url(https://res.kurly.com/pc/service/common/1908/ico_list_add_cart.png) no-repeat 50% 50%
+    background: url(images/cart8.png) no-repeat 50% 50%;
+    opacity: 0.8;
+    background-size: 45px 45px;
 }
 
 #goodsList .list_goods .thumb .btn_alarm {
@@ -3684,26 +3682,26 @@ body {
     width: 128px;
     height: 54px;
     margin-right: 12px;
-    border: 1px solid #5f0080;
+
     border-radius: 3px;
     background: #fff;
     font-weight: 700;
     font-size: 16px;
-    color: #5f0080;
-    line-height: 52px;
+
+
     letter-spacing: -.1px;
     text-align: center
 }
 
 #cartPut .cart_option .view_function .btn_save.on {
-    border: 1px solid #5f0081;
-    background-color: #5f0080;
+    border: 1px solid #FC715B;
+    background-color: #FC715B;
     color: #fff
 }
 
 #cartPut .cart_option .view_function .btn_alarm.off {
-    border: 1px solid #ddd;
-    color: #ddd
+    border: 1px solid #FC715B;
+    color: #FC715B;
 }
 
 #cartPut .cart_option .success {
@@ -4707,7 +4705,7 @@ small {
 .happy_center .list .tit {
     font-weight: 700;
     font-size: 18px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 27px
 }
 
@@ -4717,7 +4715,7 @@ small {
     width: 3px;
     height: 20px;
     margin: 5px 10px 0 0;
-    background-color: #5f0080
+    background-color: #FC715B;
 }
 
 .happy_center .list .sub {
@@ -4820,7 +4818,7 @@ small {
 .btn-danger,
 .btn-info {
     color: #eeeeee;
-    background-color: #5f0080;
-    border-color: #5f0080;
+    background-color: #FFCA18;
+    border-color: #FFCA18;
         font-size: large;
 }
