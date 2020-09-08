@@ -89,6 +89,7 @@
 <div class="row">
     <div class="text-left"><h3>상품 리뷰</h3></div>
     {% if user.is_active %}
+    {% if
 <div class="text-right" >
     <a href="{%url 'shop:add_review' pk=product.id %}" class="btn btn-sm">
         <i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;&nbsp;리뷰작성</a>
@@ -165,7 +166,7 @@
     <div class="text-right" >
 <a href="{%url 'shop:update_review' pk=review.id %}" class="btn btn-sm">리뷰수정</a>
 
-<a href="{%url 'shop:delete_review' pk=review.id %}" class="btn btn-sm">리뷰삭제</a>
+<a href="{%url 'shop:remove_review' review.id %}" class="btn btn-sm" onclick="return confirm('Are you sure?');">리뷰삭제</a>
     </div>
 {% endif %}
 {% endif %}
@@ -206,7 +207,7 @@
 {% if user.is_active %}
  <div class="text-right" >
 <a href="{% url 'shop:update_qna' qna.id %}" class="btn btn-sm">문의수정</a>
-<a href="{% url 'shop:delete_qna' qna.id %}" class="btn btn-sm">문의삭제</a>
+<a href="{% url 'shop:remove_qna' qna.id %}" class="btn btn-sm" onclick="return confirm('Are you sure?');">문의삭제</a>
 <a href="{% url 'shop:add_comment' product.id qna.id %}" class="btn btn-sm">답변작성(관리자)</a>
  </div>
 {% endif %}
@@ -220,7 +221,7 @@
         </svg>
         <font color="#BDBDBD" size="1">관리자&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{ qna_comment.qna_modify_date }}</font>
         <a href="{% url 'shop:update_qna' qna_comment.id %}" class="btn btn-sm">답변수정</a>
-        <a href="{% url 'shop:delete_qna' qna_comment.id %}" class="btn btn-sm">답변삭제</a>
+        <a href="{% url 'shop:remove_qna' qna_comment.id %}" class="btn btn-sm" onclick="return confirm('Are you sure?');">답변삭제</a>
     </p>
     <p>{{ qna_comment | safe }}</p>
     {% endif %}

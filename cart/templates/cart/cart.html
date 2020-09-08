@@ -28,6 +28,12 @@ div.cart_result {
 {% else %}
 
 <div class="container">
+    <div>
+    <br>
+    <h1>장바구니</h1>
+
+    <br><br><p align="center">주문하실 상품명 및 수량을 정확하게 확인해 주세요.</p>
+</div>
     <form id="viewCart" name="frmCart" method="post" action="/shop/order/order.php"><input type="hidden" name="mode"
                                                                                            value="setOrder">
         <div class="tbl_comm cart_goods">

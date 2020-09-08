@@ -14,6 +14,7 @@ class Product(models.Model):
     p_created_dt = models.DateTimeField(blank=True,null=True)
     p_modify_dt = models.DateTimeField(blank=True, null=True)
     brand = models.CharField(max_length=45)
+    p_url = models.CharField(max_length=256)
 
     class Meta:
         managed = True
@@ -40,7 +41,7 @@ class Qna(models.Model):
     qna_title = models.CharField(verbose_name='TITLE', max_length=50)
     product = models.ForeignKey(Product, models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
-    parent_id = models.IntegerField(blank=True, null=True)
+    parent = models.ForeignKey('self', related_name='replies', on_delete=models.CASCADE, null=True, blank=True)
     # content = models.TextField()
     content = HTMLField('CONTENT')
     qna_create_date = models.DateTimeField(auto_now_add=True)
@@ -58,8 +59,8 @@ class Review(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
     review_title = models.CharField(verbose_name='TITLE', max_length=50)
     product = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
-    rating = models.IntegerField(blank=True, null=True)
-    content = models.CharField(max_length=45, blank=True, null=True)
+    rating = models.IntegerField()
+    content = models.CharField(max_length=45)
     file = models.CharField(max_length=45, blank=True, null=True)
     r_created_dt = models.DateTimeField(auto_now_add=True)
     r_modify_dt = models.DateTimeField(auto_now=True)
@@ -101,3 +102,6 @@ class ReviewAttachFile(models.Model):
 
     def __str__(self):
         return self.filename
+
+class Wishlist(models.Model):
+    pass
