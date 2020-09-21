@@ -8,11 +8,11 @@ from register.models import User
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
     order_dt = models.DateTimeField(auto_now_add=True)
-    total_price = models.IntegerField()
 
     class Meta:
         managed = True
         db_table = 'order'
+
 
 
 class OrderDetail(models.Model):

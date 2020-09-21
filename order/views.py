@@ -34,7 +34,7 @@ def cart_to_order(request, cart_id):
         order_details.save()
         total += cart_item.product.price * cart_item.quantity
 
-    order.total_price = total
+
     order.save()
     cart.delete()
 
