@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+
+    </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
@@ -13,10 +15,6 @@
     </style>
 
 </head>
-
-
-<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-
 
 <div id="wrap" class="">
     <div id="container">
@@ -34,7 +32,7 @@
                             <p class="goods_name"><strong class="name">{{product.p_name}}</strong>
                                 <span class="short_desc">{{product.description}}</span></p>
 
-                            <p class="goods_price"><span class="position"><span class="dc"><span class="dc_price">price : {{product.price}}<span
+                            <p class="goods_price"><span class="position"><span class="dc"><span class="dc_price">{{product.price}}<span
                                     class="won">\</span></span></span></span></p>
 
 
@@ -70,26 +68,23 @@
                 </div>
 
 
+
                 <div id="cartPut">
                     <div class="cart_option cart_type2">
                         <!---->
                         <div class="inner_option">
-                            <!---->
 
-                            <div class="list_goods">
-                                <!---->
-                                <!---->
-                                <!---->
-                                <ul class="list list_nopackage">
-                                    <div class="form-group">
-
-                                    </div>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="total">
+                                <div class="product-btns">
+
                                 <div class="price">
-                                    <!----> <strong class="tit">총 상품금액 :</strong> <span class="sum"><span class="num">22,000</span>
+                                    <div>수량 : <form action="{% url 'cart:add_to_cart' product.id %}" method="post">{% csrf_token %}
+                                    <div class="qty-input">
+
+                                        <input class="input" name="quantity" type="number"
+                                               style="text-align: center; width: 70px;  " value="1" min="1">
+                                    </div></div>
+                                    <!----> <strong class="tit">총 상품금액 :</strong> <span class="sum"><span class="num">{{product.price}}</span>
                             <span class="won">원</span></span></div>
                             </div>
                         </div>
@@ -98,8 +93,10 @@
                                 <!---->
                                 <button type="button" class="btn btn_alarm off">재입고 알림</button>
                             </div>
-                            <span
-                                    class="btn_type1"><button type="button" class="txt_type">장바구니 담기</button></span>
+
+                                    <span class="btn_type1 "><button type="submit" class="txt_type">장바구니 담기</button></span>
+                                </form>
+                            </div>
                             <!---->
                             <!---->
                             <!---->

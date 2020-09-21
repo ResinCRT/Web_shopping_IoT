@@ -1,17 +1,17 @@
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.shortcuts import render, get_object_or_404, redirect
-from shop.models import *
+from shop.models import Product, Qna, Review, ReviewAttachFile
 from django.views.generic import CreateView, ListView, DetailView, FormView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import Q, Count
+from django.db.models import Q,Count
 from shop.forms import ProductSearchForm, QnaForm
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils import timezone
 from mysite.views import OwnerOnlyMixin
 import os
 from django.conf import settings
-from django.http import FileResponse
+from django.http import FileResponse, HttpResponseRedirect
 # from .forms import QnaForm
 
 
@@ -22,11 +22,10 @@ class ProductLV(ListView):
     model = Product
     template_name = 'shop/product_all.html'
     context_object_name = 'products'
-    paginate_by = 6
+    paginate_by = 5
 
     def get_ordering(self):
         sortby = self.request.GET.get("sort", "-p_modify_dt")
-        print(f"{sortby}")
         return sortby
 
     def get_context_data(self, **kwargs):
@@ -122,11 +121,24 @@ class DeleteQnaView(OwnerOnlyMixin, DeleteView):
     def get_success_url(self):
         return reverse_lazy('shop:detail', kwargs={'pk': self.object.product_id})
 
+
+# 질문 삭제(팝업창으로)
+def remove_qna(request, qna_id):
+    qna = Qna.objects.get(id=qna_id, author_id=request.user.id)
+    qna.delete()
+    return HttpResponseRedirect(reverse('shop:detail', kwargs={'pk': qna.product_id}))
+
+
+
+
+
+
 # 질문 덧글
-class CreateQnaComment(LoginRequiredMixin, CreateView):
+class QnaComment(LoginRequiredMixin, CreateView):
     model = Qna
     fields = ['qna_title', 'content', 'author']
 
+    # success_url = reverse_lazy('/shop/product/{product.id}')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -140,6 +152,7 @@ class CreateQnaComment(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('shop:detail', kwargs={'pk': self.object.product_id})
+
 
 
 # 해당 상품 리뷰 목록
@@ -168,6 +181,9 @@ class CreateReviewView(LoginRequiredMixin, CreateView):
             attach_file.save()
 
         return response
+
+
+
 
 
 # 리뷰 수정
@@ -204,3 +220,10 @@ class DeleteReviewView(OwnerOnlyMixin, DeleteView):
 
     def get_success_url(self):
         return reverse_lazy('shop:detail', kwargs={'pk': self.object.product_id})
+
+
+# 리뷰 삭제(팝업창으로)
+def remove_review(request, review_id):
+    review = Review.objects.get(id=review_id, author_id=request.user.id)
+    review.delete()
+    return HttpResponseRedirect(reverse('shop:detail', kwargs={'pk': review.product_id}))

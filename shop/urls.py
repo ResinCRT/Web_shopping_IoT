@@ -20,9 +20,11 @@ urlpatterns = [
     path('qna/<int:pk>/update/', UpdateQnaView.as_view(), name='update_qna'),
     # Example: /shop/qna/<id>/delete/
     path('qna/<int:pk>/delete/', DeleteQnaView.as_view(), name='delete_qna'),
+    # Example: /shop/qna/<id>/delete/
+    path('qna/<int:qna_id>/remove/', remove_qna, name='remove_qna'),
 
-    # Example: /shop/product/product_id/qna/add/comment/<qna_id>/
-    path('product/<int:product_id>/qna/add/comment/<int:qna_id>/', CreateQnaComment.as_view(), name='add_comment'),
+    # Example: /shop/product/product_id/qna/add/comment/<qna_id>
+    path('product/<int:product_id>/qna/add/comment/<int:qna_id>/', QnaComment.as_view(), name='add_comment'),
 
     # Example: /shop/product/id/review/add/
     path('product/<int:pk>/review/add/', CreateReviewView.as_view(), name='add_review'),
@@ -30,4 +32,6 @@ urlpatterns = [
     path('review/<int:pk>/update/', UpdateReviewView.as_view(), name='update_review'),
     # Example: /shop/review/id/delete/
     path('review/<int:pk>/delete/', DeleteReviewView.as_view(), name='delete_review'),
+    # Example: /shop/review/<id>/remove/
+    path('review/<int:review_id>/remove/', remove_review, name='remove_review'),
 ]

@@ -3,7 +3,7 @@ from django.views.generic import CreateView, ListView, DetailView, FormView, Upd
 from shop.models import Product
 from .models import Cart, CartItem
 from django.core.exceptions import ObjectDoesNotExist
-
+from .forms import AddToCartForm
 
 # class CartLV(ListView):
 #     model = Cart
@@ -50,6 +50,19 @@ def add_cart(request, product_id):
     return redirect('cart:cart_detail')
 
 
+def minus_cart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    cart_item = CartItem.objects.get(product=product, cart=cart)
+
+    if cart_item.quantity >= 2:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        pass
+    return redirect('cart:cart_detail')
+
+
 def cart_detail(request, total=0, counter=0, cart_items=None):
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
@@ -61,8 +74,35 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
     except ObjectDoesNotExist:
         pass
 
-    return render(request, 'cart.html',
+    return render(request, 'cart/cart.html',
                   dict(cart_items=cart_items, total=total, counter=counter, cart=cart))
+
+
+def add_to_cart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    try:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+    except Cart.DoesNotExist:
+        cart = Cart.objects.create(
+            cart_id=_cart_id(request)
+        )
+        cart.save()
+
+    if request.method == 'POST':
+        form = AddToCartForm(request.POST)
+        if form.is_valid():
+            try:
+                cart_item = CartItem.objects.get(product=product, cart=cart)
+                cart_item.quantity += form.cleaned_data['quantity']
+                cart_item.save()
+            except CartItem.DoesNotExist:
+                cart_item = CartItem.objects.create(
+                    product=product,
+                    quantity=form.cleaned_data['quantity'],
+                    cart=cart
+                )
+                cart_item.save()
+    return redirect('cart:cart_detail')
 
 
 def remove_cart(request, product_id):

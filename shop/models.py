@@ -4,26 +4,17 @@ from register.models import User
 from django.urls import reverse
 from tinymce.models import HTMLField
 
-class Category(models.Model):
-    category_name = models.CharField(max_length=45, blank=True, null=True)
-    parent_id = models.IntegerField(blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'category'
-
 
 class Product(models.Model):
     p_name = models.CharField(max_length=45, blank=True, null=True)
     price = models.IntegerField(blank=True, null=True)
     description = models.CharField(max_length=45, blank=True, null=True)
     read_cnt = models.IntegerField(blank=True, null=True, default=0)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Category', blank=True,null=True)
-    p_created_dt = models.DateTimeField(blank=True, null=True)
+    category_id = models.IntegerField(blank=True, null=True)
+    p_created_dt = models.DateTimeField(blank=True,null=True)
     p_modify_dt = models.DateTimeField(blank=True, null=True)
     brand = models.CharField(max_length=45)
-    p_url = models.CharField(max_length=256, blank=True, null=True)
-
+    p_url = models.CharField(max_length=256)
 
     class Meta:
         managed = True
@@ -59,7 +50,6 @@ class Qna(models.Model):
     class Meta:
         managed = True
         db_table = 'qna'
-        ordering = '-qna_create_date',
 
     def __str__(self):
         return self.content
@@ -69,8 +59,8 @@ class Review(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='USER', blank=True)
     review_title = models.CharField(verbose_name='TITLE', max_length=50)
     product = models.ForeignKey(Product, models.CASCADE, blank=True, null=True)
-    rating = models.IntegerField(blank=True, null=True)
-    content = HTMLField('CONTENT')
+    rating = models.IntegerField()
+    content = models.CharField(max_length=45)
     file = models.CharField(max_length=45, blank=True, null=True)
     r_created_dt = models.DateTimeField(auto_now_add=True)
     r_modify_dt = models.DateTimeField(auto_now=True)
@@ -78,19 +68,18 @@ class Review(models.Model):
     class Meta:
         managed = True
         db_table = 'review'
-        ordering = '-r_created_dt',
 
     def __str__(self):
         return self.review_title
 
 
-# class Category(models.Model):
-#     category_name = models.CharField(max_length=45, blank=True, null=True)
-#     parent_id = models.IntegerField(blank=True, null=True)
-#
-#     class Meta:
-#         managed = True
-#         db_table = 'category'
+class Category(models.Model):
+    category_name = models.CharField(max_length=45, blank=True, null=True)
+    parent_id = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 'category'
 
 
 class ProductAttachFile(models.Model):
@@ -113,8 +102,6 @@ class ReviewAttachFile(models.Model):
 
     def __str__(self):
         return self.filename
-
-
 
 class Wishlist(models.Model):
     pass
