@@ -42,7 +42,7 @@
                 <td>
                     <div class="form-group row">
 <!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
-                        <div class="col-sm-5 user-fill">
+                        <div class="col-sm-10 user-fill">
                             {{user.username}}
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                 <th>비밀번호</th>
                 <td>
                     <div class="form-group row">
-                        <div class="col-sm-5 user-fill">
+                        <div class="col-sm-10 user-fill">
                             <button class="btn active modify-password" onclick="location.href='{% url 'register:password_change' %}'"
                             type="button" >수정
                             </button>
@@ -64,7 +64,7 @@
                 <th>이름</th>
                 <td>
                     <div class="form-group row">
-                        <div class="col-sm-5 user-fill">
+                        <div class="col-sm-10 user-fill">
                             {{user.real_name}}
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                 <td>
                     <div class="form-group row user-fill">
 <!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
-                        <div class="col-sm-5"  >
+                        <div class="col-sm-10"  >
                             {{user.email}}
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                 <td>
                     <div class="form-group row">
 <!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
-                        <div class="col-sm-5" >
+                        <div class="col-sm-10" >
                             {{ form.phone|add_class:"form-control" }}
 
                             <!--                <div class="phone_num">-->
@@ -105,7 +105,7 @@
                 <td>
                     <div class="form-group row">
 <!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
-                        <div class="col-sm-5" >
+                        <div class="col-sm-10" >
                             {{ form.addr|add_class:"form-control" }}
 
                             <!--                <div class="phone_num">-->
@@ -124,7 +124,7 @@
                 <td>
                     <div class="form-group row">
 <!--                        <label class="col-form-label col-sm-3 ml-3 font-weight-bold"></label>-->
-                        <div class="col-sm-5" >
+                        <div class="col-sm-10" >
                             {{ form.birthdate|add_class:"form-control" }}
 
                             <!--                <div class="phone_num">-->

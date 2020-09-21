@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 {% block title %}post_confirm_delete.html{% endblock %}
 {% block content %}
-<h1>Qna Delete</h1>
-<br>
-<form action="." method="post">{% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}" ?</p>
-    <input type="submit" value="Confirm" class="btn btn-danger btn-sm"/>
-</form>
+
+
+
+
+<div id="wrap" class="">
+    <div id="container">
+        <div id="header">
+            <div class="section_view">
+                <h1>문의를 삭제합니다.</h1>
+
+
+<div><form action="." method="post" style="text-align-last: center; padding-top:60px">{% csrf_token %}
+    <p style="font-weight:1000; font-size:20px; color:#666; margin-bottom: 50px;">삭제하시겠습니까? </p>
+    <input type="submit" value="Confirm" style="font-weight: bold; color: #333;"class="btn btn-danger btn-sm"/>
+</form></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
