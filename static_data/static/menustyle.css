@@ -132,10 +132,10 @@
 #cssmenu ul ul li a {
   padding: 10px 20px;
   width: 160px;
-  font-size: 12px;
-  background: #eeeeee;
+  font-size: 15px;
+  background: #f7f7f6;
   text-decoration: none;
-  color: #999999;
+  color: #888888;
   -webkit-transition: color .2s ease;
   -moz-transition: color .2s ease;
   -ms-transition: color .2s ease;

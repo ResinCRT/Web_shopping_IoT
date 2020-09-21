@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'shopping_umchikin1',
+        'NAME': 'shopping_umchikin',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
