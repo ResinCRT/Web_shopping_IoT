@@ -45,7 +45,7 @@
             <h3 class="tit">주문 내역</h3>
         </div>
 
-        {% regroup order_detail|dictsort:"order_id" by order_id as grouped_order %}
+        {% regroup order_detail|dictsortreversed:"order_id" by order_id as grouped_order %}
         <div class="order_mainbox">
         {% if grouped_order %}
 
