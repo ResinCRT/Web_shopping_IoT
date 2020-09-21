@@ -1,22 +1,153 @@
-{% extends 'base2.html' %}
+
+<!doctype html>
+<html lang="ko">
+{% extends "base.html" %}
+{% block extra-style %}
+<style>
+table {
+	width: 100%;
+	min-width: 1000px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 15px;
+}
+div.cart_result {
+    font-family: 'Noto Sans KR', sans-serif;
+	font-size: 15px;
+}
+.container { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
+
+</style>
+{% endblock %}
 {% block content %}
 
-    {% if not cart_items %}
-    <div>
-        <h1>쇼핑카트가 비어있어요...</h1>
-    </div>
-    {% else %}
-    <div>
-        <h1>쇼핑카트</h1>
-    </div>
-        {% for cart_item in cart_items %}
-            <a href="{{cart_item.product.get_absolute_url}}">제품사진</a>
-        {{cart_item.product.name}}
-        {{cart_item.product.id}}
-        {{cart_item.product.price}}
-        {{cart_item.quantity}} x {{cart_item.product.price}}
+{% if not cart_items %}
+<div>
+    <br>
+    <h1>쇼핑카트가 비어있어요...</h1>
+</div>
+{% else %}
 
-        A${{cart_item.sub_total}}
-{% endfor %}
+<div class="container">
+    <div>
+    <br>
+    <h1>장바구니</h1>
+
+    <br><br><p align="center">주문하실 상품명 및 수량을 정확하게 확인해 주세요.</p>
+</div>
+    <form id="viewCart" name="frmCart" method="post" action="/shop/order/order.php"><input type="hidden" name="mode"
+                                                                                           value="setOrder">
+        <div class="tbl_comm cart_goods">
+            <table class="tbl_comm tbl_header">
+                <colgroup>
+                    <col style="width: 100px;">
+                    <col style="width: 350px;">
+                    <col style="width: 410px;">
+                    <col style="width: 190px;">
+                    <col style="width: 450px;">
+                    <col style="width: 140px;">
+                </colgroup>
+                <thead class="header">
+                <tr height="100" align="center">
+                    <th id="nothing"></th>
+                    <th id="picture">사진</th>
+                    <th id="thInfo">상품 정보</th>
+                    <th id="thCount">수량</th>
+                    <th id="thCost">상품금액</th>
+                    <th id="nothing2"></th>
+                </tr>
+                </thead>
+            </table>
+            <div id="viewGoods">
+                <div>
+                    <!---->
+                    <div class="view_goods"><!---->
+                        <table class="tbl_goods goods">
+                            <colgroup>
+                                <col style="width: 90px;">
+                                <col style="width: 430px;">
+                                <col style="width: 400px;">
+                                <col style="width: 486px;">
+                                <col style="width: 486px;">
+                                <col style="width: 300px;">
+                            </colgroup>
+
+
+                            <tbody>
+                            {% for cart_item in cart_items %}
+                            <tr>
+                                <td header="thInfo" class="nothing" align="center">
+                                    <div class="condition"><!----></div>
+                                </td>
+                                <td header="thInfo" class="goods_thumb" align="center">
+                                    <a href="{{ cart_item.product.get_absolute_url }}" class="product_img">
+                                        <img src="{{cart_item.product.p_url}}">
+                                    </a>
+                                </td>
+                                <td header="thInfo" class="goods_info" align="center"><!---->
+                                    <a href="{{ cart_item.product.get_absolute_url }}" class="name">{{cart_item.product.p_name}}</a>
+                                    <dl class="goods_cost">
+                                        <dt class="screen_out">판매가격</dt>
+                                        <dd class="selling_price"><span class="num">{{cart_item.product.price}}</span>
+                                            <span class="txt">원</span></dd>
+                                    </dl> <!---->
+                                    <p class="txt txt_limit"><!----></p> <!----> <!---->
+                                </td>
+                                <td header="thCount" align="center">
+                                    <div class="goods_quantity">
+                                        <div class="quantity">
+                                            <strong class="screen_out">수량</strong>
+                                            <a href="{% url 'cart:minus_cart' cart_item.product.id %}" calss="custom_a">
+                                                <i class="fas fa-minus-circle custom_icon" style="color: #5f0080;"></i>&nbsp
+                                            </a>
+                                            {{cart_item.quantity}}
+                                            <a href="{% url 'cart:add_cart' cart_item.product.id %}" calss="custom_a">
+                                                <i class="fas fa-plus-circle custom_icon" style="color: #5f0080;"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td header="thcost" align="center">
+                                    <dl class="goods_total">
+                                        <dt class="screen_out">합계</dt>
+                                        <dd class="result">
+                                            <span class="num">{{cart_item.sub_total}}</span> <span class="txt">원</span>
+                                        </dd>
+                                    </dl>
+                                </td>
+                                <td header="thDelete" class="goods_delete" align="center">
+                                    <a href="{% url 'cart:remove_cart' cart_item.product.id %}" class="custom_a">
+                                        <i class="fas fa-trash-alt custom_icon" style="color: #5f0080;"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="cart_result" align="right">
+            <div class="cart_amount cell_except">
+                <dl class="list amout_result">
+                    <br>
+                    <dt class="tit">결제예정금액</dt>
+                    <dd class="result">
+                    <p>{{ total }} 원</p>
+                    </dd>
+                </dl>
+            </div>
+            <br>
+            <a class="btn btn-primary" style="background-color:#5f0080; border-color: #5f0080;" href="{% url 'order:cart_to_order' cart.id %}">주문하기</a>
+        </div>
+    </form>
+</div>
+<br>
 {% endif %}
 {% endblock %}

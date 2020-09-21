@@ -24,6 +24,7 @@ def cart_to_order(request, cart_id):
     cart = Cart.objects.get(id=cart_id)
     cart_item_set = CartItem.objects.filter(cart_id=cart)
 
+    total = 0
     for cart_item in cart_item_set:
         order_details = OrderDetail.objects.create(
             quantity=cart_item.quantity,
@@ -31,7 +32,10 @@ def cart_to_order(request, cart_id):
             product_id=cart_item.product_id
         )
         order_details.save()
+        total += cart_item.product.price * cart_item.quantity
 
+    order.total_price = total
+    order.save()
     cart.delete()
 
     return redirect('order:detail_order')
@@ -53,21 +57,24 @@ def order_detail(request, total=0, counter=0, order_info_set=None):
                   dict(order_info_set=order_info_set, total=total, counter=counter))
 
 
-def order_view(request, total=0, counter=0, order_info_set=None):
+def order_view(request):
     try:
         orders = Order.objects.filter(user_id=request.user.id)
+        order_info_set = []
         for order in orders:
-            order_info_set = OrderDetail.objects.filter(order_id=order.id)
-            for order_info in order_info_set:
-                OrderDetail.objects.filter(order_id=order.id)
-                total += (order_info.product.price * order_info.quantity)
-                counter += order_info.quantity
+            order_info = OrderDetail.objects.filter(order_id=order.id)
+            for info in order_info:
+                order_info_set.append(info)
+            #     OrderDetail.objects.filter(order_id=order.id)
+            #     total += (order_info.product.price * order_info.quantity)
+            #     counter += order_info.quantity
 
     except ObjectDoesNotExist:
         pass
 
     return render(request, 'order/order_list.html',
-                  dict(orders=orders, order_info_set=order_info_set, total=total, counter=counter))
+                  dict(orders=orders, order_info_set=order_info_set))
+                  # dict(orders=orders, order_info_set=order_info_set, total=total, counter=counter))
 
 
 
