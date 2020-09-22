@@ -139,22 +139,22 @@
 
 </script>
 
+
 <script>
 var rate = {{review.rating}};
-if(rate){
+
 for(var i=0; i<rate; i++){
             $(".star").eq(i).addClass("on");
-};
-
+}
 </script>
 <script>
 
 var star_value = $(".star").attr('value');
+
     if(star_value==1){
     $('#rating').val(star_value);
     $(".star").eq(0).addClass("on");
     };
-
 </script>
 <script>
 $(".star").on('click',function(){
@@ -166,7 +166,6 @@ $(".star").on('click',function(){
             $(".star").eq(i).addClass("on");
          };
 });
-
 </script>
 
 
