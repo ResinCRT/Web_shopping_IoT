@@ -61,8 +61,8 @@ class MyOrderView(LoginRequiredMixin,ListView):
         query_sum = Q()
         for ord in context['order']:
             query_sum = query_sum | Q(order__id=ord.id)
-
-        context['order_detail'] = OrderDetail.objects.select_related("order").filter(query_sum)
+        if query_sum:
+            context['order_detail'] = OrderDetail.objects.select_related("order").filter(query_sum)
         return context
 
 
