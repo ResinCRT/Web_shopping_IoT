@@ -144,7 +144,7 @@
 }
 #cssmenu ul ul li:hover > a,
 #cssmenu ul ul li a:hover {
-  color: #bbbbbb;
+  color: #fc715b;
 }
 #cssmenu ul ul li.has-sub > a::after {
   position: absolute;

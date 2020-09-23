@@ -409,7 +409,7 @@ only screen and (min-resolution: 1.5dppx) {
 .section_login .notice_join .link {
     padding-left: 3px;
     font-weight: 700;
-    color: #5f0080;
+    color: #FC715B;
     text-decoration: underline
 }
 
@@ -465,7 +465,7 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .btn_type2 .txt_type {
-    color: #5f0080
+    color: #FC715B
 }
 
 .btn_type2.btn_disabled {
@@ -586,7 +586,7 @@ only screen and (min-resolution: 1.5dppx) {
 .section_login .notice_join .link {
     padding-left: 3px;
     font-weight: 700;
-    color: #5f0080;
+    color: #FC715B;
     text-decoration: underline
 }
 
@@ -872,9 +872,9 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .type_form .btn.default {
-    border: 1px solid #5f0080;
+    border: 1px solid #FC715B;
     background-color: #fff;
-    color: #5f0080
+    color: #FC715B
 }
 
 .type_form .btn.active {
@@ -931,7 +931,7 @@ only screen and (min-resolution: 1.5dppx) {
 
 .type_form input[type=radio]:checked+.ico {
     border: 1px solid #5f0081;
-    background-color: #5f0080
+    background-color: #FC715B
 }
 
 .type_form input[type=radio]:checked+.ico:after {
@@ -1319,7 +1319,7 @@ ul {
     color: #333
 }
 .mypage_top .benefit .tit {
-    color: #5f0080
+    color: #FC715B
 }
 
 .mypage_top .next {
@@ -1373,7 +1373,7 @@ ul {
 .mypage_top .list_mypage .info {
     font-weight: 700;
     font-size: 20px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 28px
 }
 
@@ -1487,9 +1487,10 @@ img {
 }
 #snb .list_menu li.on a,
 #snb .list_menu li a:hover {
-    background: #f7f7f7 url(https://res.kurly.com/pc/ico/1803/ico_arrow_on_12x22.png) no-repeat 174px 50%;
+    background: #f7f7f7 url(https://res.kurly.com/pc/ico/1803/ico_arrow_12x22.png) no-repeat 174px 50%;
     background-size: 6px 10px;
-    color: #5f0080
+    color:#fc715b;
+
 }
 #snb .link_inquire {
     display: block;
@@ -1644,7 +1645,7 @@ html {
 
 .section_cart .tbl_comm th {
     padding: 20px 0;
-    border-top: 2px solid #5f0080;
+    border-top: 2px solid #FC715B;
     font-weight: 700;
     font-size: 14px;
     color: #666;
@@ -1711,9 +1712,9 @@ html {
     height: 42px;
     margin-right: 10px;
     padding-bottom: 2px;
-    border: 1px solid #5f0080;
+    border: 1px solid #FC715B;
     background-color: #fff;
-    color: #5f0080;
+    color: #FC715B;
     letter-spacing: -.3px;
     text-align: center
 }
@@ -1735,7 +1736,7 @@ html {
     height: 48px;
     margin: 0 auto;
     border: 0;
-    background-color: #5f0080;
+    background-color: #FC715B;
     font-size: 14px;
     color: #fff;
     line-height: 20px;
@@ -1873,7 +1874,7 @@ html {
     padding-top: 13px;
     font-weight: 700;
     font-size: 12px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 18px
 }
 
@@ -1884,7 +1885,7 @@ html {
 .section_cart .tbl_goods .condition {
     font-weight: 700;
     font-size: 12px;
-    color: #5f0080;
+    color: #FC715B;
     letter-spacing: -.2px
 }
 
@@ -2121,14 +2122,14 @@ html {
 }
 
 .cart_amount .amount_delivery .pass {
-    color: #5f0080
+    color: #FC715B
 }
 
 .cart_amount .delivery_limit {
     display: block;
     padding-top: 2px;
     font-size: 12px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 20px;
     letter-spacing: -.2px
 }
@@ -2155,12 +2156,12 @@ html {
     padding-top: 2px;
     font-size: 12px;
     line-height: 20px;
-    color: #5f0080;
+    color: #FC715B;
     letter-spacing: -.2px
 }
 
 .cart_amount .amout_result .no_login {
-    color: #5f0080
+    color: #FC715B
 }
 
 .cart_amount .deco {
@@ -2371,7 +2372,7 @@ table {
 #lnbMenu li a:hover,
 #lnbMenu li .on {
     font-weight: 700;
-    color: #5f0080
+    color: #FC715B
 }
 
 #lnbMenu li.bg {
@@ -2379,7 +2380,7 @@ table {
     top: 78px;
     height: 1px;
     margin-top: -1px;
-    background-color: #5f0080
+    background-color: #FC715B
 }
 
 #bnrCategory {
@@ -2434,7 +2435,7 @@ table {
 
 #lnbMenu .event_list a.on {
     font-weight: 700;
-    color: #5f0080
+    color: #FC715B
 }
 
 #goodsList .list_ability {
@@ -2505,7 +2506,7 @@ table {
 #goodsList .sort_menu .list a:hover,
 #goodsList .sort_menu .list a.on {
     font-weight: 700;
-    color: #5f0080
+    color: #FC715B
 }
 
 #goodsList .sort_menu .delivery {
@@ -2537,11 +2538,11 @@ table {
 
 #goodsList .sort_menu .user_sort .list a.on,
 #goodsList .sort_menu .user_sort .list a:hover {
-    color: #5f0080
+    color: #FC715B
 }
 
 #goodsList .sort_menu .select_type.checked .name_select {
-    color: #5f0080
+    color: #FC715B
 }
 
 #goodsList .sort_menu .select_type.checked .name_select:after {
@@ -2747,12 +2748,12 @@ table {
 
 #goodsList .list_goods .cost .price {
     font-weight: 700;
-    color: #5f0080
+    color: #FC715B
 }
 
 #goodsList .list_goods .cost .emph {
     font-weight: 700;
-    color: #5f0080
+    color: #FC715B
 }
 
 #goodsList .list_goods .desc {
@@ -2775,11 +2776,11 @@ table {
     height: 18px;
     margin-right: 4px;
     padding: 0 4px;
-    border: 1px solid #5f0080;
+    border: 1px solid #FC715B;
     background-color: #fff;
     font-weight: 700;
     font-size: 12px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 15px;
     vertical-align: middle
 }
@@ -2900,7 +2901,7 @@ only screen and (min-resolution:1.5dppx) {
 .layout-pagination-number:hover,
 .layout-pagination-number.__active {
     background-color: #f7f7f7;
-    color: #5f0080
+    color: #FC715B
 }
 
 .layout-pagination-first-page,
@@ -2945,11 +2946,11 @@ body {
     padding-top: 20px
 }
 
-.section_view * {
+/*.section_view * {
     font-family: noto sans;
     color: #555;
     letter-spacing: -.5px
-}
+}*/
 
 .section_view:after {
     content: "";
@@ -3153,13 +3154,13 @@ body {
 
 #sectionView .goods_price .limit_day {
     display: block;
-    color: #5f0080;
+    color: #FC715B;
     letter-spacing: 0
 }
 
 #sectionView .goods_price .limit_price {
     display: block;
-    color: #5f0080;
+    color: #FC715B;
     letter-spacing: 0
 }
 
@@ -3189,8 +3190,8 @@ body {
 }
 
 #sectionView .goods_price .grade0 {
-    border: 1px solid #5f0080;
-    color: #5f0080
+    border: 1px solid #FC715B;
+    color: #FC715B
 }
 
 #sectionView .goods_price .grade1 {
@@ -3237,7 +3238,7 @@ body {
     display: none;
     padding: 4px 0 1px;
     font-size: 14px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 20px;
     letter-spacing: 0
 }
@@ -3247,7 +3248,7 @@ body {
     display: block;
     padding-top: 7px;
     font-size: 14px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 20px;
     letter-spacing: 0
 }
@@ -3330,17 +3331,17 @@ body {
     overflow: hidden;
     width: 280px;
     height: 44px;
-    border: 1px solid #5f0080;
+    border: 1px solid #FC715B;
     border-radius: 3px;
     background-color: #fff
 }
 
 #sectionView .info_kurlypass .txt_type {
     padding-left: 26px;
-    background: url(https://res.kurly.com/mobile/service/common/1908/ico_search_5f0080_20x20.png?v=1) no-repeat 0 50%;
+    background: url(https://res.kurly.com/mobile/service/common/1908/ico_search_FC715B_20x20.png?v=1) no-repeat 0 50%;
     font-weight: 700;
     font-size: 14px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 42px;
     letter-spacing: -.6px
 }
@@ -3559,7 +3560,7 @@ body {
     top: 10px;
     width: 10px;
     height: 2px;
-    background-color: #5f0080
+    background-color: #FC715B
 }
 
 #cartPut .cart_option .list .down {
@@ -3666,7 +3667,9 @@ body {
     font-size: 16px;
     line-height: 52px;
     letter-spacing: -.1px;
-    text-align: center
+    text-align: center;
+
+
 }
 
 #cartPut .cart_option .group_btn .btn_type1 {
@@ -3674,7 +3677,7 @@ body {
 }
 
 #cartPut .cart_option .group_btn .btn_type2 .txt_type {
-    color: #5f0080
+    color: #FC715B
 }
 
 #cartPut .cart_option .view_function .btn {
@@ -3837,7 +3840,7 @@ body {
     display: block;
     position: relative;
     height: 22px;
-    border-top: 2px solid #5f0080
+    border-top: 2px solid #FC715B
 }
 
 #cartPut .cart_type1 .btn_close {
@@ -3850,7 +3853,7 @@ body {
     margin-left: 280px;
     border: 0;
     border-radius: 3px 3px 0 0;
-    background-color: #5f0080;
+    background-color: #FC715B;
     text-align: center
 }
 
@@ -4154,7 +4157,7 @@ body {
 #cartPut .cart_type3 .group_btn .btn_type1 {
     float: right;
     width: 186px;
-    background-color: #5f0080;
+    background-color: #FC715B;
     color: #fff
 }
 
@@ -4531,7 +4534,7 @@ div, th, td, li, dt, dd, p {
 }
 
 #shareLayer .list_share .btn:hover .txt {
-    border-bottom: 1px solid #5f0080
+    border-bottom: 1px solid #FC715B
 }
 
 #shareLayer .list_share .btn_fb {
@@ -4569,9 +4572,9 @@ div, th, td, li, dt, dd, p {
     float: left;
     width: 84px;
     height: 30px;
-    border: 1px solid #5f0080;
+    border: 1px solid #FC715B;
     font-size: 12px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 28px;
     text-align: center
 }
@@ -4772,7 +4775,7 @@ small {
     height: 24px;
     margin-top: -12px;
     font-size: 16px;
-    color: #5f0080;
+    color: #FC715B;
     line-height: 24px;
     text-align: right;
     letter-spacing: -.4px
@@ -4821,3 +4824,18 @@ small {
     border-color: #FFCA18;
         font-size: large;
 }
+.btn-danger:hover,
+.btn-info:hover{
+    color: #eeeeee;
+    background-color: #FFCA18;
+    border-color: #FFCA18;
+    font-size: large;
+}
+.btn-danger:not(:disabled):not(.disabled):active,
+.btn-info:not(:disabled):not(.disabled):active{
+    color: #eeeeee;
+    background-color: #FFCA18;
+    border-color: #FFCA18;
+    font-size: large;
+}
+
