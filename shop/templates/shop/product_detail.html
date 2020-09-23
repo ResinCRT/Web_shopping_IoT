@@ -56,18 +56,19 @@
                                 <dl class="list">
                                     <dt class="tit">알레르기정보</dt>
                                     <dd class="desc">
-                                        -이 제품은 알류, 땅콩, 대두, 밀, 돼지고기, 복숭아, 토마토, 호두, 쇠고기, 아황산류를 사용한 제품과 같은 제조시설에서 제조
+                                        이 제품은 알류, 땅콩, 대두, 밀, 돼지고기, 복숭아, 토마토, 호두, 쇠고기, 아황산류를 사용한 제품과 같은 제조시설에서 제조
                                     </dd>
                                 </dl>
+
+
                                 <dl class="list">
                                     <dt class="tit">구매 수량</dt>
                                     <dd class="desc">
-                                        <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
-                                            {%csrf_token %}
-                                            <div class="qty-input">
-                                                <input class="input" name="quantity" type="number"
-                                                       style="text-align: center; width: 70px;  " value="1" min="1">
-                                            </div>
+                                        <form name="form" action="{% url 'cart:add_to_cart' product.id %}" method="post">{% csrf_token %}
+                    <input type=hidden name="sell_price" value="{{product.price}}">
+                                    <div style="display:flex;"><input type="button" value=" - " onclick="del();"    style="width: 15.97728px;border:0;background-color:#ffffff;outline:0;"><br>
+                    <input type="text" name="quantity" value="1" size="3" onchange="change();"style="width: 28.97728px;text-align: center;border:0;background-color:#ffffff;">
+                    <input type="button" value=" + " onclick="add();" style="border:0;background-color:#ffffff;outline:0;"></div>
 
 
                                     </dd>
@@ -85,8 +86,10 @@
                             <div class="total">
                                 <div class="product-btns">
                                     <div class="price">
-                                        <!----> <strong class="tit">총 상품금액 :</strong> <span class="sum">
-                                                    <span class="num">{{product.price}}</span><span class="won">원</span></span>
+                                        <!----> <strong class="tit">
+                                        총 상품금액 : </strong> <input type="text" name="sum" size="11" readonly style="font-weight: 800;font-size: 32px;line-height: 32px;width: 111px; outline:0;border:0;text-align: right;">
+                                        <span class="won">won</span>
+                        <br>
                                     </div>
                                 </div>
                                 <div class="group_btn off">
@@ -95,7 +98,7 @@
                                         <button type="button" class="btn btn_alarm off">재입고 알림</button>
                                     </div>
 
-                                    <span class="btn_type1 "><button type="submit"
+                                    <span class="btn_type1"><button type="submit"
                                                                      class="txt_type">장바구니 담기</button></span>
                                     </form>
                                 </div>

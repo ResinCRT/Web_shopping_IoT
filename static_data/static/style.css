@@ -4,7 +4,7 @@ h1 {
     font-weight:1000;
     line-height:0.5;
     margin: 0;
-    padding: 9px;
+    padding: 0.5px;
     width:100%;
     min-width: 1050px;
     display:inline-block;
@@ -122,7 +122,7 @@ a:hover {
     background-color: #fff;
     font-family: 'Noto Sans';
     letter-spacing: -0.3px;
-    padding-top : 27px;
+    /*padding-top : 27px;*/
 }
 
 #gnb .gnb_kurly:after {
@@ -3656,6 +3656,8 @@ body {
     width: 100%
 }
 
+
+
 #cartPut .cart_option .group_btn .txt_type {
     display: block;
     width: 100%;
@@ -3668,7 +3670,8 @@ body {
     line-height: 52px;
     letter-spacing: -.1px;
     text-align: center;
-
+    border:0;
+    outline:0;
 
 }
 
@@ -4838,4 +4841,3 @@ small {
     border-color: #FFCA18;
     font-size: large;
 }
-
