@@ -3656,6 +3656,8 @@ body {
     width: 100%
 }
 
+
+
 #cartPut .cart_option .group_btn .txt_type {
     display: block;
     width: 100%;
@@ -3668,7 +3670,8 @@ body {
     line-height: 52px;
     letter-spacing: -.1px;
     text-align: center;
-
+    border:0;
+    outline:0;
 
 }
 

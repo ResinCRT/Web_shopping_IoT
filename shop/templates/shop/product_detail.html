@@ -33,7 +33,7 @@
                                 <span class="short_desc">{{product.description}}</span></p>
 
                             <p class="goods_price"><span class="position"><span class="dc"><span class="dc_price">{{product.price}}<span
-                                    class="won">\</span></span></span></span></p>
+                                    class="won"> won</span></span></span></span></p>
 
 
                             <div class="goods_info">
@@ -59,7 +59,7 @@
                                 <dl class="list">
                                     <dt class="tit">알레르기정보</dt>
                                     <dd class="desc">
-                                        -이 제품은 알류, 땅콩, 대두, 밀, 돼지고기, 복숭아, 토마토, 호두, 쇠고기, 아황산류를 사용한 제품과 같은 제조시설에서 제조
+                                        이 제품은 알류, 땅콩, 대두, 밀, 돼지고기, 복숭아, 토마토, 호두, 쇠고기, 아황산류를 사용한 제품과 같은 제조시설에서 제조
                                     </dd>
                                 </dl>
                                 <dl class="list">
@@ -69,7 +69,7 @@
                                             {%csrf_token %}
                                             <div class="qty-input">
                                                 <input class="input" name="quantity" type="number"
-                                                       style="text-align: center; width: 70px;  " value="1" min="1">
+                                                       style="text-align: center; width: 70px;outline:none;  " value="1" min="1">
                                             </div>
 
 
@@ -87,7 +87,7 @@
                                 <div class="product-btns">
                                     <div class="price">
                                         <!----> <strong class="tit">총 상품금액 :</strong> <span class="sum">
-                                                    <span class="num">{{product.price}}</span><span class="won">원</span></span>
+                                                    <span class="num">{{product.price}}</span><span class="won"> won</span></span>
                                     </div>
                                 </div>
                                 <div class="group_btn off">
@@ -96,7 +96,7 @@
                                         <button type="button" class="btn btn_alarm off">재입고 알림</button>
                                     </div>
 
-                                    <span class="btn_type1 "><button type="submit"
+                                    <span class="btn_type1"><button type="submit"
                                                                      class="txt_type">장바구니 담기</button></span>
                                     </form>
                                 </div>
@@ -307,8 +307,7 @@
                                 <path fill-rule="evenodd"
                                       d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
                             </svg>
-                            <font color="#BDBDBD" size="1">관리자&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{
-                                qna_comment.qna_modify_date }}</font>
+                            <font color="#BDBDBD" size="1">관리자&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{qna_comment.qna_modify_date }}</font>
                             <a href="{% url 'shop:update_qna' qna_comment.id %}" class="btn btn-sm">답변수정</a>
                             <a href="{% url 'shop:delete_qna' qna_comment.id %}" class="btn btn-sm">답변삭제</a>
                         </p>
