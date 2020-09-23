@@ -23,7 +23,7 @@ class ProductLV(ListView):
     model = Product
     template_name = 'shop/product_all.html'
     context_object_name = 'products'
-    paginate_by = 9
+    paginate_by = 6
 
     def get_ordering(self):
         sortby = self.request.GET.get("sort", "-p_modify_dt")

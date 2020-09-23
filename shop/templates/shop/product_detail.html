@@ -289,19 +289,18 @@
 <a href="{% url 'shop:update_qna' qna.id %}" class="btn btn-sm">문의수정</a>
 <a href="{% url 'shop:remove_qna' qna.id %}" class="btn btn-sm">문의삭제</a>
  </div>
-{% endif %}
-    {% endif %}
+{% endif %} {% endif %}
 
 {% if user.is_superuser %}
      <div class="text-right" >
     <a href="{% url 'shop:add_comment' product.id qna.id %}" class="btn btn-sm">답변작성(관리자)</a>
           </div>
-{% endif %}
 
 
 {% endif %}
+
 <div class="text-left testingbox">
-{% for qna_comment in product.qna_set.all %}
+{% for qna_comment in product.qna_set.all reversed %}
     {% if qna.id == qna_comment.parent_id %}
     <p>
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-return-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -314,10 +313,13 @@
         {% endif%}
     </p>
     <p>{{ qna_comment | safe }}</p>
+
     {% endif %}
 {% endfor %}
 </div>
-<hr>
+    <hr>
+{% endif %}
+
 {% endfor %}
 
 
