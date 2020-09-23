@@ -1,0 +1,95 @@
+{% extends "mypage/mypage_main.html" %}
+{% block title %}User modification{% endblock %}
+{% load widget_tweaks %}
+{% block extra-style %}
+<style>
+    .nomargin-box{
+        margin-left:0;
+        padding-left:0;
+    }
+    .testingbox{
+        color:inherit;
+    }
+    .reviewbox {
+            border-top:2px solid;
+
+            border-color:#FC715B; #000000 #e7e7e7;
+            padding:40px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    {% include 'mypage/mypage_menu.html' %}
+    <div class="container member_join">
+        <div class="field_head">
+            <h3 class="tit">상품 문의</h3>
+        </div>
+        <div class="reviewbox">
+    {% for qna in qnas %}
+        {% if not qna.parent_id %}
+<div><h5>{{ qna.qna_title }}</h5></div>
+    <div class="nomargin-box" >
+        <div class="row">
+
+     <div>
+         <font color="#BDBDBD" size="1">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{qna.author}}</font>
+     </div>
+    <div>
+    <font color="#BDBDBD" size="1">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{qna.qna_create_date}}</font>
+</div>
+    </div>
+    </div>
+
+<br>
+<font color="#353535" size="3">{{qna.content | safe}}</font>
+{% if user.is_active %}
+{% if qna.author == user %}
+    <div class="text-right">
+        {% with prod=qna.product%}
+            <a href="{{ prod.get_absolute_url }}" class="btn btn-sm">상품으로 이동</a>
+        {% endwith %}
+    </div>
+{% endif %} {% endif %}
+
+
+<div class="text-left testingbox">
+    {% with prod=qna.product %}
+{% for qna_comment in prod.qna_set.all reversed %}
+    {% if qna.id == qna_comment.parent_id %}
+    <p>
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-return-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+        </svg>
+        <font color="#BDBDBD" size="1">관리자&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{ qna_comment.qna_modify_date }}</font>
+        {% if user.is_superuser %}
+        <a href="{% url 'shop:update_qna' qna_comment.id %}" class="btn btn-sm">답변수정</a>
+        <a href="{% url 'shop:remove_qna' qna_comment.id %}" class="btn btn-sm" onclick="return confirm('이 글을 삭제하시겠습니까?');">답변삭제</a>
+        {% endif%}
+    </p>
+    <p>{{ qna_comment | safe }}</p>
+
+    {% endif %}
+
+{% endfor %}
+        {% endwith %}
+    <hr style="border:1px soiid;border-color:#FC715B;">
+    {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+         <div style="justify-content:center;text-align:center;">
+                {% include 'component/pagination.html' %}
+         </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+{% block extra-script %}
+<script> active = 2;
+    mymenu[active].classList.add("mymenu-active");
+</script>
+{% endblock %}

@@ -13,6 +13,12 @@ import os
 from django.conf import settings
 from django.http import FileResponse, HttpResponseRedirect
 
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
+import json
+
 # from .forms import QnaForm
 
 
@@ -49,6 +55,7 @@ class ProductDV(DetailView):
 
     # product_detail.html에서 접근할 때 product로 접근
     context_object_name = 'product'
+
 
 
 # 검색창 통합검색 상품명, 브랜드명, 설명 다 포함해서 나오게

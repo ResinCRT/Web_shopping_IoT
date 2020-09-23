@@ -1,15 +1,111 @@
 {% extends "mypage/mypage_main.html" %}
 {% block title %}User modification{% endblock %}
 {% load widget_tweaks %}
+{% block extra-style %}
+<style>
+    .nomargin-box{
+        margin-left:0;
+        padding-left:0;
+    }
+    .testingbox{
+        color:inherit;
+    }
+    .reviewbox {
+            border-top:2px solid;
 
+            border-color:#FC715B; #000000 #e7e7e7;
+            padding:40px;
+    }
+</style>
+{% endblock %}
 {% block content %}
     {% include 'mypage/mypage_menu.html' %}
-    {%for item in review%}
-        <h3><a href="#">{{item.order_id}}</a></h3>
-        {{item.review_id}}<br>작성자 : {{item.user_id}}<br>상품명 : {{item.product_id}}<br>
-        별점 : {{item.rating}} / 10<br>
-        <p>내용 : {{item.content}}</p>
-    {% endfor %}
+    <div class="container member_join">
+        <div class="field_head">
+            <h3 class="tit">상품 리뷰</h3>
+        </div>
+        <div class="reviewbox">
+    {% for review in reviews %}
+
+    <div><h5>{{review.review_title}}</h5></div>
+
+    <div class="nomargin-box" >
+        <div class="row">
+        <div>{% if review.rating == 1 %}
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 2 %}
+<i class="fa fa-star text-warning"></i>
+{% elif review.rating == 3 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 4 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+{% elif review.rating == 5 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 6 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+{% elif review.rating == 7 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 8 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+{% elif review.rating == 9 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star-half text-warning"></i>
+{% elif review.rating == 10 %}
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+<i class="fa fa-star text-warning"></i>
+{% endif %}
+    </div>
+     <div>
+         <font color="#BDBDBD" size="1">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{review.author}}</font>
+     </div>
+    <div>
+    <font color="#BDBDBD" size="1">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{review.r_modify_dt}}</font>
+</div>
+    </div>
+    </div>
+<br>
+    {% for file in review.files.all %}
+<img class="max-small" src="{{file.upload_file.url}}">
+
+{% endfor %}
+<br>
+<br>
+<font color="#353535" size="3">{{review.content | safe}}</font>
+{% if review.author == user %}
+{% if user.is_active %}
+<div class="text-right">
+    {% with prod=review.product%}
+<a href="{{ prod.get_absolute_url }}" class="btn btn-sm">상품으로 이동</a>
+    {% endwith %}
+</div>
+
+{% endif %}
+{% endif %}
+<hr style="border:1px soiid;border-color:#FC715B;">
+{% endfor %}
+        </div>
+         <div style="justify-content:center;text-align:center;">
+                {% include 'component/pagination.html' %}
+         </div>
+    </div>
 {% endblock %}
 
 

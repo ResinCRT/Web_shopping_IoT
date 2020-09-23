@@ -69,13 +69,16 @@ class MyOrderView(LoginRequiredMixin,ListView):
 class MyReviewView(LoginRequiredMixin, ListView):
     template_name = "mypage/mypage_review.html"
     model = Review
-    context_object_name = "review"
+    context_object_name = "reviews"
     paginate_by = 3
     def get_queryset(self):
-        return Review.objects.filter(user_id=self.request.user.pk).select_related("product_id")
+        return Review.objects.filter(author=self.request.user.pk)
 
-class MyWishlistView(LoginRequiredMixin, ListView):
-    template_name = "mypage/mypage_wishlist.html"
-    model = Wishlist
-    context_object_name = "wishlist"
+class MyQnaView(LoginRequiredMixin, ListView):
+    template_name = "mypage/mypage_qna.html"
+    model = Review
+    paginate_by = 3
+    context_object_name = "qnas"
+    def get_queryset(self):
+        return Qna.objects.filter(Q(author=self.request.user.pk) & Q(parent__isnull=True)).select_related("product")
 
