@@ -34,7 +34,7 @@
                                                     <button type="button" onclick="location.href='{% url 'cart:add_cart' product.id %}'" class="btn btn_cart"><span class="screen_out">38300</span>
                                                     </button> <!----></div>
                                                 <div class="info">
-                                                    <h4 class="name">{{product.p_name}}</h4>
+                                                    <h4 class="name">[{{product.brand}}] {{product.p_name}}</h4>
                                                     <p class="cost">{{product.price}} 원</p>
                                                     <p class="desc">{{product.description}}</p>
                                                 </div>
