@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView, DetailView, FormView, UpdateView, DeleteView
+from django.views.generic import CreateView, ListView, DetailView, FormView, UpdateView, DeleteView, TemplateView
 from order.models import Order, OrderDetail
 from cart.models import CartItem, Cart
 # from cart.views import _cart_id
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Max
 from register.models import User
+
 
 # # Create your views here.
 # def _order_id(request):
@@ -56,6 +57,20 @@ def order_detail(request, total=0, counter=0, order_info_set=None):
     return render(request, 'order.html',
                   dict(order_info_set=order_info_set, total=total, counter=counter))
 
+def OrderDV(request, total=0, counter=0, details=None):
+    try:
+        order = Order.objects.filter(user_id=request.user.id).last()
+        details = OrderDetail.objects.filter(order_id=order.id)
+
+        for order_info in details:
+            total += (order_info.product.price * order_info.quantity)
+            counter += order_info.quantity
+
+    except ObjectDoesNotExist:
+        pass
+
+    return render(request, 'order_detail.html',
+                  dict(order=order, details=details, total=total, counter=counter))
 
 def order_view(request):
     try:

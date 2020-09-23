@@ -1,5 +1,5 @@
 {% extends "mypage/mypage_main.html" %}
-{% block title %}주문 내역{% endblock %}
+{% block title %}상세 주문 내역{% endblock %}
 {% load widget_tweaks %}
 {% load order_handler %}
 {% block extra-style %}
@@ -40,6 +40,7 @@
             border-color:#FC715B; #000000 #e7e7e7;
             padding:40px;
             margin-top:5px;
+            margin-bottom:25px;
             width:100%;
         }
         .img_div{
@@ -66,7 +67,7 @@
         }
         .order_sum{
             display:flex;
-            justify-content:center;
+            justify-content: center;
         }
         .order_mainbox tr{
         }
@@ -79,11 +80,23 @@
         }
         .order_mainbox td{
         }
+        .button_last{
+            width:50%;
+            justify-content: center;
+            margin-bottom:25px;
+            display:flex;
+            align-items:center;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .button_area{
+            justify-content: center;
+            width:100%;
+        }
 
     </style>
 {% endblock %}
 {% block content %}
-    {% include 'mypage/mypage_menu.html' %}
     <div class="container member_join">
         <div class="field_head">
             <h3 class="tit">주문 상세내역</h3>
@@ -132,14 +145,12 @@
                 </tr>
             </tbody>
         </table>
+        <div class="button_area">
+                <button class="btn_type1 button_last" type="submit" onclick="location.href='{% url 'shop:index'%}'"/>
+                <span class="txt_type">쇼핑 계속하기</span></button>
+        </div>
+
     </div>
 
-        {% endblock %}
 
-
-
-{% block extra-script %}
-<script> active = 0;
-    getList = itemList
-</script>
 {% endblock %}
