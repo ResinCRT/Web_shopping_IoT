@@ -3595,7 +3595,8 @@ body {
 
 #cartPut .cart_option .total .price {
     overflow: hidden;
-    text-align: right
+    text-align: right;
+    padding-bottom:20px;
 }
 
 #cartPut .cart_option .total .tit {
@@ -3806,7 +3807,7 @@ body {
 
 #cartPut .cart_type2 .total {
     padding: 30px 0 20px;
-    border-top: 1px solid #f4f4f4
+
 }
 
 #cartPut .cart_type2 .total.no_border {
@@ -4213,8 +4214,6 @@ only screen and (min-resolution:1.5dppx) {
     }
 }
 
-.layout-wrapper.goods-view-area {
-    padding-right: 40px;}
 
 
 body, input, select, textarea, button {
@@ -4257,7 +4256,7 @@ html, body {
 }
 
 .layout-wrapper.goods-view-area {
-    padding-right: 40px;
+
     margin-bottom: 200px;
 }
 .goods-add-product {

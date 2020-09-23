@@ -37,7 +37,7 @@
 
 
                             <div class="goods_info">
-                                <dl class="list fst">
+                                <dl class="list">
                                     <dt class="tit">판매단위</dt>
                                     <dd class="desc">1봉</dd>
                                 </dl>
@@ -62,6 +62,19 @@
                                         -이 제품은 알류, 땅콩, 대두, 밀, 돼지고기, 복숭아, 토마토, 호두, 쇠고기, 아황산류를 사용한 제품과 같은 제조시설에서 제조
                                     </dd>
                                 </dl>
+                                <dl class="list">
+                                    <dt class="tit">구매 수량</dt>
+                                    <dd class="desc">
+                                        <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
+                                                {%csrf_token %}
+                                                <div class="qty-input">
+                                                    <input class="input" name="quantity" type="number"
+                                                           style="text-align: center; width: 70px;  " value="1" min="1">
+                                                </div>
+
+
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
@@ -77,17 +90,14 @@
                             <div class="total">
                                 <div class="product-btns">
 
-                                <div class="price">
-                                    <div>수량 : <form action="{% url 'cart:add_to_cart' product.id %}" method="post">{% csrf_token %}
-                                    <div class="qty-input">
+                                    <div class="price">
 
-                                        <input class="input" name="quantity" type="number"
-                                               style="text-align: center; width: 70px;  " value="1" min="1">
-                                    </div></div>
-                                    <!----> <strong class="tit">총 상품금액 :</strong> <span class="sum"><span class="num">{{product.price}}</span>
-                            <span class="won">원</span></span></div>
-                            </div>
-                        </div>
+
+                                                <!----> <strong class="tit">총 상품금액 :</strong> <span class="sum">
+                                                    <span class="num">{{product.price}}</span><span class="won">원</span></span>
+
+                                    </div>
+                                </div>
                         <div class="group_btn off">
                             <div class="view_function">
                                 <!---->
@@ -166,7 +176,7 @@
     </div>
 
 <div style="margin-top:80px">
-    <div class="container">
+    <div class="container" style="padding-left:0px; padding-right:0px;">
         <div class="row">
             <div style="display:grid;grid-auto-flow:column;"><h3>상품 리뷰</h3><div>
             {% if user.is_active %}
@@ -177,7 +187,7 @@
             {% endif %}
         </div>
     </div>
-    <hr height="3px">
+    <hr height="3px" style="border-top:2px solid">
     {% for review in product.review_set.all %}
 
     <div><h5>{{review.review_title}}</h5></div>
@@ -265,7 +275,7 @@
             {% endif %}
 
 
-    <hr height="5px">
+    <hr height="5px" style="border-top:2px solid">
     {% for qna in product.qna_set.all %}
     {% if not qna.parent_id %}
     <div><h5>{{ qna.qna_title }}</h5></div>
@@ -285,6 +295,7 @@
     <font color="#353535" size="3">{{qna.content | safe}}</font>
     {% if qna.author == user %}
     {% if user.is_active %}
+
     <div class="text-right">
         <a href="{% url 'shop:update_qna' qna.id %}" class="btn btn-sm">문의수정</a>
         <a href="{% url 'shop:delete_qna' qna.id %}" class="btn btn-sm">문의삭제</a>
@@ -308,9 +319,9 @@
     <p>{{ qna_comment | safe }}</p>
     {% endif %}
     {% endfor %}
-    <hr>
-    {% endfor %}
 
+    {% endfor %}
+<hr>
 
 </div>
 </div>
