@@ -28,7 +28,7 @@ div.cart_result {
 {% else %}
 
 <div class="container">
-    <div>
+    <div style="padding-top:70px;">
     <br>
     <h1>장바구니</h1>
 
@@ -48,12 +48,7 @@ div.cart_result {
                 </colgroup>
                 <thead class="header">
                 <tr height="100" align="center">
-                    <th id="nothing"></th>
-                    <th id="picture">사진</th>
-                    <th id="thInfo">상품 정보</th>
-                    <th id="thCount">수량</th>
-                    <th id="thCost">상품금액</th>
-                    <th id="nothing2"></th>
+
                 </tr>
                 </thead>
             </table>
@@ -84,30 +79,26 @@ div.cart_result {
                                     </a>
                                 </td>
                                 <td header="thInfo" class="goods_info" align="center"><!---->
+
                                     <a href="{{ cart_item.product.get_absolute_url }}" class="name">{{cart_item.product.p_name}}</a>
-                                    <dl class="goods_cost">
-                                        <dt class="screen_out">판매가격</dt>
-                                        <dd class="selling_price"><span class="num">{{cart_item.product.price}}</span>
-                                            <span class="txt">원</span></dd>
-                                    </dl> <!---->
-                                    <p class="txt txt_limit"><!----></p> <!----> <!---->
+
                                 </td>
                                 <td header="thCount" align="center">
                                     <div class="goods_quantity">
                                         <div class="quantity">
                                             <strong class="screen_out">수량</strong>
                                             <a href="{% url 'cart:minus_cart' cart_item.product.id %}" calss="custom_a">
-                                                <i class="fas fa-minus-circle custom_icon" style="color: #5f0080;"></i>&nbsp
+                                                <i class="fas fa-minus-circle custom_icon" style="color: #FFCA18;"></i>&nbsp
                                             </a>
                                             {{cart_item.quantity}}
                                             <a href="{% url 'cart:add_cart' cart_item.product.id %}" calss="custom_a">
-                                                <i class="fas fa-plus-circle custom_icon" style="color: #5f0080;"></i>
+                                                <i class="fas fa-plus-circle custom_icon" style="color: #FFCA18;"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </td>
                                 <td header="thcost" align="center">
-                                    <dl class="goods_total">
+                                    <dl class="goods_total" style="margin-bottom: 0px;">
                                         <dt class="screen_out">합계</dt>
                                         <dd class="result">
                                             <span class="num">{{cart_item.sub_total}}</span> <span class="txt">원</span>
@@ -116,7 +107,7 @@ div.cart_result {
                                 </td>
                                 <td header="thDelete" class="goods_delete" align="center">
                                     <a href="{% url 'cart:remove_cart' cart_item.product.id %}" class="custom_a">
-                                        <i class="fas fa-trash-alt custom_icon" style="color: #5f0080;"></i>
+                                        <i class="fas fa-trash-alt custom_icon" style="color: #FFCA18;"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -144,7 +135,7 @@ div.cart_result {
                 </dl>
             </div>
             <br>
-            <a class="btn btn-primary" style="background-color:#5f0080; border-color: #5f0080;" href="{% url 'order:cart_to_order' cart.id %}">주문하기</a>
+            <a class="btn btn-primary" style="background-color: #FFCA18;border-color: #FFCA18;" href="{% url 'order:cart_to_order' cart.id %}">주문하기</a>
         </div>
     </form>
 </div>

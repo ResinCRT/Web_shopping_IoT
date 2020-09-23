@@ -34,7 +34,7 @@
 
 
                             <div class="goods_info">
-                                <dl class="list fst">
+                                <dl class="list">
                                     <dt class="tit">판매단위</dt>
                                     <dd class="desc">1봉</dd>
                                 </dl>
@@ -59,123 +59,129 @@
                                         -이 제품은 알류, 땅콩, 대두, 밀, 돼지고기, 복숭아, 토마토, 호두, 쇠고기, 아황산류를 사용한 제품과 같은 제조시설에서 제조
                                     </dd>
                                 </dl>
+                                <dl class="list">
+                                    <dt class="tit">구매 수량</dt>
+                                    <dd class="desc">
+                                        <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
+                                            {%csrf_token %}
+                                            <div class="qty-input">
+                                                <input class="input" name="quantity" type="number"
+                                                       style="text-align: center; width: 70px;  " value="1" min="1">
+                                            </div>
+
+
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                 </div>
-
 
 
                 <div id="cartPut">
                     <div class="cart_option cart_type2">
                         <!---->
                         <div class="inner_option">
-
                             <div class="total">
                                 <div class="product-btns">
+                                    <div class="price">
+                                        <!----> <strong class="tit">총 상품금액 :</strong> <span class="sum">
+                                                    <span class="num">{{product.price}}</span><span class="won">원</span></span>
+                                    </div>
+                                </div>
+                                <div class="group_btn off">
+                                    <div class="view_function">
+                                        <!---->
+                                        <button type="button" class="btn btn_alarm off">재입고 알림</button>
+                                    </div>
 
-                                <div class="price">
-                                    <div>수량 : <form action="{% url 'cart:add_to_cart' product.id %}" method="post">{% csrf_token %}
-                                    <div class="qty-input">
-
-                                        <input class="input" name="quantity" type="number"
-                                               style="text-align: center; width: 70px;  " value="1" min="1">
-                                    </div></div>
-                                    <!----> <strong class="tit">총 상품금액 :</strong> <span class="sum"><span class="num">{{product.price}}</span>
-                            <span class="won">원</span></span></div>
-                            </div>
-                        </div>
-                        <div class="group_btn off">
-                            <div class="view_function">
+                                    <span class="btn_type1 "><button type="submit"
+                                                                     class="txt_type">장바구니 담기</button></span>
+                                    </form>
+                                </div>
                                 <!---->
-                                <button type="button" class="btn btn_alarm off">재입고 알림</button>
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
                             </div>
-
-                                    <span class="btn_type1 "><button type="submit" class="txt_type">장바구니 담기</button></span>
-                                </form>
-                            </div>
-                            <!---->
-                            <!---->
-                            <!---->
-                            <!---->
-                            <!---->
                         </div>
                     </div>
-                </div>
-                <!--                <a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">장바구니에 담기</a>-->
+                    <!--                <a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">장바구니에 담기</a>-->
 
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="layout-wrapper goods-view-area">
-
-
-        <div class="goods_wrap">
-
-    </div>
+        <div class="layout-wrapper goods-view-area">
 
 
-    <div class="happy_center fst" style="padding-top:200px; padding-bottom:200px">
-        <div class="happy">
-            <h4 class="tit">고객행복센터</h4>
-            <p class="sub">
-                <span class="emph">궁금하신 점이나 서비스 이용에 불편한 점이 있으신가요?</span><span class="bar"></span>
-                문제가 되는 부분을 사진으로 찍어<span class="bar"></span>
-                아래 중 편하신 방법으로 접수해 주시면<span class="bar"></span>
-                빠르게 도와드리겠습니다.
-            </p>
-        </div>
-        <ul class="list">
-            <li>
-                <div class="tit">전화 문의 6744-8542</div>
-                <div class="sub">오전 7시~오후 7시 (연중무휴)</div>
-            </li>
-            <li>
-                <div class="tit">카카오톡 문의</div>
-                <div class="sub">오전 7시~오후 7시 (연중무휴)</div>
-                <div class="expend">
-                    카카오톡에서 ’움치킨’을 검색 후<br>
-                    대화창에 문의 및 불편사항을<br>
-                    남겨주세요.
-                </div>
-            </li>
-            <li>
-                <div class="tit">홈페이지 문의</div>
-                <div class="sub">
-                    24시간 접수 가능<br>
-                    로그인 &gt; 움치킨 &gt; 1:1 문의
-                </div>
-                <div class="expend">
-                    고객센터 운영 시간에 순차적으로 답변해드리겠습니다.
-                </div>
-            </li>
-        </ul>
-    </div>
+            <div class="goods_wrap">
 
-    <div class="happy_center lst">
-        <div class="happy unfold">
-            <h4 class="tit">교환 및 환불 안내</h4>
-            <p class="sub">
-                고객님의 단순 변심으로 인한 반품은 어려울 수 있으니 양해 부탁드립니다.
-            </p>
-        </div>
-    </div>
-
-<div style="margin-top:80px">
-    <div class="container">
-        <div class="row">
-            <div style="display:grid;grid-auto-flow:column;"><h3>상품 리뷰</h3><div>
-            {% if user.is_active %}
-            <div style="text-align: -webkit-right;margin-top:12px">
-                <a href="{%url 'shop:add_review' pk=product.id %}" class="btn btn-sm">
-                    <i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;&nbsp;리뷰작성</a>
             </div>
-            {% endif %}
-        </div>
-    </div>
-    <hr height="3px">
-    {% for review in product.review_set.all %}
+
+
+            <div class="happy_center fst" style="padding-top:200px; padding-bottom:200px">
+                <div class="happy">
+                    <h4 class="tit">고객행복센터</h4>
+                    <p class="sub">
+                        <span class="emph">궁금하신 점이나 서비스 이용에 불편한 점이 있으신가요?</span><span class="bar"></span>
+                        문제가 되는 부분을 사진으로 찍어<span class="bar"></span>
+                        아래 중 편하신 방법으로 접수해 주시면<span class="bar"></span>
+                        빠르게 도와드리겠습니다.
+                    </p>
+                </div>
+                <ul class="list">
+                    <li>
+                        <div class="tit">전화 문의 6744-8542</div>
+                        <div class="sub">오전 7시~오후 7시 (연중무휴)</div>
+                    </li>
+                    <li>
+                        <div class="tit">카카오톡 문의</div>
+                        <div class="sub">오전 7시~오후 7시 (연중무휴)</div>
+                        <div class="expend">
+                            카카오톡에서 ’움치킨’을 검색 후<br>
+                            대화창에 문의 및 불편사항을<br>
+                            남겨주세요.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tit">홈페이지 문의</div>
+                        <div class="sub">
+                            24시간 접수 가능<br>
+                            로그인 &gt; 움치킨 &gt; 1:1 문의
+                        </div>
+                        <div class="expend">
+                            고객센터 운영 시간에 순차적으로 답변해드리겠습니다.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="happy_center lst">
+                <div class="happy unfold">
+                    <h4 class="tit">교환 및 환불 안내</h4>
+                    <p class="sub">
+                        고객님의 단순 변심으로 인한 반품은 어려울 수 있으니 양해 부탁드립니다.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top:80px">
+                <div class="container" style="padding-left:0px; padding-right:0px;">
+                    <div class="row">
+                        <div style="display:grid;grid-auto-flow:column;"><h3>상품 리뷰</h3>
+                            <div>
+                                {% if user.is_active %}
+                                <div style="text-align: -webkit-right;margin-top:12px">
+                                    <a href="{%url 'shop:add_review' pk=product.id %}" class="btn btn-sm">
+                                        <i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;&nbsp;리뷰작성</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr height="3px" style="border-top:2px solid">
+                        {% for review in product.review_set.all %}
 
     <div><h5>{{review.review_title}}</h5></div>
 
