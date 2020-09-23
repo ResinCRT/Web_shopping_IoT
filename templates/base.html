@@ -61,7 +61,7 @@
                     </li>
                 </ul>
             </div>
-            <h1><a href="{% url 'home' %}"><img src="static_data/static/images/logo5.png" style="width:300px"></a></h1>
+            <h1><a href="{% url 'home' %}"><img src="/static_data/static/images/logo5.png" style="width:300px"></a></h1>
             <nav id="gnb">
                 <h2 class="screen_out">메뉴</h2>
                 <div id="gnbMenu" class="gnb_kurly">
@@ -138,5 +138,45 @@
 
 
 </body>
-{% block extra-script %}{% endblock %}
+{% block extra-script %}<body onload="init();">
+<script language="JavaScript">
+<!--
+var sell_price;
+var quantity;
+
+function init () {
+   sell_price = document.form.sell_price.value;
+   quantity = document.form.quantity.value;
+   document.form.sum.value = sell_price;
+   change();
+}
+
+function add () {
+   hm = document.form.quantity;
+   sum = document.form.sum;
+   hm.value ++ ;
+
+   sum.value = parseInt(hm.value) * sell_price;
+}
+
+function del () {
+   hm = document.form.quantity;
+   sum = document.form.sum;
+      if (hm.value > 1) {
+         hm.value -- ;
+         sum.value = parseInt(hm.value) * sell_price;
+      }
+}
+
+function change () {
+   hm = document.form.quantity;
+   sum = document.form.sum;
+
+      if (hm.value < 0) {
+         hm.value = 0;
+      }
+   sum.value = parseInt(hm.value) * sell_price;
+}
+
+</script>{% endblock %}
 </html>
