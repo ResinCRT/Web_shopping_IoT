@@ -30,6 +30,9 @@
     vertical-align: top;
     transition: all .5s ease-in-out;
     }
+    .main-category-pointer{
+            cursor:pointer;
+    }
     </style>
     {% block extra-style %}{% endblock %}
 </head>
@@ -70,7 +73,7 @@
                             <div class="cssbox">
                                 <ul style="width: 120px;">
                                     <li class='active has-sub' style="width: 120px;">
-                                        <div style="font-size:18px;font-weight:700; height:50px; width:130px;padding-top:5px;">
+                                        <div  onclick="location.href='{% url 'shop:index'%}'" class="main-category-pointer" style="font-size:18px;font-weight:700; height:50px; width:130px;padding-top:5px;">
                                             <i class="fas fa-bars"></i>
                                             <span>메인카테고리</span></div>
                                         <ul>

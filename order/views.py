@@ -17,8 +17,13 @@ from register.models import User
 
 
 def cart_to_order(request, cart_id):
+    try:
+        uid = request.user.id
+    except ObjectDoesNotExist:
+        uid = None
+
     order = Order.objects.create(
-        user_id=request.user.id
+        user_id=uid
     )
     order.save()
 

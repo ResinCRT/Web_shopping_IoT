@@ -32,6 +32,7 @@ class Migration(migrations.Migration):
                 ('quantity', models.IntegerField()),
                 ('active', models.BooleanField(default=True)),
                 ('cart', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cart.cart')),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='shop.product')),
             ],
             options={
                 'db_table': 'CartItem',

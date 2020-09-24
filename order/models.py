@@ -6,7 +6,7 @@ from register.models import User
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     order_dt = models.DateTimeField(auto_now_add=True)
 
     class Meta:
